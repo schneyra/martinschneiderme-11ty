@@ -1,0 +1,26 @@
+---
+title:
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {{title}}
+            {% if title %}&rsaquo;{% endif %}
+            Martin Schneider &mdash; Frontend Developer &amp; Diplom Informatiker (FH)
+        </title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    </head>
+    <body>
+        {% include "header.njk" %}
+
+        {{wurst}}
+
+        {{ content | safe }}
+
+        {% include "footer.njk" %}
+    </body>
+</html>
