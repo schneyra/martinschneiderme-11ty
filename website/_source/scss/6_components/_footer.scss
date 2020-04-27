@@ -1,12 +1,21 @@
 .footer {
+    --color-link: var(--color-footer-link);
+    --color-link-hover: var(--color-footer-link-hover);
+
+
     background-color: var(--color-footer-background);
     color: var(--color-footer-text);
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    line-height: 2;
 
-    a {
-        color: var(--color-footer-link);
+    @media screen and (min-width: 600px) {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &__name {
+        text-transform: uppercase;
+        font-weight: 600;
     }
 }

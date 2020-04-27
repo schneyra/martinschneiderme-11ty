@@ -8,4 +8,12 @@
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2rem;
     }
+
+    &__image {
+        @media screen and (max-width: 599px) {
+            display: block;
+            margin-top: 3rem;
+            text-align: center;
+        }
+    }
 }
