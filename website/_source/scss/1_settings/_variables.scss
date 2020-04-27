@@ -1,0 +1,72 @@
+// Color-Scheme generated at
+// https://coolors.co/001a2b-004672-70163c-baf2bb-eaeaea
+:root {
+    --os-color-mode: "light";
+    --color-content-background: #fafafa;
+    --color-footer-background: #001a2b;
+    --color-text: #111;
+    --color-link: #001a2b;
+    --color-link-visited: #004672;
+    --color-link-hover: #001a2b;
+    --color-headline: #004672;
+    --color-headline-gradient-start: #001a2b;
+    --color-headline-gradient-end: #004672;
+    --color-link-background: #baf2bb;
+    --color-footer-text: #fff;
+    --color-footer-icon: #fff;
+    --color-footer-link: #fff;
+    --color-footer-link-hover: #001a2b;
+    --color-footer-link-background: #baf2bb;
+    --color-postlist-post-bottom: #eaeaea;
+    --color-postlist-post-background-hover: #eaeaea;
+    --color-imagecaption: #111;
+    --color-imagecaption-background: #ffffff;
+    --color-image-shadow: #eaeaea;
+    --color-postlist-datetime: #666;
+    --color-reset-button-background: #001a2b;
+    --color-input-border: #aaa;
+    --color-code-text: #001a2b;
+    --color-code-background: #eaeaea;
+    --color-selection-color: #111;
+    --color-selection-background: rgba(186, 242, 187, 0.75);
+    --zindex-footer: 0;
+    --zindex-content: 1;
+    --content-max-width: 52rem;
+}
+
+@mixin darkModeCustomProperties() {
+    --color-content-background: #012;
+    --color-text: #efefef;
+    --color-link: #efefef;
+    --color-link-visited: #eee;
+    --color-headline: #efefef;
+    --color-headline-gradient-start: #fff;
+    --color-headline-gradient-end: #ccc;
+    --color-imagecaption: #efefef;
+    --color-imagecaption-background: #123;
+    --color-image-shadow: #111;
+    --color-postlist-datetime: #bbb;
+    --color-postlist-post-bottom: #112233;
+    --color-postlist-post-background-hover: #123;
+    --color-code-text: #efefef;
+    --color-code-background: #234;
+}
+
+// if the users device prefers dark color mode
+@media (prefers-color-scheme: dark) {
+    :root {
+        --os-color-mode: "dark";
+    }
+
+    // only apply device-preference if the user
+    // has not set a color-mode
+    :root:not([data-user-color-scheme]) {
+        @include darkModeCustomProperties;
+    }
+}
+
+// if the user has switched mode, a data-attribute
+// on the html-element is set to either "dark" or "light"
+[data-user-color-scheme="dark"] {
+    @include darkModeCustomProperties;
+}

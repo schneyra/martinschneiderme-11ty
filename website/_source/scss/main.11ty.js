@@ -46,9 +46,9 @@ module.exports = class {
             const result = await this.minify(css)
             return result
         } catch (err) {            
-                console.error(err)
-                const msg = err.formatted || err.message
-                return this.renderError(msg)
+            console.error(err)
+            const msg = err.formatted || err.message
+            return this.renderError(msg)
         }
     }
 }

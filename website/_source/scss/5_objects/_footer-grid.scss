@@ -1,0 +1,11 @@
+.footer-grid {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    z-index: var(--zindex-footer);
+
+    @media screen and (min-width: 600px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+}

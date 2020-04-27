@@ -1,0 +1,11 @@
+.link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__icon {
+        width: 0.8em;
+        height: 0.8em;
+        margin-right: 0.5em;
+    }
+}

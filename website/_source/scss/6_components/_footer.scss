@@ -1,0 +1,12 @@
+.footer {
+    background-color: var(--color-footer-background);
+    color: var(--color-footer-text);
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    a {
+        color: var(--color-footer-link);
+    }
+}

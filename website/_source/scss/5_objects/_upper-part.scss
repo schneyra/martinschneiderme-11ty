@@ -1,0 +1,7 @@
+.upper-part {
+    min-height: 95vh;
+    position: relative;
+    z-index: var(--zindex-content);
+    background: var(--color-content-background);
+    padding-bottom: 3rem;
+}
