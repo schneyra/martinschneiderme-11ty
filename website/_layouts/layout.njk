@@ -15,12 +15,10 @@ title:
         <link href="/favicon.ico" rel="icon" type="image/x-icon">
     </head>
     <body>
-        {% include "header.njk" %}
-
-        {{wurst}}
+        {% include "../_includes/header.njk" %}
 
         {{ content | safe }}
 
-        {% include "footer.njk" %}
+        {% include "../_includes/footer.njk" %}
     </body>
 </html>

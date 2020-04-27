@@ -11,10 +11,10 @@ case "$1" in
             ;;   
         serve)
             shift
-            docker exec -ti martinschneiderme-11ty_node npx @11ty/eleventy --input=./website --serve
-            ;;
+            docker exec -ti martinschneiderme-11ty_node npx @11ty/eleventy --serve
+            ;;      
         build)
             shift
-            docker exec -ti martinschneiderme-11ty_node npx @11ty/eleventy --input=./website
+            docker exec -ti martinschneiderme-11ty_node npx @11ty/eleventy
             ;;
 esac
