@@ -1,6 +1,6 @@
 .footer-grid {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     z-index: var(--zindex-footer);
 
     @media screen and (min-width: 600px) {
@@ -12,7 +12,7 @@
     &__image {
         @media screen and (max-width: 599px) {
             display: block;
-            margin-top: 3rem;
+            margin-top: 5rem;
             text-align: center;
         }
     }
