@@ -1,11 +1,16 @@
 .figure {
     margin: 0;
     background: var(--color-imagecaption-background);
-    max-width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+        width: 50%;
+    }
 
     &__image {
         display: block;
-        max-width: 100%;
+        width: 100%;
+        height: auto;
     }
 
     &__caption {
