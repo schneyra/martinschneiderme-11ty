@@ -1,0 +1,16 @@
+.header {
+    padding: 2rem 0;
+    background: var(--color-background-header);
+
+    &__wrapper {
+        @media screen and (min-width: 600px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__navigation {
+        flex-grow: 1;
+    }
+}
