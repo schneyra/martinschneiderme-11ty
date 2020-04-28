@@ -1,0 +1,14 @@
+.content-sort-order {
+    @media screen and (max-width: 599px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    @media screen and (min-width: 600px) {
+        figure {
+            float: right;
+            margin-left: 3rem;
+            margin-bottom: 3rem;
+        }
+    }
+}

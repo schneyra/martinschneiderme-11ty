@@ -6,6 +6,10 @@
 
     &__element {
         display: inline-block;
-        margin-left: 1em;
+        margin-left: 1rem;
+    }
+
+    &__link {
+        font-weight: 400;
     }
 }

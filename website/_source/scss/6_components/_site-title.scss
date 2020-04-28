@@ -1,0 +1,14 @@
+.site-title {
+    color: var(--color-headline);
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+
+    &:hover {
+        box-shadow: none;
+        background: none;
+    }
+}

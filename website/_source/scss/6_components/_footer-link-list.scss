@@ -4,9 +4,13 @@
     list-style: none;
     text-transform: uppercase;
 
+    @media screen and (min-width: 600px) {
+        margin: 0 0 0 2rem;
+    }
+
     &__icon {
         width: 0.8em;
         height: 0.8em;
-        margin-right: 0.5em;
+        margin-right: 0.5rem;
     }
 }

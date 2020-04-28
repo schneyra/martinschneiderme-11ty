@@ -1,0 +1,16 @@
+.figure {
+    margin: 0;
+    background: var(--color-imagecaption-background);
+    max-width: 50%;
+
+    &__image {
+        display: block;
+        max-width: 100%;
+    }
+
+    &__caption {
+        font-size: 1rem;
+        padding: 1rem;
+        font-style: italic;
+    }
+}

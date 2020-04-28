@@ -3,9 +3,11 @@ h2,
 h3,
 h4,
 h5 {
-    margin-top: 2em;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     color: var(--color-headline);
-    font-weight: 300;
+    font-weight: 900;
     letter-spacing: 0.025em;
+    line-height: 1.3;
 }
