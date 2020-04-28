@@ -11,7 +11,9 @@ title:
             {% if title %}&rsaquo;{% endif %}
             Martin Schneider &mdash; Frontend Developer &amp; Diplom Informatiker (FH)
         </title>
-        <link rel="stylesheet" href="/dist/css/main.css">
+
+        {{ 'website/_source/scss/main.scss' | compileSCSS | safe }}
+        
         <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="/favicon.ico" rel="icon" type="image/x-icon">
     </head>

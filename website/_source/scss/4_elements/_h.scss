@@ -4,4 +4,8 @@ h3,
 h4,
 h5 {
     margin-top: 2em;
+    text-transform: uppercase;
+    color: var(--color-headline);
+    font-weight: 300;
+    letter-spacing: 0.025em;
 }

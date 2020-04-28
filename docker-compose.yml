@@ -1,12 +1,12 @@
-version: '3'
+version: "3"
 
 services:
-  node:
-    container_name: martinschneiderme-11ty_node
-    image: node:latest
-    working_dir: /home/node/app
-    volumes:
-      - .:/home/node/app:cached
-    command: tail -f /dev/null
-    ports:
-      - 8080:8080
+    node:
+        container_name: martinschneiderme-11ty_node
+        image: node:latest
+        working_dir: /home/node/app
+        volumes:
+            - .:/home/node/app:cached
+        command: tail -f /dev/null
+        ports:
+            - 8080:8080
