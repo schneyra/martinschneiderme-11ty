@@ -1,5 +1,7 @@
 ---
 title:
+metaDescription: Hey, my name is Martin. I'm a frontend developer from Germany.
+metaSlug: /
 ---
 <!doctype html>
 <html lang="en">
@@ -18,8 +20,7 @@ title:
 
         {{ 'website/_source/scss/main.scss' | compileSCSS | safe }}
         
-        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-        <link href="/favicon.ico" rel="icon" type="image/x-icon">
+        {% include '../_includes/head-meta.njk' %}
     </head>
     <body>
         <div class="upper-part">
