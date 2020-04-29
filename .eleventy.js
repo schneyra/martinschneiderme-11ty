@@ -40,6 +40,7 @@ module.exports = function (eleventyConfig) {
     ]);
 
     eleventyConfig.addWatchTarget("./website/_source");
+    eleventyConfig.addPassthroughCopy("./website/fonts");
 
     eleventyConfig.addNunjucksAsyncFilter(
         "compileSCSS",
