@@ -4,7 +4,7 @@
     border: 0;
     background: transparent;
     font-size: 1.5rem;
-    color: var(--color-link);
+    color: var(--color-text-offset);
     transition: all 100ms ease-in-out;
     display: flex;
     align-items: center;
@@ -14,7 +14,6 @@
 
     &:focus {
         outline: none;
-        color: var(--color-link-hover);
         background: var(--color-link-background);
     }
 

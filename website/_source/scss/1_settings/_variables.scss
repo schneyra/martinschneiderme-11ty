@@ -2,47 +2,28 @@
 // https://coolors.co/001a2b-004672-70163c-baf2bb-eaeaea
 :root {
     --os-color-mode: "light";
-    --color-content-background: #fafafa;
-    --color-footer-background: #123;
+
+    --color-bg: #f0f0f0;
+    --color-bg-offset: #eaeaea;
+    --color-text: #2b2f3c;
+    --color-text-offset: #213944;
+
+    --color-link-hover: #213944;
     --color-link-background: #baf2bb;
-    --color-imagecaption-background: #fff;
-    --color-text: #333;
-    --color-link: #003662;
-    --color-link-visited: #004672;
-    --color-link-hover: #001a2b;
-    --color-headline: #004672;
-    --color-footer-text: #eaeaea;
-    --color-footer-link: #eaeaea;
-    --color-footer-link-hover: #001a2b;
-    --color-footer-link-background: #baf2bb;
-    --color-postlist-post-bottom: #eaeaea;
-    --color-postlist-post-background-hover: #eaeaea;
-    --color-imagecaption: #111;
-    --color-image-shadow: #eaeaea;
-    --color-postlist-datetime: #666;
-    --color-code-text: #001a2b;
-    --color-code-background: #eaeaea;
-    --color-selection-color: #111;
+
+    --color-selection-color: #213944;
     --color-selection-background: #baf2bb;
+
     --zindex-footer: 0;
     --zindex-content: 1;
     --content-max-width: 48rem;
 }
 
 @mixin darkModeCustomProperties() {
-    --color-content-background: #001a2b;
-    --color-text: #efefef;
-    --color-link: #efefef;
-    --color-link-visited: #eee;
-    --color-headline: #efefef;
-    --color-imagecaption: #efefef;
-    --color-imagecaption-background: #141d2b;
-    --color-image-shadow: #111;
-    --color-postlist-datetime: #bbb;
-    --color-postlist-post-bottom: #040d1b;
-    --color-postlist-post-background-hover: #040d1b;
-    --color-code-text: #efefef;
-    --color-code-background: #234;
+    --color-bg: #2b2f3c;
+    --color-bg-offset: #1b1f2c;
+    --color-text: #cfcfcf;
+    --color-text-offset: #f7f7f7;
 }
 
 // if the users device prefers dark color mode
