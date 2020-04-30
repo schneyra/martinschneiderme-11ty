@@ -1,6 +1,7 @@
 const path = require("path");
 const sass = require("node-sass");
 const CleanCSS = require("clean-css");
+const Terser = require("terser");
 
 async function compileSCSS(completePath) {
     const promise = new Promise((resolve, reject) => {
@@ -51,6 +52,16 @@ module.exports = function (eleventyConfig) {
             callback(null, `<style>${minifiedCSS}</style>`);
         },
     );
+
+    eleventyConfig.addFilter("jsmin", function (code) {
+        let minified = Terser.minify(code);
+        if (minified.error) {
+            console.log("Terser error: ", minified.error);
+            return code;
+        }
+
+        return minified.code;
+    });
 
     return {
         dir: {

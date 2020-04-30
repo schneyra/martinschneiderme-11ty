@@ -3,14 +3,14 @@
 :root {
     --os-color-mode: "light";
     --color-content-background: #fafafa;
-    --color-footer-background: #141d2b;
+    --color-footer-background: #123;
     --color-link-background: #baf2bb;
     --color-imagecaption-background: #fff;
     --color-text: #333;
     --color-link: #003662;
     --color-link-visited: #004672;
     --color-link-hover: #001a2b;
-    --color-headline: #003662;
+    --color-headline: #004672;
     --color-footer-text: #eaeaea;
     --color-footer-link: #eaeaea;
     --color-footer-link-hover: #001a2b;
@@ -30,17 +30,17 @@
 }
 
 @mixin darkModeCustomProperties() {
-    --color-content-background: #012;
+    --color-content-background: #001a2b;
     --color-text: #efefef;
     --color-link: #efefef;
     --color-link-visited: #eee;
     --color-headline: #efefef;
     --color-imagecaption: #efefef;
-    --color-imagecaption-background: #123;
+    --color-imagecaption-background: #141d2b;
     --color-image-shadow: #111;
     --color-postlist-datetime: #bbb;
-    --color-postlist-post-bottom: #112233;
-    --color-postlist-post-background-hover: #123;
+    --color-postlist-post-bottom: #040d1b;
+    --color-postlist-post-background-hover: #040d1b;
     --color-code-text: #efefef;
     --color-code-background: #234;
 }
