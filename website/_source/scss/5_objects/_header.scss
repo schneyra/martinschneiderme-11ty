@@ -1,5 +1,9 @@
 .header {
-    padding: 2rem 0 5rem;
+    padding: 2rem 0 2rem;
+
+    @media (min-width: 600px) {
+        padding: 2rem 0 5rem;
+    }
 
     &__wrapper {
         @media screen and (min-width: 600px) {

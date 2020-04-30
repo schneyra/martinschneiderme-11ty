@@ -3,19 +3,16 @@
 :root {
     --os-color-mode: "light";
     --color-content-background: #fafafa;
-    --color-footer-background: #123;
+    --color-footer-background: #141d2b;
     --color-link-background: #baf2bb;
-    --color-imagecaption-background: #ffffff;
+    --color-imagecaption-background: #fff;
     --color-text: #333;
     --color-link: #003662;
     --color-link-visited: #004672;
     --color-link-hover: #001a2b;
     --color-headline: #003662;
-    --color-headline-gradient-start: #001a2b;
-    --color-headline-gradient-end: #004672;
-    --color-footer-text: #fff;
-    --color-footer-icon: #fff;
-    --color-footer-link: #fff;
+    --color-footer-text: #eaeaea;
+    --color-footer-link: #eaeaea;
     --color-footer-link-hover: #001a2b;
     --color-footer-link-background: #baf2bb;
     --color-postlist-post-bottom: #eaeaea;
@@ -23,12 +20,10 @@
     --color-imagecaption: #111;
     --color-image-shadow: #eaeaea;
     --color-postlist-datetime: #666;
-    --color-reset-button-background: #001a2b;
-    --color-input-border: #aaa;
     --color-code-text: #001a2b;
     --color-code-background: #eaeaea;
     --color-selection-color: #111;
-    --color-selection-background: rgba(186, 242, 187, 0.75);
+    --color-selection-background: #baf2bb;
     --zindex-footer: 0;
     --zindex-content: 1;
     --content-max-width: 48rem;
@@ -40,8 +35,6 @@
     --color-link: #efefef;
     --color-link-visited: #eee;
     --color-headline: #efefef;
-    --color-headline-gradient-start: #fff;
-    --color-headline-gradient-end: #ccc;
     --color-imagecaption: #efefef;
     --color-imagecaption-background: #123;
     --color-image-shadow: #111;
