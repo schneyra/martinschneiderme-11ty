@@ -9,6 +9,8 @@ pagination:
 permalink: articles/{{ article.slug }}/index.html
 ---
 
+{{ 'website/_source/scss/article.scss' | compileSCSS | safe }}
+
 <article class="article">
 <h1 class="headline">{{ article.title }}</h1>
 {{ article.date }}
