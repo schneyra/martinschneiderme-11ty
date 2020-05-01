@@ -19,7 +19,7 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
             <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title }}</a>
           </h2>
           
-          <time datetime="{article.date}" class="article-list__date">{{ item.formattedDate }}</time>
+          <time datetime="{{ item.date }}" class="article-list__date">{{ item.formattedDate }}</time>
           
           <div class="article-list__excerpt">{{ item.excerpt | safe }}</div>
         </article>

@@ -1,0 +1,16 @@
+figure {
+    margin: 2em 0 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+figcaption {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    font-style: italic;
+    color: var(--color-text-offset);
+}
