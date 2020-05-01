@@ -48,6 +48,13 @@ async function getAllArticles() {
     }
 
     const filteredPosts = blogposts.map((post) => {
+        const dateConverterOptions = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        };
+
         // Remove HTML-Tags from Meta-Description
         let metaDescription = post.excerpt.rendered.replace(
             /(<([^>]+)>)/gi,
@@ -58,6 +65,10 @@ async function getAllArticles() {
         return {
             title: post.title.rendered,
             date: post.date,
+            formattedDate: new Date(post.date).toLocaleDateString(
+                "en-US",
+                dateConverterOptions,
+            ),
             slug: post.slug,
             metaDescription: metaDescription,
             excerpt: post.excerpt.rendered,

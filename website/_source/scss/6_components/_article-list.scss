@@ -1,0 +1,56 @@
+.article-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__article {
+        border-bottom: 1px solid var(--color-bg-offset);
+        padding: 2rem 4rem 2rem 0;
+        position: relative;
+        transition: padding 200ms ease-in-out,
+            background-color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-bg-offset);
+                padding: 2rem;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
+                    0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
+                    0 8px 16px rgba(0, 0, 0, 0.07);
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        margin-top: 0;
+    }
+
+    &__link {
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__date {
+        font-size: 0.9em;
+        font-style: italic;
+    }
+
+    &__excerpt {
+        p {
+            width: 100%;
+            max-width: 100%;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

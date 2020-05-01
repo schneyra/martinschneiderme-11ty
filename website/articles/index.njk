@@ -8,12 +8,21 @@ pagination:
 permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
+{{ 'website/_source/scss/articles.scss' | compileSCSS | safe }}
+
+<h1 class="headline">Articles</h1>
 {% for item in pagination.items %}
-    {% if loop.first %}<ul>{% endif %}
-      <li>
-        <h2><a href="/articles/{{ item.slug }}/">{{ item.title }}</a></h2>
-        <p>{{ item.date }}</p>
-        <p>{{ item.excerpt | safe }}</p>
+    {% if loop.first %}<ul class="article-list">{% endif %}
+      <li class="article-list__article">
+        <article>
+          <h2 class="article-list__title">
+            <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title }}</a>
+          </h2>
+          
+          <time datetime="{article.date}" class="article-list__date">{{ item.formattedDate }}</time>
+          
+          <div class="article-list__excerpt">{{ item.excerpt | safe }}</div>
+        </article>
       </li>
     {% if loop.last %}</ul>{% endif %}
   {% endfor %}
