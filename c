@@ -5,9 +5,9 @@ case "$1" in
         stop)
             docker-compose down
             ;;
-        shell)
+        node)
             shift
-            docker exec -ti martinschneiderme-11ty_node yarn $@
+            docker exec -ti martinschneiderme-11ty_node node $@
             ;;  
         yarn)
             shift

@@ -1,0 +1,17 @@
+---
+layout: layout
+title: Articles
+metaSlug: /articles/
+pagination:
+    data: articlesFromWordPress
+    size: 1
+    alias: article
+permalink: articles/{{ article.slug }}/index.html
+---
+
+<article class="article">
+<h1 class="headline">{{ article.title }}</h1>
+{{ article.date }}
+<div class="article__excerpt">{{ article.excerpt | safe }}</div>
+{{ article.content | safe }}
+</article>

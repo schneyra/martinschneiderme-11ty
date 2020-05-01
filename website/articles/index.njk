@@ -1,0 +1,31 @@
+---
+layout: layout
+title: Articles
+metaSlug: /articles/
+pagination:
+  data: articlesFromWordPress
+  size: 10
+permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
+---
+
+{% for item in pagination.items %}
+    {% if loop.first %}<ul>{% endif %}
+      <li>
+        <h2><a href="/articles/{{ item.slug }}/">{{ item.title }}</a></h2>
+        <p>{{ item.date }}</p>
+        <p>{{ item.excerpt | safe }}</p>
+      </li>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+
+  {# pagination #}
+  {% if pagination.hrefs | length > 0 %}
+  <ul>
+    {% if pagination.previousPageHref %}
+      <li><a href="{{ pagination.previousPageHref }}">Previous page</a></li>
+    {% endif %}
+    {% if pagination.nextPageHref %}
+      <li><a href="{{ pagination.nextPageHref }}">Next page</a></li>
+    {% endif %}
+  </ul>
+  {% endif %}
