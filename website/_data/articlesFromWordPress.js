@@ -4,6 +4,58 @@
 
 // required packages
 const fetch = require("node-fetch");
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const Prism = require("prismjs");
+const he = require("he");
+
+const highlightCode = (content) => {
+    const dom = new JSDOM(content);
+
+    let preElements = dom.window.document.querySelectorAll("pre");
+
+    if (preElements.length) {
+        preElements.forEach((pre) => {
+            let code = pre.querySelector("code");
+
+            if (code) {
+                // get specified language from css-classname
+                let codeLanguage = "html";
+                const preClass = pre.className;
+
+                var matches = preClass.match(/language-(.*)/);
+                if (matches != null) {
+                    codeLanguage = matches[1];
+                }
+
+                // set grammar that prism should use for highlighting
+                let prismGrammar = Prism.languages.html;
+
+                if (codeLanguage === "javascript" || codeLanguage === "js") {
+                    prismGrammar = Prism.languages.javascript;
+                }
+
+                if (codeLanguage === "css") {
+                    prismGrammar = Prism.languages.css;
+                }
+
+                // highlight code
+                code.innerHTML = Prism.highlight(
+                    code.innerHTML,
+                    prismGrammar,
+                    codeLanguage,
+                );
+
+                code.innerHTML = he.decode(code.innerHTML);
+                code.classList.add(`language-${codeLanguage}`);
+            }
+        });
+
+        content = dom.window.document.body.innerHTML;
+    }
+
+    return content;
+};
 
 // get blogposts
 // see https://www.datocms.com/docs/content-delivery-api/first-request#vanilla-js-example
@@ -62,6 +114,8 @@ async function getAllArticles() {
         );
         metaDescription = metaDescription.replace("\n", "");
 
+        const content = highlightCode(post.content.rendered);
+
         return {
             title: post.title.rendered,
             date: post.date,
@@ -72,7 +126,7 @@ async function getAllArticles() {
             slug: post.slug,
             metaDescription: metaDescription,
             excerpt: post.excerpt.rendered,
-            content: post.content.rendered,
+            content: content,
         };
     });
 

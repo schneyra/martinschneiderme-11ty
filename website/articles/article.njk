@@ -18,4 +18,8 @@ permalink: articles/{{ article.slug }}/index.html
     <div class="article__excerpt">{{ article.excerpt | safe }}</div>
     
     {{ article.content | safe }}
+
+    {% if article.content.includes('language-')%}
+        {{ 'website/_source/scss/prism.scss' | compileSCSS | safe }}
+    {% endif %}
 </article>
