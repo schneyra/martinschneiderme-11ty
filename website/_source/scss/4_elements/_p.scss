@@ -1,4 +1,9 @@
 p {
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+
     @media screen and (min-width: 600px) {
         max-width: 75%;
     }
