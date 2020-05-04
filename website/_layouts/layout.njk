@@ -3,6 +3,20 @@ title:
 metaDescription: Hey, my name is Martin. I'm a frontend developer from Germany.
 metaSlug: /
 ---
+
+{# Override front matter if the current page is an article #}
+{% if article.title %}
+    {% set title = article.title %}
+{% endif %}
+
+{% if article.metaDescription %}
+    {% set metaDescription = article.metaDescription %}
+{% endif %}
+
+{% if article.slug %}
+    {% set metaSlug = '/articles/' + article.slug + '/' %}
+{% endif %}
+
 <!doctype html>
 <html lang="en">
     <head>
