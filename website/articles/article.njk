@@ -22,12 +22,4 @@ permalink: articles/{{ article.slug }}/index.html
     {% endif %}
 </article>
 
-        <button data-sharing-button>Share!</button>
-
-        {% set articleSharingJs %}
-            {% include "../_source/js/articleSharing.js" %}
-        {% endset %}
-
-        <script>
-            {{ articleSharingJs | jsmin | safe }}
-        </script>
+{% include 'website/_includes/sharingButton.njk' %}
