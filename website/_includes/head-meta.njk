@@ -7,6 +7,10 @@
 
 <meta name="google-site-verification" content="q30M0p1A4chHEQhW3ypsQYO7sz1EU7ACd3ng6IXqu-I" />
 
+{% if metaRobots %}
+    <meta name="robots" content="{{ metaRobots }}" />
+{% endif %}
+
 <meta name="description" content="{{metaDescription}}" />
 
 <meta property="twitter:card" content="summary_large_image">
