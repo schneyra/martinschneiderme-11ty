@@ -21,3 +21,13 @@ permalink: articles/{{ article.slug }}/index.html
         {{ 'website/_source/scss/prism.scss' | compileSCSS | safe }}
     {% endif %}
 </article>
+
+        <button data-sharing-button>Share!</button>
+
+        {% set articleSharingJs %}
+            {% include "../_source/js/articleSharing.js" %}
+        {% endset %}
+
+        <script>
+            {{ articleSharingJs | jsmin | safe }}
+        </script>
