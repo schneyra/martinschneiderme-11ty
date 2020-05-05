@@ -1,8 +1,16 @@
 // https://web.dev/web-share/
 (() => {
     if (navigator.share) {
-        const sharingButton = document.querySelector("[data-sharing-button]");
+        // https://davidwalsh.name/detect-android
+        var ua = navigator.userAgent.toLowerCase();
+        var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+        const sharingIconSelector = isAndroid
+            ? "[data-sharing-icon-android]"
+            : "[data-sharing-icon-ios]";
+        const sharingIcon = document.querySelector(sharingIconSelector);
+        sharingIcon.classList.remove("is-hidden");
 
+        const sharingButton = document.querySelector("[data-sharing-button]");
         sharingButton.classList.remove("is-hidden");
 
         sharingButton.addEventListener("click", () => {
