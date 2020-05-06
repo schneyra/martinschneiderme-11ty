@@ -1,0 +1,47 @@
+---
+permalink: articles/feed.xml
+eleventyExcludeFromCollections: true
+pagination:
+  data: articlesFromWordPress
+  size: 10
+  alias: articles
+---
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	>
+
+    <channel>
+        <title>Martin Schneider - Frontend Developer &amp; Diplom Informatiker (FH)</title>
+        <atom:link href="https://martinschneider.me/articles/feed.xml" rel="self" type="application/rss+xml" />
+        <link>https://martinschneider.me</link>
+        <description>Hey, my name is Martin. I'm a frontend developer from Germany.</description>
+        <lastBuildDate>{{ articles[0].rssDate }}</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+
+    <image>
+        <url>https://martinschneider.me/logo128.jpg</url>
+        <title>Martin Schneider - Frontend Developer &amp; Diplom Informatiker (FH)</title>
+        <link>https://martinschneider.me</link>
+        <width>128</width>
+        <height>128</height>
+    </image> 
+
+    {%- for article in articles %}
+    {% set absoluteUrl = 'https://martinschneider.me/articles/' + article.slug + '/' %}
+        <item>
+            <title>{{article.title}}</title>
+            <link>{{ absoluteUrl }}</link>
+            <dc:creator><![CDATA[Martin Schneider]]></dc:creator>
+            <pubDate>{{ article.rssDate }}</pubDate>
+            <guid isPermaLink="false">{{ absoluteUrl }}</guid>
+            <description><![CDATA[{{ article.excerpt | safe }}]]></description>
+            <content:encoded><![CDATA[{{ article.content | safe }}]]></content:encoded>
+        </item>
+    {%- endfor %}
+    </channel>
+</rss>

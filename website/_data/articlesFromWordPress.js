@@ -114,7 +114,14 @@ async function getAllArticles() {
         );
         metaDescription = metaDescription.replace("\n", "");
 
-        const content = highlightCode(post.content.rendered);
+        // Code-Highlighting with Prism
+        let content = highlightCode(post.content.rendered);
+
+        // Make relative URLs absolute (would work otherwise on the site, but not in the feed)
+        content = content.replace(
+            'href="/',
+            'href="https://martinschneider.me/',
+        );
 
         return {
             title: post.title.rendered,
@@ -123,6 +130,7 @@ async function getAllArticles() {
                 "en-US",
                 dateConverterOptions,
             ),
+            rssDate: new Date(post.date).toUTCString(),
             slug: post.slug,
             metaDescription: metaDescription,
             excerpt: post.excerpt.rendered,
