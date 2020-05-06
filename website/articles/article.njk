@@ -25,3 +25,15 @@ permalink: articles/{{ article.slug }}/index.html
 {{ article.slug | displayWebmentions | safe }}
 
 {% include 'website/_includes/sharingButton.njk' %}
+
+{% set webmentionsJs %}
+    {% include "../_source/js/webmentions.js" %}
+{% endset %}
+
+<script>
+    {{ webmentionsJs | jsmin | safe }}
+</script>
+
+<div data-webmentionwrapper></div>
+
+{{ 'website/_source/scss/webmentions.scss' | compileSCSS | safe }}

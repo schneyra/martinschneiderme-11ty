@@ -31,18 +31,18 @@
     &--has-text {
         background-color: var(--color-bg-offset);
         border-radius: 1em;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 0.3em 0.75em;
         text-transform: uppercase;
-        margin-top: 1rem;
+        margin: 1rem 1rem 0 0;
 
         .icon-button__text {
             margin-left: 0.5em;
         }
 
         .icon-button__icon {
-            height: 0.9em;
-            width: 0.9em;
+            height: 1em;
+            width: 1em;
         }
     }
 }
