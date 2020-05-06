@@ -22,4 +22,6 @@ permalink: articles/{{ article.slug }}/index.html
     {% endif %}
 </article>
 
+{{ article.slug | displayWebmentions | safe }}
+
 {% include 'website/_includes/sharingButton.njk' %}
