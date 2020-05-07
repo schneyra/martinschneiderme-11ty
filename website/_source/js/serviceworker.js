@@ -7,20 +7,20 @@ const CACHE_KEYS = {
 const EXCLUDED_URLS = [
     "admin",
     ".netlify",
-    "https://identity.netlify.com/v1/netlify-identity-widget.js",
-    "https://unpkg.com/netlify-cms@^2.9.3/dist/netlify-cms.js",
+    "http://localhost:8080/browser-sync/browser-sync-client.js",
+    "http://localhost:8080/browser-sync/socket.io/",
 ];
 
 // URLS that we want to be cached when the worker is installed
 const PRE_CACHE_URLS = [
     "/",
-    "/fonts/ibm-plex-sans-v7-latin-500.woff2",
+    /*"/fonts/ibm-plex-sans-v7-latin-500.woff2",
     "/fonts/ibm-plex-sans-v7-latin-700.woff2",
-    "/fonts/ibm-plex-sans-v7-latin-regular.woff2",
+    "/fonts/ibm-plex-sans-v7-latin-regular.woff2",*/
 ];
 
 // You might want to bypass a certain host
-const IGNORED_HOSTS = ["localhost", "unpkg.com"];
+const IGNORED_HOSTS = []; //["localhost"];
 
 /**
  * Takes an array of strings and puts them in a named cache store
@@ -64,11 +64,13 @@ self.addEventListener("fetch", (evt) => {
 
     // Check we don't want to ignore this host
     if (IGNORED_HOSTS.indexOf(hostname) >= 0) {
+        console.log("sw ignored host: " + hostname);
         return;
     }
 
     // Check we don't want to ignore this URL
     if (EXCLUDED_URLS.some((page) => evt.request.url.indexOf(page) > -1)) {
+        console.log("sw ignored url: " + evt.request.url);
         return;
     }
 
@@ -76,6 +78,8 @@ self.addEventListener("fetch", (evt) => {
         caches.match(evt.request).then((cachedResponse) => {
             // Item found in cache so return
             if (cachedResponse) {
+                console.log("sw cache hit");
+
                 return cachedResponse;
             }
 
@@ -83,6 +87,8 @@ self.addEventListener("fetch", (evt) => {
             return caches.open(CACHE_KEYS.RUNTIME).then((cache) => {
                 return fetch(evt.request)
                     .then((response) => {
+                        console.log("sw cache write");
+
                         // Put the new response in cache and return it
                         return cache
                             .put(evt.request, response.clone())
