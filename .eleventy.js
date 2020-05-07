@@ -3,6 +3,7 @@ const sass = require("node-sass");
 const CleanCSS = require("clean-css");
 const Terser = require("terser");
 const fetch = require("node-fetch");
+const htmlmin = require("html-minifier");
 
 async function compileSCSS(completePath) {
     const promise = new Promise((resolve, reject) => {
@@ -92,6 +93,20 @@ module.exports = function (eleventyConfig) {
         }
 
         return minified.code;
+    });
+
+    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+        if (outputPath.endsWith(".html")) {
+            let minified = htmlmin.minify(content, {
+                useShortDoctype: true,
+                removeComments: true,
+                collapseWhitespace: true,
+                removeScriptTypeAttributes: true,
+            });
+            return minified;
+        }
+
+        return content;
     });
 
     return {
