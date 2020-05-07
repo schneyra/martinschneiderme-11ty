@@ -6,7 +6,7 @@ const CACHE_KEYS = {
 // URLS that we don’t want to end up in the cache
 const EXCLUDED_URLS = [
     "admin",
-    ".netlify",
+    //".netlify",
     "http://localhost:8080/browser-sync/browser-sync-client.js",
     "http://localhost:8080/browser-sync/socket.io/",
 ];
@@ -14,9 +14,9 @@ const EXCLUDED_URLS = [
 // URLS that we want to be cached when the worker is installed
 const PRE_CACHE_URLS = [
     "/",
-    /*"/fonts/ibm-plex-sans-v7-latin-500.woff2",
+    "/fonts/ibm-plex-sans-v7-latin-500.woff2",
     "/fonts/ibm-plex-sans-v7-latin-700.woff2",
-    "/fonts/ibm-plex-sans-v7-latin-regular.woff2",*/
+    "/fonts/ibm-plex-sans-v7-latin-regular.woff2",
 ];
 
 // You might want to bypass a certain host
