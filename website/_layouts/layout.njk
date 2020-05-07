@@ -62,5 +62,13 @@ metaSlug: /
         <script>
             {{ colorModeToggleButton | jsmin | safe }}
         </script>
+
+        {% set serviceworkerEmbed %}
+            {% include "../_source/js/serviceworkerEmbed.js" %}
+        {% endset %}
+
+        <script>
+            {{ serviceworkerEmbed | jsmin | safe }}
+        </script>
     </body>
 </html>
