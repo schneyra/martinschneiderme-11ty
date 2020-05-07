@@ -5,8 +5,6 @@ const CACHE_KEYS = {
 
 // URLS that we don’t want to end up in the cache
 const EXCLUDED_URLS = [
-    "admin",
-    //".netlify",
     "http://localhost:8080/browser-sync/browser-sync-client.js",
     "http://localhost:8080/browser-sync/socket.io/",
 ];
@@ -64,13 +62,11 @@ self.addEventListener("fetch", (evt) => {
 
     // Check we don't want to ignore this host
     if (IGNORED_HOSTS.indexOf(hostname) >= 0) {
-        console.log("sw ignored host: " + hostname);
         return;
     }
 
     // Check we don't want to ignore this URL
     if (EXCLUDED_URLS.some((page) => evt.request.url.indexOf(page) > -1)) {
-        console.log("sw ignored url: " + evt.request.url);
         return;
     }
 
@@ -78,8 +74,6 @@ self.addEventListener("fetch", (evt) => {
         caches.match(evt.request).then((cachedResponse) => {
             // Item found in cache so return
             if (cachedResponse) {
-                console.log("sw cache hit");
-
                 return cachedResponse;
             }
 
@@ -87,8 +81,6 @@ self.addEventListener("fetch", (evt) => {
             return caches.open(CACHE_KEYS.RUNTIME).then((cache) => {
                 return fetch(evt.request)
                     .then((response) => {
-                        console.log("sw cache write");
-
                         // Put the new response in cache and return it
                         return cache
                             .put(evt.request, response.clone())
