@@ -45,10 +45,14 @@ metaSlug: /
         {% include '../_includes/head-meta.njk' %}
     </head>
     <body>
+        <a href="#main" class="screen-reader-text skiplink">
+            Skip to content.
+        </a>
+        
         <div class="upper-part box-shadow">
             {% include "../_includes/header.njk" %}
 
-            <main class="content-wrapper">
+            <main class="content-wrapper" id="main">
                 {{ content | safe }}
             </main>
         </div>
