@@ -25,6 +25,7 @@
         &:hover {
             color: var(--color-link-hover);
             background: var(--color-link-background);
+            box-shadow: none;
         }
     }
 
@@ -35,6 +36,9 @@
         padding: 0.3em 0.75em;
         text-transform: uppercase;
         margin: 1rem 1rem 0 0;
+        text-decoration: none;
+        font-weight: 400;
+        line-height: inherit;
 
         .icon-button__text {
             margin-left: 0.5em;
