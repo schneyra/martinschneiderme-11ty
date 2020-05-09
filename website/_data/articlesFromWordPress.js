@@ -131,6 +131,7 @@ async function getAllArticles() {
                 dateConverterOptions,
             ),
             rssDate: new Date(post.date).toUTCString(),
+            modifiedDate: post.modified,
             slug: post.slug,
             metaDescription: metaDescription,
             excerpt: post.excerpt.rendered,

@@ -5,6 +5,8 @@ const Terser = require("terser");
 const fetch = require("node-fetch");
 const htmlmin = require("html-minifier");
 
+const w3DateFilter = require("./website/_filters/w3cDate.js");
+
 async function compileSCSS(completePath) {
     const promise = new Promise((resolve, reject) => {
         sass.render(
@@ -108,6 +110,8 @@ module.exports = function (eleventyConfig) {
 
         return content;
     });
+
+    eleventyConfig.addFilter("w3DateFilter", w3DateFilter);
 
     return {
         dir: {

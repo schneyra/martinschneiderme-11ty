@@ -1,0 +1,30 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+pagination:
+  data: articlesFromWordPress
+  size: 10000
+  alias: articles
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://martinschneider.me/</loc>
+    </url>
+
+    <url>
+        <loc>http://martinschneider.me/about/</loc>
+    </url>
+
+    <url>
+        <loc>http://martinschneider.me/articles/</loc>
+    </url>
+
+   {%- for article in articles %}
+    {% set absoluteUrl = 'https://martinschneider.me/articles/' + article.slug + '/' %}
+		<url>
+            <loc>{{ absoluteUrl }}</loc>
+            <lastmod>{{ article.modifiedDate | w3DateFilter }}</lastmod>
+		</url>
+    {%- endfor %}
+</urlset>
