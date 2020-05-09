@@ -11,6 +11,16 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
 {{ 'website/_source/scss/articles.scss' | compileSCSS | safe }}
 
 <h1 class="headline">Articles</h1>
+
+<p>
+  The internet is giving us the ability to share ideas, knowledge and thoughts and so I'm writing articles on development-related topics from time to time. 
+  Grab <a href="/articles/feed.xml">the RSS-feed</a> and stay updated! 
+</p>
+<p>
+  I'm happy to receive any feedback both on my writing and the content itself. 
+  Feel free to send me a message on <a href="https://twitter.com/schneyra">my twitter</a>!
+</p>
+
 {% for item in pagination.items %}
     {% if loop.first %}<ul class="article-list">{% endif %}
       <li class="article-list__article">
