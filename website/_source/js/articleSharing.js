@@ -5,13 +5,16 @@
         var ua = navigator.userAgent.toLowerCase();
         var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
         const sharingIconSelector = isAndroid
-            ? "[data-sharing-icon-android]"
-            : "[data-sharing-icon-ios]";
+            ? "[data-js-sharing-icon-android]"
+            : "[data-js-sharing-icon-ios]";
         const sharingIcon = document.querySelector(sharingIconSelector);
         sharingIcon.classList.remove("is-hidden");
 
-        const sharingButton = document.querySelector("[data-sharing-button]");
+        const sharingButton = document.querySelector(
+            "[data-js-sharing-button]",
+        );
         sharingButton.classList.remove("is-hidden");
+        sharingButton.removeAttribute("aria-hidden");
 
         sharingButton.addEventListener("click", () => {
             let url = document.location.href;
