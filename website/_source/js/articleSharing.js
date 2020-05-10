@@ -1,11 +1,11 @@
 // https://web.dev/web-share/
 (() => {
     if (navigator.share) {
-        // Android uses a different icon for sharing buttons then
-        // devices in Apples ecosystem
-        // https://davidwalsh.name/detect-android
+        // Android uses a different icon for sharing buttons
+        // from devices in Apples ecosystem
+        // Thanks to: https://davidwalsh.name/detect-android
         var ua = navigator.userAgent.toLowerCase();
-        var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+        var isAndroid = ua.indexOf("android") > -1;
         const sharingIconSelector = isAndroid
             ? "[data-js-sharing-icon-android]"
             : "[data-js-sharing-icon-ios]";
