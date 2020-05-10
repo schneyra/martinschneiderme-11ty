@@ -1,6 +1,8 @@
 // https://web.dev/web-share/
 (() => {
     if (navigator.share) {
+        // Android uses a different icon for sharing buttons then
+        // devices in Apples ecosystem
         // https://davidwalsh.name/detect-android
         var ua = navigator.userAgent.toLowerCase();
         var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
@@ -13,6 +15,7 @@
         const sharingButton = document.querySelector(
             "[data-js-sharing-button]",
         );
+
         sharingButton.classList.remove("is-hidden");
         sharingButton.removeAttribute("aria-hidden");
 
