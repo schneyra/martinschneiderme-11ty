@@ -1,8 +1,19 @@
 {
     "name": "martinschneider.me",
-    "version": "1",
+    "description": "The personal website of Martin Schneider, build with 11ty.",
+    "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
+    "author": {
+        "name": "Martin Schneider",
+        "email": "hallo@martinschneider.me",
+        "url": "https://martinschneider.me/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/schneyra/martinschneiderme-11ty.git"
+    },
+    "homepage": "https://www.martinschneider.me/",
     "dependencies": {
         "@11ty/eleventy": "^0.11.0",
         "clean-css": "^4.2.3",
