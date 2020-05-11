@@ -7,7 +7,6 @@ const fetch = require("node-fetch");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const Prism = require("prismjs");
-const he = require("he");
 
 const highlightCode = (content) => {
     const dom = new JSDOM(content);
@@ -39,11 +38,9 @@ const highlightCode = (content) => {
                     prismGrammar = Prism.languages.css;
                 }
 
-                code.innerHTML = he.decode(code.innerHTML);
-
                 // highlight code
                 code.innerHTML = Prism.highlight(
-                    code.innerHTML,
+                    code.textContent,
                     prismGrammar,
                     codeLanguage,
                 );

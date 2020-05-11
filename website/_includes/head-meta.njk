@@ -13,10 +13,10 @@
 
 <link rel="canonical" href="https://martinschneider.me{{metaSlug}}" />
 
-<meta name="description" content="{{metaDescription}}" />
+<meta name="description" content="{{metaDescription | safe }}" />
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://martinschneider.me{{metaSlug}}">
 <meta property="twitter:title" content="{{title}}{% if title %} &rsaquo; {% endif %}Martin Schneider &mdash; Frontend Developer & Diplom Informatiker (FH)">
-<meta property="twitter:description" content="{{metaDescription}}">
+<meta property="twitter:description" content="{{metaDescription | safe }}">
 {#<meta property="twitter:image" content="">#}
