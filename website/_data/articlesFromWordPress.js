@@ -39,6 +39,8 @@ const highlightCode = (content) => {
                     prismGrammar = Prism.languages.css;
                 }
 
+                code.innerHTML = he.decode(code.innerHTML);
+
                 // highlight code
                 code.innerHTML = Prism.highlight(
                     code.innerHTML,
@@ -46,7 +48,6 @@ const highlightCode = (content) => {
                     codeLanguage,
                 );
 
-                code.innerHTML = he.decode(code.innerHTML);
                 code.classList.add(`language-${codeLanguage}`);
             }
         });
