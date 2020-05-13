@@ -14,8 +14,8 @@
 
     &:focus {
         outline: none;
-        color: var(--color-link-hover);
-        background: var(--color-link-background);
+        color: var(--color-primary-invert);
+        background: var(--color-primary);
     }
 
     @media (hover: hover) {
@@ -23,8 +23,8 @@
         min-width: 1.5em;
 
         &:hover {
-            color: var(--color-link-hover);
-            background: var(--color-link-background);
+            color: var(--color-primary-invert);
+            background: var(--color-primary);
             box-shadow: none;
         }
     }

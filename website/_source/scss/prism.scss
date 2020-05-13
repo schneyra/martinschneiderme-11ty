@@ -23,7 +23,7 @@ pre[class*="language-"] {
     word-break: normal;
     word-wrap: normal;
     line-height: 1.7;
-    border-radius: 0.25em;
+    border-radius: 0.25rem;
 
     -moz-tab-size: 2;
     -o-tab-size: 2;
@@ -69,7 +69,7 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
     padding: 0.1em;
-    border-radius: 0.25em;
+    border-radius: 0.25rem;
     white-space: normal;
 }
 

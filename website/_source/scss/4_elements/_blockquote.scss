@@ -1,0 +1,25 @@
+blockquote {
+    font-style: italic;
+    padding: 0.75rem 1rem;
+    border-left: 0.5rem solid var(--color-primary);
+    background-color: var(--color-bg-offset);
+    margin: 1.5rem 0;
+    font-size: 0.95em;
+    border-radius: 0 0.25rem 0.25rem 0;
+
+    @media screen and (min-width: 600px) {
+        max-width: 75%;
+    }
+
+    p {
+        max-width: 100%;
+    }
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}

@@ -14,10 +14,10 @@
 
     &:focus {
         clip: auto !important;
-        background-color: var(--color-link-background);
+        background-color: var(--color-primary);
         -webkit-clip-path: none;
         clip-path: none;
-        color: var(--color-link-hover);
+        color: var(--color-primary-invert);
         display: block;
         font-size: 0.9em;
         font-weight: 700;

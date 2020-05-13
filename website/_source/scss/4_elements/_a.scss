@@ -1,15 +1,15 @@
 @mixin hoverFocusStyles {
     text-decoration-color: transparent;
-    color: var(--color-link-hover);
-    background-color: var(--color-link-background);
+    color: var(--color-primary-invert);
+    background-color: var(--color-primary);
     text-decoration: none;
-    box-shadow: 0 0 0 0.2em var(--color-link-background);
+    box-shadow: 0 0 0 0.2em var(--color-primary);
     text-shadow: none;
 }
 
 a {
     text-decoration-thickness: 0.1em;
-    text-decoration-color: var(--color-link-background);
+    text-decoration-color: var(--color-primary);
     color: var(--color-text-offset);
     font-weight: 500;
     transition: background-color 100ms ease-in-out, box-shadow 100ms ease-in-out,
