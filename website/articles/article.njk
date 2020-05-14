@@ -9,9 +9,11 @@ permalink: articles/{{ article.slug }}/index.html
 
 {{ 'website/_source/scss/article.scss' | compileSCSS | safe }}
 
-<article class="article">
+<article data-js-article class="article">
     <h1 class="headline">{{ article.title }}</h1>
     <time datetime="{{ article.date }}" class="article__date">{{ article.formattedDate }}</time>
+
+    {% include "../_includes/readingIndicator.njk" %}
 
     <div class="article__excerpt">{{ article.excerpt | safe }}</div>
     
@@ -37,3 +39,11 @@ permalink: articles/{{ article.slug }}/index.html
 <div data-webmentionwrapper></div>
 
 {{ 'website/_source/scss/webmentions.scss' | compileSCSS | safe }}
+
+{% set readingIndicatorJs %}
+    {% include "../_source/js/readingIndicator.js" %}
+{% endset %}
+
+<script>
+    {{ readingIndicatorJs | jsmin | safe }}
+</script>

@@ -1,0 +1,15 @@
+.reading-indicator-wrapper {
+    padding: 0.55rem 0 0.5rem;
+    width: 100%;
+    position: sticky;
+    top: -0.05rem;
+    background: var(--color-bg);
+}
+
+.reading-indicator {
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+        max-width: 75%;
+    }
+}
