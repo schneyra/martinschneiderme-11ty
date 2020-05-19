@@ -28,7 +28,7 @@
     function updateReadingIndicator() {
         const scrollPosition = window.scrollY;
         const progressPercent =
-            ((scrollPosition - headerHeight) / articleHeight) * 100;
+            (scrollPosition / (articleHeight - headerHeight)) * 100;
         const roundedPercent = Math.round(progressPercent);
 
         // scale is from 10 to 110, so there's always a litte line shown
