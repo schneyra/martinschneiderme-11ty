@@ -24,11 +24,11 @@
         .clientHeight;
     const articleHeight = document.querySelector("[data-js-article]")
         .clientHeight;
-    const scrollHeight = headerHeight + articleHeight;
 
     function updateReadingIndicator() {
         const scrollPosition = window.scrollY;
-        const progressPercent = (scrollPosition / scrollHeight) * 100;
+        const progressPercent =
+            ((scrollPosition - headerHeight) / articleHeight) * 100;
         const roundedPercent = Math.round(progressPercent);
 
         // scale is from 10 to 110, so there's always a litte line shown
