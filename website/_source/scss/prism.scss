@@ -60,6 +60,7 @@ pre[class*="language-"] {
     margin: 0.5em 0;
     overflow: auto;
     position: relative;
+    z-index: -1;
 
     &::before {
         content: attr(data-language);
