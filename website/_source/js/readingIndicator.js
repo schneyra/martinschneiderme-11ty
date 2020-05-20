@@ -20,16 +20,21 @@
     );
 
     // We need to take the header into account
+    const pageHeight = window.innerHeight;
     const headerHeight = document.querySelector("[data-js-header]")
         .clientHeight;
     const articleHeight = document.querySelector("[data-js-article]")
         .clientHeight;
 
     function updateReadingIndicator() {
-        const scrollPosition = window.scrollY;
-        const progressPercent =
-            (scrollPosition / (articleHeight - headerHeight)) * 100;
-        const roundedPercent = Math.round(progressPercent);
+        const scrollPosition = window.pageYOffset;
+        let progressPercent =
+            (scrollPosition / (headerHeight + articleHeight - pageHeight)) *
+            100;
+        let roundedPercent = Math.round(progressPercent);
+
+        progressPercent = progressPercent >= 100 ? 100 : progressPercent;
+        roundedPercent = roundedPercent >= 100 ? 100 : roundedPercent;
 
         // scale is from 10 to 110, so there's always a litte line shown
         readingIndicator.value = progressPercent + 10;
