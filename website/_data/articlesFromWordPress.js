@@ -27,6 +27,9 @@ const highlightCode = (content) => {
                     codeLanguage = matches[1];
                 }
 
+                // for later use in CSS
+                pre.dataset.language = codeLanguage;
+
                 // set grammar that prism should use for highlighting
                 let prismGrammar = Prism.languages.html;
 
