@@ -23,7 +23,7 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
 
 {% for item in pagination.items %}
     {% if loop.first %}<ul class="article-list">{% endif %}
-      <li class="article-list__article">
+      <li class="article-list__article" data-cy="articleListArticle">
         <article>
           <h2 class="article-list__title">
             <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title }}</a>
