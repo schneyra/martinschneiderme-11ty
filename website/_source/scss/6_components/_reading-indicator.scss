@@ -4,6 +4,7 @@
     position: sticky;
     top: -0.05rem;
     background: var(--color-bg);
+    z-index: var(--zindex-reading-indicator);
 }
 
 .reading-indicator {
