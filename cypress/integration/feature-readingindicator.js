@@ -7,7 +7,7 @@ describe("Feature - Reading-Indicator", () => {
         cy.contains("[data-cy-reading-indicator]", "0%");
     });
 
-    it("ends with value 100%", () => {
+    it("ends with 100%", () => {
         cy.scrollTo("bottom");
         cy.contains("[data-cy-reading-indicator]", "100%");
     });

@@ -1,6 +1,32 @@
-describe("Page - Articles", () => {
+describe("Page - Article", () => {
+    const excerpt =
+        "After years and years of just having some placeholder-site on that domain that I use for emails, I decided to build a classic homepage. My own little place on the internet, that is just about me. Welcome.";
+
     beforeEach(() => {
         cy.visit("/articles/welcome-to-my-new-website/");
+    });
+
+    it("has the correct title", () => {
+        cy.title().should(
+            "eq",
+            "Welcome to My New Website › Martin Schneider — Frontend Developer & Diplom Informatiker (FH)",
+        );
+    });
+
+    it("has the correct canonical", () => {
+        cy.get('link[rel="canonical"]').should(
+            "have.attr",
+            "href",
+            "https://martinschneider.me/articles/welcome-to-my-new-website/",
+        );
+    });
+
+    it("has the correct description", () => {
+        cy.get('meta[name="description"]').should(
+            "have.attr",
+            "content",
+            excerpt,
+        );
     });
 
     it("has the correct headline", () => {
@@ -12,10 +38,7 @@ describe("Page - Articles", () => {
     });
 
     it("has the correct excerpt", () => {
-        cy.contains(
-            ".article__excerpt p",
-            "After years and years of just having some placeholder-site on that domain that I use for emails, I decided to build a classic homepage. My own little place on the internet, that is just about me. Welcome.",
-        );
+        cy.contains(".article__excerpt p", excerpt);
     });
 
     it("has a reactions-button", () => {
