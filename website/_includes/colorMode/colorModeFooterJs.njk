@@ -1,0 +1,7 @@
+{% set colorModeToggleButtonJs %}
+    {% include "../../_source/js/colorModeToggleButton.js" %}
+{% endset %}
+
+<script>
+    {{ colorModeToggleButtonJs | jsmin | safe }}
+</script>
