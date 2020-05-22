@@ -1,0 +1,13 @@
+{{ article.slug | webmentionButton | safe }}
+
+<div data-webmentionwrapper></div>
+
+{% set webmentionsJs %}
+    {% include "../_source/js/webmentions.js" %}
+{% endset %}
+
+<script>
+    {{ webmentionsJs | jsmin | safe }}
+</script>
+
+{{ 'website/_source/scss/webmentions.scss' | compileSCSS | safe }}

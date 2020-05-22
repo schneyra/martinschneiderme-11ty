@@ -13,7 +13,7 @@ permalink: articles/{{ article.slug }}/index.html
     <h1 class="headline">{{ article.title }}</h1>
     <time datetime="{{ article.date }}" class="article__date">{{ article.formattedDate }}</time>
 
-    {% include "../_includes/readingIndicator.njk" %}
+    {% include "../_includes/readingIndicator/readingIndicatorMarkup.njk" %}
 
     <div class="article__excerpt">{{ article.excerpt | safe }}</div>
     
@@ -24,26 +24,7 @@ permalink: articles/{{ article.slug }}/index.html
     {% endif %}
 </article>
 
-{{ article.slug | displayWebmentions | safe }}
-
 {% include 'website/_includes/sharingButton.njk' %}
+{% include 'website/_includes/webmentions.njk' %}
 
-{% set webmentionsJs %}
-    {% include "../_source/js/webmentions.js" %}
-{% endset %}
-
-<script>
-    {{ webmentionsJs | jsmin | safe }}
-</script>
-
-<div data-webmentionwrapper></div>
-
-{{ 'website/_source/scss/webmentions.scss' | compileSCSS | safe }}
-
-{% set readingIndicatorJs %}
-    {% include "../_source/js/readingIndicator.js" %}
-{% endset %}
-
-<script>
-    {{ readingIndicatorJs | jsmin | safe }}
-</script>
+{% include "../_includes/readingIndicator/readingIndicatorJs.njk" %}
