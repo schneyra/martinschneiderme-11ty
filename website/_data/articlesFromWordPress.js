@@ -1,99 +1,28 @@
-/**
- * This is heavily inspired by https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/
- */
-
-// required packages
 const fetch = require("node-fetch");
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const Prism = require("prismjs");
-
-const highlightCode = (content) => {
-    const dom = new JSDOM(content);
-
-    let preElements = dom.window.document.querySelectorAll("pre");
-
-    if (preElements.length) {
-        preElements.forEach((pre) => {
-            let code = pre.querySelector("code");
-
-            if (code) {
-                // get specified language from css-classname
-                let codeLanguage = "html";
-                const preClass = pre.className;
-
-                var matches = preClass.match(/language-(.*)/);
-                if (matches != null) {
-                    codeLanguage = matches[1];
-                }
-
-                // for later use in CSS
-                pre.dataset.language = codeLanguage;
-
-                // set grammar that prism should use for highlighting
-                let prismGrammar = Prism.languages.html;
-
-                if (codeLanguage === "javascript" || codeLanguage === "js") {
-                    prismGrammar = Prism.languages.javascript;
-                }
-
-                if (codeLanguage === "css") {
-                    prismGrammar = Prism.languages.css;
-                }
-
-                // highlight code
-                code.innerHTML = Prism.highlight(
-                    code.textContent,
-                    prismGrammar,
-                    codeLanguage,
-                );
-
-                code.classList.add(`language-${codeLanguage}`);
-            }
-        });
-
-        content = dom.window.document.body.innerHTML;
-    }
-
-    return content;
-};
+const highlightCode = require("../../functions/highlightCode");
 
 // get blogposts
-// see https://www.datocms.com/docs/content-delivery-api/first-request#vanilla-js-example
+// This is heavily inspired by https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/
 async function getAllArticles() {
-    // max number of records to fetch per query
     const recordsPerQuery = 100;
 
-    // number of records to skip (start at 0)
     let offset = 0;
-
-    // do we make a query ?
-    let makeNewQuery = true;
-
-    // Blogposts array
+    let queryPosts = true;
     let blogposts = [];
 
-    // make queries until makeNewQuery is set to false
-    while (makeNewQuery) {
+    while (queryPosts) {
         try {
-            // initiate fetch
             const response = await fetch(
                 `https://www.dertagundich.de/wp-json/wp/v2/msme_posts?per_page=${recordsPerQuery}&offset=${offset}`,
             );
 
-            // store the JSON response when promise resolves
             const posts = await response.json();
 
-            // update blogpost array with the data from the JSON response
             blogposts = blogposts.concat(posts);
-
-            // prepare for next query
             offset += recordsPerQuery;
 
-            // check if we are geting back less than the records we fetch per query
-            // if yes, stop querying
             if (response.headers.get("X-WP-Total") <= offset) {
-                makeNewQuery = false;
+                queryPosts = false;
             }
         } catch (error) {
             throw new Error(error);
