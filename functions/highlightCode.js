@@ -31,6 +31,10 @@ module.exports = (content) => {
                     prismGrammar = Prism.languages.javascript;
                 }
 
+                if (codeLanguage === "json") {
+                    prismGrammar = Prism.languages.javascript;
+                }
+
                 if (codeLanguage === "css") {
                     prismGrammar = Prism.languages.css;
                 }
