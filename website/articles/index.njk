@@ -23,23 +23,22 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
 </p>
 
 {% for item in pagination.items %}
-    {% if loop.first %}<ul class="article-list">{% endif %}
-      <li class="article-list__article" data-cy="articleListArticle">
-        <article class="flow-small">
-          <h2 class="article-list__title">
-            <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title }}</a>
-          </h2>
-          
-          <time datetime="{{ item.date }}" class="article-list__date">{{ item.formattedDate }}</time>
-          
-          <div class="article-list__excerpt">{{ item.excerpt | safe }}</div>
-        </article>
-      </li>
-    {% if loop.last %}</ul>{% endif %}
-  {% endfor %}
+  {% if loop.first %}<ul class="article-list">{% endif %}
+    <li class="article-list__article" data-cy="articleListArticle">
+      <article class="flow-small">
+        <h2 class="article-list__title">
+          <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title }}</a>
+        </h2>
+        
+        <time datetime="{{ item.date }}" class="article-list__date">{{ item.formattedDate }}</time>
+        
+        <div class="article-list__excerpt">{{ item.excerpt | safe }}</div>
+      </article>
+    </li>
+  {% if loop.last %}</ul>{% endif %}
+{% endfor %}
 
-  {# pagination #}
-  {% if pagination.hrefs | length > 0 %}
+{% if pagination.hrefs | length > 1 %}
   <ul>
     {% if pagination.previousPageHref %}
       <li><a href="{{ pagination.previousPageHref }}">Previous page</a></li>
@@ -48,4 +47,4 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
       <li><a href="{{ pagination.nextPageHref }}">Next page</a></li>
     {% endif %}
   </ul>
-  {% endif %}
+{% endif %}

@@ -17,6 +17,9 @@
     --zindex-reading-indicator: 10;
 
     --content-max-width: 48rem;
+    --flow: 1.75rem;
+    --flow-small: 0.75rem;
+    --flow-large: 5rem;
 }
 
 @mixin darkModeCustomProperties() {

@@ -1,8 +1,8 @@
 .footer-grid {
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    padding-top: var(--flow-large);
+    padding-bottom: var(--flow-large);
     display: grid;
-    grid-gap: 3rem;
+    grid-gap: var(--flow-large);
     grid-template-columns: 1fr;
 
     @media screen and (min-width: 600px) {
