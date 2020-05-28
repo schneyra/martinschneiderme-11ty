@@ -12,13 +12,12 @@
 pre[class*="language-"] {
     background: var(--color-bg-offset);
     padding: 0;
-    margin: 0.5em 0;
     overflow: auto;
     position: relative;
     display: flex;
     align-items: center;
     z-index: var(--zindex-pre);
-    border-radius: 0.25rem;
+    border-radius: 0.2rem;
 
     &::before {
         content: attr(data-language);
@@ -29,7 +28,7 @@ pre[class*="language-"] {
         writing-mode: vertical-rl;
         line-height: 1;
         padding: 0.75em 0.5em;
-        border-radius: 0.25rem 0 0.25rem 0;
+        border-radius: 0.2rem 0;
         align-self: flex-start;
         margin-bottom: 1.5rem;
     }
@@ -55,7 +54,7 @@ code[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
     padding: 0.1em;
-    border-radius: 0.25rem;
+    border-radius: 0.2rem;
     white-space: normal;
 }
 

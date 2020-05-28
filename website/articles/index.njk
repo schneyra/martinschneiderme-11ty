@@ -16,6 +16,7 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
   The internet is giving us the ability to share ideas, knowledge and thoughts and so I'm writing articles on development-related topics from time to time. 
   Grab <a href="/articles/feed.xml">the RSS-feed</a> and stay updated! 
 </p>
+
 <p>
   I'm happy to receive any feedback both on my writing and the content itself. 
   Feel free to send me a message on <a href="https://twitter.com/schneyra">my twitter</a>!
@@ -24,7 +25,7 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
 {% for item in pagination.items %}
     {% if loop.first %}<ul class="article-list">{% endif %}
       <li class="article-list__article" data-cy="articleListArticle">
-        <article>
+        <article class="flow-small">
           <h2 class="article-list__title">
             <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title }}</a>
           </h2>

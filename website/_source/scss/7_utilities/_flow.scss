@@ -1,0 +1,7 @@
+.flow > *:not(style) + * {
+    margin-top: 1.5rem;
+}
+
+.flow-small > *:not(style) + * {
+    margin-top: 0.75rem;
+}

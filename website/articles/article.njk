@@ -9,7 +9,7 @@ permalink: articles/{{ article.slug }}/index.html
 
 {{ 'website/_source/scss/article.scss' | compileSCSS | safe }}
 
-<article data-js-article class="article">
+<article data-js-article class="article flow">
     <h1 class="headline">{{ article.title }}</h1>
     <time datetime="{{ article.date }}" class="article__date">{{ article.formattedDate }}</time>
 
