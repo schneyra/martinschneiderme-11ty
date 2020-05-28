@@ -38,7 +38,7 @@
     async function getWebmentions(slug) {
         return new Promise((resolve, reject) => {
             fetch(
-                `https://webmention.io/api/mentions.jf2?domain=martinschneider.me&sort-dir=up&target=https://martinschneider.me/articles/${slug}/`,
+                `https://webmention.io/api/mentions.jf2?domain=martinschneider.me&per-page=200&sort-dir=up&target=https://martinschneider.me/articles/${slug}/`,
             )
                 .then((response) => response.json())
                 .then((data) => resolve(data));
