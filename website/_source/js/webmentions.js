@@ -1,36 +1,45 @@
 (() => {
     function renderWebmentions(webmentions) {
-        let html = `<h3>Reactions</h3><ol class="webmentions">`;
+        let html = `<h3>Reactions</h3>`;
 
-        webmentions.forEach((mention) => {
-            const twitterString = mention.url.includes("twitter.com")
-                ? " on twitter"
-                : "";
+        if (webmentions.length) {
+            html += `<ol class="webmentions">`;
 
-            html += `<li class="webmentions__mention"><span class="webmentions__head">
+            webmentions.forEach((mention) => {
+                const twitterString = mention.url.includes("twitter.com")
+                    ? " on twitter"
+                    : "";
+
+                html += `<li class="webmentions__mention"><span class="webmentions__head">
             <img src="${mention.author.photo}" class="webmentions__avatar" loading="lazy" height="256" width="256" />
             <span>${mention.author.name} `;
 
-            if (mention["wm-property"] === "like-of") {
-                html += `liked <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
-            }
+                if (mention["wm-property"] === "like-of") {
+                    html += `liked <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
+                }
 
-            if (mention["wm-property"] === "in-reply-to" && mention.content) {
-                html += `
+                if (
+                    mention["wm-property"] === "in-reply-to" &&
+                    mention.content
+                ) {
+                    html += `
                     replied to <a href="${mention.url}">this post</a>${twitterString}.</span></span>
                     <blockquote class="webmentions__quote">${mention.content.text}</blockquote>
                 `;
-            }
+                }
 
-            if (mention["wm-property"] === "repost-of") {
-                console.log(mention);
-                html += `reposted <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
-            }
+                if (mention["wm-property"] === "repost-of") {
+                    console.log(mention);
+                    html += `reposted <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
+                }
 
-            html += `</li>`;
-        });
+                html += `</li>`;
+            });
 
-        html += `</ol>`;
+            html += `</ol>`;
+        } else {
+            html += "<p>No mentions yet. Be the first to share this post!</p>";
+        }
 
         document.querySelector("[data-webmentionwrapper]").innerHTML = html;
     }
