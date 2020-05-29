@@ -5,10 +5,7 @@ blockquote {
     background-color: var(--color-bg-offset);
     font-size: 0.95em;
     border-radius: 0 0.2rem 0.2rem 0;
-
-    @media screen and (min-width: 600px) {
-        max-width: 75%;
-    }
+    max-width: var(--content-inner-max-width);
 
     p {
         max-width: 100%;

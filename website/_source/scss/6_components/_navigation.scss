@@ -1,11 +1,8 @@
 .navigation {
     list-style: none;
-    padding: 0;
+    padding: 1.5rem 0;
     display: block;
-
-    @media screen and (min-width: 600px) {
-        text-align: right;
-    }
+    text-align: right;
 
     &__element {
         display: inline-block;
