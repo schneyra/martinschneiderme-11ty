@@ -3,4 +3,8 @@
         font-weight: 700;
         color: var(--color-text-offset);
     }
+
+    &__link {
+        display: inline-block;
+    }
 }

@@ -9,15 +9,22 @@ permalink: articles/{{ article.slug }}/index.html
 
 {{ 'website/_source/scss/article.scss' | compileSCSS | safe }}
 
-<article data-js-article class="article flow">
-    <h1 class="headline">{{ article.title }}</h1>
-    <time datetime="{{ article.date }}" class="article__date">{{ article.formattedDate }}</time>
+<article data-js-article class="article flow h-entry">
+    <header class="flow-small">
+        <h1 class="headline p-name">{{ article.title }}</h1>
+        
+        <a class="article__link u-url" href="https://martinschneider.me/articles/{{ article.slug }}/">
+            <time datetime="{{ article.date }}" class="dt-published">{{ article.formattedDate }}</time>
+        </a>
+    </header>
 
     {% include "../_includes/readingIndicator/readingIndicatorMarkup.njk" %}
-
-    <div class="article__excerpt">{{ article.excerpt | safe }}</div>
     
-    {{ article.content | safe }}
+    <div class="flow e-content">
+        <div class="article__excerpt">{{ article.excerpt | safe }}</div>
+    
+        {{ article.content | safe }}
+    </div>
 
     {% if article.content.includes('language-')%}
         {{ 'website/_source/scss/prism.scss' | compileSCSS | safe }}
