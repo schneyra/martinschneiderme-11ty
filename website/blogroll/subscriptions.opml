@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+	<head>
+		<title>Subscriptions - martin@martinschneider.me</title>
+	</head>
+	<body>
+		<outline text="1 Personal Blogs" title="1 Personal Blogs">
+			<outline htmlUrl="https://benfredericson.photo.blog" title="Ben Fredericson Blog" xmlUrl="https://benfredericson.photo.blog/feed/" type="rss" text="Ben Fredericson Blog"/>
+			<outline htmlUrl="https://www.dominik-schwarz.net" title="Dominik M. Schwarz" xmlUrl="https://www.dominik-schwarz.net/feed/" type="rss" text="Dominik M. Schwarz"/>
+			<outline htmlUrl="https://1ppm.de" title="Johannes Mirus" xmlUrl="https://1ppm.de/feed/" type="rss" text="Johannes Mirus"/>
+			<outline htmlUrl="https://knuspermagier.de" title="knuspermagier.de" xmlUrl="https://knuspermagier.de/feed" type="rss" text="knuspermagier.de"/>
+			<outline htmlUrl="https://lostfocus.de" title="LostFocus" xmlUrl="https://lostfocus.de/feed/" type="rss" text="LostFocus"/>
+			<outline htmlUrl="https://teymurvisuals.com/blog/" title="Teymur Madjderey" xmlUrl="https://teymurvisuals.com/blog?format=rss" type="rss" text="Teymur Madjderey"/>
+		</outline>
+		<outline text="2 Developers &amp; Designers" title="2 Developers &amp; Designers">
+			<outline htmlUrl="https://bryanlrobinson.com" title="Bryan Robinson" xmlUrl="https://bryanlrobinson.com/feed.xml" type="rss" text="Bryan Robinson"/>
+			<outline htmlUrl="http://daverupert.com" title="Dave Rupert" xmlUrl="https://daverupert.com/atom.xml" type="rss" text="Dave Rupert"/>
+			<outline htmlUrl="https://csswizardry.com/" title="Harry Roberts" xmlUrl="https://feeds.feedburner.com/csswizardry" type="rss" text="Harry Roberts"/>
+			<outline htmlUrl="https://matuzo.at" title="Manuel Matuzović" xmlUrl="https://www.matuzo.at/feed.xml" type="rss" text="Manuel Matuzović"/>
+			<outline htmlUrl="https://mxb.dev" title="Max Böck" xmlUrl="https://mxb.dev/feed.xml" type="rss" text="Max Böck"/>
+			<outline htmlUrl="https://sarasoueidan.com/blog/" title="Sara Soueidan" xmlUrl="https://www.sarasoueidan.com/blog/index.xml" type="rss" text="Sara Soueidan"/>
+			<outline htmlUrl="https://sarasoueidan.com/today-i-learned/" title="Sara Soueidan (TIL)" xmlUrl="https://www.sarasoueidan.com/today-i-learned/index.xml" type="rss" text="Sara Soueidan (TIL)"/>
+			<outline htmlUrl="https://annualbeta.com/" title="Søren Birkemeyer" xmlUrl="https://annualbeta.com/feed" type="rss" text="Søren Birkemeyer"/>
+			<outline htmlUrl="https://tobiasahlin.com" title="Tobias Ahlin" xmlUrl="https://tobiasahlin.com/feed.xml" type="rss" text="Tobias Ahlin"/>
+			<outline htmlUrl="http://trentwalton.com" title="Trent Walton" xmlUrl="https://trentwalton.com/feed.xml" type="rss" text="Trent Walton"/>
+		</outline>
+		<outline text="3 Magazines &amp; Topics" title="3 Magazines &amp; Topics">
+			<outline htmlUrl="https://inclusive-components.design/" title="Inclusive Components" xmlUrl="http://inclusive-components.club/rss/" type="rss" text="Inclusive Components"/>
+			<outline htmlUrl="https://www.smashingmagazine.com/articles/" title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed" type="rss" text="Smashing Magazine"/>
+			<outline htmlUrl="https://thehistoryoftheweb.com" title="The History of the Web" xmlUrl="https://thehistoryoftheweb.com/feed/" type="rss" text="The History of the Web"/>
+		</outline>
+		<outline text="4 Newsletter" title="4 Newsletter">
+			<outline htmlUrl="https://css-tricks.com" title="CSS-Tricks" xmlUrl="https://css-tricks.com/newsletter/feed/" type="rss" text="CSS-Tricks"/>
+			<outline htmlUrl="https://javascriptweekly.com/" title="JavaScript Weekly" xmlUrl="https://javascriptweekly.com/rss/" type="rss" text="JavaScript Weekly"/>
+			<outline htmlUrl="https://wdrl.info/archive" title="Web Development Reading List" xmlUrl="https://wdrl.info/feed" type="rss" text="Web Development Reading List"/>
+		</outline>
+		<outline text="5 My feeds" title="5 My feeds">
+			<outline htmlUrl="https://www.dertagundich.de" title="der tag und ich" xmlUrl="http://www.dertagundich.de/feed/" type="rss" text="der tag und ich"/>
+			<outline htmlUrl="https://martinschneider.me" title="Martin Schneider" xmlUrl="https://martinschneider.me/articles/feed.xml" type="rss" text="Martin Schneider"/>
+		</outline>
+	</body>
+</opml>

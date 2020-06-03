@@ -22,7 +22,8 @@
         "node-fetch": "^2.6.0",
         "node-sass": "^4.14.0",
         "prismjs": "^1.20.0",
-        "terser": "^4.6.13"
+        "terser": "^4.6.13",
+        "xml2js": "^0.4.23"
     },
     "devDependencies": {
         "cypress": "^4.6.0",

@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
         "jpg",
         "webp",
         "png",
+        "opml",
     ]);
 
     eleventyConfig.addWatchTarget("./website/_source");

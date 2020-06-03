@@ -1,0 +1,36 @@
+---
+layout: layout
+title: Blogroll
+metaSlug: /blogroll/
+---
+
+{{ 'website/_source/scss/blogroll.scss' | compileSCSS | safe }}
+
+<h1 class="headline">Blogroll</h1>
+
+<div class="flow-large">
+    <p>
+        This is an alphabetical list of blogs, websites and newsletters that I'm reading on a regular basis. 
+        You can download the <a href="/blogroll/subscriptions.opml">OPML file with all my subscriptions</a>.
+        Any suggestions?
+    </p>
+
+    {% for group in subscriptions %}
+        {% if loop.first %}<ul class="flow-large reset-list">{% endif %}
+            <li>
+                {# Remove the trailing number from the group name - it is just for sorting #}
+                <h2>{{ group.$.text.slice(1)|trim }}</h2>
+            
+                {% for subscription in group.outline %}
+                        {% if loop.first %}<ul class="listsites reset-list">{% endif %}
+
+                        <li>
+                            <a href="{{ subscription.$.htmlUrl }}">{{ subscription.$.text }}</a>
+                        </li>
+
+                    {% if loop.last %}</ul>{% endif %}
+                {% endfor %}
+            </li>
+        {% if loop.last %}</ul>{% endif %}
+    {% endfor %}
+</div>

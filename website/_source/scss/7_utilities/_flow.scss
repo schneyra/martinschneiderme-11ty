@@ -5,3 +5,7 @@
 .flow-small > *:not(style) + *:not(:empty) {
     margin-top: var(--flow-small);
 }
+
+.flow-large > *:not(style) + *:not(:empty) {
+    margin-top: var(--flow-large);
+}
