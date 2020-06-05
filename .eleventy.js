@@ -3,6 +3,7 @@ const compileSCSS = require("./functions/filters/compileSCSS.js");
 const jsmin = require("./functions/filters/jsmin.js");
 const webmentionButton = require("./functions/filters/webmentionButton.js");
 const htmlmin = require("./functions/transforms/htmlmin");
+const purgeInlineCSS = require("./functions/transforms/purgeInlineCSS");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setTemplateFormats([
@@ -26,6 +27,7 @@ module.exports = function (eleventyConfig) {
 
     // Transforms run after HTML-generation
     eleventyConfig.addTransform("htmlmin", htmlmin);
+    eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
 
     return {
         dir: {

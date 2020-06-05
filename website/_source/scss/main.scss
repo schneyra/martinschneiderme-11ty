@@ -2,6 +2,7 @@
 @import "1_settings/_fonts";
 
 @import "3_generic/reset";
+@import "3_generic/prism";
 
 @import "4_elements/selection";
 @import "4_elements/html";
@@ -10,18 +11,35 @@
 @import "4_elements/h";
 @import "4_elements/p";
 @import "4_elements/img";
+@import "4_elements/time";
+@import "4_elements/code";
+@import "4_elements/figure";
+@import "4_elements/blockquote";
+@import "4_elements/progress";
 
 @import "5_objects/upper-part";
 @import "5_objects/content-wrapper";
 @import "5_objects/header";
+@import "5_objects/footer-grid";
+@import "5_objects/content-sort-order";
+@import "5_objects/about-image";
 
 @import "6_components/navigation";
 @import "6_components/headline";
 @import "6_components/site-title";
 @import "6_components/icon-button";
+@import "6_components/webmentions";
+@import "6_components/footer";
+@import "6_components/footer-link-list";
+@import "6_components/avatar";
+@import "6_components/listsites";
+@import "6_components/article-list";
+@import "6_components/article";
+@import "6_components/reading-indicator";
 
 @import "7_utilities/screen-reader-text";
 @import "7_utilities/colormode-helper";
 @import "7_utilities/box-shadow";
 @import "7_utilities/utilities";
 @import "7_utilities/flow";
+@import "7_utilities/reset-list";

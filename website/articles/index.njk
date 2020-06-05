@@ -8,8 +8,6 @@ pagination:
 permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
-{{ 'website/_source/scss/articles.scss' | compileSCSS | safe }}
-
 <h1 class="headline">Articles</h1>
 
 <p>

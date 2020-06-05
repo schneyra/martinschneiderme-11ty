@@ -7,8 +7,6 @@ pagination:
 permalink: articles/{{ article.slug }}/index.html
 ---
 
-{{ 'website/_source/scss/article.scss' | compileSCSS | safe }}
-
 <article data-js-article class="article flow h-entry">
     <header class="flow-small">
         <h1 class="headline p-name">{{ article.title }}</h1>
@@ -25,10 +23,6 @@ permalink: articles/{{ article.slug }}/index.html
     
         {{ article.content | safe }}
     </div>
-
-    {% if article.content.includes('language-')%}
-        {{ 'website/_source/scss/prism.scss' | compileSCSS | safe }}
-    {% endif %}
 </article>
 
 {% include 'website/_includes/sharingButton.njk' %}
