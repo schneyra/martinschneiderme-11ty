@@ -30,7 +30,7 @@ async function compileSCSS(completePath) {
 }
 
 module.exports = async (filepath, callback) => {
-    const completePath = path.join(__dirname + "/../", filepath);
+    const completePath = path.join(__dirname + "/../../", filepath);
     const compiledCSS = await compileSCSS(completePath);
     const minifiedCSS = await minifyCSS(compiledCSS);
     callback(null, `<style>${minifiedCSS}</style>`);

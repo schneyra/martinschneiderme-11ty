@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const highlightCode = require("../../functions/highlightCode");
+const highlightCode = require("../../functions/helper/highlightCode");
 
 // get blogposts
 // This is heavily inspired by https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/

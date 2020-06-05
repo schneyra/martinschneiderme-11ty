@@ -1,8 +1,8 @@
-const w3DateFilter = require("./functions/w3cDate.js");
-const compileSCSS = require("./functions/compileSCSS.js");
-const jsmin = require("./functions/jsmin.js");
-const webmentionButton = require("./functions/webmentionButton.js");
-const htmlmin = require("./functions/htmlmin");
+const w3DateFilter = require("./functions/filters/w3cDate.js");
+const compileSCSS = require("./functions/filters/compileSCSS.js");
+const jsmin = require("./functions/filters/jsmin.js");
+const webmentionButton = require("./functions/filters/webmentionButton.js");
+const htmlmin = require("./functions/transforms/htmlmin");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setTemplateFormats([
