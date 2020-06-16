@@ -21,4 +21,8 @@ case "$1" in
             shift
             docker exec -ti martinschneiderme-11ty_node npx @11ty/eleventy
             ;;
+        netlify)
+            shift
+            docker exec -ti martinschneiderme-11ty_node npx netlify $@
+            ;;
 esac

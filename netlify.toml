@@ -10,7 +10,10 @@ TERM = "xterm"
     package = "netlify-plugin-cypress"
     [plugins.inputs]
         record = true
-    
+
+[[plugins]]
+    package = "netlify-plugin-subfont" 
+
 [[plugins]]
     package = "@netlify/plugin-lighthouse"
     [plugins.inputs.thresholds]
