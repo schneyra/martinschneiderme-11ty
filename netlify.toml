@@ -10,3 +10,12 @@ TERM = "xterm"
     package = "netlify-plugin-cypress"
     [plugins.inputs]
         record = true
+    
+[[plugins]]
+    package = "@netlify/plugin-lighthouse"
+    [plugins.inputs.thresholds]
+        performance = 0.95
+        accessibility = 0.95
+        best-practices = 0.95
+        seo = 0.95
+        pwa = 0.95
