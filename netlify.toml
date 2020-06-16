@@ -12,9 +12,6 @@ TERM = "xterm"
         record = true
 
 [[plugins]]
-    package = "netlify-plugin-subfont" 
-
-[[plugins]]
     package = "@netlify/plugin-lighthouse"
     [plugins.inputs.thresholds]
         performance = 0.95
