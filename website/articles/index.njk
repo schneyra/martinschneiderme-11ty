@@ -30,7 +30,7 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
       <article class="flow-small">
         <h2 class="article-list__title">
           {% if 'til' in item.categorySlugs %}TIL: {% endif %}
-          <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title }}</a>
+          <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title | safe }}</a>
         </h2>
         
         <time datetime="{{ item.date }}" class="article-list__date">{{ item.formattedDate }}</time>

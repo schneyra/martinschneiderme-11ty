@@ -9,7 +9,7 @@ permalink: articles/{{ article.slug }}/index.html
 
 <article data-js-article class="article flow h-entry">
     <header class="flow-small">
-        <h1 class="headline p-name">{{ article.title }}</h1>
+        <h1 class="headline p-name">{{ article.title | safe }}</h1>
         
         <a class="article__link u-url" href="https://martinschneider.me/articles/{{ article.slug }}/">
             <time datetime="{{ article.date }}" class="dt-published">{{ article.formattedDate }}</time>
