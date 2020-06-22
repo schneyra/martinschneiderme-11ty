@@ -19,6 +19,27 @@
                 padding: 2rem;
             }
         }
+
+        &--til {
+            display: flex;
+            align-items: center;
+
+            svg {
+                height: 3.5rem;
+                width: 3.5rem;
+                margin-right: 1.5rem;
+                color: var(--color-bg-offset);
+                transition: color 200ms ease-in-out;
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    svg {
+                        color: var(--color-text-offset);
+                    }
+                }
+            }
+        }
     }
 
     &__title {

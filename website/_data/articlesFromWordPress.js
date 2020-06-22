@@ -14,6 +14,7 @@ async function getAllArticles() {
         try {
             const response = await fetch(
                 `https://www.dertagundich.de/wp-json/wp/v2/msme_posts?per_page=${recordsPerQuery}&offset=${offset}`,
+                //`http://host.docker.internal/wp-json/wp/v2/msme_posts?per_page=${recordsPerQuery}&offset=${offset}`,
             );
 
             const posts = await response.json();
@@ -66,6 +67,7 @@ async function getAllArticles() {
             metaDescription: metaDescription,
             excerpt: post.excerpt.rendered,
             content: content,
+            categorySlugs: post.msme_categories_slugs,
         };
     });
 
