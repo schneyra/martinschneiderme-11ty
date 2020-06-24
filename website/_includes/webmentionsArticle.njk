@@ -1,6 +1,6 @@
-{{ article.slug | webmentionButton | safe }}
-
-<div data-webmentionwrapper></div>
+<div data-webmentionwrapper>
+    {{ article.slug | webmentionButton | safe }}
+</div>
 
 {% set webmentionsJs %}
     {% include "../_source/js/webmentions.js" %}

@@ -1,11 +1,11 @@
-.flow > *:not(style) + *:not(:empty) {
+.flow > *:not(style) + * {
     margin-top: var(--flow);
 }
 
-.flow-small > *:not(style) + *:not(:empty) {
+.flow-small > *:not(style) + * {
     margin-top: var(--flow-small);
 }
 
-.flow-large > *:not(style) + *:not(:empty) {
+.flow-large > *:not(style) + * {
     margin-top: var(--flow-large);
 }
