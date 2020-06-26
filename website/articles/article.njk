@@ -11,12 +11,12 @@ permalink: articles/{{ article.slug }}/index.html
     <header class="flow-small">
         <h1 class="headline p-name">{{ article.title | safe }}</h1>
         
-        <a class="article__link u-url" href="https://martinschneider.me/articles/{{ article.slug }}/">
+        <a class="article__link u-url" href="{{ site.url }}/articles/{{ article.slug }}/">
             <time datetime="{{ article.date }}" class="dt-published">{{ article.formattedDate }}</time>
         </a>
     </header>
 
-    {% include "../_includes/readingIndicator/readingIndicatorMarkup.njk" %}
+    {% include "website/_includes/readingIndicator/readingIndicatorMarkup.njk" %}
     
     <div class="flow e-content">
         <div class="article__excerpt">{{ article.excerpt | safe }}</div>
@@ -28,4 +28,4 @@ permalink: articles/{{ article.slug }}/index.html
 {% include 'website/_includes/sharingButton.njk' %}
 {% include 'website/_includes/webmentionsArticle.njk' %}
 
-{% include "../_includes/readingIndicator/readingIndicatorJs.njk" %}
+{% include "website/_includes/readingIndicator/readingIndicatorJs.njk" %}

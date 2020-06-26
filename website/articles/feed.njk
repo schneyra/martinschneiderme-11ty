@@ -14,9 +14,9 @@ pagination:
 	>
 
     <channel>
-        <title>Martin Schneider - Frontend Developer &amp; Diplom Informatiker (FH)</title>
-        <atom:link href="https://martinschneider.me/articles/feed.xml" rel="self" type="application/rss+xml" />
-        <link>https://martinschneider.me</link>
+        <title>{{ site.nameXml }}</title>
+        <atom:link href="{{ site.url }}/articles/feed.xml" rel="self" type="application/rss+xml" />
+        <link>{{ site.url }}</link>
         <description>Hey, my name is Martin. I'm a frontend developer from Germany.</description>
         <lastBuildDate>{{ articles[0].rssDate }}</lastBuildDate>
         <language>en-US</language>
@@ -24,15 +24,15 @@ pagination:
         <sy:updateFrequency>1</sy:updateFrequency>
 
     <image>
-        <url>https://martinschneider.me/logo128.jpg</url>
-        <title>Martin Schneider - Frontend Developer &amp; Diplom Informatiker (FH)</title>
-        <link>https://martinschneider.me</link>
+        <url>{{ site.url }}/logo128.jpg</url>
+        <title>{{ site.nameXml }}</title>
+        <link>{{ site.url }}</link>
         <width>128</width>
         <height>128</height>
     </image> 
 
     {%- for article in articles %}
-    {% set absoluteUrl = 'https://martinschneider.me/articles/' + article.slug + '/' %}
+    {% set absoluteUrl = site.url + '/articles/' + article.slug + '/' %}
         <item>
             <title>{{article.title}}</title>
             <link>{{ absoluteUrl }}</link>

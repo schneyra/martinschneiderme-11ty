@@ -25,10 +25,10 @@ metaSlug: /
         <title>
             {{title}}
             {% if title %}&rsaquo;{% endif %}
-            Martin Schneider &mdash; Frontend Developer &amp; Diplom Informatiker (FH)
+            {{ site.name }}
         </title>
 
-        {% include '../_includes/colorMode/colorModeHeaderJs.njk' %}
+        {% include 'website/_includes/colorMode/colorModeHeaderJs.njk' %}
 
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin="">
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-500.woff2" as="font" type="font/woff2" crossorigin="">
@@ -36,7 +36,7 @@ metaSlug: /
 
         {{ 'website/_source/scss/main.scss' | compileSCSS | safe }}
         
-        {% include '../_includes/layout/head-meta.njk' %}
+        {% include 'website/_includes/layout/head-meta.njk' %}
     </head>
     <body>
         <a href="#main" class="screen-reader-text skiplink">
@@ -44,16 +44,16 @@ metaSlug: /
         </a>
         
         <div class="upper-part box-shadow">
-            {% include "../_includes/layout/header.njk" %}
+            {% include "website/_includes/layout/header.njk" %}
 
-            <main class="content-wrapper flow" id="main">
+            <main class="content-wrapper flow" id="main" tabindex="-1">
                 {{ content | safe }}
             </main>
         </div>
 
-        {% include "../_includes/layout/footer.njk" %}
+        {% include "website/_includes/layout/footer.njk" %}
         
-        {% include '../_includes/colorMode/colorModeFooterJs.njk' %}
-        {% include '../_includes/layout/serviceWorkerEmbed.njk' %}
+        {% include 'website/_includes/colorMode/colorModeFooterJs.njk' %}
+        {% include 'website/_includes/layout/serviceWorkerEmbed.njk' %}
     </body>
 </html>
