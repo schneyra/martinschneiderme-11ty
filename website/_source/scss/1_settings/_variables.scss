@@ -8,7 +8,7 @@
     --color-text: #2b2f3c;
     --color-text-offset: #213944;
 
-    --color-primary: #baf2bb;
+    --color-primary: #aae2ab;
     --color-primary-invert: #213944;
 
     --zindex-footer: 0;
@@ -21,6 +21,9 @@
     --flow: 1.75rem;
     --flow-small: 0.75rem;
     --flow-large: 3rem;
+
+    --box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 3px 6px rgba(0, 0, 0, 0.07);
 }
 
 @mixin darkModeCustomProperties() {
@@ -28,6 +31,7 @@
     --color-bg-offset: #1b1f2c;
     --color-text: #cfcfcf;
     --color-text-offset: #f7f7f7;
+    --color-primary: #baf2bb;
 }
 
 // if the users device prefers dark color mode
