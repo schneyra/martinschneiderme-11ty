@@ -6,26 +6,28 @@ pagination:
     alias: article
 permalink: articles/{{ article.slug }}/index.html
 ---
+<div class="flow-large">
+    <article data-js-article class="article flow h-entry">
+        <header class="flow-small">
+            <h1 class="headline p-name">{{ article.title | safe }}</h1>
+            
+            <a class="article__link u-url" href="{{ site.url }}/articles/{{ article.slug }}/">
+                <time datetime="{{ article.date }}" class="dt-published">{{ article.formattedDate }}</time>
+            </a>
+        </header>
 
-<article data-js-article class="article flow h-entry">
-    <header class="flow-small">
-        <h1 class="headline p-name">{{ article.title | safe }}</h1>
+        {% include "website/_includes/readingIndicator/readingIndicatorMarkup.njk" %}
         
-        <a class="article__link u-url" href="{{ site.url }}/articles/{{ article.slug }}/">
-            <time datetime="{{ article.date }}" class="dt-published">{{ article.formattedDate }}</time>
-        </a>
-    </header>
+        <div class="flow e-content">
+            <div class="article__excerpt">{{ article.excerpt | safe }}</div>
+        
+            {{ article.content | safe }}
+        </div>
+    </article>
 
-    {% include "website/_includes/readingIndicator/readingIndicatorMarkup.njk" %}
-    
-    <div class="flow e-content">
-        <div class="article__excerpt">{{ article.excerpt | safe }}</div>
-    
-        {{ article.content | safe }}
-    </div>
-</article>
-
-{% include 'website/_includes/sharingButton.njk' %}
-{% include 'website/_includes/webmentionsArticle.njk' %}
+    {% include 'website/_includes/_sharingButton.njk' %}
+    {% include 'website/_includes/_webmentionsArticle.njk' %}
+    {% include 'website/_includes/_recentArticles.njk' %}
+</div>
 
 {% include "website/_includes/readingIndicator/readingIndicatorJs.njk" %}
