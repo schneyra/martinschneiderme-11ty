@@ -9,7 +9,7 @@ describe("Page - Article 'Welcome to My New Website'", () => {
     it("has the correct title", () => {
         cy.title().should(
             "eq",
-            "Welcome to My New Website › Martin Schneider — Frontend Developer & Diplom Informatiker (FH)",
+            "Welcome to My New Website › Martin Schneider — Frontend Developer",
         );
     });
 
