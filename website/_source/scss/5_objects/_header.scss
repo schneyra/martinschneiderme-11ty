@@ -1,9 +1,10 @@
 .header {
-    padding: 2rem 0 2rem;
-
-    @media (min-width: 600px) {
-        padding: 2rem 0 5rem;
-    }
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: var(--zindex-header);
+    padding: 1rem 0;
 
     &__wrapper {
         @media screen and (min-width: 600px) {

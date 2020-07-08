@@ -43,13 +43,11 @@ metaSlug: /
             Skip to content.
         </a>
         
-        <div class="upper-part box-shadow">
-            {% include "website/_includes/layout/header.njk" %}
+        {% include "website/_includes/layout/header.njk" %}
 
-            <main class="content-wrapper flow" id="main" tabindex="-1">
-                {{ content | safe }}
-            </main>
-        </div>
+        <main class="upper-part box-shadow" id="main" tabindex="-1">
+            {{ content | safe }}
+        </main>
 
         {% include "website/_includes/layout/footer.njk" %}
         
