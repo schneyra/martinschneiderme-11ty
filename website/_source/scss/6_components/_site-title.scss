@@ -7,4 +7,14 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     text-shadow: 0.05em 0.05em 0 var(--color-bg-offset);
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+        text-decoration-color: transparent;
+        color: var(--color-primary-invert);
+        background-color: var(--color-primary);
+        text-decoration: none;
+        box-shadow: 0 0 0 0.2em var(--color-primary);
+        text-shadow: none;
+    }
 }

@@ -5,11 +5,12 @@
 
     --color-bg: #f3f3f3;
     --color-bg-offset: #eaeaea;
-    --color-text: #2b2f3c;
-    --color-text-offset: #213944;
+    --color-text: #0f131a;
+    --color-text-offset: #171d26;
 
-    --color-primary: #aae2ab;
-    --color-primary-invert: #213944;
+    --color-primary: #87d4d4;
+    --color-primary-invert: #171d26;
+    --color-secondary: #ff540a;
 
     --zindex-footer: 0;
     --zindex-content: 1;
@@ -30,11 +31,11 @@
 }
 
 @mixin darkModeCustomProperties() {
-    --color-bg: #2b2f3c;
-    --color-bg-offset: #1b1f2c;
+    --color-bg: #171d26;
+    --color-bg-offset: #0f131a;
     --color-text: #cfcfcf;
     --color-text-offset: #f7f7f7;
-    --color-primary: #baf2bb;
+    --color-primary: #9bd1e8; //#f45b69; //#9bd1e8;
 }
 
 // if the users device prefers dark color mode
