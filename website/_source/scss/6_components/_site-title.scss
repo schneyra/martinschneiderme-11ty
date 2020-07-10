@@ -9,7 +9,8 @@
     text-shadow: 0.05em 0.05em 0 var(--color-bg-offset);
     transition: all 100ms ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
         text-decoration-color: transparent;
         color: var(--color-primary-invert);
         background-color: var(--color-primary);
