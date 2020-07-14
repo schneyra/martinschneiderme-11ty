@@ -4,12 +4,16 @@
 }
 
 a {
-    text-decoration-thickness: 0.1em;
-    text-decoration-color: var(--color-primary);
-    color: var(--color-text-offset);
-    font-weight: 500;
-    background-color: transparent;
-    transition: text-decoration-color 100ms ease-in-out;
+    transition: text-decoration-color 200ms ease-in-out;
+
+    &:link,
+    &:visited {
+        text-decoration-thickness: 0.1em;
+        text-decoration-color: var(--color-primary);
+        color: var(--color-text-offset);
+        font-weight: 500;
+        background-color: transparent;
+    }
 
     @media (hover: hover) {
         &:hover {
@@ -21,5 +25,14 @@ a {
         @include hoverFocusStyles;
 
         outline: none;
+        text-decoration-thickness: 0.2em;
+    }
+
+    &:active {
+        text-decoration-color: transparent;
+        color: var(--color-text);
+        background: var(--color-secondary);
+        box-shadow: 0 0 0 0.2em var(--color-secondary);
+        transition: none;
     }
 }

@@ -12,12 +12,6 @@
     border-radius: 50%;
     padding: 0;
 
-    &:focus {
-        outline: none;
-        color: var(--color-primary-invert);
-        background: var(--color-primary);
-    }
-
     @media (hover: hover) {
         min-height: 1.5em;
         min-width: 1.5em;
@@ -27,6 +21,18 @@
             background: var(--color-primary);
             box-shadow: none;
         }
+    }
+
+    &:focus {
+        outline: none;
+        color: var(--color-primary-invert);
+        background: var(--color-primary);
+    }
+
+    &:active {
+        color: var(--color-primary-invert);
+        background: var(--color-secondary);
+        box-shadow: none;
     }
 
     &--has-text {
