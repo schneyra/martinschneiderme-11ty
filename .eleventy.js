@@ -28,8 +28,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
 
     // Transforms run after HTML-generation
-    eleventyConfig.addTransform("htmlmin", htmlmin);
-    eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
+    if (process.env.ELEVENTY_ENV !== "development") {
+        eleventyConfig.addTransform("htmlmin", htmlmin);
+        eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
+    }
 
     return {
         dir: {

@@ -16,7 +16,7 @@ permalink: articles/{{ article.slug }}/index.html
             </a>
         </header>
 
-        {% include "website/_includes/readingIndicator/readingIndicatorMarkup.njk" %}
+        {% include "readingIndicator/readingIndicatorMarkup.njk" %}
         
         <div class="flow e-content">
             <div class="article__excerpt">{{ article.excerpt | safe }}</div>
@@ -25,9 +25,9 @@ permalink: articles/{{ article.slug }}/index.html
         </div>
     </article>
 
-    {% include 'website/_includes/_sharingButton.njk' %}
-    {% include 'website/_includes/_webmentionsArticle.njk' %}
-    {% include 'website/_includes/_recentArticles.njk' %}
+    {% include '_sharingButton.njk' %}
+    {% include '_webmentionsArticle.njk' %}
+    {% include '_recentArticles.njk' %}
 </div>
 
-{% include "website/_includes/readingIndicator/readingIndicatorJs.njk" %}
+{% include "readingIndicator/readingIndicatorJs.njk" %}

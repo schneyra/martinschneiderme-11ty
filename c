@@ -15,7 +15,7 @@ case "$1" in
             ;;   
         serve)
             shift
-            docker exec -ti martinschneiderme-11ty_node npx @11ty/eleventy --serve
+            docker exec -ti --env ELEVENTY_ENV=development martinschneiderme-11ty_node npx @11ty/eleventy --serve
             ;;      
         build)
             shift

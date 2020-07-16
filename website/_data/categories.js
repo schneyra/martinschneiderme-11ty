@@ -1,16 +1,17 @@
-const fetch = require("node-fetch");
+const Cache = require("@11ty/eleventy-cache-assets");
 
-async function getCategories() {
+module.exports = async () => {
     try {
-        const response = await fetch(
-            `https://www.dertagundich.de/wp-json/wp/v2/msme_categories`,
-            //`http://host.docker.internal/wp-json/wp/v2/msme_categories`,
+        return Cache(
+            "https://www.dertagundich.de/wp-json/wp/v2/msme_categories",
+            // http://host.docker.internal/wp-json/wp/v2/msme_categories,
+            {
+                duration: "1d",
+                type: "json",
+            },
         );
-
-        return await response.json();
     } catch (error) {
-        throw new Error(error);
+        console.log(error);
+        return [];
     }
-}
-
-module.exports = getCategories;
+};
