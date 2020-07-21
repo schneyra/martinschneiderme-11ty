@@ -1,6 +1,6 @@
 (() => {
     function renderWebmentions(webmentions) {
-        let html = `<h3>Reactions</h3>`;
+        let html = "";
 
         if (webmentions.length) {
             html += `<ol class="webmentions">`;
@@ -29,7 +29,6 @@
                 }
 
                 if (mention["wm-property"] === "repost-of") {
-                    console.log(mention);
                     html += `reposted <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
                 }
 
@@ -55,10 +54,8 @@
     }
 
     async function webmentionButton() {
-        const html = `<h3>Reactions</h3><p>Loading webmentions...</p>`;
-        document.querySelector("[data-webmentionwrapper]").innerHTML = html;
-
         const slug = webmentionLoadButton.dataset.webmentionbutton;
+
         const webmentions = await getWebmentions(slug);
         webmentionLoadButton.removeEventListener("click", webmentionButton);
 

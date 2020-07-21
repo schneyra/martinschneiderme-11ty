@@ -1,6 +1,11 @@
-<div data-webmentionwrapper>
-    {{ article.slug | webmentionButton | safe }}
-</div>
+<details class="flow-small">
+    <summary data-webmentionbutton="{{ article.slug }}">
+        {{ article.slug | webmentionButton | safe }}
+    </summary>
+    <div data-webmentionwrapper>
+        <p>Loading Webmentions...</p>
+    </data>
+</details>
 
 {% set webmentionsJs %}
     {% include "website/_source/js/webmentions.js" %}
