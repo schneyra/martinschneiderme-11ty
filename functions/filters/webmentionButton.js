@@ -13,7 +13,7 @@ async function getWebmentionCount(slug) {
 function generateWebmentionHtml(count) {
     const label = count.count === 1 ? "Reaction" : "Reactions";
 
-    let html = `<h3 class="glitch" data-glitch="${count.count} ${label}">${count.count} ${label}</h3>`;
+    let html = `${count.count} ${label}`;
 
     return html;
 }

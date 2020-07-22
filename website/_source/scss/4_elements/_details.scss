@@ -1,5 +1,10 @@
 summary {
-    & > * {
-        display: inline-block;
+    font-weight: 500;
+
+    &:focus {
+        outline: none;
+        text-decoration: underline;
+        text-decoration-thickness: 0.2rem;
+        text-decoration-color: var(--color-secondary);
     }
 }

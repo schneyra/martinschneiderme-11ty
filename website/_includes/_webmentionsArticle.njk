@@ -1,7 +1,5 @@
 <details class="flow-small">
-    <summary data-webmentionbutton="{{ article.slug }}">
-        {{ article.slug | webmentionButton | safe }}
-    </summary>
+    <summary data-webmentionbutton="{{ article.slug }}">{{ article.slug | webmentionButton | safe }}</summary>
     <div data-webmentionwrapper>
         <p>Loading Webmentions...</p>
     </data>

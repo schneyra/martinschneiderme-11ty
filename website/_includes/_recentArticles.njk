@@ -1,11 +1,7 @@
 {% set recentArticles = articles | recentArticles(page) %}
 
 <details class="flow-small">
-    <summary>
-        <h3 class="glitch" data-glitch="Other articles I've written recently">
-            Other articles I've written recently
-        </h3>
-    </summary>
+    <summary>Other articles I've written recently</summary>
     
     <ol class="article-list article-list--small">
         {%- for recentArticle in recentArticles %}
