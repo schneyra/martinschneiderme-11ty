@@ -1,13 +1,18 @@
-const fetch = require("node-fetch");
+const AssetCache = require("@11ty/eleventy-cache-assets");
 
 async function getWebmentionCount(slug) {
-    return new Promise((resolve, reject) => {
-        fetch(
+    try {
+        return AssetCache(
             `https://webmention.io/api/count.json?target=https://martinschneider.me/articles/${slug}/`,
-        )
-            .then((response) => response.json())
-            .then((data) => resolve(data));
-    });
+            {
+                duration: "1d",
+                type: "json",
+            },
+        );
+    } catch (error) {
+        console.error(`Error: ${error}`);
+        return [];
+    }
 }
 
 function generateWebmentionHtml(count) {
