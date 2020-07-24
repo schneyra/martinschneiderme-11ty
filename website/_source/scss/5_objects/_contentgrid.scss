@@ -1,0 +1,36 @@
+.contentgrid {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+    grid-gap: 2vw;
+
+    &:first-of-type {
+        padding-top: var(--header-height);
+    }
+
+    &__content-left {
+        padding: 4rem 2rem;
+        align-self: start;
+        justify-self: start;
+        margin-left: -4vw;
+        background: var(--color-bg-offset);
+
+        & > * {
+            max-width: 60ch;
+        }
+    }
+
+    &__image-right {
+        align-self: center;
+        justify-self: center;
+        position: relative;
+        margin: 2rem;
+
+        img {
+            display: block;
+            max-width: 100%;
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
