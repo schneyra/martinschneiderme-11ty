@@ -18,14 +18,6 @@ pre[class*="language-"] {
     align-items: center;
     z-index: var(--zindex-pre);
     border-radius: 0.2rem;
-    box-shadow: var(--box-shadow);
-    transition: box-shadow 200ms ease-in-out;
-
-    @media (hover: hover) {
-        &:hover {
-            box-shadow: none;
-        }
-    }
 
     &::before {
         content: attr(data-language);
