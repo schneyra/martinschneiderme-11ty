@@ -2,19 +2,7 @@
 layout: layout
 ---
 
-<div class="max-wrapper contentgrid">
-    <div class="contentgrid__content-left flow js-rellax" data-rellax-speed="1">
-        <h1 class="headline glitch" data-glitch="Hey, my name is Martin!">Hey, my name is Martin!</h1>
-        <p>I'm a <a href="#webdevelopment">frontend developer</a>, <a href="#family">father and boyfriend</a>, <a href="#photography">hobby photographer</a>, <a href="#reading">avid reader</a>, <a href="#music">music lover</a>, <a href="#blogging">long-time blogger</a> and <a href="#scouting">lifelong scout</a>.</p>
-    </div>
-
-    <div class="contentgrid__image-right flow js-rellax" data-rellax-speed="-2">
-        <picture class="image">
-            <source srcset="/images/avatar600.webp 2x, /images/avatar300.webp 1x" type="image/webp">
-            <source srcset="/images/avatar600.jpg 2x, /images/avatar300.jpg 1x" type="image/jpg">
-            <img alt="Martin Schneider looking sceptical." class="image__image" loading="lazy" src="/images/avatar300.jpg" width="150" height="150">
-        </picture>
-    </div>
-</div>
+{% include "contentHome/_overview.njk" %}
+{% include "contentHome/_family.njk" %}
 
 <script src="/rellax.js" defer></script>
