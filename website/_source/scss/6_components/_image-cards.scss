@@ -1,0 +1,58 @@
+.image-cards {
+    padding-top: var(--header-height);
+    padding-bottom: var(--header-height);
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+    list-style: none;
+
+    &-textcontent {
+        position: sticky;
+        top: 10%;
+    }
+
+    &__item {
+        position: sticky;
+        top: 10%;
+
+        & + & {
+            margin-top: 40vh;
+        }
+
+        &:nth-child(1) {
+            transform: rotate(0deg) translate(-1.3rem, 1rem);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(-3deg) translate(-1rem, -1rem);
+        }
+
+        &:nth-child(3) {
+            transform: rotate(1deg) translate(2rem, 1rem);
+        }
+
+        &:nth-child(4) {
+            transform: rotate(4deg) translate(1rem, 1rem);
+        }
+
+        &:nth-child(5) {
+            transform: rotate(-1deg) translate(-2rem, 1rem);
+        }
+
+        &:nth-child(6) {
+            transform: rotate(2deg) translate(-1rem, 2rem);
+        }
+    }
+
+    &__image {
+        padding: 0.5em;
+        background: #fff;
+        box-shadow: 0 2px 40px -10px rgba(0, 0, 0, 0.1);
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: 100%;
+    }
+}

@@ -16,6 +16,10 @@
         & > * {
             max-width: 60ch;
         }
+
+        &--alignstart {
+            align-self: start;
+        }
     }
 
     &--reverse &__content {
