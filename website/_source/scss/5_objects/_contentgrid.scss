@@ -4,10 +4,11 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, auto));
     grid-gap: 2vw;
     padding-top: var(--header-height);
+    padding-bottom: var(--header-height);
 
     &__content {
         padding: 4rem 2rem;
-        align-self: start;
+        align-self: center;
         justify-self: start;
         margin-left: -4vw;
         background: var(--color-bg-offset);
