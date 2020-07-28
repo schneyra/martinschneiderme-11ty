@@ -1,16 +1,38 @@
 .image-cards {
-    padding-top: var(--header-height);
-    padding-bottom: var(--header-height);
+    padding: var(--header-height) 3rem;
     position: relative;
     display: block;
-    text-align: center;
     margin: 0 auto;
     max-width: 900px;
     list-style: none;
 
-    &-textcontent {
-        position: sticky;
-        top: 10%;
+    &__textcontent {
+        background: var(--color-bg-offset);
+        padding: 4vw 6vw 4vw 4vw;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 1rem;
+            height: 110%;
+            position: absolute;
+            right: -0.75rem;
+            top: -2rem;
+            background-color: var(--color-primary);
+            transform: rotate(3deg);
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1rem;
+            height: 110%;
+            position: absolute;
+            right: 0.25rem;
+            top: -1rem;
+            background-color: var(--color-secondary);
+            transform: rotate(3deg);
+        }
     }
 
     &__item {
