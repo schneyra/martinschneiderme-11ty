@@ -37,44 +37,45 @@
 
     &__item {
         position: sticky;
-        top: 10%;
+        top: 10vh;
 
         & + & {
             margin-top: 40vh;
         }
 
-        &:nth-child(1) {
+        &:nth-child(2) {
             transform: rotate(0deg) translate(-1.3rem, 1rem);
         }
 
-        &:nth-child(2) {
+        &:nth-child(3) {
             transform: rotate(-3deg) translate(-1rem, -1rem);
         }
 
-        &:nth-child(3) {
+        &:nth-child(4) {
             transform: rotate(1deg) translate(2rem, 1rem);
         }
 
-        &:nth-child(4) {
+        &:nth-child(5) {
             transform: rotate(4deg) translate(1rem, 1rem);
         }
 
-        &:nth-child(5) {
+        &:nth-child(6) {
             transform: rotate(-1deg) translate(-2rem, 1rem);
         }
 
-        &:nth-child(6) {
+        &:nth-child(7) {
             transform: rotate(2deg) translate(-1rem, 2rem);
         }
     }
 
     &__image {
+        display: block;
         padding: 0.5em;
         background: #fff;
         box-shadow: 0 2px 40px -10px rgba(0, 0, 0, 0.1);
-        width: auto;
+        width: 100%;
         height: auto;
-        max-width: 90%;
+        max-width: 90vw;
         max-height: 100%;
     }
 }
