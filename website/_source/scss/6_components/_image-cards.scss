@@ -1,6 +1,5 @@
 .image-cards {
     padding: var(--header-height) 3rem;
-    position: relative;
     display: block;
     margin: 0 auto;
     max-width: 900px;
@@ -37,34 +36,35 @@
 
     &__item {
         position: sticky;
-        top: 10vh;
+        top: 50vh;
+        margin-top: 40vh;
 
-        & + & {
-            margin-top: 40vh;
+        &:nth-child(1) {
+            transform: translateY(-50%);
         }
 
         &:nth-child(2) {
-            transform: rotate(0deg) translate(-1.3rem, 1rem);
+            transform: rotate(-2deg) translate(-1.3rem, -51%);
         }
 
         &:nth-child(3) {
-            transform: rotate(-3deg) translate(-1rem, -1rem);
+            transform: rotate(-3deg) translate(-1rem, -51%);
         }
 
         &:nth-child(4) {
-            transform: rotate(1deg) translate(2rem, 1rem);
+            transform: rotate(1deg) translate(2rem, -49%);
         }
 
         &:nth-child(5) {
-            transform: rotate(4deg) translate(1rem, 1rem);
+            transform: rotate(4deg) translate(1rem, -49%);
         }
 
         &:nth-child(6) {
-            transform: rotate(-1deg) translate(-2rem, 1rem);
+            transform: rotate(0deg) translate(0, -49%);
         }
 
         &:nth-child(7) {
-            transform: rotate(2deg) translate(-1rem, 2rem);
+            transform: rotate(2deg) translate(-2rem, -48%);
         }
     }
 
@@ -75,7 +75,7 @@
         box-shadow: 0 2px 40px -10px rgba(0, 0, 0, 0.1);
         width: 100%;
         height: auto;
-        max-width: 90vw;
+        max-width: 800px;
         max-height: 100%;
     }
 }
