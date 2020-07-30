@@ -1,10 +1,14 @@
 .contentgrid {
     min-height: 90vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
-    grid-gap: 2vw;
+
     padding-top: var(--header-height);
     padding-bottom: var(--header-height);
+
+    @media (min-width: 900px) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 2vw;
+    }
 
     &__content {
         padding: 4rem 2rem;
@@ -22,9 +26,16 @@
         }
     }
 
-    &--reverse &__content {
-        justify-self: end;
-        margin-right: -4vw;
+    &--reverse {
+        @media (min-width: 900px) {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .contentgrid__content {
+            justify-self: end;
+            margin-right: -4vw;
+            margin-left: 0;
+        }
     }
 
     &__image {
