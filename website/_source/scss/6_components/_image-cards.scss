@@ -82,7 +82,7 @@
     &__image {
         display: block;
         padding: 0.5em;
-        background: #fff;
+        background: var(--color-bg-offset);
         box-shadow: 0 2px 40px -10px rgba(0, 0, 0, 0.1);
         width: 100%;
         height: auto;
