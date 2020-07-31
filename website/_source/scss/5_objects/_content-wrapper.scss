@@ -1,13 +1,15 @@
 .content-wrapper {
     width: var(--content-wrapper-max-width);
     max-width: 100%;
-    padding: 0 4vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
     margin: 0 auto;
 }
 
 .max-wrapper {
     width: var(--max-wrapper-max-width);
     max-width: 100%;
-    padding: 0 4vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
     margin: 0 auto;
 }
