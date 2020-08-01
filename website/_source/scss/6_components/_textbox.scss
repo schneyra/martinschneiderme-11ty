@@ -1,0 +1,29 @@
+.textbox {
+    background: var(--color-bg-offset);
+    padding: 4vw calc(2rem + 4vw) 4vw 4vw;
+    position: relative;
+    margin-left: -4vw;
+    margin-right: -4vw;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 115%;
+        position: absolute;
+        right: 0;
+        top: -10%;
+        background-color: var(--color-primary);
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 115%;
+        position: absolute;
+        right: 1rem;
+        top: -5%;
+        background-color: var(--color-secondary);
+    }
+}

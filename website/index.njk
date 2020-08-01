@@ -2,10 +2,16 @@
 layout: layout
 ---
 
-<div class="content-wrapper flow">
-    <h1 class="headline glitch" data-glitch="Hey, my name is Martin!">Hey, my name is Martin!</h1>
+{% include "contentHome/_overview.njk" %}
+{% include "contentHome/_development.njk" %}
+{% include "contentHome/_family.njk" %}
+{% include "contentHome/_photography.njk" %}
 
-    <p>I'm a frontend developer, living with my family in Bonn, Germany.</p>
-    <p>Welcome to my small part of the internet where you can <a href="/about/">find out what I like to do</a> besides crafting websites. If you want to read even more check out my personal blog <a href="https://dertagundich.de">der tag und ich</a>.</p>
-    <p>I also write <a href="/articles/">some articles related to web development</a> right here.</p>
-</div>
+{#}
+{% include "contentHome/_reading.njk" %}
+{% include "contentHome/_music.njk" %}
+{% include "contentHome/_blogging.njk" %}
+{% include "contentHome/_scouting.njk" %}
+#}
+
+<script src="/rellax.js" defer></script>
