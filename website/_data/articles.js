@@ -22,15 +22,16 @@ async function fetchArticles() {
 
 module.exports = async () => {
     const blogposts = await fetchArticles();
-    var cachedPosts = flatCache.load("modifiedPosts", path.resolve(".cache"));
+    const cacheFile = flatCache.load("cachedPosts", path.resolve(".cache"));
+    const cachedPosts = cacheFile.getKey("cachedPosts");
 
-    if (cachedPosts.getKey("posts")) {
+    if (cachedPosts) {
         console.log("Articles: Returning cached posts");
-        return cachedPosts.getKey("posts");
+        return cachedPosts;
     } else {
         const filteredPostsData = await filterPosts(blogposts);
-        cachedPosts.setKey("posts", filteredPostsData);
-        cachedPosts.save();
+        cacheFile.setKey("cachedPosts", filteredPostsData);
+        cacheFile.save();
 
         console.log("Articles: Saved posts to cache");
 
