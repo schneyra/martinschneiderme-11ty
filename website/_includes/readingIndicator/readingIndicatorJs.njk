@@ -1,7 +1,3 @@
-{% set readingIndicatorJs %}
-    {% include "website/_source/js/readingIndicator.js" %}
-{% endset %}
-
 <script>
-    {{ readingIndicatorJs | jsmin | safe }}
+    {% include "compiledassets/readingIndicator.js" %}
 </script>

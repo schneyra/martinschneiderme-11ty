@@ -5,10 +5,6 @@
     </data>
 </details>
 
-{% set webmentionsJs %}
-    {% include "website/_source/js/webmentions.js" %}
-{% endset %}
-
 <script>
-    {{ webmentionsJs | jsmin | safe }}
+    {% include "compiledassets/webmentions.js" %}
 </script>

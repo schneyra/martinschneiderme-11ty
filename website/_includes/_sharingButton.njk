@@ -4,10 +4,6 @@
     <span class="icon-button__text">Share this post</span>
 </button>
 
-{% set articleSharingJs %}
-    {% include "website/_source/js/articleSharing.js" %}
-{% endset %}
-
 <script>
-    {{ articleSharingJs | jsmin | safe }}
+    {% include "compiledassets/articleSharing.js" %}
 </script>

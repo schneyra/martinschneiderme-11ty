@@ -34,7 +34,9 @@ metaSlug: /
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-500.woff2" as="font" type="font/woff2" crossorigin="">
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-700.woff2" as="font" type="font/woff2" crossorigin="">
 
-        {{ 'website/_source/scss/main.scss' | compileSCSS | safe }}
+        <style>
+            {% include 'compiledassets/main.css' %}
+        </style>
         
         {% include 'layout/head-meta.njk' %}
     </head>

@@ -4,3 +4,4 @@ node_modules/
 # Local Netlify folder
 .netlify
 .cache
+website/_includes/compiledassets/

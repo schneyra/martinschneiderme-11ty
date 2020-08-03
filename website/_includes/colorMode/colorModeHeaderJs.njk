@@ -1,7 +1,3 @@
-{% set colorModeHeaderJs %}
-    {% include "website/_source/js/colorModeHeader.js" %}
-{% endset %}
-
 <script>
-    {{ colorModeHeaderJs | jsmin | safe }}
+    {% include "compiledassets/colorModeHeader.js" %}
 </script>

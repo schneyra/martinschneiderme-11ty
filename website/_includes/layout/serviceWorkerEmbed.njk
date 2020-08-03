@@ -1,7 +1,3 @@
-{% set serviceworkerEmbedJs %}
-    {% include "website/_source/js/serviceworkerEmbed.js" %}
-{% endset %}
-
 <script>
-    {{ serviceworkerEmbedJs | jsmin | safe }}
+    {% include "compiledassets/serviceworkerEmbed.js" %}
 </script>
