@@ -1,10 +1,10 @@
 (() => {
     const toggleButton = document.querySelector(
-        "[data-js-colormode-togglebutton]",
+        "[data-js-colormode-togglebutton]"
     );
 
     const toggleButtonLabel = document.querySelector(
-        "[data-js-colormode-togglebutton-label]",
+        "[data-js-colormode-togglebutton-label]"
     );
 
     function setToggleButtonLabel(label) {
@@ -13,7 +13,7 @@
 
     function getCSSCustomProp(propKey) {
         let response = getComputedStyle(
-            document.documentElement,
+            document.documentElement
         ).getPropertyValue(propKey);
 
         if (response.length) {
@@ -62,7 +62,7 @@
             // set the state on the <html>-element to toggle mode
             document.documentElement.setAttribute(
                 "data-user-color-scheme",
-                currentColorMode,
+                currentColorMode
             );
 
             // save the state for later visits

@@ -13,7 +13,7 @@
         sharingIcon.classList.remove("is-hidden");
 
         const sharingButton = document.querySelector(
-            "[data-js-sharing-button]",
+            "[data-js-sharing-button]"
         );
 
         sharingButton.classList.remove("is-hidden");
@@ -23,7 +23,7 @@
             let url = document.location.href;
 
             const canonicalElement = document.querySelector(
-                "link[rel=canonical]",
+                "link[rel=canonical]"
             );
 
             if (canonicalElement !== null) {

@@ -16,7 +16,7 @@
     };
 
     const readingIndicator = document.querySelector(
-        "[data-js-reading-indicator]",
+        "[data-js-reading-indicator]"
     );
 
     // We need to take the header into account
@@ -42,6 +42,6 @@
     }
 
     document.addEventListener("scroll", debounce(updateReadingIndicator), {
-        passive: true,
+        passive: true
     });
 })();

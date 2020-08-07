@@ -6,7 +6,7 @@
     if (currentColorMode) {
         document.documentElement.setAttribute(
             "data-user-color-scheme",
-            currentColorMode,
+            currentColorMode
         );
     }
 })();
