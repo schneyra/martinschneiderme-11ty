@@ -7,4 +7,10 @@
     &__link {
         display: inline-block;
     }
+
+    // override the flow-property to give the headline some more space
+    h2,
+    h3 {
+        --flow: 2em;
+    }
 }

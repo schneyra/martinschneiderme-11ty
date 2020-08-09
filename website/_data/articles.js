@@ -5,6 +5,7 @@ const Prism = require("prismjs");
 
 /**
  * Get the articles from WordPress
+ * Uses eleventy-cache-assets to speed up build time
  */
 async function fetchArticles() {
     try {
@@ -13,8 +14,8 @@ async function fetchArticles() {
             "https://www.dertagundich.de/wp-json/wp/v2/msme_posts?per_page=100",
             {
                 duration: "1m",
-                type: "json",
-            },
+                type: "json"
+            }
         );
     } catch (error) {
         console.error(`Error: ${error}`);
@@ -23,28 +24,28 @@ async function fetchArticles() {
 }
 
 /**
- * Clean and convert the API-response for our needs
+ * Clean up and convert the API response for our needs
  */
 async function processPosts(blogposts) {
     return Promise.all(
         blogposts.map(async (post) => {
-            // Remove HTML-Tags from Meta-Description
+            // remove HTML-Tags from the excerpt for meta description
             let metaDescription = post.excerpt.rendered.replace(
                 /(<([^>]+)>)/gi,
-                "",
+                ""
             );
             metaDescription = metaDescription.replace("\n", "");
 
-            // Code-Highlighting with Prism
+            // Code highlighting with Prism
             let content = highlightCode(post.content.rendered);
 
             // Make relative URLs absolute (would work otherwise on the site, but not in the feed)
             content = content.replace(
                 'href="/',
-                'href="https://martinschneider.me/',
+                'href="https://martinschneider.me/'
             );
 
-            // return only the data that is needed for the actual output
+            // Return only the data that is needed for the actual output
             return await {
                 title: post.title.rendered,
                 date: post.date,
@@ -52,7 +53,7 @@ async function processPosts(blogposts) {
                     weekday: "long",
                     year: "numeric",
                     month: "long",
-                    day: "numeric",
+                    day: "numeric"
                 }),
                 rssDate: new Date(post.date).toUTCString(),
                 modifiedDate: post.modified,
@@ -60,9 +61,9 @@ async function processPosts(blogposts) {
                 metaDescription: metaDescription,
                 excerpt: post.excerpt.rendered,
                 content: content,
-                categorySlugs: post.msme_categories_slugs,
+                categorySlugs: post.msme_categories_slugs
             };
-        }),
+        })
     );
 }
 
@@ -76,6 +77,8 @@ function highlightCode(content) {
 
     let preElements = dom.window.document.querySelectorAll("pre");
 
+    // WordPress delivers a `code`-tag that is wrapped in a `pre`
+    // the used language is specified by a CSS class
     if (preElements.length) {
         preElements.forEach((pre) => {
             let code = pre.querySelector("code");
@@ -112,7 +115,7 @@ function highlightCode(content) {
                 code.innerHTML = Prism.highlight(
                     code.textContent,
                     prismGrammar,
-                    codeLanguage,
+                    codeLanguage
                 );
 
                 code.classList.add(`language-${codeLanguage}`);
