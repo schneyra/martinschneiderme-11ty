@@ -47,8 +47,25 @@ code[class*="language-"] {
     line-height: 1.7;
     tab-size: 2;
     hyphens: none;
-    padding: 0.5em;
+    padding: 1em;
     overflow: auto;
+    width: 100%;
+}
+
+// --content-wrapper-max-width: 48rem
+@media (min-width: 52rem) {
+    pre[class*="language-"] {
+        margin-left: -2rem;
+        background: transparent;
+
+        &::before {
+            border-radius: 0.2rem 0 0 0.2rem;
+        }
+    }
+
+    code[class*="language-"] {
+        border-top-left-radius: 0;
+    }
 }
 
 /* Inline code */
