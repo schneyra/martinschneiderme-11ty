@@ -3,7 +3,7 @@
     min-width: 48px;
     border: 0;
     background: transparent;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: var(--color-text-offset);
     transition: all 100ms ease-in-out;
     display: inline-flex;
@@ -13,8 +13,8 @@
     padding: 0;
 
     @media (hover: hover) {
-        min-height: 1.5em;
-        min-width: 1.5em;
+        min-height: 1.75em;
+        min-width: 1.75em;
 
         &:hover {
             color: var(--color-primary-invert);
