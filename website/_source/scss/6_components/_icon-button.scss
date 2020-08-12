@@ -35,6 +35,11 @@
         box-shadow: none;
     }
 
+    &__icon {
+        width: 1em;
+        height: 1em;
+    }
+
     &--has-text {
         background-color: var(--color-bg-offset);
         border-radius: 1em;
