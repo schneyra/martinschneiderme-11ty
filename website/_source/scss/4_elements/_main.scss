@@ -2,9 +2,4 @@ main {
     &:focus {
         outline: none;
     }
-
-    // https://twitter.com/slightlylate/status/1304860616272703488
-    & > * + * {
-        content-visibility: auto;
-    }
 }
