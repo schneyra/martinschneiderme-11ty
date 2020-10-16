@@ -4,7 +4,7 @@ html {
     line-height: 1.8;
     color: var(--color-text);
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.125rem; /* 16 * 1.125 = 18px */
     font-size: clamp(16px, 1.25vw, 26px);
     font-family: "IBM Plex Sans", sans-serif;
 }
