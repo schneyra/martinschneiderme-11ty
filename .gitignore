@@ -5,3 +5,4 @@ node_modules/
 .netlify
 .cache
 website/_includes/compiledassets/
+#*.webp

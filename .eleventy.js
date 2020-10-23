@@ -3,6 +3,9 @@ const recentArticles = require("./functions/filters/recentArticles.js");
 const webmentionButton = require("./functions/filters/webmentionButton.js");
 const htmlmin = require("./functions/transforms/htmlmin");
 const purgeInlineCSS = require("./functions/transforms/purgeInlineCSS");
+const compileCss = require("./functions/build/gulp-css");
+const compileJs = require("./functions/build/gulp-js");
+const generateOptimizedImages = require("./functions/build/images");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setTemplateFormats([
@@ -11,7 +14,7 @@ module.exports = function (eleventyConfig) {
         "jpg",
         "webp",
         "png",
-        "opml",
+        "opml"
     ]);
 
     eleventyConfig.addWatchTarget("./website/_source");
@@ -21,6 +24,12 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);
     eleventyConfig.addFilter("recentArticles", recentArticles);
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
+
+    eleventyConfig.on("beforeBuild", () => {
+        compileCss();
+        compileJs();
+        generateOptimizedImages();
+    });
 
     // Transforms run after HTML-generation
     if (process.env.ELEVENTY_ENV !== "development") {
@@ -32,7 +41,7 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: "website",
             includes: "_includes",
-            layouts: "_layouts",
-        },
+            layouts: "_layouts"
+        }
     };
 };
