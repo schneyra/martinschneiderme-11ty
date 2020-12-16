@@ -6,7 +6,7 @@
 
     @media (min-width: 900px) {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 4fr 3fr;
         grid-gap: 2vw;
     }
 
@@ -28,7 +28,7 @@
 
     &--reverse {
         @media (min-width: 900px) {
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 3fr 4fr;
         }
 
         .contentgrid__content {
@@ -43,6 +43,9 @@
         justify-self: center;
         position: relative;
         margin: 2rem;
+        align-items: center;
+        justify-content: center;
+        display: flex;
 
         img {
             display: block;
