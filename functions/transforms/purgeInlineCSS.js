@@ -15,7 +15,7 @@ module.exports = async (content, outputPath) => {
         const [{ css: result }] = await new PurgeCSS().purge({
             content: [{ raw: content.replace(pattern, ""), extension: "html" }],
             css: [{ raw: extractedCSS[0] }],
-            whitelist: [
+            safelist: [
                 "::-webkit-progress-bar",
                 "::-webkit-progress-value",
                 "::-moz-progress-bar",
