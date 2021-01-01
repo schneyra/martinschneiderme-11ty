@@ -1,9 +1,6 @@
 ---
 permalink: articles/feed.xml
 eleventyExcludeFromCollections: true
-pagination:
-  data: articles
-  size: 10
 ---
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -30,7 +27,7 @@ pagination:
         <height>128</height>
     </image> 
 
-    {%- for article in articles %}
+    {%- for article in articles.slice(0, 10) %}
     {% set absoluteUrl = site.url + '/articles/' + article.slug + '/' %}
         <item>
             <title>{{article.title}}</title>

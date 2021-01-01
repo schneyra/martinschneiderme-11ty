@@ -44,12 +44,12 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
 {% endfor %}
 
 {% if pagination.hrefs | length > 1 %}
-  <ul>
+  <ul class="pagination">
     {% if pagination.previousPageHref %}
-      <li><a href="{{ pagination.previousPageHref }}">Previous page</a></li>
+      <li><a href="{{ pagination.previousPageHref }}">&laquo; Previous page</a></li>
     {% endif %}
     {% if pagination.nextPageHref %}
-      <li><a href="{{ pagination.nextPageHref }}">Next page</a></li>
+      <li><a href="{{ pagination.nextPageHref }}">Next page &raquo;</a></li>
     {% endif %}
   </ul>
 {% endif %}
