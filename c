@@ -9,9 +9,9 @@ case "$1" in
             shift
             docker exec -ti martinschneiderme-11ty_node node $@
             ;;  
-        yarn)
+        npm)
             shift
-            docker exec -ti martinschneiderme-11ty_node yarn $@
+            docker exec -ti martinschneiderme-11ty_node npm $@
             ;;   
         serve)
             shift
