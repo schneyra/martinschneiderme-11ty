@@ -8,6 +8,10 @@ case "$1" in
         node)
             shift
             docker exec -ti martinschneiderme-11ty_node node $@
+            ;; 
+        npx)
+            shift
+            docker exec -ti martinschneiderme-11ty_node npx $@
             ;;  
         npm)
             shift

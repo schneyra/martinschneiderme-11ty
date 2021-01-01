@@ -1,0 +1,6 @@
+{
+    "extends": ["html-validate:recommended"],
+    "rules": {
+        "long-title": ["warn", { "maxlength": 70 }]
+    }
+}

@@ -7,6 +7,7 @@ module.exports = (content, outputPath) => {
             removeComments: true,
             collapseWhitespace: true,
             removeScriptTypeAttributes: true,
+            collapseBooleanAttributes: true
         });
         return minified;
     }
