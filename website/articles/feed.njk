@@ -30,13 +30,13 @@ eleventyExcludeFromCollections: true
     {%- for article in articles.slice(0, 10) %}
     {% set absoluteUrl = site.url + '/articles/' + article.slug + '/' %}
         <item>
-            <title>{{article.title}}</title>
+            <title>{{ article.title }}</title>
             <link>{{ absoluteUrl }}</link>
             <dc:creator><![CDATA[Martin Schneider]]></dc:creator>
             <pubDate>{{ article.rssDate }}</pubDate>
             <guid isPermaLink="false">{{ absoluteUrl }}</guid>
             <description><![CDATA[{{ article.excerpt | safe }}]]></description>
-            <content:encoded><![CDATA[{{ article.content | safe }}]]></content:encoded>
+            <content:encoded><![CDATA[{{ article.excerpt | safe }} {{ article.content | safe }}]]></content:encoded>
         </item>
     {%- endfor %}
     </channel>
