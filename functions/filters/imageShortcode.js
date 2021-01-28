@@ -11,7 +11,7 @@ module.exports = async function imageShortcode(
         widths,
         formats: ["avif", "webp", "jpeg"],
         outputDir: "./_site/img",
-        urlPath: "img/"
+        urlPath: "/img/"
     });
 
     let imageAttributes = {
