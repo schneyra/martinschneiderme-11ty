@@ -5,10 +5,8 @@
     </div>
 
     <div class="contentgrid__image flow js-rellax" data-rellax-speed="-2">
-        <picture class="image">
-            <source srcset="/images/avatar600.webp 600w, /images/avatar300.webp 300w" sizes="300px" type="image/webp">
-            <source srcset="/images/avatar600.jpg 600w, /images/avatar300.jpg 300w" sizes="300px" type="image/jpg">
-            <img alt="Martin Schneider looking sceptical." class="image__image" loading="lazy" src="/images/avatar300.jpg" width="300" height="300">
-        </picture>
+        <div class="image">
+            {% image "./website/images/avatar.jpg", "Martin looking sceptical.", [300, 600], "300px", "image__image" %}
+        </div>
     </div>
 </div>

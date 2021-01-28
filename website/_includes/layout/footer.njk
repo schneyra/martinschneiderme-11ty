@@ -83,11 +83,9 @@
             </ul>
         </div>
         <div class="footer-grid__item footer-grid__image">
-            <picture class="image">
-                <source srcset="/images/avatar600.webp 600w, /images/avatar300.webp 300w" sizes="300px" type="image/webp">
-                <source srcset="/images/avatar600.jpg 600w, /images/avatar300.jpg 300w" sizes="300px" type="image/jpg">
-                <img alt="Martin Schneider looking sceptical." class="image__image" loading="lazy" src="/images/avatar300.jpg" width="250" height="250">
-            </picture>
+            <div class="image">
+                {% image "./website/images/avatar.jpg", "Martin looking sceptical.", [250, 500], "250px", "image__image" %}
+            </div>
         </div>
     </div>
 </footer>
