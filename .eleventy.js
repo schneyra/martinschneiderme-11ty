@@ -6,11 +6,7 @@ const purgeInlineCSS = require("./functions/transforms/purgeInlineCSS");
 const imageShortcode = require("./functions/filters/imageShortcode");
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.setTemplateFormats([
-        "ico",
-        "njk",
-        "opml"
-    ]);
+    eleventyConfig.setTemplateFormats(["ico", "njk", "opml"]);
 
     eleventyConfig.addWatchTarget("./website/_source");
     eleventyConfig.addPassthroughCopy("./website/fonts");

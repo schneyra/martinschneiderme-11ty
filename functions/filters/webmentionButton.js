@@ -6,8 +6,8 @@ async function getWebmentionCount(slug) {
             `https://webmention.io/api/count.json?target=https://martinschneider.me/articles/${slug}/`,
             {
                 duration: "1d",
-                type: "json",
-            },
+                type: "json"
+            }
         );
     } catch (error) {
         console.error(`Error: ${error}`);

@@ -19,8 +19,8 @@ module.exports = async (content, outputPath) => {
                 "::-webkit-progress-bar",
                 "::-webkit-progress-value",
                 "::-moz-progress-bar",
-                "::-ms-fill",
-            ],
+                "::-ms-fill"
+            ]
         });
 
         return content.replace(pattern, `<style>${result}</style>`);
