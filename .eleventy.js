@@ -9,14 +9,12 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.setTemplateFormats([
         "ico",
         "njk",
-        "jpg",
-        "webp",
-        "png",
         "opml"
     ]);
 
     eleventyConfig.addWatchTarget("./website/_source");
     eleventyConfig.addPassthroughCopy("./website/fonts");
+    eleventyConfig.addPassthroughCopy("./website/images");
 
     // Filters are used in templates
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);

@@ -2,7 +2,6 @@
     "name": "martinschneider.me",
     "description": "The personal website of Martin Schneider, build with 11ty.",
     "version": "1.0.0",
-    "main": "index.js",
     "license": "MIT",
     "author": {
         "name": "Martin Schneider",
