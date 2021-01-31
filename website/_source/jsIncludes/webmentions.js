@@ -3,6 +3,14 @@
         let html = "";
 
         if (webmentions.length) {
+            // update the label since it's normally written at build-time
+            const label = webmentions.length === 1 ? "Reaction" : "Reactions";
+            let labelHtml = `${webmentions.length} ${label}`;
+            document.querySelector(
+                "[data-js-webmention-label]"
+            ).innerHTML = labelHtml;
+
+            // now we're generating the actual list
             html += `<ol class="webmentions">`;
 
             webmentions.forEach((mention) => {
@@ -10,9 +18,17 @@
                     ? " on twitter"
                     : "";
 
-                html += `<li class="webmentions__mention"><span class="webmentions__head">
-            <img src="${mention.author.photo}" class="webmentions__avatar" loading="lazy" height="256" width="256" />
-            <span>${mention.author.name} `;
+                html += `<li class="webmentions__mention"><span class="webmentions__head">`;
+
+                if (mention.author.photo) {
+                    html += `<img src="${mention.author.photo}" class="webmentions__avatar" loading="lazy" height="256" width="256" />`;
+                }
+
+                html += `<span>${
+                    mention.author.name
+                        ? mention.author.name
+                        : "<em>Someone</em>"
+                } `;
 
                 if (mention["wm-property"] === "like-of") {
                     html += `liked <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
@@ -30,6 +46,10 @@
 
                 if (mention["wm-property"] === "repost-of") {
                     html += `reposted <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
+                }
+
+                if (mention["wm-property"] === "mention-of") {
+                    html += `mentioned the article in <a href="${mention.url}">this post</a>${twitterString}.</span></span>`;
                 }
 
                 html += `</li>`;

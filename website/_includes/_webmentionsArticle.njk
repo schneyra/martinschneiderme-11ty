@@ -1,6 +1,6 @@
 <details class="flow-small">
-    <summary data-webmentionbutton="{{ article.slug }}">{{ article.slug | webmentionButton | safe }}</summary>
-    <div data-webmentionwrapper>
+    <summary data-webmentionbutton="{{ article.slug }}" data-js-webmention-label="data-js-webmention-label">{{ article.slug | webmentionButton | safe }}</summary>
+    <div data-webmentionwrapper="data-webmentionwrapper">
         <p>Loading Webmentions...</p>
     </data>
 </details>
