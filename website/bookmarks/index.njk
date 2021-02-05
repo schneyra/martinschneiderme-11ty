@@ -8,8 +8,14 @@ pagination:
 permalink: bookmarks{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
-<h1>{{ bookmarks | length }}
-  Bookmarks</h1>
+<h1>Bookmarks</h1>
+
+<p>Page
+  {{ pagination.pageNumber+1 }}
+  of
+  {{ pagination.pages|length }}. I have currently saved
+  {{ bookmarks | length }}
+  Bookmarks.</p>
 
 {% if bookmarks | length %}
   <ol class="article-list">
