@@ -4,9 +4,6 @@
 
     &__item {
         display: inline;
-
-        &:not(:first-child) {
-            margin-left: var(--flow-small);
-        }
+        margin-right: var(--flow-small);
     }
 }
