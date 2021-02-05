@@ -1,0 +1,47 @@
+---
+layout: page
+title: Bookmarks
+metaSlug: /bookmarks/
+pagination:
+  data: bookmarks
+  size: 10
+permalink: bookmarks{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
+---
+
+<h1>{{ bookmarks | length }}
+  Bookmarks</h1>
+
+{% if bookmarks | length %}
+  <ol class="article-list">
+    {% for bookmark in pagination.items %}
+      <li class="article-list__article">
+        <article class="flow-small">
+          <h2 class="article-list__title">
+            <a href="{{ bookmark.href }}" class="article-list__link">
+              {{ bookmark.title }}
+            </a>
+          </h2>
+
+          <time datetime="{{ bookmark.date }}" class="article-list__date">saved on
+            {{ bookmark.formattedDate }}
+          </time>
+
+          {% if bookmark.excerpt %}
+            <p class="article-list__excerpt">{{ bookmark.excerpt }}</p>
+          {% endif %}
+
+          {% if bookmark.tags | length %}
+            <ul class="tag-list">
+              {% for tag in bookmark.tags %}
+                <li class="tag-list__item">
+                  <span class="tag">{{ tag }}</span></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </article>
+      </li>
+    {% endfor %}
+  </ol>
+{% endif %}
+
+{% include '_pagination.njk' %}
