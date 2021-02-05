@@ -4,11 +4,9 @@
             <li>
                 <a href="{{ pagination.previousPageHref }}">&laquo; Previous page</a>
             </li>
-        {% else %}
-            <span></span>
         {% endif %}
         {% if pagination.nextPageHref %}
-            <li>
+            <li class="pagination__next">
                 <a href="{{ pagination.nextPageHref }}">Next page &raquo;</a>
             </li>
         {% endif %}
