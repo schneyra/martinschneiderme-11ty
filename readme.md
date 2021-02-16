@@ -4,7 +4,7 @@
 
 Repository for 👨🏼‍💻  [martinschneider.me](https://martinschneider.me).
 
-Build with 11ty, articles written in WordPress, hosted on Netlify.
+Build with [Eleventy](https://www.11ty.dev/), articles written in [WordPress](https://wordpress.org/), hosted on [Netlify](https://www.netlify.com/).
 
 ## Installation
 
