@@ -1,17 +1,19 @@
 {% set recentArticles = articles | recentArticles(page) %}
 
 <details class="flow-small">
-    <summary>Other articles I've written recently</summary>
-    
+    <summary>
+        <h2>Other articles I've written recently</h2>
+    </summary>
+
     <ol class="article-list article-list--small">
         {%- for recentArticle in recentArticles %}
             <li class="article-list__article">
                 <article class="flow-small">
-                    <h4 class="article-list__title">
+                    <h3 class="article-list__title">
                         <a href="/articles/{{ recentArticle.slug }}/" class="article-list__link">
                             {{ recentArticle.title | safe }}
                         </a>
-                    </h4>
+                    </h3>
                     <time class="article-list__date" datetime="{{ recentArticle.date }}">{{ recentArticle.formattedDate }}</time>
                 </article>
             </li>

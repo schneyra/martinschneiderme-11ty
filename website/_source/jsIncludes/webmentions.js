@@ -5,7 +5,7 @@
         if (webmentions.length) {
             // update the label since it's normally written at build-time
             const label = webmentions.length === 1 ? "Reaction" : "Reactions";
-            let labelHtml = `${webmentions.length} ${label}`;
+            let labelHtml = `<h2>${webmentions.length} ${label}</h2>`;
             document.querySelector(
                 "[data-js-webmention-label]"
             ).innerHTML = labelHtml;
