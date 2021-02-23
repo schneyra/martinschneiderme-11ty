@@ -1,13 +1,16 @@
 summary {
-    &:focus {
-        outline: none;
-        text-decoration: underline;
-        text-decoration-thickness: 0.2rem;
-        text-decoration-color: var(--color-secondary);
-    }
-
     & > * {
         display: inline-block;
         font-size: 1em;
+    }
+
+    &:focus {
+        outline: none;
+
+        & > * {
+            text-decoration: underline;
+            text-decoration-thickness: 0.2rem;
+            text-decoration-color: var(--color-secondary);
+        }
     }
 }
