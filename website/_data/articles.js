@@ -2,6 +2,7 @@ const AssetCache = require("@11ty/eleventy-cache-assets");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const Prism = require("prismjs");
+const createOgImage = require("./../../functions/helper/createOgImage");
 
 /**
  * Get the articles from WordPress
@@ -45,6 +46,8 @@ async function processPosts(blogposts) {
                 'href="https://martinschneider.me/'
             );
 
+            const ogImage = await createOgImage(post.title.rendered);
+
             // Return only the data that is needed for the actual output
             return await {
                 title: post.title.rendered,
@@ -61,7 +64,8 @@ async function processPosts(blogposts) {
                 metaDescription: metaDescription,
                 excerpt: post.excerpt.rendered,
                 content: content,
-                categorySlugs: post.msme_categories_slugs
+                categorySlugs: post.msme_categories_slugs,
+                ogImage: ogImage
             };
         })
     );

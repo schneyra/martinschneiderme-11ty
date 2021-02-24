@@ -17,6 +17,12 @@ metaSlug: /
     {% set metaSlug = '/articles/' + article.slug + '/' %}
 {% endif %}
 
+{% if article.ogImage %}
+    {% set ogImage = article.ogImage %}
+{% else %}
+    {% set ogImage = site.ogImage %}
+{% endif %}
+
 <!doctype html>
 <html lang="en">
     <head>
