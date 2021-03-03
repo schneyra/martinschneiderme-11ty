@@ -1,5 +1,16 @@
 const Image = require("@11ty/eleventy-img");
 
+/**
+ * Generates a `picture`-tag
+ *
+ * @param {string} src
+ * @param {string} alt
+ * @param {array} widths
+ * @param {string} sizes
+ * @param {string} pictureClass
+ * @param {string} imageClass
+ * @returns
+ */
 module.exports = async function imageShortcode(
     src,
     alt,
@@ -10,7 +21,7 @@ module.exports = async function imageShortcode(
 ) {
     if (alt === undefined) {
         // You bet we throw an error on missing alt (alt="" works okay)
-        throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+        throw new Error(`Missing \`alt\` on image from: ${src}`);
     }
 
     let metadata = await Image(src, {
