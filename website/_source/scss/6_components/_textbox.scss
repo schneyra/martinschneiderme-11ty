@@ -13,7 +13,7 @@
         position: absolute;
         right: 0;
         top: -10%;
-        background-color: var(--color-primary);
+        background: var(--gradient-primary);
     }
 
     &::after {
@@ -24,6 +24,6 @@
         position: absolute;
         right: 1rem;
         top: -5%;
-        background-color: var(--color-secondary);
+        background: var(--gradient-secondary);
     }
 }

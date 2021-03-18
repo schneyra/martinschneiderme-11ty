@@ -1,16 +1,28 @@
-// Color-Scheme generated at
-// https://coolors.co/001a2b-004672-70163c-baf2bb-eaeaea
 :root {
     --os-color-mode: "light";
 
-    --color-bg: #f3f3f3;
-    --color-bg-offset: #eaeaea;
-    --color-text: #0f131a;
-    --color-text-offset: #171d26;
+    --color-bg: hsl(0, 0%, 95%);
+    --color-bg-offset: hsl(0, 0%, 92%);
 
-    --color-primary: #87d4d4;
-    --color-primary-invert: #171d26;
-    --color-secondary: #ff540a;
+    --color-text: hsl(216, 25%, 8%);
+    --color-text-offset: hsl(216, 25%, 12%);
+
+    --color-primary: hsl(180, 60%, 75%);
+    --color-primary--dark: hsl(180, 60%, 55%);
+    --color-primary-invert: hsl(216, 25%, 12%);
+    --gradient-primary: linear-gradient(
+        180deg,
+        var(--color-primary),
+        var(--color-primary--dark)
+    );
+
+    --color-secondary: hsl(18, 100%, 52%);
+    --color-secondary--dark: hsl(18, 100%, 47%);
+    --gradient-secondary: linear-gradient(
+        180deg,
+        var(--color-secondary),
+        var(--color-secondary--dark)
+    );
 
     --zindex-footer: 0;
     --zindex-content: 1;
@@ -30,11 +42,10 @@
 }
 
 @mixin darkModeCustomProperties() {
-    --color-bg: #171d26;
-    --color-bg-offset: #0f131a;
-    --color-text: #cfcfcf;
-    --color-text-offset: #f7f7f7;
-    --color-primary: #9bd1e8; //#f45b69; //#9bd1e8;
+    --color-bg: hsl(216, 25%, 12%);
+    --color-bg-offset: hsl(216, 25%, 8%);
+    --color-text: hsl(0, 0%, 81%);
+    --color-text-offset: hsl(0, 0%, 97%);
 }
 
 // if the users device prefers dark color mode
