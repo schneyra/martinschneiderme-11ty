@@ -5,6 +5,7 @@ publish = "_site"
 [build.environment]
 CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
 TERM = "xterm"
+NODE_VERSION = "14"
 
 [[plugins]]
     package = "netlify-plugin-cypress"
@@ -22,3 +23,11 @@ TERM = "xterm"
         
 [[plugins]]
     package = "netlify-plugin-html-validate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "default-src 'self';"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
