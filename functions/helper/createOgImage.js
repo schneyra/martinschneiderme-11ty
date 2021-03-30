@@ -37,5 +37,5 @@ module.exports = async function createOgImage(title) {
 
     const ogImage = await Image(buffer, options);
 
-    return ogImage.jpg[0].url;
+    return ogImage.jpeg[0].url;
 };

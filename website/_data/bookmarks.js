@@ -45,8 +45,10 @@ async function processBookmarks(bookmarks) {
 }
 
 module.exports = async () => {
-    let bookmarks = await fetchBookmarks();
+    /*let bookmarks = await fetchBookmarks();
     bookmarks = await processBookmarks(bookmarks);
 
-    return bookmarks;
+    return bookmarks;*/
+
+    return [];
 };
