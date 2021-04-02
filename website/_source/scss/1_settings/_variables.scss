@@ -8,7 +8,7 @@
     --color-text-offset: hsl(216, 25%, 12%);
 
     --color-primary: hsl(180, 60%, 75%);
-    --color-primary--dark: hsl(180, 60%, 55%);
+    --color-primary--dark: hsl(180, 60%, 25%);
     --color-primary-invert: hsl(216, 25%, 12%);
     --gradient-primary: linear-gradient(
         180deg,
@@ -16,7 +16,7 @@
         var(--color-primary--dark)
     );
 
-    --color-secondary: hsl(18, 100%, 52%);
+    --color-secondary: hsl(32, 100%, 50%);
     --color-secondary--dark: hsl(18, 100%, 47%);
     --gradient-secondary: linear-gradient(
         180deg,
