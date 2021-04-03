@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const parseString = require("xml2js").parseString;
+const { AssetCache } = require("@11ty/eleventy-cache-assets");
 
 /**
  * Converts fs.readfile to a promised version
@@ -10,8 +11,15 @@ const util = require("util");
 const readFile = util.promisify(fs.readFile);
 
 async function subscriptions() {
-    const filePath = path.join(__dirname, "../blogroll/subscriptions.opml");
+    let asset = new AssetCache("subscriptions");
 
+    // check if cached
+    if (asset.isCacheValid("1d")) {
+        return asset.getCachedValue();
+    }
+
+    // load file and convert it
+    const filePath = path.join(__dirname, "../blogroll/subscriptions.opml");
     let subscriptions;
 
     await readFile(filePath, { encoding: "utf-8" })
@@ -25,6 +33,8 @@ async function subscriptions() {
             });
         })
         .catch(() => console.error("Error loading file."));
+
+    await asset.save(subscriptions, "json");
 
     return subscriptions;
 }

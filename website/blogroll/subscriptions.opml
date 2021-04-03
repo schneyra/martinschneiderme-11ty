@@ -5,56 +5,59 @@
 </head>
 <body>
 <outline text="1 Personal Blogs" title="1 Personal Blogs">
-<outline title="Dominik Schwind" type="rss" xmlUrl="https://lostfocus.de/feed/" htmlUrl="https://lostfocus.de" text="Dominik Schwind" />
-<outline text="Johannes Mirus" xmlUrl="https://1ppm.de/feed/" htmlUrl="https://1ppm.de" type="rss" title="Johannes Mirus" />
-<outline xmlUrl="https://marcgoertz.de/feed" text="Marc Görtz" type="rss" title="Marc Görtz" htmlUrl="https://marcgoertz.de" />
-<outline type="rss" title="Ben Fredericson" htmlUrl="https://benfredericson.photo.blog" xmlUrl="https://benfredericson.photo.blog/feed/" text="Ben Fredericson" />
-<outline title="Teymur Madjderey" xmlUrl="https://teymurvisuals.com/blog?format=rss" type="rss" text="Teymur Madjderey" htmlUrl="https://teymurvisuals.com/blog/" />
-<outline type="rss" htmlUrl="https://knuspermagier.de" text="Philipp Waldhauer" title="Philipp Waldhauer" xmlUrl="https://knuspermagier.de/feed" />
-<outline type="rss" title="Dominik M. Schwarz" htmlUrl="https://www.dominik-schwarz.net" xmlUrl="https://www.dominik-schwarz.net/feed/" text="Dominik M. Schwarz" />
+<outline xmlUrl="https://lostfocus.de/feed/" htmlUrl="https://lostfocus.de" title="Dominik Schwind" text="Dominik Schwind" type="rss" />
+<outline text="Johannes Mirus" htmlUrl="https://1ppm.de" type="rss" xmlUrl="https://1ppm.de/feed/" title="Johannes Mirus" />
+<outline title="Marc Görtz" type="rss" htmlUrl="https://marcgoertz.de" xmlUrl="https://marcgoertz.de/feed" text="Marc Görtz" />
+<outline text="Ben Fredericson" title="Ben Fredericson" type="rss" htmlUrl="https://benfredericson.photo.blog" xmlUrl="https://benfredericson.photo.blog/feed/" />
+<outline htmlUrl="https://teymurvisuals.com/blog/" xmlUrl="https://teymurvisuals.com/blog?format=rss" type="rss" title="Teymur Madjderey" text="Teymur Madjderey" />
+<outline text="Philipp Waldhauer" title="Philipp Waldhauer" type="rss" htmlUrl="https://knuspermagier.de" xmlUrl="https://knuspermagier.de/feed" />
+<outline type="rss" title="Dominik M. Schwarz" text="Dominik M. Schwarz" htmlUrl="https://www.dominik-schwarz.net" xmlUrl="https://www.dominik-schwarz.net/feed/" />
 </outline>
-<outline text="2 Developers &amp; Designers" title="2 Developers &amp; Designers">
-<outline type="rss" htmlUrl="http://jasonformat.com/" title="Jason Miller" xmlUrl="https://jasonformat.com/rss/" text="Jason Miller" />
-<outline text="Jonathan Snook" title="Jonathan Snook" htmlUrl="https://snook.ca/" type="rss" xmlUrl="https://snook.ca/jonathan/index.rdf" />
-<outline text="Ethan Marcotte" htmlUrl="https://ethanmarcotte.com" title="Ethan Marcotte" type="rss" xmlUrl="https://ethanmarcotte.com/wrote/feed.xml" />
-<outline htmlUrl="http://daverupert.com" text="Dave Rupert" xmlUrl="https://daverupert.com/atom.xml" title="Dave Rupert" type="rss" />
-<outline htmlUrl="https://sarasoueidan.com/blog/" title="Sara Soueidan" text="Sara Soueidan" type="rss" xmlUrl="https://www.sarasoueidan.com/blog/index.xml" />
-<outline htmlUrl="https://css-irl.info" xmlUrl="https://css-irl.info/rss.xml" title="Michelle Barker" type="rss" text="Michelle Barker" />
-<outline type="rss" htmlUrl="https://www.zachleat.com/web/" xmlUrl="https://www.zachleat.com/web/feed/" title="Zach Leatherman" text="Zach Leatherman" />
-<outline text="Jeremy Keith" htmlUrl="https://adactio.com/journal/" type="rss" xmlUrl="https://adactio.com/journal/rss" title="Jeremy Keith" />
-<outline title="Sara Soueidan (TIL)" text="Sara Soueidan (TIL)" type="rss" htmlUrl="https://sarasoueidan.com/today-i-learned/" xmlUrl="https://www.sarasoueidan.com/today-i-learned/index.xml" />
-<outline type="rss" htmlUrl="https://andy-bell.design/" xmlUrl="https://hankchizljaw.com/feed/writing.xml" title="Andy Bell" text="Andy Bell" />
-<outline type="rss" htmlUrl="https://zellwk.com/" xmlUrl="https://zellwk.com/feed.xml" title="Zell Liew" text="Zell Liew" />
-<outline text="Harry Roberts" xmlUrl="https://feeds.feedburner.com/csswizardry" type="rss" title="Harry Roberts" htmlUrl="https://csswizardry.com/" />
-<outline xmlUrl="https://www.matuzo.at/feed.xml" type="rss" htmlUrl="https://matuzo.at" text="Manuel Matuzović" title="Manuel Matuzović" />
-<outline title="Søren Birkemeyer" text="Søren Birkemeyer" htmlUrl="https://annualbeta.com/" type="rss" xmlUrl="https://annualbeta.com/feed" />
-<outline text="Lea Verou" htmlUrl="https://lea.verou.me" xmlUrl="https://lea.verou.me/feed/" type="rss" title="Lea Verou" />
-<outline xmlUrl="https://tatianamac.com/feed/feed.xml" htmlUrl="https://www.tatianamac.com/" title="Tatiana Mac" text="Tatiana Mac" type="rss" />
-<outline type="rss" title="Laura Kalbag" xmlUrl="https://laurakalbag.com/posts/index.xml" text="Laura Kalbag" htmlUrl="https://laurakalbag.com/posts/" />
-<outline type="rss" htmlUrl="https://tobiasahlin.com" xmlUrl="https://tobiasahlin.com/feed.xml" title="Tobias Ahlin" text="Tobias Ahlin" />
-<outline xmlUrl="https://mxb.dev/feed.xml" htmlUrl="https://mxb.dev" title="Max Böck" text="Max Böck" type="rss" />
-<outline title="Bryan Robinson" xmlUrl="https://bryanlrobinson.com/feed.xml" text="Bryan Robinson" type="rss" htmlUrl="https://bryanlrobinson.com" />
-<outline title="Trent Walton" text="Trent Walton" xmlUrl="https://trentwalton.com/feed.xml" type="rss" htmlUrl="http://trentwalton.com" />
-<outline htmlUrl="https://matthiasott.com" xmlUrl="https://matthiasott.com/feed" type="rss" title="Matthias Ott" text="Matthias Ott" />
+<outline title="2 Developers &amp; Designers" text="2 Developers &amp; Designers">
+<outline type="rss" htmlUrl="http://jasonformat.com/" xmlUrl="https://jasonformat.com/rss/" text="Jason Miller" title="Jason Miller" />
+<outline title="Jonathan Snook" htmlUrl="https://snook.ca/" text="Jonathan Snook" xmlUrl="https://snook.ca/jonathan/index.rdf" type="rss" />
+<outline htmlUrl="https://ethanmarcotte.com" xmlUrl="https://ethanmarcotte.com/wrote/feed.xml" type="rss" title="Ethan Marcotte" text="Ethan Marcotte" />
+<outline htmlUrl="https://daverupert.com" xmlUrl="https://daverupert.com/atom.xml" title="Dave Rupert" text="Dave Rupert" type="rss" />
+<outline type="rss" text="Sara Soueidan" xmlUrl="https://www.sarasoueidan.com/blog/index.xml" title="Sara Soueidan" htmlUrl="https://sarasoueidan.com/blog/" />
+<outline text="Michelle Barker" type="rss" htmlUrl="https://css-irl.info/" title="Michelle Barker" xmlUrl="https://css-irl.info/rss.xml" />
+<outline htmlUrl="https://www.zachleat.com/web/" xmlUrl="https://www.zachleat.com/web/feed/" title="Zach Leatherman" text="Zach Leatherman" type="rss" />
+<outline htmlUrl="https://adactio.com/journal/" title="Jeremy Keith" type="rss" text="Jeremy Keith" xmlUrl="https://adactio.com/journal/rss" />
+<outline text="Sara Soueidan (TIL)" type="rss" htmlUrl="https://sarasoueidan.com/today-i-learned/" xmlUrl="https://www.sarasoueidan.com/today-i-learned/index.xml" title="Sara Soueidan (TIL)" />
+<outline type="rss" title="Andy Bell" xmlUrl="https://hankchizljaw.com/feed/writing.xml" text="Andy Bell" htmlUrl="https://andy-bell.design/" />
+<outline text="Zell Liew" xmlUrl="https://zellwk.com/feed.xml" type="rss" title="Zell Liew" htmlUrl="https://zellwk.com/" />
+<outline title="Harry Roberts" text="Harry Roberts" htmlUrl="https://csswizardry.com/" type="rss" xmlUrl="https://feeds.feedburner.com/csswizardry" />
+<outline type="rss" xmlUrl="https://www.matuzo.at/feed.xml" title="Manuel Matuzović" text="Manuel Matuzović" htmlUrl="https://matuzo.at" />
+<outline type="rss" title="Søren Birkemeyer" htmlUrl="https://annualbeta.com/" xmlUrl="https://annualbeta.com/feed" text="Søren Birkemeyer" />
+<outline title="Lea Verou" text="Lea Verou" type="rss" htmlUrl="https://lea.verou.me" xmlUrl="https://lea.verou.me/feed/" />
+<outline type="rss" title="Tatiana Mac" text="Tatiana Mac" htmlUrl="https://www.tatianamac.com/" xmlUrl="https://tatianamac.com/feed/feed.xml" />
+<outline title="Laura Kalbag" type="rss" text="Laura Kalbag" htmlUrl="https://laurakalbag.com/posts/" xmlUrl="https://laurakalbag.com/posts/index.xml" />
+<outline title="Tobias Ahlin" type="rss" htmlUrl="https://tobiasahlin.com" text="Tobias Ahlin" xmlUrl="https://tobiasahlin.com/feed.xml" />
+<outline xmlUrl="https://mxb.dev/feed.xml" type="rss" title="Max Böck" text="Max Böck" htmlUrl="https://mxb.dev" />
+<outline text="Bryan Robinson" htmlUrl="https://bryanlrobinson.com" title="Bryan Robinson" type="rss" xmlUrl="https://bryanlrobinson.com/feed.xml" />
+<outline type="rss" htmlUrl="http://trentwalton.com" title="Trent Walton" xmlUrl="https://trentwalton.com/feed.xml" text="Trent Walton" />
+<outline htmlUrl="https://matthiasott.com" title="Matthias Ott" xmlUrl="https://matthiasott.com/feed" text="Matthias Ott" type="rss" />
+<outline type="rss" title="Simon Hearne" htmlUrl="https://simonhearne.com" text="Simon Hearne" xmlUrl="https://simonhearne.com/feed.xml" />
 </outline>
 <outline text="3 Magazines &amp; Topics" title="3 Magazines &amp; Topics">
-<outline htmlUrl="https://inclusive-components.design/" xmlUrl="http://inclusive-components.club/rss/" text="Inclusive Components" type="rss" title="Inclusive Components" />
-<outline type="rss" text="The History of the Web" xmlUrl="https://thehistoryoftheweb.com/feed/" title="The History of the Web" htmlUrl="https://thehistoryoftheweb.com" />
-<outline title="Smashing Magazine" type="rss" htmlUrl="https://www.smashingmagazine.com/articles/" text="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed" />
-<outline text="Modern CSS Solutions for Old CSS Problems" htmlUrl="https://moderncss.dev" xmlUrl="https://moderncss.dev/feed/" type="rss" title="Modern CSS Solutions for Old CSS Problems" />
-<outline type="rss" text="Increment" htmlUrl="https://increment.com" title="Increment" xmlUrl="https://increment.com/feed.xml" />
+<outline htmlUrl="https://inclusive-components.design/" xmlUrl="http://inclusive-components.club/rss/" title="Inclusive Components" type="rss" text="Inclusive Components" />
+<outline htmlUrl="https://thehistoryoftheweb.com" type="rss" text="The History of the Web" title="The History of the Web" xmlUrl="https://thehistoryoftheweb.com/feed/" />
+<outline htmlUrl="https://www.smashingmagazine.com/" title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed" text="Smashing Magazine" type="rss" />
+<outline type="rss" htmlUrl="https://moderncss.dev" title="Modern CSS Solutions for Old CSS Problems" xmlUrl="https://moderncss.dev/feed/" text="Modern CSS Solutions for Old CSS Problems" />
+<outline htmlUrl="https://increment.com" xmlUrl="https://increment.com/feed.xml" title="Increment" text="Increment" type="rss" />
+<outline htmlUrl="https://webdevelopmenthistory.com" title="Web Development History" type="rss" text="Web Development History" xmlUrl="https://webdevelopmenthistory.com/feed/" />
+<outline xmlUrl="https://briefs.video/feed.xml" text="Webbed Briefs" type="rss" htmlUrl="https://briefs.video/" title="Webbed Briefs" />
 </outline>
 <outline title="4 Newsletter" text="4 Newsletter">
-<outline type="rss" xmlUrl="https://csslayout.news/issues.rss" htmlUrl="https://csslayout.news/issues" text="CSS Layout News" title="CSS Layout News" />
-<outline title="CSS Weekly" htmlUrl="https://css-weekly.com" text="CSS Weekly" xmlUrl="https://feeds.feedburner.com/CSS-Weekly" type="rss" />
-<outline type="rss" title="CSS-Tricks" xmlUrl="https://css-tricks.com/newsletter/feed/" htmlUrl="https://css-tricks.com" text="CSS-Tricks" />
-<outline xmlUrl="https://javascriptweekly.com/rss/" title="JavaScript Weekly" htmlUrl="https://javascriptweekly.com/" text="JavaScript Weekly" type="rss" />
-<outline xmlUrl="https://wdrl.info/feed" text="Web Development Reading List" htmlUrl="https://wdrl.info/archive" title="Web Development Reading List" type="rss" />
-<outline htmlUrl="https://us11.campaign-archive.com/feed?u=884d5f16016183c67252bd18c&amp;id=364cecaf87" xmlUrl="https://us11.campaign-archive.com/feed?u=884d5f16016183c67252bd18c&amp;id=364cecaf87" type="rss" title="A11y Weekly" text="A11y Weekly" />
+<outline htmlUrl="https://csslayout.news/issues" type="rss" title="CSS Layout News" text="CSS Layout News" xmlUrl="https://csslayout.news/issues.rss" />
+<outline xmlUrl="https://feeds.feedburner.com/CSS-Weekly" htmlUrl="https://css-weekly.com" type="rss" text="CSS Weekly" title="CSS Weekly" />
+<outline title="CSS-Tricks" type="rss" htmlUrl="https://css-tricks.com" xmlUrl="https://css-tricks.com/newsletter/feed/" text="CSS-Tricks" />
+<outline text="JavaScript Weekly" title="JavaScript Weekly" xmlUrl="https://javascriptweekly.com/rss/" htmlUrl="https://javascriptweekly.com/" type="rss" />
+<outline title="Web Development Reading List" htmlUrl="https://wdrl.info/archive" xmlUrl="https://wdrl.info/feed" type="rss" text="Web Development Reading List" />
+<outline text="A11y Weekly" htmlUrl="https://us11.campaign-archive.com/feed?u=884d5f16016183c67252bd18c&amp;id=364cecaf87" xmlUrl="https://us11.campaign-archive.com/feed?u=884d5f16016183c67252bd18c&amp;id=364cecaf87" type="rss" title="A11y Weekly" />
 </outline>
 <outline title="5 My feeds" text="5 My feeds">
-<outline text="Martin Schneider" htmlUrl="https://martinschneider.me" title="Martin Schneider" type="rss" xmlUrl="https://martinschneider.me/articles/feed.xml" />
-<outline title="der tag und ich" htmlUrl="https://www.dertagundich.de" text="der tag und ich" xmlUrl="http://www.dertagundich.de/feed/" type="rss" />
+<outline xmlUrl="https://martinschneider.me/articles/feed.xml" text="Martin Schneider" title="Martin Schneider" type="rss" htmlUrl="https://martinschneider.me" />
+<outline text="der tag und ich" htmlUrl="https://www.dertagundich.de" xmlUrl="http://www.dertagundich.de/feed/" type="rss" title="der tag und ich" />
 </outline>
 </body>
 </opml>
