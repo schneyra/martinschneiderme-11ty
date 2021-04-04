@@ -16,7 +16,7 @@ case "$1" in
         npm)
             shift
             docker exec -ti martinschneiderme-11ty_node npm $@
-            ;;   
+            ;;
         serve)
             shift
             docker exec -ti --env ELEVENTY_ENV=development martinschneiderme-11ty_node npx @11ty/eleventy --serve
