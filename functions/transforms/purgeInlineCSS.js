@@ -4,7 +4,10 @@ const { PurgeCSS } = require("purgecss");
 const pattern = /<style>.*?<\/style>/s;
 
 module.exports = async (content, outputPath) => {
-    if (outputPath.endsWith(".html")) {
+    if (
+        outputPath.endsWith(".html") &&
+        outputPath.indexOf("bookmarks/includes") === -1
+    ) {
         // get CSS from content and remove tags
         const extractedCSS = await content
             .match(/<style>(.*?)<\/style>/g)

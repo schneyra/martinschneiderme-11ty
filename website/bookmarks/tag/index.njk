@@ -1,0 +1,26 @@
+---
+layout: page
+title: My Bookmarks
+---
+
+{#
+pagination:
+  data: bookmarks.tags
+  size: 1
+  alias: tag
+permalink: bookmarks/tag/{{ tag }}{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
+
+#}
+
+<ul>
+{% for tag in bookmarks.tags %}
+  <li>
+    <h2>{{ tag.tag }}</h2>
+    <ul>
+    {% for bookmark in tag.bookmarks %}
+      <li>{{ bookmark.title }}</li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
