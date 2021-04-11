@@ -10,42 +10,17 @@ permalink: bookmarks{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNum
 
 <h1 class="headline glitch" data-glitch="Bookmarks">Bookmarks</h1>
 
-<p>Page
+<p>I have currently saved
+  {{ bookmarks.bookmarks | length }}
+  bookmarks. This is page
   {{ pagination.pageNumber+1 }}
   of
-  {{ pagination.pages|length }}. I have currently saved
-  {{ bookmarks.bookmarks | length }}
-  Bookmarks.</p>
+  {{ pagination.pages|length }}.</p>
 
 {% if bookmarks | length %}
   <ol class="article-list">
     {% for bookmark in pagination.items %}
-      <li class="article-list__article">
-        <article class="flow-small">
-          <h2 class="article-list__title">
-            <a href="{{ bookmark.href }}" class="article-list__link">
-              {{ bookmark.title }}
-            </a>
-          </h2>
-
-          <time datetime="{{ bookmark.date }}" class="article-list__date">saved on
-            {{ bookmark.formattedDate }}
-          </time>
-
-          {% if bookmark.excerpt %}
-            <p class="article-list__excerpt">{{ bookmark.excerpt }}</p>
-          {% endif %}
-
-          {% if bookmark.tags | length %}
-            <ul class="tag-list">
-              {% for tag in bookmark.tags %}
-                <li class="tag-list__item">
-                  <span class="tag">{{ tag }}</span></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </article>
-      </li>
+      {% include "_bookmark.njk" %}
     {% endfor %}
   </ol>
 {% endif %}

@@ -6,4 +6,9 @@
         display: inline;
         margin-right: var(--flow-small);
     }
+
+    &__link {
+        z-index: 10000;
+        position: relative;
+    }
 }

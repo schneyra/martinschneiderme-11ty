@@ -1,26 +1,25 @@
 ---
 layout: page
-title: My Bookmarks
----
-
-{#
+title: Tag {{ bookmarks.tag }} > Bookmarks
+metaSlug: /bookmarks/tag/{{ bookmarks.tag | slug }}/
 pagination:
   data: bookmarks.tags
   size: 1
-  alias: tag
-permalink: bookmarks/tag/{{ tag }}{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
+  alias: bookmarks
+permalink: bookmarks/tag/{{ bookmarks.tag | slug }}/index.html
+---
 
-#}
+<h1 class="headline glitch" data-glitch="Tag: {{ bookmarks.tag }}">Tag: {{ bookmarks.tag }}</h1>
 
-<ul>
-{% for tag in bookmarks.tags %}
-  <li>
-    <h2>{{ tag.tag }}</h2>
-    <ul>
-    {% for bookmark in tag.bookmarks %}
-      <li>{{ bookmark.title }}</li>
+<p>I have currently saved {{ bookmarks.bookmarks | length }} bookmarks with this tag.</p>
+<p><a href="/bookmarks/">&larr; Back to all bookmarks</a></p>
+
+{% if bookmarks.bookmarks | length %}
+  <ol class="article-list">
+    {% for bookmark in bookmarks.bookmarks %}
+      {% include "_bookmark.njk" %}
     {% endfor %}
-    </ul>
-  </li>
-{% endfor %}
-</ul>
+  </ol>
+{% endif %}
+
+{% include '_pagination.njk' %}
