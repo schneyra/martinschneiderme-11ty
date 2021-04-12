@@ -5,18 +5,15 @@
 
     &__article {
         border-bottom: 0.1rem solid var(--color-bg-offset);
-        padding: 2rem 0;
+        padding: 2rem;
         position: relative;
 
         @media (hover: hover) {
             transition: padding 200ms ease-in-out,
                 background-color 200ms ease-in-out;
 
-            padding: 2rem 4rem 2rem 0;
-
             &:hover {
                 background-color: var(--color-bg-offset);
-                padding: 2rem;
 
                 .tag {
                     background-color: var(--color-bg);

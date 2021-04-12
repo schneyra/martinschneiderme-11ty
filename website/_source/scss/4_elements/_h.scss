@@ -10,4 +10,8 @@ h5 {
     letter-spacing: 0.025em;
     line-height: 1.3;
     text-shadow: 0.05em 0.05em 0 var(--color-bg-offset);
+
+    & + * {
+        --flow: 1rem;
+    }
 }
