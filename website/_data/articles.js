@@ -2,7 +2,7 @@ const AssetCache = require("@11ty/eleventy-cache-assets");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const Prism = require("prismjs");
-const createOgImage = require("./../../functions/helper/createOgImage");
+const createOgImage = require("./../_functions/helper/createOgImage");
 
 /**
  * Get the articles from WordPress

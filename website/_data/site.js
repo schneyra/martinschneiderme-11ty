@@ -1,4 +1,4 @@
-const createOgImage = require("./../../functions/helper/createOgImage");
+const createOgImage = require("./../_functions/helper/createOgImage");
 
 module.exports = async () => {
     return {

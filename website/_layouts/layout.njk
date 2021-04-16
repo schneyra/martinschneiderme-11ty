@@ -34,7 +34,9 @@ metaSlug: /
             {{ site.name }}
         </title>
 
-        {% include 'colorMode/colorModeHeaderJs.njk' %}
+        <script>
+            {% include "compiledassets/colorModeHeader.js" %}
+        </script>
 
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-500.woff2" as="font" type="font/woff2" crossorigin>
@@ -58,9 +60,14 @@ metaSlug: /
         </main>
 
         {% include "layout/footer.njk" %}
-        
-        {% include 'colorMode/colorModeFooterJs.njk' %}
-        {% include 'layout/serviceWorkerEmbed.njk' %}
+
+        <script>
+            {% include "compiledassets/colorModeToggleButton.js" %}
+        </script>        
+
+        <script>
+            {% include "compiledassets/serviceworkerEmbed.js" %}
+        </script>
         
         <script src="/instantpage.js" defer></script>
     </body>

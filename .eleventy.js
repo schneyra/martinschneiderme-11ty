@@ -1,9 +1,9 @@
-const w3DateFilter = require("./functions/filters/w3cDate.js");
-const recentArticles = require("./functions/filters/recentArticles.js");
-const webmentionButton = require("./functions/filters/webmentionButton.js");
-const htmlmin = require("./functions/transforms/htmlmin");
-const purgeInlineCSS = require("./functions/transforms/purgeInlineCSS");
-const imageShortcode = require("./functions/filters/imageShortcode");
+const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
+const recentArticles = require("./website/_functions/filters/recentArticles.js");
+const webmentionButton = require("./website/_functions/filters/webmentionButton.js");
+const htmlmin = require("./website/_functions/transforms/htmlmin");
+const purgeInlineCSS = require("./website/_functions/transforms/purgeInlineCSS");
+const imageShortcode = require("./website/_functions/filters/imageShortcode");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml"]);
