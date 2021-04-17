@@ -9,8 +9,7 @@
         position: relative;
 
         @media (hover: hover) {
-            transition: padding 200ms ease-in-out,
-                background-color 200ms ease-in-out;
+            transition: background-color 200ms ease-in-out;
 
             &:hover {
                 background-color: var(--color-bg-offset);
@@ -70,15 +69,7 @@
 
     &--small {
         .article-list__article {
-            padding: 1rem 0;
-
-            @media (hover: hover) {
-                padding: 1rem 2rem 1rem 0;
-
-                &:hover {
-                    padding: 1rem;
-                }
-            }
+            padding: 1rem;
         }
 
         &__title {

@@ -1,6 +1,6 @@
 // there needs to be a data-glitch-attribute on the element,
 // containing the same text as the element
-@media (hover: hover) {
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
     .glitch {
         position: relative;
         z-index: 1;
