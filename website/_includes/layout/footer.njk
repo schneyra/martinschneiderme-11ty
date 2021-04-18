@@ -1,22 +1,27 @@
 <footer class="footer h-card">
     <div class="max-wrapper footer-grid">
-        <div class="footer-grid__item">
-            <strong class="footer__name p-name">
-                <a href="https://martinschneider.me" class="u-url u-uid">Martin Schneider</a>
-            </strong>
-            <br>
-            <span class="p-job-title">Frontend-Developer</span>
-            <br>
-            <span class="p-job-title">Diplom Informatiker (FH)</span>
-            <br>
-            <a href="mailto:hallo@martinschneider.me" class="u-email" rel="me">hallo@martinschneider.me</a>
-            <br>
-            <br>
-            <a href="/colophon/">Colophon</a><br>
-            <a href="/legal/">Legal Information</a><br>
-            {#<a href="/privacy/">Privacy Policy</a>#}
+        <div class="footer-grid__item flow">
+            <div>
+                <strong class="footer__name p-name">
+                    <a href="https://martinschneider.me" class="u-url u-uid">Martin Schneider</a>
+                </strong>
+                <br>
+                <span class="p-job-title">Frontend-Developer</span>
+                <br>
+                <span class="p-job-title">Diplom Informatiker (FH)</span>
+                <br>
+                <a href="mailto:hallo@martinschneider.me" class="u-email" rel="me">hallo@martinschneider.me</a>
+            </div>
+            <nav aria-label="Secondary Navigation">
+                <ul class="link-list">
+                    <li class="link-list__element"><a href="/articles/feed.xml">RSS-Feed</a></li>
+                    <li class="link-list__element"><a href="/colophon/">Colophon</a></li>
+                    {#<li class="link-list__element"><a href="/accessibility/">Accessibility</a></li>#}
+                    <li class="link-list__element"><a href="/legal/">Legal Information</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="footer-grid__item">
+        <nav aria-label="Me, elsewhere on the web" class="footer-grid__item">
             <ul class="link-list">
                 <li class="link-list__element">
                     <a href="https://www.dertagundich.de/" 
@@ -66,14 +71,8 @@
                         title="My account on XING">
                         {% include 'svg/xing.svg' %}XING</a>
                 </li>
-                <li class="link-list__element">
-                    <a href="/articles/feed.xml" 
-                        class="link-list__link">
-                        {% include 'svg/rss.svg' %}RSS-Feed
-                    </a>
-                </li>
             </ul>
-        </div>
+        </nav>
         <div class="footer-grid__item footer-grid__image">
             {% image "./website/_source/images/avatar.jpg", "Martin looking sceptical.", [250], "250px", "image", "image__image" %}
         </div>

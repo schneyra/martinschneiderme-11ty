@@ -4,10 +4,6 @@
     list-style: none;
     text-transform: uppercase;
 
-    @media screen and (min-width: 600px) {
-        margin-left: 2rem;
-    }
-
     &__icon {
         width: 0.8em;
         height: 0.8em;
