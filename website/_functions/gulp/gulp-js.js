@@ -10,7 +10,7 @@ const compileJs = () => {
         .pipe(uglify())
         .pipe(dest("./website/_includes/compiledassets"))
         .on("end", function () {
-            console.log("JS compiled");
+            console.log("📦 JS compiled");
         });
 };
 

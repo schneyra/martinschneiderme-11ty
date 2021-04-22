@@ -33,7 +33,7 @@ module.exports = async function imageShortcode(
 
     let lowsrc = metadata.jpeg[0];
 
-    console.log("Generated images for " + src);
+    console.log("🖼 Generated images for " + src);
 
     pictureClass = pictureClass ? `class="${pictureClass}"` : "";
     imageClass = imageClass ? `class="${imageClass}"` : "";

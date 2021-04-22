@@ -9,7 +9,7 @@ const compileCss = () => {
         .pipe(autoprefixer())
         .pipe(dest("./website/_includes/compiledassets"))
         .on("end", function () {
-            console.log("SCSS compiled");
+            console.log("🎨 SCSS compiled");
         });
 };
 

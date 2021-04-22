@@ -44,7 +44,7 @@ async function processPosts(blogposts) {
             content = await generateImages(content);
 
             if (content === undefined) {
-                console.log(post.title.rendered);
+                console.log('🧨 ' + post.title.rendered);
             }
 
             // Make relative URLs absolute (would work otherwise on the site, but not in the feed)
