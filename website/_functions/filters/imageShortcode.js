@@ -16,8 +16,8 @@ module.exports = async function imageShortcode(
     alt,
     widths,
     sizes,
-    pictureClass,
-    imageClass
+    pictureClass = "",
+    imageClass = ""
 ) {
     if (alt === undefined) {
         // You bet we throw an error on missing alt (alt="" works okay)
@@ -33,7 +33,12 @@ module.exports = async function imageShortcode(
 
     let lowsrc = metadata.jpeg[0];
 
-    return `<picture class="${pictureClass}">
+    console.log("Generated images for " + src);
+
+    pictureClass = pictureClass ? `class="${pictureClass}"` : "";
+    imageClass = imageClass ? `class="${imageClass}"` : "";
+
+    return `<picture ${pictureClass}>
         ${Object.values(metadata)
             .map((imageFormat) => {
                 return `  <source type="${
@@ -48,7 +53,7 @@ module.exports = async function imageShortcode(
             width="${lowsrc.width}"
             height="${lowsrc.height}"
             alt="${alt}"
-            class="${imageClass}"
+            ${imageClass}
             loading="lazy"
             decoding="async">
         </picture>`;

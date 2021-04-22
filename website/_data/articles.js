@@ -3,6 +3,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const Prism = require("prismjs");
 const createOgImage = require("./../_functions/helper/createOgImage");
+const imageShortcode = require("./../_functions/filters/imageShortcode");
 
 /**
  * Get the articles from WordPress
@@ -11,7 +12,7 @@ const createOgImage = require("./../_functions/helper/createOgImage");
 async function fetchArticles() {
     try {
         return AssetCache(
-            // http://host.docker.internal/wp-json/wp/v2/msme_posts?per_page=100
+            //"http://host.docker.internal/wp-json/wp/v2/msme_posts?per_page=100",
             "https://www.dertagundich.de/wp-json/wp/v2/msme_posts?per_page=100",
             {
                 duration: "1m",
@@ -37,8 +38,14 @@ async function processPosts(blogposts) {
             );
             metaDescription = metaDescription.replace("\n", "");
 
-            // Code highlighting with Prism
-            let content = highlightCode(post.content.rendered);
+            let content = post.content.rendered;
+
+            content = await highlightCode(content);
+            content = await generateImages(content);
+
+            if (content === undefined) {
+                console.log(post.title.rendered);
+            }
 
             // Make relative URLs absolute (would work otherwise on the site, but not in the feed)
             content = content.replace(
@@ -74,61 +81,93 @@ async function processPosts(blogposts) {
 /**
  * Use Prism.js to highlight embedded code
  */
-function highlightCode(content) {
-    // since Prism.js works on the DOM,
-    // we need an instance of JSDOM in the build
+async function highlightCode(content) {
+    return new Promise((resolve) => {
+        // since Prism.js works on the DOM,
+        // we need an instance of JSDOM in the build
+        const dom = new JSDOM(content);
+
+        let preElements = dom.window.document.querySelectorAll("pre");
+
+        // WordPress delivers a `code`-tag that is wrapped in a `pre`
+        // the used language is specified by a CSS class
+        if (preElements.length) {
+            preElements.forEach((pre) => {
+                let code = pre.querySelector("code");
+
+                if (code) {
+                    // get specified language from css-classname
+                    let codeLanguage = "html";
+                    const preClass = pre.className;
+
+                    var matches = preClass.match(/language-(.*)/);
+                    if (matches != null) {
+                        codeLanguage = matches[1];
+                    }
+
+                    // save the language for later use in CSS
+                    pre.dataset.language = codeLanguage;
+
+                    // set grammar that prism should use for highlighting
+                    let prismGrammar = Prism.languages.html;
+
+                    if (
+                        codeLanguage === "javascript" ||
+                        codeLanguage === "js" ||
+                        codeLanguage === "json"
+                    ) {
+                        prismGrammar = Prism.languages.javascript;
+                    }
+
+                    if (codeLanguage === "css") {
+                        prismGrammar = Prism.languages.css;
+                    }
+
+                    // highlight code
+                    code.innerHTML = Prism.highlight(
+                        code.textContent,
+                        prismGrammar,
+                        codeLanguage
+                    );
+
+                    code.classList.add(`language-${codeLanguage}`);
+                }
+            });
+
+            content = dom.window.document.body.innerHTML;
+        }
+
+        resolve(content);
+    });
+}
+
+/**
+ * Use 11ty/Image to generate a picture tag from the embedded images
+ */
+async function generateImages(content) {
     const dom = new JSDOM(content);
 
-    let preElements = dom.window.document.querySelectorAll("pre");
+    let images = dom.window.document.querySelectorAll("img");
 
-    // WordPress delivers a `code`-tag that is wrapped in a `pre`
-    // the used language is specified by a CSS class
-    if (preElements.length) {
-        preElements.forEach((pre) => {
-            let code = pre.querySelector("code");
-
-            if (code) {
-                // get specified language from css-classname
-                let codeLanguage = "html";
-                const preClass = pre.className;
-
-                var matches = preClass.match(/language-(.*)/);
-                if (matches != null) {
-                    codeLanguage = matches[1];
-                }
-
-                // save the language for later use in CSS
-                pre.dataset.language = codeLanguage;
-
-                // set grammar that prism should use for highlighting
-                let prismGrammar = Prism.languages.html;
-
-                if (
-                    codeLanguage === "javascript" ||
-                    codeLanguage === "js" ||
-                    codeLanguage === "json"
-                ) {
-                    prismGrammar = Prism.languages.javascript;
-                }
-
-                if (codeLanguage === "css") {
-                    prismGrammar = Prism.languages.css;
-                }
-
-                // highlight code
-                code.innerHTML = Prism.highlight(
-                    code.textContent,
-                    prismGrammar,
-                    codeLanguage
+    await Promise.all(
+        [...images].map(async (image) => {
+            if (image.src) {
+                const picture = await imageShortcode(
+                    image.src,
+                    //"http://host.docker.internal/wp-content/uploads/2021/01/dtui-fallback.jpg",
+                    image.alt,
+                    [440, 880, 1200, 1680, 2400],
+                    "(min-width: 52rem) 52rem, 100vw"
                 );
 
-                code.classList.add(`language-${codeLanguage}`);
+                image.outerHTML = picture;
+
+                return image;
             }
-        });
+        })
+    );
 
-        content = dom.window.document.body.innerHTML;
-    }
-
+    content = dom.window.document.body.innerHTML;
     return content;
 }
 
