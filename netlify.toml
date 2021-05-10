@@ -29,4 +29,6 @@ NODE_VERSION = "14"
   [headers.values]
     X-XSS-Protection = "1; mode=block"
     Permissions-Policy = "interest-cohort=()"
-
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin"
