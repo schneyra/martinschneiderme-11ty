@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "email": "mailto:{{ martin.email }}",
+    "image": "{{ martin.url }}{{ martin.imagePath }}",
+    "jobTitle": "{{ martin.jobtitle1}}, {{ martin.jobtitle2 }}",
+    "name": "{{ martin.name }}",
+    "url": "{{ martin.url }}",
+    "sameAs": [
+        {% for account in martin.sameAs %}
+            "{{ account.url }}"{% if not loop.last%},{% endif %}
+        {% endfor %}
+    ] 
+}
+</script>

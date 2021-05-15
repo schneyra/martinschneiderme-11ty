@@ -3,14 +3,14 @@
         <div class="footer-grid__item flow">
             <div>
                 <strong class="footer__name p-name">
-                    <a href="https://martinschneider.me" class="u-url u-uid">Martin Schneider</a>
+                    <a href="{{ site.url }}" class="u-url u-uid">{{ martin.name }}</a>
                 </strong>
                 <br>
-                <span class="p-job-title">Frontend-Developer</span>
+                <span class="p-job-title">{{ martin.jobtitle1 }}</span>
                 <br>
-                <span class="p-job-title">Diplom Informatiker (FH)</span>
+                <span class="p-job-title">{{ martin.jobtitle2 }}</span>
                 <br>
-                <a href="mailto:hallo@martinschneider.me" class="u-email" rel="me">hallo@martinschneider.me</a>
+                <a href="mailto:{{ martin.email }}" class="u-email" rel="me">{{ martin.email }}</a>
             </div>
             <div>
                 <ul class="link-list">
@@ -23,58 +23,20 @@
         </div>
         <div class="footer-grid__item">
             <ul class="link-list">
-                <li class="link-list__element">
-                    <a href="https://www.dertagundich.de/" 
-                        class="link-list__link" 
-                        rel="me noopener noreferrer" 
-                        target="_blank" 
-                        title="My personal blog">
-                        {% include 'svg/blog.svg' %}Blog</a>
-                </li>
-                <li class="link-list__element">
-                    <a href="https://github.com/schneyra" 
-                        class="link-list__link" 
-                        rel="me noopener" 
-                        target="_blank" 
-                        title="My account on Github">
-                        {% include 'svg/github.svg' %}Github</a>
-                </li>
-                <li class="link-list__element">
-                    <a href="https://www.twitter.com/schneyra/" 
-                        class="link-list__link" 
-                        rel="me noopener" 
-                        target="_blank" 
-                        title="My account on twitter">
-                        {% include 'svg/twitter.svg' %}Twitter</a>
-                </li>
-                <li class="link-list__element">
-                    <a href="https://www.instagram.com/schneyra/" 
-                        class="link-list__link" 
-                        rel="me noopener" 
-                        target="_blank" 
-                        title="My account on instagram">
-                        {% include 'svg/instagram.svg' %}instagram</a>
-                </li>
-                <li class="link-list__element">
-                    <a href="https://www.linkedin.com/in/martin-schneider-b941bb5b/" 
-                        class="link-list__link" 
-                        rel="me noopener" 
-                        target="_blank" 
-                        title="My account on linkedin">
-                        {% include 'svg/linkedin.svg' %}LinkedIn</a>
-                </li>
-                <li class="link-list__element">
-                    <a href="https://www.xing.com/profile/Martin_Schneider68/cv" 
-                        class="link-list__link" 
-                        rel="me noopener" 
-                        target="_blank" 
-                        title="My account on XING">
-                        {% include 'svg/xing.svg' %}XING</a>
-                </li>
+                {% for account in martin.sameAs %}
+                    <li class="link-list__element">
+                        <a href="{{ account.url }}" 
+                            class="link-list__link" 
+                            rel="me noopener" 
+                            target="_blank" 
+                            title="{{ account.title }}">
+                            {% include 'svg/' ~ account.name ~ '.svg' %}{{ account.name }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
         <div class="footer-grid__item footer-grid__image">
-            {% image "./website/_source/images/avatar.jpg", "Martin looking sceptical.", [250], "250px", "image", "image__image" %}
+            {% image martin.image, "Martin looking sceptical.", [250], "250px", "image", "image__image" %}
         </div>
     </div>
 </footer>
