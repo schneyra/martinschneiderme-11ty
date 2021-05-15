@@ -1,6 +1,6 @@
 const Image = require("@11ty/eleventy-img");
 
-async function createImage() {
+async function createAvatarImage() {
     const image = await Image("./website/_source/images/avatar.jpg", {
         formats: ["jpeg"],
         outputDir: "./_site/images",
@@ -18,7 +18,7 @@ module.exports = async () => {
         jobtitle1: "Frontend-Developer",
         jobtitle2: "Diplom Informatiker (FH)",
         image: "./website/_source/images/avatar.jpg",
-        imagePath: await createImage(),
+        imagePath: await createAvatarImage(),
         sameAs: [
             {
                 name: "blog",
