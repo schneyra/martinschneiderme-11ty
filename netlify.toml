@@ -1,5 +1,5 @@
 [build]
-command = "npx @11ty/eleventy --input=./website"
+command = "ELEVENTY_ENV='production' npx @11ty/eleventy --input=./website"
 publish = "_site"
 
 [build.environment]

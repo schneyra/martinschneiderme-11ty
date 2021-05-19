@@ -26,7 +26,10 @@ module.exports = async function imageShortcode(
 
     let metadata = await Image(src, {
         widths,
-        formats: ["avif", "webp", "jpeg"],
+        formats:
+            process.env.ELEVENTY_ENV === "production"
+                ? ["avif", "webp", "jpeg"]
+                : ["jpeg"],
         outputDir: "./_site/images",
         urlPath: "/images/"
     });

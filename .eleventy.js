@@ -6,6 +6,8 @@ const purgeInlineCSS = require("./website/_functions/transforms/purgeInlineCSS")
 const imageShortcode = require("./website/_functions/filters/imageShortcode");
 
 module.exports = function (eleventyConfig) {
+    console.log("👷‍♂️ Build mode: " + process.env.ELEVENTY_ENV || "development");
+
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml"]);
 
     eleventyConfig.addWatchTarget("./website/_source");
@@ -19,7 +21,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
     // Transforms run after HTML-generation
-    if (process.env.ELEVENTY_ENV !== "development") {
+    if (process.env.ELEVENTY_ENV === "production") {
         eleventyConfig.addTransform("htmlmin", htmlmin);
         eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
     }
