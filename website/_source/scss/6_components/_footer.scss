@@ -2,6 +2,7 @@
     background-color: var(--color-bg-offset);
     line-height: 2;
     font-size: 1rem;
+    position: relative;
 
     @media screen and (min-width: 600px) {
         z-index: var(--zindex-footer);
@@ -9,6 +10,26 @@
         bottom: 0;
         left: 0;
         width: 100%;
+    }
+
+    @media screen and (min-width: 600px) {
+        &::before {
+            position: absolute;
+            top: 0;
+            transform: translateY(-0.2em);
+            left: 0;
+            width: 100%;
+            content: "Martin Schneider";
+            display: block;
+            color: var(--color-bg);
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 9vw;
+            line-height: 1;
+            font-weight: 700;
+            letter-spacing: 0.4vw;
+            opacity: 0.75;
+        }
     }
 
     &__name {
