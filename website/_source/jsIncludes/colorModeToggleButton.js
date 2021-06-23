@@ -26,6 +26,11 @@
     function toggleColorMode() {
         let currentColorMode = localStorage.getItem("colorMode");
         const osColorMode = getCSSCustomProp("--os-color-mode");
+        const metaTagThemeColor = document.querySelector(
+            '[name="theme-color"]'
+        );
+        const lightColor = "hsl(0, 0%, 95%)";
+        const darkColor = "hsl(216, 25%, 12%)";
 
         // Switches between "auto" and "opposite of 'auto'"
         switch (currentColorMode) {
@@ -65,12 +70,24 @@
                 currentColorMode
             );
 
+            if (currentColorMode === "light") {
+                metaTagThemeColor.content = lightColor;
+            } else {
+                metaTagThemeColor.content = darkColor;
+            }
+
             // save the state for later visits
             localStorage.setItem("colorMode", currentColorMode);
         } else {
             // remove settings to fall back to OS-preference
             document.documentElement.removeAttribute("data-user-color-scheme");
             localStorage.removeItem("colorMode");
+
+            if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+                metaTagThemeColor.content = lightColor;
+            } else {
+                metaTagThemeColor.content = darkColor;
+            }
         }
 
         setToggleButtonLabel(nextColorModeLabel);
