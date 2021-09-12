@@ -1,5 +1,5 @@
 const { src, dest, lastRun } = require("gulp");
-const sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("sass"));
 sass.compiler = require("sass");
 const autoprefixer = require("gulp-autoprefixer");
 
