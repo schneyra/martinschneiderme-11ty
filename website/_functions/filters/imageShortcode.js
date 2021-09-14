@@ -17,7 +17,8 @@ module.exports = async function imageShortcode(
     widths,
     sizes,
     pictureClass = "",
-    imageClass = ""
+    imageClass = "",
+    lazyloading = true
 ) {
     if (alt === undefined) {
         // You bet we throw an error on missing alt (alt="" works okay)
@@ -57,7 +58,7 @@ module.exports = async function imageShortcode(
             height="${lowsrc.height}"
             alt="${alt}"
             ${imageClass}
-            loading="lazy"
+            ${lazyloading ? 'loading="lazy"' : ""}
             decoding="async">
         </picture>`;
 };
