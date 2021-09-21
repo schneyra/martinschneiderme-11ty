@@ -25,7 +25,7 @@ metaDescription: An alphabetical list of blogs, websites and newsletters that I'
 
                         <li class="blogroll-item">
                             {% set imageUrl = "https://avatar.martinschneider.me/" ~ subscription.$.htmlUrl | urlencode ~ "/" %}
-                            {% image imageUrl, "Avatar for " ~ subscription.$.text ~ ".", [16], "16px", "blogroll-item__image" %}
+                            {% image imageUrl, "Avatar for " ~ subscription.$.text ~ ".", [16, 32], "16px", "blogroll-item__image" %}
                             <a href="{{ subscription.$.htmlUrl }}">{{ subscription.$.text }}</a>
                         </li>
 
