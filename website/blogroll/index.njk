@@ -23,7 +23,9 @@ metaDescription: An alphabetical list of blogs, websites and newsletters that I'
                 {% for subscription in group.outline %}
                         {% if loop.first %}<ul class="listsites reset-list">{% endif %}
 
-                        <li>
+                        <li class="blogroll-item">
+                            {% set imageUrl = "https://avatar.martinschneider.me/" ~ subscription.$.htmlUrl | urlencode ~ "/" %}
+                            {% image imageUrl, "Avatar for " ~ subscription.$.text ~ ".", [16], "16px", "blogroll-item__image" %}
                             <a href="{{ subscription.$.htmlUrl }}">{{ subscription.$.text }}</a>
                         </li>
 
