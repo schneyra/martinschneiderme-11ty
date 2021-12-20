@@ -23,7 +23,7 @@
         }
     }
 
-    &:focus {
+    &:focus-visible {
         outline: none;
         color: var(--color-primary-invert);
         background: var(--color-primary);

@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
         <atom:link href="{{ site.url }}/articles/feed.xml" rel="self" type="application/rss+xml" />
         <link>{{ site.url }}</link>
         <description>Hey, my name is Martin. I'm a frontend developer from Germany.</description>
-        <lastBuildDate>{{ articles[0].rssDate }}</lastBuildDate>
+        <lastBuildDate>{{ collections.articles | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
         <language>en-US</language>
         <sy:updatePeriod>hourly</sy:updatePeriod>
         <sy:updateFrequency>1</sy:updateFrequency>
@@ -27,16 +27,16 @@ eleventyExcludeFromCollections: true
         <height>128</height>
     </image> 
 
-    {%- for article in articles.slice(0, 10) %}
-    {% set absoluteUrl = site.url + '/articles/' + article.slug + '/' %}
+    {%- for article in collections.articles | reverse %}
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
         <item>
-            <title>{{ article.title }}</title>
+            <title>{{ article.data.title }}</title>
             <link>{{ absoluteUrl }}</link>
             <dc:creator><![CDATA[Martin Schneider]]></dc:creator>
-            <pubDate>{{ article.rssDate }}</pubDate>
+            <pubDate>{{ article.date | dateToRfc3339 }}</pubDate>
             <guid isPermaLink="false">{{ absoluteUrl }}</guid>
-            <description><![CDATA[{{ article.excerpt | safe }}]]></description>
-            <content:encoded><![CDATA[{{ article.excerpt | safe }} {{ article.content | safe }}]]></content:encoded>
+            <description><![CDATA[{{ article.data.excerpt | safe }}]]></description>
+            <content:encoded><![CDATA[{% if article.data.excerpt %}<p><b>{{ article.data.excerpt | safe }}</b></p>{% endif %} {{ article.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}]]></content:encoded>
         </item>
     {%- endfor %}
     </channel>

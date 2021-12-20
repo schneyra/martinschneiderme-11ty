@@ -1,29 +1,27 @@
 ---
 layout: page
-pagination:
-    data: articles
-    size: 1
-    alias: article
-permalink: articles/{{ article.slug }}/index.html
+permalink: articles/{{ title | slug }}/index.html
 ---
 <div class="flow-large">
     <article data-js-article="data-js-article" class="article flow h-entry">
         <header class="flow-small">
-            <h1 class="headline p-name glitch" data-glitch="{{ article.title | safe }}">
-                {{ article.title | safe }}
+            <h1 class="headline p-name glitch" data-glitch="{{ title | safe }}">
+                {{ title | safe }}
             </h1>
 
-            <a class="article__link u-url" href="{{ site.url }}/articles/{{ article.slug }}/">
-                <time datetime="{{ article.date }}" class="dt-published">{{ article.formattedDate }}</time>
+            <a class="article__link u-url" href="{{ site.url }}/articles/{{ title | slug }}/">
+            <time datetime="{{ page.date }}" class="dt-published">{{ page.date | longDate }}</time>
             </a>
         </header>
 
         {% include "readingIndicator/readingIndicatorMarkup.njk" %}
 
         <div class="flow e-content">
-            <div class="article__excerpt">{{ article.excerpt | safe }}</div>
+            {% if excerpt %}
+                <div class="article__excerpt">{{ excerpt }}</div>
+            {% endif %}
 
-            {{ article.content | safe }}
+            {{ content | safe }}
         </div>
     </article>
 

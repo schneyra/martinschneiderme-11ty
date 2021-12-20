@@ -1,4 +1,4 @@
-{% set recentArticles = articles | recentArticles(page) %}
+{% set recentArticles = collections.articles | recentArticles(page) %}
 
 <details class="flow-small">
     <summary>
@@ -6,15 +6,15 @@
     </summary>
 
     <ol class="article-list article-list--small">
-        {%- for recentArticle in recentArticles %}
+        {%- for recentArticle in recentArticles | reverse %}
             <li class="article-list__article">
                 <article class="flow-small">
                     <h3 class="article-list__title">
-                        <a href="/articles/{{ recentArticle.slug }}/" class="article-list__link">
-                            {{ recentArticle.title | safe }}
+                        <a href="{{ recentArticle.url }}" class="article-list__link">
+                            {{ recentArticle.data.title | safe }}
                         </a>
                     </h3>
-                    <time class="article-list__date" datetime="{{ recentArticle.date }}">{{ recentArticle.formattedDate }}</time>
+                    <time class="article-list__date" datetime="{{ recentArticle.data.date }}">{{ recentArticle.data.date | longDate }}</time>
                 </article>
             </li>
         {%- endfor %}
