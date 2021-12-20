@@ -1,8 +1,8 @@
 ---
-title: Adding Webmentions to My Website
+title: "Adding Webmentions to My Website"
 layout: article
 date: 2020-04-13
-excerpt: Webmention is a webstandard that enables websites to notify each other when content is mentioned, liked or linked. This is my little journey how I have implemented them into my website.
+excerpt: "Webmention is a webstandard that enables websites to notify each other when content is mentioned, liked or linked. This is my little journey how I have implemented them into my website."
 ---
 
 One reason to write posts like this one is sharing my learnings and I'm looking forward to get as much feedback as possible. For the things I write about as well as my hopefully evolving writing skills. Implementing the ability to display webmentions gives me the chance to collect some of the feedback. I've oriented myself roughtly by <a href="https://mxb.dev/blog/using-webmentions-on-static-sites/">this guide by Max Böck</a>. Although he wrote it based on his implementation for his 11ty-based site, I was able to follow his steps. Thank you! Understanding the mechanisms and the interaction between the different tools was actually harder than the actual implementation.

@@ -20,6 +20,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget("./website/_source");
     eleventyConfig.addPassthroughCopy("./website/fonts");
     eleventyConfig.addPassthroughCopy("./website/images");
+    eleventyConfig.addPassthroughCopy("./website/articles/**/*.(jpg|jpeg|png)");
 
     // Filters are used in templates
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);

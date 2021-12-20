@@ -1,8 +1,8 @@
 ---
-title: Welcome to My New Website
+title: "Welcome to My New Website"
 layout: article
 date: 2020-03-15
-excerpt: After years and years of just having some placeholder-site on that domain that I use for emails, I decided to build a classic homepage. My own little place on the internet, that is just about me. Welcome.
+excerpt: "After years and years of just having some placeholder-site on that domain that I use for emails, I decided to build a classic homepage. My own little place on the internet, that is just about me. Welcome."
 ---
 
 While I was always writing articles for my personal blog <a href="https://www.dertagundich.de">der tag und ich</a>, I've never had an idea what my personal site should contain. What would be interesting about me? Over the last weeks, I've developed some ideas and I wrote some paragraphs about me. You can read it on the homepage. I think, that the content might not be in it's final version. But neither am I.
