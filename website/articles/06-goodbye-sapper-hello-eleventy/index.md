@@ -8,7 +8,7 @@ excerpt: "Sometimes things change fast: Just about two months after I launched t
 
 In the <a href="/articles/building-a-website-with-sapper-and-wordpress/">article about the building of the Sapper-version</a> of this site, I wrote:
 
-<blockquote class="wp-block-quote">"To be honest: This page should be a developed as a static-site-generator-project, there is actually no need for all that SPA/SSR-stuff. I’m doing this primarily as a learning-project."</blockquote>
+> "To be honest: This page should be a developed as a static-site-generator-project, there is actually no need for all that SPA/SSR-stuff. I’m doing this primarily as a learning-project."
 
 And although I had a lot of fun with Svelte and Sapper and really liked the concept of the framework, it always bugged me that I had this pretty simple and fast site that also caused about double the traffic it actually needed. Not speaking of the in my case really unnecessary hydration-part that hands over the routing to JavaScript. So while I really liked the site itself and enjoyed writing the first articles, I always had that "this is not right"-feeling. There are use cases for SSR/SPA-frameworks - my little homepage isn't one.
 

@@ -6,7 +6,7 @@ date: 2020-04-20
 excerpt: "Many people prefer the so called dark mode of their operating system. My website now also comes with a dark version. It is automatically shown if you are in dark mode, but you can also toggle it by button."
 ---
 
-A few years back, operating-system-manufacturers started implementing the so-called "dark modes" into their systems. Users can switch between a light or dark color-theme of the OS and the software supporting that feature. CSS gives us a <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">prefers-color-scheme</a></code> Media-Query which provides the selected mode for usage in our stylesheets. The people at Stack Overflow have written a detailed post about <a href="https://stackoverflow.blog/2020/03/31/building-dark-mode-on-stack-overflow/">their journey to the often requested dark mode</a>. Here is how I implemented it.
+A few years back, operating-system-manufacturers started implementing the so-called "dark modes" into their systems. Users can switch between a light or dark color-theme of the OS and the software supporting that feature. CSS gives us a `<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">prefers-color-scheme</a>` Media-Query which provides the selected mode for usage in our stylesheets. The people at Stack Overflow have written a detailed post about <a href="https://stackoverflow.blog/2020/03/31/building-dark-mode-on-stack-overflow/">their journey to the often requested dark mode</a>. Here is how I implemented it.
 
 When developing my last placeholder-site on this domain, I've had implemented a dark version which changed some of the sites colors and even a picture. Here's a comparison of the two versions:
 
@@ -16,11 +16,11 @@ This time I also wanted to give the user the opportunity to switch manually betw
 
 ## Preparing My CSS
 
-The easiest way to change colors on a website is certainly via <em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a></em>. Since I am by no means a designer, so I like to store all colors of my CSS in variables because I'm changing them back and forth all the time. While I only used SCSS-variables in the past, this time I've been using custom properties while developing this site from the beginning. So I didn't have to change much in the existing code: I mainly set a <code>@media (prefers-color-scheme: dark)</code> and began changing colors.
+The easiest way to change colors on a website is certainly via <em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a></em>. Since I am by no means a designer, so I like to store all colors of my CSS in variables because I'm changing them back and forth all the time. While I only used SCSS-variables in the past, this time I've been using custom properties while developing this site from the beginning. So I didn't have to change much in the existing code: I mainly set a `@media (prefers-color-scheme: dark)` and began changing colors.
 
 ## Switching Modes With a Button
 
-My first plan was to manually switch the color mode by setting a variable on the <code>body</code>-Element. So I started by adding a little file named <em>ColorModeToggle.svelte</em> to my repository and started coding. While I was discussing my plan with my frontend-friends they reminded me of the tutorial <em><a href="https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/">Create a user controlled dark or light mode</a></em> by Andy Bell. Luckily that covers everything I've thought of, so was able to follow it mostly.
+My first plan was to manually switch the color mode by setting a variable on the `body`-Element. So I started by adding a little file named <em>ColorModeToggle.svelte</em> to my repository and started coding. While I was discussing my plan with my frontend-friends they reminded me of the tutorial <em><a href="https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/">Create a user controlled dark or light mode</a></em> by Andy Bell. Luckily that covers everything I've thought of, so was able to follow it mostly.
 
 The basic idea, as it is detailed described by Andy Bell, is to let the browser automatically switch to the preferred version of the site - but also let the user decide otherwise.
 
@@ -79,11 +79,11 @@ function toggleColorMode() {
 }
 ```
 
-I also went a slightly other way to show the suitable icon in my button and wrote some helper-classes named <code>.show-if-colormode-light</code> and <code>.show-if-colormode-dark</code> in my CSS. I prefer that solution over storing SVGs in a custom property and those classes might come in handy later in the project.
+I also went a slightly other way to show the suitable icon in my button and wrote some helper-classes named `.show-if-colormode-light` and `.show-if-colormode-dark` in my CSS. I prefer that solution over storing SVGs in a custom property and those classes might come in handy later in the project.
 
 ## Remembering the Selected Mode
 
-I'm using localStorage to remember the visitors preference. While saving and getting the state is easy, I stumbled upon the problem that the pages flashed white when reloading the dark site. After fiddling around with various methods to set the data-attribute when loading the site initially, including the <a href="https://svelte.dev/docs#onMount"><code>onMount</code>-function of Svelte</a>, I've found the solution in swyx' blogpost with the suitable name <em><a href="https://www.swyx.io/writing/avoid-fotc/">Avoiding Flash of Unthemed Code</a></em>. Now I'm using the <code>&lt;svelte:head&gt;</code>-Tag to inject a <code>script</code>-tag with an <em>IIFE</em> into the head of my site. No flashes. Thanks.
+I'm using localStorage to remember the visitors preference. While saving and getting the state is easy, I stumbled upon the problem that the pages flashed white when reloading the dark site. After fiddling around with various methods to set the data-attribute when loading the site initially, including the <a href="https://svelte.dev/docs#onMount">`onMount`-function of Svelte</a>, I've found the solution in swyx' blogpost with the suitable name <em><a href="https://www.swyx.io/writing/avoid-fotc/">Avoiding Flash of Unthemed Code</a></em>. Now I'm using the `&lt;svelte:head&gt;`-Tag to inject a `script`-tag with an <em>IIFE</em> into the head of my site. No flashes. Thanks.
 
 ## In conclusion...
 

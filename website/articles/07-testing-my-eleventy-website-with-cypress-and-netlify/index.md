@@ -9,7 +9,7 @@ Although I know about the importance and benefits of a good code coverage I'm no
 
 Automated testing is a big field in software development and their different types of tests, a lot of theory behind it and many tools that provide the necessary functions. I am by no means an expert in testing but I want to show you what I've learned the in the past days.
 
-When I made my first attempt at this website with Sapper, there was already a folder named <code>cypress</code> in the starter-project and I fiddled around with the test runner it for some time. Getting started with <a href="https://www.cypress.io/">Cypress</a> was somehow easy and it was fun to see my tests run green. Why not try it with my Eleventy page?
+When I made my first attempt at this website with Sapper, there was already a folder named `cypress` in the starter-project and I fiddled around with the test runner it for some time. Getting started with <a href="https://www.cypress.io/">Cypress</a> was somehow easy and it was fun to see my tests run green. Why not try it with my Eleventy page?
 
 Cypress is a JavaScript based Test Runner for End-to-End tests. It basically controls a browser, it can click on links and buttons and checks the results in the browser. Tests are run in Electron, but you can also use Firefox, Chrome or Chrome Canary if they are installed on your machine.
 
@@ -17,7 +17,7 @@ Cypress is a JavaScript based Test Runner for End-to-End tests. It basically con
 
 Nothing too fancy here. I just downloaded the client-software to my MacBook. I usually run my projects in a Node.js Docker container where Cypress can't run without some modifications and wasn't in the mood to run a bigger developer operation at that point. Cypress provides some containers with all required dependencies installed and I might have a look at that later.
 
-Writing the first tests was really easy. First step was placing a basic configuration file named <code>cypress.json</code> into the root folder of my project. It defines the baseUrl that my Eleventy project runs at.
+Writing the first tests was really easy. First step was placing a basic configuration file named `cypress.json` into the root folder of my project. It defines the baseUrl that my Eleventy project runs at.
 
 ```json
 {
@@ -25,7 +25,7 @@ Writing the first tests was really easy. First step was placing a basic configur
 }
 ```
 
-Then I've created a folder <code>cypress/integration</code> and placed a file named <code>homepage.js</code> in it. It contains the following code, that checks the homepage for the correct headline and tests the navigation.
+Then I've created a folder `cypress/integration` and placed a file named `homepage.js` in it. It contains the following code, that checks the homepage for the correct headline and tests the navigation.
 
 ```js
 describe("Page - Homepage", () => {
@@ -63,9 +63,9 @@ The documentation on <a href="https://docs.cypress.io/guides/getting-started/ins
 
 ## Cypress and Netlify and Continous Testing
 
-After all, tests are just as good as the interval they are running. With about six seconds runtime, the tests are too slow to run them on every change while developing. To be honest: I would always forget to run the tests before every commit and because of my odd docker setup a commit hook does not work for me. Luckily, I've read about <s>the beta version of</s> <a href="https://www.netlify.com/products/build/plugins/">Netflify Build Plugins</a> in their newsletter and had discovered <a href="https://github.com/cypress-io/netlify-plugin-cypress">the Cypress plugin</a> that runs tests after the build. Installation was really easy, it was mainly a <code>yarn add cypress netlify-plugin-cypress</code> and a new line in my <code>netlify.toml</code>. As I later found out, I could've just installed the plugin from the Netlify backend.
+After all, tests are just as good as the interval they are running. With about six seconds runtime, the tests are too slow to run them on every change while developing. To be honest: I would always forget to run the tests before every commit and because of my odd docker setup a commit hook does not work for me. Luckily, I've read about <s>the beta version of</s> <a href="https://www.netlify.com/products/build/plugins/">Netflify Build Plugins</a> in their newsletter and had discovered <a href="https://github.com/cypress-io/netlify-plugin-cypress">the Cypress plugin</a> that runs tests after the build. Installation was really easy, it was mainly a `yarn add cypress netlify-plugin-cypress` and a new line in my `netlify.toml`. As I later found out, I could've just installed the plugin from the Netlify backend.
 
-After a push into my repository the deployment started as usual. Netlify began building the latest version of the site and then the Cypress tests against it started. And failed directly. Somehow it wasn't possible to run <code>cy.visit("/");</code> more than once in a spec on the server. After some modifications the tests ran perfectly.
+After a push into my repository the deployment started as usual. Netlify began building the latest version of the site and then the Cypress tests against it started. And failed directly. Somehow it wasn't possible to run `cy.visit("/");` more than once in a spec on the server. After some modifications the tests ran perfectly.
 
 ![A table showing the positive test results of my cypress test.](/articles/07-testing-my-eleventy-website-with-cypress-and-netlify/msme-cypress-netlify-complete.jpeg)
 

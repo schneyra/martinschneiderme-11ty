@@ -6,7 +6,7 @@ date: 2020-08-04
 excerpt: "When I decided to move to the Jamstack, I was sure that I wanted to build something with an API and since I'm quite familiar with WordPress and its API that was an easy choice. But what seemed to be an easy task has had its obstacles."
 ---
 
-The initial idea was that working with different APIs would force me to get more comfortable again with <code>fetch</code> and the work with promises. But relying on an API was also a good idea since my choice of technology only lasted some weeks. <a href="/articles/goodbye-sapper-hello-eleventy/">The switch from Sapper to Eleventy</a> would have been much more work without the blogposts stored in my good old WordPress.
+The initial idea was that working with different APIs would force me to get more comfortable again with `fetch` and the work with promises. But relying on an API was also a good idea since my choice of technology only lasted some weeks. <a href="/articles/goodbye-sapper-hello-eleventy/">The switch from Sapper to Eleventy</a> would have been much more work without the blogposts stored in my good old WordPress.
 
 ## Getting and Processing the Article Data
 
@@ -160,7 +160,7 @@ As you might have noticed, I'm fetching a maximum of one hundred posts. That's t
 
 ## Writing the Pages With Eleventy
 
-Building the overview page for the articles was not much more than following the instructions in the <a href="https://www.11ty.dev/docs/pagination/">11ty documentation on paginations</a>. You might find the sections "Paging a Collection" and "Remapping with permalinks" useful. Here's the front matter of the overview template, where <code>pagination</code> and <code>permalink</code> are the interesting parts. The actual markup of the list is just an <code>ul</code> filled with <code>article</code> elements.
+Building the overview page for the articles was not much more than following the instructions in the <a href="https://www.11ty.dev/docs/pagination/">11ty documentation on paginations</a>. You might find the sections "Paging a Collection" and "Remapping with permalinks" useful. Here's the front matter of the overview template, where `pagination` and `permalink` are the interesting parts. The actual markup of the list is just an `ul` filled with `article` elements.
 
 ```yaml
 ---
@@ -186,7 +186,7 @@ permalink: articles/{{ article.slug }}/index.html
 ---
 ```
 
-If you have read other articles on building a blog with 11ty, you might notice that I did not include any front matter for meta descriptions or the <code>title</code> tag in this template. I'm doing that on other pages as well. Unfortunately, front matter cannot be filled from Nunjucks variables. So I had to trick a bit in my base template. The following code sits right after the front matter in my base layout and solves that problem.
+If you have read other articles on building a blog with 11ty, you might notice that I did not include any front matter for meta descriptions or the `title` tag in this template. I'm doing that on other pages as well. Unfortunately, front matter cannot be filled from Nunjucks variables. So I had to trick a bit in my base template. The following code sits right after the front matter in my base layout and solves that problem.
 
 {% raw %}
 

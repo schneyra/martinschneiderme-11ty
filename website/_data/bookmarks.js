@@ -91,11 +91,6 @@ module.exports = async () => {
     );
 
     return {
-        bookmarks: [],
-        tags: []
-    };
-
-    return {
         bookmarks: processedBookmarks,
         tags: bookmarksByTag
     };

@@ -33,13 +33,13 @@ In order to collect other than direct webmentions, for example from tweets, some
 
 ## Displaying the Mentions for a Post
 
-Finally, some coding! I was almost disappointed about that part. It was mainly a simple <code>fetch()</code> against the URL provided by webmention.io, extended with some parameters for filtering the specific URL and sorting.
+Finally, some coding! I was almost disappointed about that part. It was mainly a simple `fetch()` against the URL provided by webmention.io, extended with some parameters for filtering the specific URL and sorting.
 
 ```html
 https://webmention.io/api/mentions.jf2?domain=${domain}&amp;sort-dir=up&amp;target=${targetBase}${slug}/
 ```
 
-Then some templating to show the different types of mentions like "like-of", "repost-of" or "in-reply-to" and some CSS. That file named <code>Webmention.svelte</code> is quite boring. At least for the moment. I'll see if and how the mentions will be used and optimize here and there.
+Then some templating to show the different types of mentions like "like-of", "repost-of" or "in-reply-to" and some CSS. That file named `Webmention.svelte` is quite boring. At least for the moment. I'll see if and how the mentions will be used and optimize here and there.
 
 ## Notifying other Pages
 

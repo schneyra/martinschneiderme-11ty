@@ -15,7 +15,7 @@ Today I deployed the first version of <a href="/blogroll/">my blogroll</a>. It i
 
 The blogroll is generated from an OPML file that I exported from <a href="https://reederapp.com/">Reeder</a>, which is the client I use for reading the RSS feeds in my Feedly account. The file is checked into the repository of this site and provides the data for the blogroll in the build process. I'm just going to update that file from time to time. There are definitely sites missing in my list. Feel free to send me some links!
 
-Since OPML is an XML based format I was able to convert it to JSON with <a href="https://github.com/Leonidas-from-XIV/node-xml2js">node-xml2js</a>. Here is the complete script that I've placed in the <code>data</code> folder of Eleventy. The related template is quite simple: Just two nested for-loops that print the groups and the containing feeds.
+Since OPML is an XML based format I was able to convert it to JSON with <a href="https://github.com/Leonidas-from-XIV/node-xml2js">node-xml2js</a>. Here is the complete script that I've placed in the `data` folder of Eleventy. The related template is quite simple: Just two nested for-loops that print the groups and the containing feeds.
 
 ```js
 const fs = require("fs");
