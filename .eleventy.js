@@ -9,6 +9,7 @@ const webmentionButton = require("./website/_functions/filters/webmentionButton.
 const htmlmin = require("./website/_functions/transforms/htmlmin");
 const purgeInlineCSS = require("./website/_functions/transforms/purgeInlineCSS");
 const imageShortcode = require("./website/_functions/filters/imageShortcode");
+const imageShortcodeForArticles = require("./website/_functions/filters/imageShortcodeForArticles");
 
 module.exports = function (eleventyConfig) {
     console.log("👷‍♂️ Build mode: " + process.env.ELEVENTY_ENV || "development");
@@ -30,6 +31,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("recentArticles", recentArticles);
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+    eleventyConfig.addNunjucksAsyncShortcode(
+        "imageForArticles",
+        imageShortcodeForArticles
+    );
 
     // Transforms run after HTML-generation
     if (process.env.ELEVENTY_ENV === "production") {
