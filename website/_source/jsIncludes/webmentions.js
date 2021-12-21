@@ -6,14 +6,13 @@
             // update the label since it's normally written at build-time
             const label = webmentions.length === 1 ? "Reaction" : "Reactions";
             let labelHtml = `<h2>${webmentions.length} ${label}</h2>`;
-            document.querySelector(
-                "[data-js-webmention-label]"
-            ).innerHTML = labelHtml;
+            document.querySelector("[data-js-webmention-label]").innerHTML =
+                labelHtml;
 
             // now we're generating the actual list
             html += `<ol class="webmentions">`;
 
-            webmentions.forEach((mention) => {
+            webmentions.forEach(async (mention) => {
                 const twitterString = mention.url.includes("twitter.com")
                     ? " on twitter"
                     : "";
@@ -66,7 +65,7 @@
     async function getWebmentions(slug) {
         return new Promise((resolve, reject) => {
             fetch(
-                `https://webmention.io/api/mentions.jf2?domain=martinschneider.me&per-page=200&sort-dir=up&target=https://martinschneider.me/articles/${slug}/`
+                `https://webmention.io/api/mentions.jf2?domain=martinschneider.me&per-page=200&sort-dir=up&target=https://martinschneider.me${slug}`
             )
                 .then((response) => response.json())
                 .then((data) => resolve(data));

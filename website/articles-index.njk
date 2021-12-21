@@ -6,7 +6,8 @@ pagination:
   alias: articlelist
   data: collections.articles
   size: 10
-permalink: articles{% if articles.pageNumber > 0 %}/page{{ articles.pageNumber + 1}}{% endif %}/index.html
+  reverse: true
+permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
 <h1 class="headline glitch" data-glitch="Articles">Articles</h1>
@@ -22,10 +23,10 @@ permalink: articles{% if articles.pageNumber > 0 %}/page{{ articles.pageNumber +
   <a href="https://twitter.com/schneyra">my twitter</a>!
 </p>
 
-{% for article in articlelist | reverse %}
+{%- for article in articlelist -%}
 
-  {% set isTilPost = 'til' in article.data.tags  %}
-  {% set isChangelogPost = false %}
+  {%- set isTilPost = 'til' in article.data.tags -%}
+  {%- set isChangelogPost = 'changelog' in article.data.tags -%}
 
   {% if loop.first %}
     <ol class="article-list">
@@ -56,6 +57,6 @@ permalink: articles{% if articles.pageNumber > 0 %}/page{{ articles.pageNumber +
     {% if loop.last %}
     </ol>
   {% endif %}
-{% endfor %}
+{%- endfor -%}
 
 {% include '_pagination.njk' %}

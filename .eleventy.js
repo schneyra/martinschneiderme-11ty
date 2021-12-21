@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+//const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
 const longDate = require("./website/_functions/filters/longDate.js");
@@ -14,6 +15,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(syntaxHighlight);
+    //eleventyConfig.addPlugin(UpgradeHelper);
 
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml", "md"]);
 

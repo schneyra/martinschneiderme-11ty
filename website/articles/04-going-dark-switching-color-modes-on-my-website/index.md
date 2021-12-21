@@ -1,5 +1,6 @@
 ---
 title: "Going Dark: Switching Color Modes on My Website"
+permalink: "/articles/going-dark-switching-color-modes-on-my-website/"
 layout: article
 date: 2020-04-20
 excerpt: "Many people prefer the so called dark mode of their operating system. My website now also comes with a dark version. It is automatically shown if you are in dark mode, but you can also toggle it by button."
