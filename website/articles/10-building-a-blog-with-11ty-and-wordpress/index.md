@@ -4,7 +4,6 @@ permalink: "/articles/building-a-website-with-11ty-and-wordpress/"
 layout: article
 date: 2020-08-04
 excerpt: "When I decided to move to the Jamstack, I was sure that I wanted to build something with an API and since I'm quite familiar with WordPress and its API that was an easy choice. But what seemed to be an easy task has had its obstacles."
-templateEngineOverride: njk,md
 ---
 
 The initial idea was that working with different APIs would force me to get more comfortable again with <code>fetch</code> and the work with promises. But relying on an API was also a good idea since my choice of technology only lasted some weeks. <a href="/articles/goodbye-sapper-hello-eleventy/">The switch from Sapper to Eleventy</a> would have been much more work without the blogposts stored in my good old WordPress.
@@ -189,6 +188,8 @@ permalink: articles/{{ article.slug }}/index.html
 
 If you have read other articles on building a blog with 11ty, you might notice that I did not include any front matter for meta descriptions or the <code>title</code> tag in this template. I'm doing that on other pages as well. Unfortunately, front matter cannot be filled from Nunjucks variables. So I had to trick a bit in my base template. The following code sits right after the front matter in my base layout and solves that problem.
 
+{% raw %}
+
 ```twig
 {# Override front matter if the current page is an article #}
 {% if article.title %}
@@ -200,12 +201,12 @@ If you have read other articles on building a blog with 11ty, you might notice t
 {% endif %}
 
 {% if article.slug %}
-    {% set metaSlug = '/articles/' + article.slug + '/' %}
+    {% set metaSlug = '/articles/' + article.slug+ '/' %}
 {% endif %}
 ```
 
+{% endraw %}
+
 ## Triggering New Netlify Builds From WordPress
 
-That's how the pages of the "article" part of this site are generated. Within my WordPress I'm currently using the plugin <a href="https://wordpress.org/plugins/deploy-netlifypress/">Deploy with NetlifyPress</a> to trigger a new build of my page when I change one of the posts in my custom post type. There are several other plugins out there, but I like that I can specify which Custom Post Type should trigger a build.
-
-And that's it. If you have any questions or ideas: <a href="https://twitter.com/schneyra">Feel free to contact me</a>.
+That's how the pages of the "article" part of this site are generated. Within my WordPress I'm currently using the plugin <a href="https://wordpress.org/plugins/deploy-netlifypress/">Deploy with NetlifyPress</a> to trigger a new build of my page when I change one of the posts in my custom post type. There are several other plugins out there, but I like that I can specify which Custom Post Type should trigger a build. And that's it. If you have any questions or ideas: <a href="https://twitter.com/schneyra">Feel free to contact me</a>.

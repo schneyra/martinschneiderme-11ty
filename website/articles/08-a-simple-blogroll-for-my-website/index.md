@@ -9,7 +9,7 @@ The idea came to me when I cleared out my feed reader some weeks ago. With my gr
 
 <em>"Why not publish a list of the pages I have subscribed to?"</em> Linking and recommending other peoples content is one of the pillars of the modern web. A blogroll with familiar links to other pages also helps me to identify like minded people.
 
-Today I deployed the first version of <a href="https://martinschneider.me/blogroll/">my blogroll</a>. It is simply an alphabetically ordered list of pages. They are for now grouped by "Personal blogs", "Developers and Designers", "Magazines and Topics" and "Newsletters". While the first two groups contain links to pages of individual persons, the sites within the last two groups publish or recommend mostly the content of other people and are quite a good source for interesting content.
+Today I deployed the first version of <a href="/blogroll/">my blogroll</a>. It is simply an alphabetically ordered list of pages. They are for now grouped by "Personal blogs", "Developers and Designers", "Magazines and Topics" and "Newsletters". While the first two groups contain links to pages of individual persons, the sites within the last two groups publish or recommend mostly the content of other people and are quite a good source for interesting content.
 
 ## Converting OPML
 

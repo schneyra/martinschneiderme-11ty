@@ -38,6 +38,7 @@ module.exports = function (eleventyConfig) {
     }
 
     return {
+        markdownTemplateEngine: "njk",
         dir: {
             input: "website",
             includes: "_includes",

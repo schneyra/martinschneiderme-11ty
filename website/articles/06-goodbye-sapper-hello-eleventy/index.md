@@ -6,7 +6,7 @@ date: 2020-05-13
 excerpt: "Sometimes things change fast: Just about two months after I launched this website with the SSR-Framework Sapper I'm replacing it with a site that is generated with the static site generator Eleventy. Let me explain."
 ---
 
-In the <a href="https://martinschneider.me/articles/building-a-website-with-sapper-and-wordpress/">article about the building of the Sapper-version</a> of this site, I wrote:
+In the <a href="/articles/building-a-website-with-sapper-and-wordpress/">article about the building of the Sapper-version</a> of this site, I wrote:
 
 <blockquote class="wp-block-quote">"To be honest: This page should be a developed as a static-site-generator-project, there is actually no need for all that SPA/SSR-stuff. I’m doing this primarily as a learning-project."</blockquote>
 
@@ -32,4 +32,4 @@ Apart from that I really like the community around the software. There are plent
 
 Well, first: More content. I have some raw drafts in the backend and also one or two ideas that I could implement into this site. Then: Some optimization and cleanup. I am mostly <em>learning by doing</em> so this page is a repository consisting of some thrown-together and latenight-written code. And maybe I'll return to Svelte with a little side project. We'll see.
 
-I've tinkered a bit with end-to-end- and accessibility-testing, but that topic will need some further investigation. Feel free to subscribe to my <a href="https://martinschneider.me/articles/feed.xml">RSS-Feed</a> or <a href="https://twitter.com/schneyra">follow <em>@schneyra</em> on twitter</a>.
+I've tinkered a bit with end-to-end- and accessibility-testing, but that topic will need some further investigation. Feel free to subscribe to my <a href="/articles/feed.xml">RSS-Feed</a> or <a href="https://twitter.com/schneyra">follow <em>@schneyra</em> on twitter</a>.
