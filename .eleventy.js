@@ -43,7 +43,7 @@ module.exports = function (eleventyConfig) {
     }
 
     return {
-        markdownTemplateEngine: "njk, md",
+        markdownTemplateEngine: "njk",
         dir: {
             input: "website",
             includes: "_includes",
