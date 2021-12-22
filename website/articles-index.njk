@@ -31,7 +31,7 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
   {% if loop.first %}
     <ol class="article-list">
     {% endif %}
-    <li class="article-list__article" data-cy="articleListArticle">
+    <li class="article-list__article{% if isTilPost %} article-list__article--til{% endif %}{% if isChangelogPost %} article-list__article--changelog{% endif %}" data-cy="articleListArticle">
       {% if isTilPost %}
         {% include 'svg/lightbulb.svg' %}
       {% endif %}
