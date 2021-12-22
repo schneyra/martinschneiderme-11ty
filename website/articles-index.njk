@@ -47,7 +47,7 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
           <a href="{{ article.url }}" class="article-list__link">{{ article.data.title | safe }}</a>
         </h2>
 
-        <time datetime="{{ article.date }}" class="article-list__date">{{ article.date | longDate }}</time>
+        <time datetime="{{ article.date | w3DateFilter }}" class="article-list__date">{{ article.date | longDate }}</time>
 
         {% if not isTilPost and not isChangelogPost %}
           <div class="article-list__excerpt">{{ article.data.excerpt | safe }}</div>

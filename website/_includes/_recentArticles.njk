@@ -14,7 +14,7 @@
                             {{ recentArticle.data.title | safe }}
                         </a>
                     </h3>
-                    <time class="article-list__date" datetime="{{ recentArticle.data.date }}">{{ recentArticle.data.date | longDate }}</time>
+                    <time class="article-list__date" datetime="{{ recentArticle.data.date | w3DateFilter }}">{{ recentArticle.data.date | longDate }}</time>
                 </article>
             </li>
         {%- endfor %}

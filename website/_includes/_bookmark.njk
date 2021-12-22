@@ -6,7 +6,7 @@
         </a>
         </h2>
 
-        <time datetime="{{ bookmark.date }}" class="article-list__date">saved on
+        <time datetime="{{ bookmark.date | w3DateFilter }}" class="article-list__date">saved on
         {{ bookmark.formattedDate }}
         </time>
 

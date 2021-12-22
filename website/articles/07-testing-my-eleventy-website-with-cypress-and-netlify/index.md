@@ -1,6 +1,6 @@
 ---
 title: "Testing My Eleventy-Website With Cypress and Netlify"
-date: 2020-05-13
+date: 2020-05-25
 excerpt: 'Last time I wrote "this page is a repository consisting of some thrown-together and latenight-written code". Some tests should ensure that I don''t break to much when I''m, cleaning up the code. Here''s how I created a basic setup that runs my tests before every deployment.'
 ---
 
