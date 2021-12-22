@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: articles/{{ title | slug }}/index.html
+permalink: articles/{{ title | slugify }}/index.html
 ---
 <div class="flow-large">
     <article data-js-article="data-js-article" class="article flow h-entry">
@@ -9,7 +9,7 @@ permalink: articles/{{ title | slug }}/index.html
                 {{ title | safe }}
             </h1>
 
-            <a class="article__link u-url" href="{{ site.url }}/articles/{{ title | slug }}/">
+            <a class="article__link u-url" href="{{ site.url }}/articles/{{ title | slugify }}/">
             <time datetime="{{ page.date }}" class="dt-published">{{ page.date | longDate }}</time>
             </a>
         </header>

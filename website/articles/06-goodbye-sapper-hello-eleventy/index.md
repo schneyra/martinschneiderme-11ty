@@ -1,6 +1,5 @@
 ---
 title: "Goodbye Sapper, hello Eleventy!"
-permalink: "/articles/goodbye-sapper-hello-eleventy/"
 layout: article
 date: 2020-05-13
 excerpt: "Sometimes things change fast: Just about two months after I launched this website with the SSR-Framework Sapper I'm replacing it with a site that is generated with the static site generator Eleventy. Let me explain."

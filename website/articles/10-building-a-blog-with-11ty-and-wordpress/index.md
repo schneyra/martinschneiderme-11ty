@@ -1,6 +1,5 @@
 ---
 title: "Building a Blog With 11ty and WordPress"
-permalink: "/articles/building-a-website-with-11ty-and-wordpress/"
 layout: article
 date: 2020-08-04
 excerpt: "When I decided to move to the Jamstack, I was sure that I wanted to build something with an API and since I'm quite familiar with WordPress and its API that was an easy choice. But what seemed to be an easy task has had its obstacles."

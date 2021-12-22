@@ -1,6 +1,5 @@
 ---
 title: "Meta Element: theme-color"
-permalink: "/articles/meta-tag-theme-color/"
 layout: article
 date: 2021-05-18
 excerpt: "In the changelog I’m documenting modifications to this site that might be of interest, but are not necessarily my own ideas or work. This time it’s about a new tag that's supported in Safari."

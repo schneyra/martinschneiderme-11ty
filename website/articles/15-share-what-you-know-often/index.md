@@ -1,6 +1,5 @@
 ---
 title: "Share what you know. Often."
-permalink: "/articles/share-what-you-know-often/"
 layout: article
 date: 2021-05-18
 excerpt: "Just because I know something and consider it general knowledge does not mean that this the case for everyone. We need to share what we know more often."

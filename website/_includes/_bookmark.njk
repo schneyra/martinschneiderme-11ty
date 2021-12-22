@@ -18,7 +18,7 @@
         <ul class="tag-list">
             {% for tag in bookmark.tags %}
             <li class="tag-list__item">
-                <a href="/bookmarks/tag/{{ tag | slug}}/" class="tag-list__link tag">{{ tag }}</a>
+                <a href="/bookmarks/tag/{{ tag | slugify }}/" class="tag-list__link tag">{{ tag }}</a>
             </li>
             {% endfor %}
         </ul>
