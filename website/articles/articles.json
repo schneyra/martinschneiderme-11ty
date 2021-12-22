@@ -1,6 +1,7 @@
 {
-    "tags": [
-      "articles"
-    ]
-  }
+  "layout": "article",
+  "tags": [
+    "articles"
+  ]
+}
   

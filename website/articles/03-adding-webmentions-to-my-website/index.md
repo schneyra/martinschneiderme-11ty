@@ -1,6 +1,5 @@
 ---
 title: "Adding Webmentions to My Website"
-layout: article
 date: 2020-04-13
 excerpt: "Webmention is a webstandard that enables websites to notify each other when content is mentioned, liked or linked. This is my little journey how I have implemented them into my website."
 ---

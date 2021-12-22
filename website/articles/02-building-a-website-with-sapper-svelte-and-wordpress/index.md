@@ -1,6 +1,5 @@
 ---
 title: "Building a Website With Sapper, Svelte and WordPress"
-layout: article
 date: 2020-03-28
 excerpt: "Sapper is the application framework for Svelte. An easy way to build a server side rendered single page application. (Bingo!) WordPress is used as a backend for articles like this one. Here are some details."
 ---

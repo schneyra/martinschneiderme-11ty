@@ -1,6 +1,5 @@
 ---
 title: "Goodbye 2020! 🥂 Hello 2021!"
-layout: article
 date: 2020-12-31
 excerpt: "While I'm struggling more than ever to write the annual recap of the last year on my personal blog, I don't have that problem on this more tech-focused site. In terms of work and tech, 2020 was a demanding, but the outcome was very good."
 ---

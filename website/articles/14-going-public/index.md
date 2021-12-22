@@ -1,6 +1,5 @@
 ---
 title: "Going Public"
-layout: article
 date: 2021-04-19
 excerpt: "Some weeks ago I decided to make a big step forward and show more of my work to the world. I have a lot of thoughts about that. I actually might be overthinking this."
 ---

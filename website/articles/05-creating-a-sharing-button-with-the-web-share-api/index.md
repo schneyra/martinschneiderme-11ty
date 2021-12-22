@@ -1,6 +1,5 @@
 ---
 title: "Creating a Sharing Button With the Web Share API"
-layout: article
 date: 2020-05-10
 excerpt: "One of the great features of the modern internet is the ability to easily  share content. I'm sharing a lot of links to content of all kind every day. Most of the time I simply copy URLs from the browser and paste them somewhere. But wouldn't it be neat to have a simpler solution?"
 ---

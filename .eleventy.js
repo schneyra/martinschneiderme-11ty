@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(UpgradeHelper);
 
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml", "md"]);
+    eleventyConfig.addWatchTarget("./website/articles");
 
     eleventyConfig.addWatchTarget("./website/_source");
     eleventyConfig.addPassthroughCopy("./website/fonts");

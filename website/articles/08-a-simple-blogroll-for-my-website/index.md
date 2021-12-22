@@ -1,6 +1,5 @@
 ---
 title: "A Simple Blogroll for My Website"
-layout: article
 date: 2020-06-06
 excerpt: "Back in the days almost every blog had a blogroll: A simple list of other websites that the owner likes or recommends. I've already seen some on other sites in the past weeks - maybe it's time to bring that tradition back."
 ---

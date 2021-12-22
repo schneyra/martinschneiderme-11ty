@@ -1,6 +1,5 @@
 ---
 title: "Building Charts With CSS"
-layout: article
 date: 2021-09-12
 excerpt: "These days, I'm working a lot on the WordPress theme  of my blog. This weekend I made some charts for the archive page to make it a bit more visually appealing."
 ---

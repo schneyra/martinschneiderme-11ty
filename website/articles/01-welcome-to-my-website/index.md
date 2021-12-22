@@ -1,6 +1,5 @@
 ---
 title: "Welcome to My New Website"
-layout: article
 date: 2020-03-15
 excerpt: "After years and years of just having some placeholder-site on that domain that I use for emails, I decided to build a classic homepage. My own little place on the internet, that is just about me. Welcome."
 ---
