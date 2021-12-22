@@ -1,6 +1,6 @@
 const Image = require("@11ty/eleventy-img");
 
-module.exports = async function createOgImage(title) {    
+module.exports = async function createOgImage(title) {
     let titleAsArray = title.split(" ");
     let firstPartOfTitle = [];
 
