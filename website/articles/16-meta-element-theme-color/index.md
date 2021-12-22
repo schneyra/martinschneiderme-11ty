@@ -8,7 +8,7 @@ tags:
     - changelog
 ---
 
-With the <a href="https://developer.apple.com/safari/download/" data-type="URL" data-id="https://developer.apple.com/safari/download/">latest developer preview of Safari</a> there's support for the meta element with the name <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" data-type="URL" data-id="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color">theme-color</a></code>. While there was some support mostly on Android phones, it is now also possible to modify the color of the tab bar of Apples browser on macOS. The support for media queries seems to be new. So first I've added these two lines way up in the <code>head</code>-Element of my template to set the color to match the background color of my website.
+With the <a href="https://developer.apple.com/safari/download/">latest developer preview of Safari</a> there's support for the meta element with the name <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color">theme-color</a></code>. While there was some support mostly on Android phones, it is now also possible to modify the color of the tab bar of Apples browser on macOS. The support for media queries seems to be new. So first I've added these two lines way up in the <code>head</code>-Element of my template to set the color to match the background color of my website.
 
 ```html
 <meta
@@ -32,4 +32,4 @@ But since the neccessary code is already in place, it's just a small change in t
 
 Im pretty happy with that solution for the moment, although I'm a bit concerned that I might forget to change the color in these two additional places when I'm fiddling around in the stylesheets next time. Maybe this is the right point to think about design tokens. I like this small detail and I'm curious if other browser vendors will provide something similar in the future. People have for example also used it to make notifications more obvious.
 
-A lot of the new features of Safari in the upcoming release of macOS are shown in <a href="https://developer.apple.com/videos/play/wwdc2021/10029/" data-type="URL" data-id="https://developer.apple.com/videos/play/wwdc2021/10029/">this video on apple.com</a>.
+A lot of the new features of Safari in the upcoming release of macOS are shown in <a href="https://developer.apple.com/videos/play/wwdc2021/10029/">this video on apple.com</a>.
