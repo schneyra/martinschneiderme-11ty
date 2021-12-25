@@ -10,8 +10,6 @@
     {% set description = site.defaultDescription %}
 {% endif %}
 
-{{ ogImage }}
-
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="/favicon.ico" rel="icon" type="image/x-icon">
 
@@ -36,5 +34,5 @@
 <meta property="twitter:title" content="{{ title }}{% if title %} &rsaquo; {% endif %}{{ site.name }}">
 <meta property="twitter:description" content="{{ description | safe }}">
 {% if ogImage %}
-    <meta property="twitter:image" content="https://martinschneider.me{{ ogImage }}">
+    <meta property="twitter:image" content="https://martinschneider.me{{ title | createOgImage }}">
 {% endif %}
