@@ -33,6 +33,9 @@
 <meta property="twitter:url" content="{{ absoluteUrl }}">
 <meta property="twitter:title" content="{{ title }}{% if title %} &rsaquo; {% endif %}{{ site.name }}">
 <meta property="twitter:description" content="{{ description | safe }}">
-{% if ogImage %}
+
+{% if title %}
     <meta property="twitter:image" content="https://martinschneider.me{{ title | createOgImage }}">
+{% else %}
+    <meta property="twitter:image" content="https://martinschneider.me{{ site.ogImage }}">
 {% endif %}

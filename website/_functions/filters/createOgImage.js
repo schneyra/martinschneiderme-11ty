@@ -1,6 +1,8 @@
 const Image = require("@11ty/eleventy-img");
+const TextToSVG = require('text-to-svg');
 
 module.exports = async function createOgImage(title) {
+    // split the given text into two parts
     let titleAsArray = title.split(" ");
     let firstPartOfTitle = [];
 
@@ -10,6 +12,21 @@ module.exports = async function createOgImage(title) {
             Math.floor(titleAsArray.length / 2)
         );
     }
+
+    // Title
+    let textToSVG = TextToSVG.loadSync(__dirname + '/../../fonts/IBMPlexSans-SemiBold.otf');
+
+    const optionsTitle1 = {x: 75, y: 390, fontSize: 50, attributes: {fill: 'hsl(0, 0%, 95%)'}};
+    const optionsTitle2 = {x: 75, y: 445, fontSize: 50, attributes: {fill: 'hsl(0, 0%, 95%)'}};
+    
+    const title1 = textToSVG.getPath(firstPartOfTitle.join(" "), optionsTitle1);
+    const title2 = textToSVG.getPath(titleAsArray.join(" "), optionsTitle2);
+    
+    // Website
+    textToSVG = TextToSVG.loadSync(__dirname + '/../../fonts/IBMPlexMono-Regular.otf');
+
+    const optionsWebsite = {x: 75, y: 520, fontSize: 30, attributes: {fill: 'hsl(180, 60%, 75%)'}};
+    const website = textToSVG.getPath('martinschneider.me', optionsWebsite);
 
     let svg = (firstPartOfTitle, titleAsArray) => `
         <svg width="2400" height="1200" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
@@ -30,15 +47,11 @@ module.exports = async function createOgImage(title) {
             <rect width="1200" height="600" fill="hsl(216, 25%, 8%)"/> 
             <rect width="100" height="100" x="1025" y="50" fill="url('#primaryGradient')"/> 
             <rect width="100" height="100" x="1050" y="75" fill="url('#secondaryGradient')"/>
-            <text x="75" y="390" text-anchor="left" font-size="50px" font-family="sans-serif" fill="hsl(0, 0%, 95%)" text-rendering="optimizeLegibility">${firstPartOfTitle.join(
-                " "
-            )}</text>
-            <text x="75" y="445" text-anchor="left" font-size="50px" font-family="sans-serif" fill="hsl(0, 0%, 95%)" text-rendering="optimizeLegibility">${titleAsArray.join(
-                " "
-            )}</text>
-            <text x="75" y="520" text-anchor="left" font-size="30px" font-family="monospace" fill="hsl(180, 60%, 75%)" text-rendering="optimizeLegibility">martinschneider.me</text>
-        </svg>
-        `;
+
+            ${title1}
+            ${title2}
+            ${website}
+        </svg>`;
 
     var buffer = Buffer.from(svg(firstPartOfTitle, titleAsArray));
 
