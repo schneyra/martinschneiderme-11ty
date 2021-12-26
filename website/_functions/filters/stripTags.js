@@ -1,10 +1,6 @@
 module.exports = function stripTags(text) {
-    text.replace(
-        /(<([^>]+)>)/gi,
-        ""
-    );
-
-    text.replace("\n", "");
+    text = text.replace(/(<([^>]+)>)/gi, "");
+    text = text.replace("\n", "");
 
     return text;
 };

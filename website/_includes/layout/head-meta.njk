@@ -1,11 +1,11 @@
 {% set absoluteUrl = site.url ~ page.url  %}
 
 {% if metaDescription %}
-    {% set description = metaDescription | stripTags %}
+    {% set description = metaDescription %}
 {% elseif metaDescription %}
-    {% set description = metaDescription | stripTags %}
+    {% set description = metaDescription %}
 {% elseif excerpt %}
-    {% set description = excerpt | stripTags %}
+    {% set description = excerpt %}
 {% else %}
     {% set description = site.defaultDescription %}
 {% endif %}
@@ -27,12 +27,12 @@
 
 <link rel="canonical" href="{{ absoluteUrl }}"/>
 
-<meta name="description" content="{{ description | safe }}"/>
+<meta name="description" content="{{ description | stripTags }}"/>
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ absoluteUrl }}">
 <meta property="twitter:title" content="{{ title }}{% if title %} &rsaquo; {% endif %}{{ site.name }}">
-<meta property="twitter:description" content="{{ description | safe }}">
+<meta property="twitter:description" content="{{ description | stripTags }}">
 
 {% if title %}
     <meta property="twitter:image" content="https://martinschneider.me{{ title | createOgImage }}">
