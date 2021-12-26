@@ -35,7 +35,7 @@
 <meta property="twitter:description" content="{{ description | stripTags }}">
 
 {% if title %}
-    <meta property="twitter:image" data-wurst="lolz" content="https://martinschneider.me {{ title | createOgImage }}">
+    <meta property="twitter:image" data-wurst="lolz" content="https://martinschneider.me{{ title | createOgImage }}">
 {% else %}
     <meta property="twitter:image" content="https://martinschneider.me{{ "Martin Schneider Frontend Developer" | createOgImage }}">
 {% endif %}
