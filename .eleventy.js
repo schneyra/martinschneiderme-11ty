@@ -11,6 +11,7 @@ const purgeInlineCSS = require("./website/_functions/transforms/purgeInlineCSS")
 const imageShortcode = require("./website/_functions/filters/imageShortcode");
 const imageShortcodeForArticles = require("./website/_functions/filters/imageShortcodeForArticles");
 const createOgImage = require("./website/_functions/filters/createOgImage");
+const stripTags = require("./website/_functions/filters/stripTags");
 
 module.exports = function (eleventyConfig) {
     console.log("👷‍♂️ Build mode: " + process.env.ELEVENTY_ENV || "development");
@@ -32,6 +33,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);
     eleventyConfig.addFilter("longDate", longDate);
     eleventyConfig.addFilter("recentArticles", recentArticles);
+    eleventyConfig.addFilter("stripTags", stripTags);
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
     eleventyConfig.addNunjucksAsyncShortcode(

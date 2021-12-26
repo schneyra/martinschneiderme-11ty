@@ -1,11 +1,11 @@
 {% set absoluteUrl = site.url ~ page.url  %}
 
 {% if metaDescription %}
-    {% set description = metaDescription %}
+    {% set description = metaDescription | stripTags %}
 {% elseif metaDescription %}
-    {% set description = metaDescription %}
+    {% set description = metaDescription | stripTags %}
 {% elseif excerpt %}
-    {% set description = excerpt %}
+    {% set description = excerpt | stripTags %}
 {% else %}
     {% set description = site.defaultDescription %}
 {% endif %}
