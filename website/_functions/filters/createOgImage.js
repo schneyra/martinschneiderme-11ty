@@ -1,7 +1,12 @@
 const Image = require("@11ty/eleventy-img");
-const TextToSVG = require('text-to-svg');
+const TextToSVG = require("text-to-svg");
 
-module.exports = async function createOgImage(title) {
+const createOgImage = async (title) => {
+    if (!title) {
+        console.error("[msme] OG image: No title given");
+        return "/";
+    }
+
     // split the given text into two parts
     let titleAsArray = title.split(" ");
     let firstPartOfTitle = [];
@@ -14,19 +19,39 @@ module.exports = async function createOgImage(title) {
     }
 
     // Title
-    let textToSVG = TextToSVG.loadSync(__dirname + '/../../fonts/IBMPlexSans-SemiBold.otf');
+    let textToSVG = TextToSVG.loadSync(
+        __dirname + "/../../fonts/IBMPlexSans-SemiBold.otf"
+    );
 
-    const optionsTitle1 = {x: 75, y: 390, fontSize: 50, attributes: {fill: 'hsl(0, 0%, 95%)'}};
-    const optionsTitle2 = {x: 75, y: 445, fontSize: 50, attributes: {fill: 'hsl(0, 0%, 95%)'}};
-    
+    const optionsTitle1 = {
+        x: 75,
+        y: 390,
+        fontSize: 50,
+        attributes: { fill: "hsl(0, 0%, 95%)" }
+    };
+    const optionsTitle2 = {
+        x: 75,
+        y: 445,
+        fontSize: 50,
+        attributes: { fill: "hsl(0, 0%, 95%)" }
+    };
+
     const title1 = textToSVG.getPath(firstPartOfTitle.join(" "), optionsTitle1);
     const title2 = textToSVG.getPath(titleAsArray.join(" "), optionsTitle2);
-    
-    // Website
-    textToSVG = TextToSVG.loadSync(__dirname + '/../../fonts/IBMPlexMono-Regular.otf');
 
-    const optionsWebsite = {x: 75, y: 520, fontSize: 30, attributes: {fill: 'hsl(180, 60%, 75%)'}};
-    const website = textToSVG.getPath('martinschneider.me', optionsWebsite);
+    // Website
+    textToSVG = TextToSVG.loadSync(
+        __dirname + "/../../fonts/IBMPlexMono-Regular.otf"
+    );
+
+    const optionsWebsite = {
+        x: 75,
+        y: 520,
+        fontSize: 30,
+        attributes: { fill: "hsl(180, 60%, 75%)" }
+    };
+
+    const website = textToSVG.getPath("martinschneider.me", optionsWebsite);
 
     let svg = (firstPartOfTitle, titleAsArray) => `
         <svg width="2400" height="1200" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
@@ -63,6 +88,10 @@ module.exports = async function createOgImage(title) {
     };
 
     const ogImage = await Image(buffer, options);
-
     return ogImage.jpeg[0].url;
+};
+
+module.exports = async (title, callback) => {
+    const ogImageUrl = await createOgImage(title);
+    callback(null, ogImageUrl);
 };

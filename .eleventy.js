@@ -29,11 +29,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./website/articles/**/*.(jpg|jpeg|png)");
 
     // Filters are used in templates
-    eleventyConfig.addFilter("createOgImage", createOgImage);
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);
     eleventyConfig.addFilter("longDate", longDate);
     eleventyConfig.addFilter("recentArticles", recentArticles);
     eleventyConfig.addFilter("stripTags", stripTags);
+    eleventyConfig.addNunjucksAsyncFilter("createOgImage", createOgImage);
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
     eleventyConfig.addNunjucksAsyncShortcode(
