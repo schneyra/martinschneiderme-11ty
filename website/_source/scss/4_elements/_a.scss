@@ -1,5 +1,6 @@
 a {
     transition: text-decoration-color 100ms ease-in-out;
+    text-underline-offset: 3px;
 
     &:link {
         text-decoration-thickness: 0.1em;

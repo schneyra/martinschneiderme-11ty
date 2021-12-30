@@ -36,11 +36,6 @@ module.exports = async () => {
                 title: "My account on twitter"
             },
             {
-                name: "instagram",
-                url: "https://www.instagram.com/schneyra/",
-                title: "My account on instagram"
-            },
-            {
                 name: "linkedin",
                 url: "https://www.linkedin.com/in/martin-schneider-b941bb5b/",
                 title: "My account on linkedin"
