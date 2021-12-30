@@ -17,16 +17,21 @@
         min-width: 1.75em;
 
         &:hover {
-            color: var(--color-primary-invert);
-            background: var(--color-primary);
+            background: var(--color-secondary);
             box-shadow: none;
         }
     }
 
-    &:focus-visible {
+    &:focus {
+        outline: 1px dashed var(--color-primary);
+    }
+
+    &:focus:not(:focus-visible) {
         outline: none;
-        color: var(--color-primary-invert);
-        background: var(--color-primary);
+    }
+
+    &:focus-visible {
+        outline: 0.1em dashed currentColor;
     }
 
     &:active {

@@ -1,9 +1,8 @@
 .textbox {
-    background: var(--color-bg-offset);
-    padding: 4vw calc(2rem + 4vw) 4vw 4vw;
+    padding: 1.5rem calc(2rem + 1.5rem) 1.5rem 1.5rem;
     position: relative;
-    margin-left: -4vw;
-    margin-right: -4vw;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
 
     &::before {
         content: "";
