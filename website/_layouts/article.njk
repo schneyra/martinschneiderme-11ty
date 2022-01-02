@@ -9,7 +9,7 @@ permalink: articles/{{ title | slugify }}/index.html
                 {{ title | safe }}
             </h1>
 
-            <a class="article__link u-url" href="{{ site.url }}/articles/{{ title | slugify }}/">
+            <a class="article__link u-url" href="{{ site.url }}{{ permalink }}">
             <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | longDate }}</time>
             </a>
         </header>
