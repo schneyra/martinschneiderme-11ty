@@ -4,7 +4,7 @@ date: 2020-05-13
 excerpt: "Sometimes things change fast: Just about two months after I launched this website with the SSR-Framework Sapper I'm replacing it with a site that is generated with the static site generator Eleventy. Let me explain."
 ---
 
-In the <a href="/articles/building-a-website-with-sapper-svelte-and-wordpress/">article about the building of the Sapper-version</a> of this site, I wrote:
+In the <a href="/articles/building-a-website-with-sapper-and-wordpress/">article about the building of the Sapper-version</a> of this site, I wrote:
 
 > "To be honest: This page should be a developed as a static-site-generator-project, there is actually no need for all that SPA/SSR-stuff. I’m doing this primarily as a learning-project."
 
