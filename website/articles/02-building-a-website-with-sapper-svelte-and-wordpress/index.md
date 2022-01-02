@@ -2,6 +2,7 @@
 title: "Building a Website With Sapper, Svelte and WordPress"
 date: 2020-03-28
 excerpt: "Sapper is the application framework for Svelte. An easy way to build a server side rendered single page application. (Bingo!) WordPress is used as a backend for articles like this one. Here are some details."
+permalink: "/articles/building-a-website-with-sapper-and-wordpress/"
 ---
 
 When I decided to develop a new website for myself, my first thoughts were: Should it be static, handwritten HTML, like the last one? Or should I go the oldfashioned, well-known WordPress-path? I soon decided to try something <em>really</em> new and after experimenting a bit with static site generators, I ended up wanting to try that <abbr title="JavaScript, APIs, and Markup">Jam</abbr>stack-Thing. I've experimented with both React and Vue in the past and knew that I would like to have a solution that provides Server Side Rendering (SSR). But should I try React/Next.js or should I give Vue/Nuxt.js a chance?

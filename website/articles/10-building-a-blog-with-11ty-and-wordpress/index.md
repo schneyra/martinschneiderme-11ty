@@ -2,6 +2,7 @@
 title: "Building a Blog With 11ty and WordPress"
 date: 2020-08-04
 excerpt: "When I decided to move to the Jamstack, I was sure that I wanted to build something with an API and since I'm quite familiar with WordPress and its API that was an easy choice. But what seemed to be an easy task has had its obstacles."
+permalink: "/articles/building-a-website-with-11ty-and-wordpress/"
 ---
 
 The initial idea was that working with different APIs would force me to get more comfortable again with `fetch` and the work with promises. But relying on an API was also a good idea since my choice of technology only lasted some weeks. <a href="/articles/goodbye-sapper-hello-eleventy/">The switch from Sapper to Eleventy</a> would have been much more work without the blogposts stored in my good old WordPress.

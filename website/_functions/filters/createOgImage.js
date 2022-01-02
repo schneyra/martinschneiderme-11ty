@@ -2,6 +2,10 @@ const Image = require("@11ty/eleventy-img");
 const TextToSVG = require("text-to-svg");
 
 const createOgImage = async (title) => {
+    if (global.environment !== "production") {
+        return "/og-images-only-in-production.jpg";
+    }
+
     if (!title) {
         console.error("[msme] OG image: No title given");
         return "/";

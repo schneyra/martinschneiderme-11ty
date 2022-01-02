@@ -18,7 +18,7 @@ permalink: articles/{{ title | slugify }}/index.html
 
         <div class="flow e-content">
             {% if excerpt %}
-                <div class="article__excerpt">{{ excerpt }}</div>
+                <p class="article__excerpt">{{ excerpt }}</p>
             {% endif %}
 
             {{ content | safe }}

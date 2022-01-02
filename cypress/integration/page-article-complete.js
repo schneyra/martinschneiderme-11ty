@@ -9,7 +9,7 @@ describe("Page - Article 'Welcome to My New Website'", () => {
     it("has the correct title", () => {
         cy.title().should(
             "eq",
-            "Welcome to My New Website › Martin Schneider — Frontend Developer",
+            "Welcome to My New Website › Martin Schneider — Frontend Developer"
         );
     });
 
@@ -17,7 +17,7 @@ describe("Page - Article 'Welcome to My New Website'", () => {
         cy.get('link[rel="canonical"]').should(
             "have.attr",
             "href",
-            "https://martinschneider.me/articles/welcome-to-my-new-website/",
+            "https://martinschneider.me/articles/welcome-to-my-new-website/"
         );
     });
 
@@ -25,7 +25,7 @@ describe("Page - Article 'Welcome to My New Website'", () => {
         cy.get('meta[name="description"]').should(
             "have.attr",
             "content",
-            excerpt,
+            excerpt
         );
     });
 
@@ -38,7 +38,7 @@ describe("Page - Article 'Welcome to My New Website'", () => {
     });
 
     it("has the correct excerpt", () => {
-        cy.contains(".article__excerpt p", excerpt);
+        cy.contains("p.article__excerpt", excerpt);
     });
 
     it("has a reactions-button", () => {
