@@ -52,7 +52,7 @@ const createOgImage = async (title) => {
         x: 75,
         y: 520,
         fontSize: 30,
-        attributes: { fill: "hsl(180, 60%, 75%)" }
+        attributes: { fill: "hsl(108, 37%, 50%)" }
     };
 
     const website = textToSVG.getPath("martinschneider.me", optionsWebsite);
@@ -61,19 +61,20 @@ const createOgImage = async (title) => {
         <svg width="2400" height="1200" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="primaryGradient" gradientTransform="rotate(90)">
-                <stop offset="5%"  stop-color="hsl(180, 60%, 75%)" />
-                <stop offset="95%" stop-color="hsl(180, 60%, 25%)" />
+                <stop offset="5%"  stop-color="hsl(207, 26%, 32%)" />
+                <stop offset="95%" stop-color="hsl(207, 26%, 22%)" />
                 </linearGradient>
             </defs>
+
 
             <defs>
                 <linearGradient id="secondaryGradient" gradientTransform="rotate(90)">
-                <stop offset="5%"  stop-color="hsl(32, 100%, 50%)" />
-                <stop offset="95%" stop-color="hsl(18, 100%, 47%)" />
+                <stop offset="5%"  stop-color="hsl(108, 37%, 50%)" />
+                <stop offset="95%" stop-color="hsl(108, 37%, 45%)" />
                 </linearGradient>
             </defs>
 
-            <rect width="1200" height="600" fill="hsl(216, 25%, 8%)"/> 
+            <rect width="1200" height="600" fill="hsl(205, 55%, 10%)"/> 
             <rect width="100" height="100" x="1025" y="50" fill="url('#primaryGradient')"/> 
             <rect width="100" height="100" x="1050" y="75" fill="url('#secondaryGradient')"/>
 
