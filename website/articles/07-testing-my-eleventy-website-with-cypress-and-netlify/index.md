@@ -52,11 +52,11 @@ describe("Page - Homepage", () => {
 
 To run the tests I simply had to open my project-folder and click the "Run all specs"-button. The result looks good:
 
-![Screenshot of the cypress testrunner showing successful test for the homepage.](/articles/07-testing-my-eleventy-website-with-cypress-and-netlify/msme-first-tests.png)
+{% imageForArticles 'website/articles/07-testing-my-eleventy-website-with-cypress-and-netlify/msme-first-tests.png', 'Screenshot of the cypress testrunner showing successful test for the homepage.' %}
 
 Writing some more tests was actually a lot of fun. I quickly learned how to click a button and check data-attributes to test the colormode switcher. I've implemented some example tests to see if an article is displayed correctly, I let the browser scroll an article to the bottom to test the reading-indicator.
 
-![Screenshot of the cypress testrunner showing successful test for several features.](/articles/07-testing-my-eleventy-website-with-cypress-and-netlify/msme-more-tests.png)
+{% imageForArticles 'website/articles/07-testing-my-eleventy-website-with-cypress-and-netlify/msme-more-tests.png', 'Screenshot of the cypress testrunner showing successful test for several features.' %}
 
 The documentation on <a href="https://docs.cypress.io/guides/getting-started/installing-cypress.html">installing Cypress</a> and <a href="https://docs.cypress.io/guides/getting-started/writing-your-first-test.html">writing and running the first tests</a> is pretty good and I'm going to have a closer look before I'll write more tests for sure. That's fine for now, let's go to the next step.
 
@@ -66,7 +66,7 @@ After all, tests are just as good as the interval they are running. With about s
 
 After a push into my repository the deployment started as usual. Netlify began building the latest version of the site and then the Cypress tests against it started. And failed directly. Somehow it wasn't possible to run `cy.visit("/");` more than once in a spec on the server. After some modifications the tests ran perfectly.
 
-![A table showing the positive test results of my cypress test.](/articles/07-testing-my-eleventy-website-with-cypress-and-netlify/msme-cypress-netlify-complete.jpeg)
+{% imageForArticles 'website/articles/07-testing-my-eleventy-website-with-cypress-and-netlify/msme-cypress-netlify-complete.jpeg', 'A table showing the positive test results of my cypress test.' %}
 
 After hours and hours of fiddling with GitLab-CI and Docker containers in the past I am really impressed how easy the installation of the plugin was.
 

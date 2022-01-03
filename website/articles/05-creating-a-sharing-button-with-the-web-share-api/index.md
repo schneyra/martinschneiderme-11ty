@@ -65,7 +65,7 @@ Now, time for some JavaScript! As you can see it's pretty straight forward. The 
 
 I already had the CSS for buttons with icons, so there was not much more work left. I thought some time about writing the markup with JavaScript instead of hiding it initially but since I am inlining all the code there's no real benefit.
 
-![Picture of the new Sharing Button beneath the content.](/articles/05-creating-a-sharing-button-with-the-web-share-api/sharing-button.jpeg)
+{% imageForArticles 'website/articles/05-creating-a-sharing-button-with-the-web-share-api/sharing-button.jpeg', 'Picture of the new Sharing Button beneath the content.' %}
 
 That was a fun evening-project, although I don't think that it will survive really long. The functionality might be useful in a list of items that you would like to share separately or when you're building a web-based application. There's no real need for the button in an browser-environment. For example the sharing-button in Safari will be right beside my own one on an iOS device.
 

@@ -11,7 +11,7 @@ When I initially build this site, I wasn't in the mood of thinking too much abou
 
 Back to the topic: Using an SVG to create a unique image for social sharing purposes sounded great. The <a href="https://github.com/11ty/eleventy-img">eleventy-img plugin</a> was already installed from <a href="/articles/using-the-eleventy-image-plugin-to-generate-images/">my previous changes to the homepage</a> and I quickly copied <a href="https://github.com/g12n/colors-and-palettes/blob/main/_data/colors.js">the code of Michaels solution</a>. It just took minutes to have a working implementation. It then took several hours on this and the following evening until I was happy with the actual outcome. I had to find out when to split the long titles of my posts and had to fiddle around with the positioning of the elements within the image. That was a lot of fun. I did not too much with SVGs on a code-level so there was a lot to learn.
 
-![A screenshot how my posts look when I share them in Slack.](/articles/13-og-images-with-the-eleventy-image-plugin/social-sharing.jpeg)
+{% imageForArticles 'website/articles/13-og-images-with-the-eleventy-image-plugin/social-sharing.jpeg', 'A screenshot how my posts look when I share them in Slack.' %}
 
 Although I'm not finished yet: I just changed some of the colors of the site and need to put the new gradient onto that little boxes. Also, I'm not using the right font, which is <em>IBM Plex</em>, on the image.
 
