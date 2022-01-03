@@ -14,7 +14,9 @@ const createOgImage = require("./website/_functions/filters/createOgImage");
 const stripTags = require("./website/_functions/filters/stripTags");
 
 module.exports = function (eleventyConfig) {
-    console.log("👷‍♂️ Build mode: " + process.env.ELEVENTY_ENV || "development");
+    console.log(
+        "[msme] Build mode: " + process.env.ELEVENTY_ENV || "development"
+    );
 
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(syntaxHighlight);
@@ -27,6 +29,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./website/fonts");
     eleventyConfig.addPassthroughCopy("./website/images");
     eleventyConfig.addPassthroughCopy("./website/articles/**/*.(jpg|jpeg|png)");
+    eleventyConfig.addPassthroughCopy({
+        "./node_modules/instant.page/instantpage.js": "instantpage.js"
+    });
 
     // Filters are used in templates
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);
