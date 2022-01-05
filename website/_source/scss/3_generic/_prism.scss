@@ -20,7 +20,6 @@ pre[class*="language-"] {
     border-radius: 0.2rem;
 
     &::before {
-        content: attr(data-language);
         display: block;
         color: var(--color-primary-invert);
         text-transform: uppercase;
@@ -31,6 +30,36 @@ pre[class*="language-"] {
         border-radius: 0.2rem 0;
         align-self: flex-start;
         margin-bottom: 1.5rem;
+    }
+}
+
+pre.language-html {
+    &::before {
+        content: "HTML";
+    }
+}
+
+pre.language-js {
+    &::before {
+        content: "JavaScript";
+    }
+}
+
+pre.language-json {
+    &::before {
+        content: "JSON";
+    }
+}
+
+pre.language-css {
+    &::before {
+        content: "CSS";
+    }
+}
+
+pre.language-scss {
+    &::before {
+        content: "SCSS";
     }
 }
 

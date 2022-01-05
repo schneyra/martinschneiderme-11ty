@@ -2,7 +2,7 @@
 permalink: sitemap.xml
 eleventyExcludeFromCollections: true
 pagination:
-  data: articles
+  data: collections.articles
   size: 10000
 ---
 <?xml version="1.0" encoding="UTF-8"?>
@@ -15,11 +15,11 @@ pagination:
     <loc>{{ site.url }}/articles/</loc>
   </url>
 
-  {%- for article in articles -%}
-    {% set absoluteUrl = site.url + '/articles/' + article.slug + '/' %}
+  {%- for article in collections.articles -%}
+    {% set absoluteUrl = site.url + article.url %}
     <url>
       <loc>{{ absoluteUrl }}</loc>
-      <lastmod>{{ article.modifiedDate|w3DateFilter }}</lastmod>
+      <lastmod>{{ article.date|w3DateFilter }}</lastmod>
     </url>
   {%- endfor -%}
 </urlset>

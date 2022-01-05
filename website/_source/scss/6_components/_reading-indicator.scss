@@ -1,12 +1,12 @@
 .reading-indicator-wrapper {
-    padding: 0.55rem 4vw 0.5rem;
+    padding: 0.55rem 1.5rem 0.5rem;
     width: 100%;
     position: sticky;
     top: -0.05rem;
     background: var(--color-bg);
     z-index: var(--zindex-reading-indicator);
-    width: calc(100% + 8vw);
-    margin-left: -4vw;
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
 }
 
 .reading-indicator {

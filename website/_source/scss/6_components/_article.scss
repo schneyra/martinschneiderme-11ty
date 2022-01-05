@@ -2,10 +2,24 @@
     &__excerpt {
         font-weight: 700;
         color: var(--color-text-offset);
+        max-width: var(--content-inner-max-width);
     }
 
     &__link {
         display: inline-block;
+    }
+
+    figure {
+        width: 100%;
+    }
+
+    picture {
+        display: block;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
     }
 
     // override the flow-property to give the headline some more space

@@ -24,14 +24,20 @@
     }
 
     &:focus {
+        outline: 1px dashed var(--color-primary);
+    }
+
+    &:focus:not(:focus-visible) {
         outline: none;
-        color: var(--color-primary-invert);
-        background: var(--color-primary);
+    }
+
+    &:focus-visible {
+        outline: 0.1em dashed currentColor;
     }
 
     &:active {
         color: var(--color-primary-invert);
-        background: var(--color-secondary);
+        background: var(--color-primary);
         box-shadow: none;
     }
 
@@ -44,19 +50,21 @@
         background-color: var(--color-bg-offset);
         border-radius: 1em;
         font-size: 0.9rem;
-        padding: 0.3em 0.75em;
+        padding: 0.75em 1em;
         text-transform: uppercase;
         text-decoration: none;
-        font-weight: 400;
+        font-weight: 500;
         line-height: inherit;
 
         .icon-button__text {
             margin-left: 0.5em;
+            line-height: 1;
         }
 
         .icon-button__icon {
-            height: 1em;
-            width: 1em;
+            width: 0.9em;
+            height: 0.9em;
+            stroke-width: 3px;
         }
     }
 }

@@ -1,12 +1,11 @@
 ---
 layout: page
 title: Tag
-metaSlug: /bookmarks/tag/{{ bookmarks.tag | slug }}/
 pagination:
   data: bookmarks.tags
   size: 1
   alias: bookmarks
-permalink: bookmarks/tag/{{ bookmarks.tag | slug }}/index.html
+permalink: bookmarks/tag/{{ bookmarks.tag | slugify }}/index.html
 ---
 
 <h1 class="headline glitch" data-glitch="Tag: {{ bookmarks.tag }}">Tag: {{ bookmarks.tag }}</h1>

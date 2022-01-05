@@ -1,10 +1,11 @@
 ---
 layout: page
 title: Articles
-metaSlug: /articles/
 pagination:
-  data: articles
+  alias: articlelist
+  data: collections.articles
   size: 10
+  reverse: true
 permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
@@ -21,14 +22,15 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
   <a href="https://twitter.com/schneyra">my twitter</a>!
 </p>
 
-{% for item in pagination.items %}
-  {% set isTilPost = 'til' in item.categorySlugs %}
-  {% set isChangelogPost = 'changelog' in item.categorySlugs %}
+{%- for article in articlelist -%}
+
+  {%- set isTilPost = 'til' in article.data.tags -%}
+  {%- set isChangelogPost = 'changelog' in article.data.tags -%}
 
   {% if loop.first %}
     <ol class="article-list">
     {% endif %}
-    <li class="article-list__article article-list__article--{{ item.categorySlugs|join(' article-list__article---') }}" data-cy="articleListArticle">
+    <li class="article-list__article{% if isTilPost %} article-list__article--til{% endif %}{% if isChangelogPost %} article-list__article--changelog{% endif %}" data-cy="articleListArticle">
       {% if isTilPost %}
         {% include 'svg/lightbulb.svg' %}
       {% endif %}
@@ -41,19 +43,19 @@ permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumb
         <h2 class="article-list__title">
           {% if isTilPost %}TIL:{% endif %}
           {% if isChangelogPost %}Changelog:{% endif %}
-          <a href="/articles/{{ item.slug }}/" class="article-list__link">{{ item.title | safe }}</a>
+          <a href="{{ article.url }}" class="article-list__link">{{ article.data.title | safe }}</a>
         </h2>
 
-        <time datetime="{{ item.date }}" class="article-list__date">{{ item.formattedDate }}</time>
+        <time datetime="{{ article.date | w3DateFilter }}" class="article-list__date">{{ article.date | longDate }}</time>
 
         {% if not isTilPost and not isChangelogPost %}
-          <div class="article-list__excerpt">{{ item.excerpt | safe }}</div>
+          <div class="article-list__excerpt">{{ article.data.excerpt | safe }}</div>
         {% endif %}
       </article>
     </li>
     {% if loop.last %}
     </ol>
   {% endif %}
-{% endfor %}
+{%- endfor -%}
 
 {% include '_pagination.njk' %}

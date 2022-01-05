@@ -1,23 +1,27 @@
+/**
+Colors: https://coolors.co/69995d-cd4631-ffc857-3d5467-eeeef2
+**/
+
 :root {
     --os-color-mode: "light";
 
-    --color-bg: hsl(0, 0%, 95%);
-    --color-bg-offset: hsl(0, 0%, 92%);
+    --color-bg: hsl(240, 13%, 94%);
+    --color-bg-offset: hsl(240, 13%, 90%);
 
     --color-text: hsl(216, 25%, 8%);
     --color-text-offset: hsl(216, 25%, 12%);
 
-    --color-primary: hsl(180, 60%, 75%);
-    --color-primary--dark: hsl(180, 60%, 25%);
-    --color-primary-invert: hsl(216, 25%, 12%);
+    --color-primary: hsl(207, 26%, 32%);
+    --color-primary--dark: hsl(207, 26%, 22%);
+    --color-primary-invert: hsl(0, 0%, 90%);
     --gradient-primary: linear-gradient(
         180deg,
         var(--color-primary),
         var(--color-primary--dark)
     );
 
-    --color-secondary: hsl(32, 100%, 50%);
-    --color-secondary--dark: hsl(18, 100%, 47%);
+    --color-secondary: hsl(108, 37%, 50%);
+    --color-secondary--dark: hsl(108, 37%, 45%);
     --gradient-secondary: linear-gradient(
         180deg,
         var(--color-secondary),
@@ -42,9 +46,9 @@
 }
 
 @mixin darkModeCustomProperties() {
-    --color-bg: hsl(216, 25%, 12%);
-    --color-bg-offset: hsl(216, 25%, 8%);
-    --color-text: hsl(0, 0%, 81%);
+    --color-bg: hsl(205, 55%, 10%);
+    --color-bg-offset: hsl(205, 55%, 5%);
+    --color-text: hsl(0, 0%, 90%);
     --color-text-offset: hsl(0, 0%, 97%);
 }
 

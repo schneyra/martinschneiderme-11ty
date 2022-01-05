@@ -6,7 +6,7 @@
         </a>
         </h2>
 
-        <time datetime="{{ bookmark.date }}" class="article-list__date">saved on
+        <time datetime="{{ bookmark.date | w3DateFilter }}" class="article-list__date">saved on
         {{ bookmark.formattedDate }}
         </time>
 
@@ -18,7 +18,7 @@
         <ul class="tag-list">
             {% for tag in bookmark.tags %}
             <li class="tag-list__item">
-                <a href="/bookmarks/tag/{{ tag | slug}}/" class="tag-list__link tag">{{ tag }}</a>
+                <a href="/bookmarks/tag/{{ tag | slugify }}/" class="tag-list__link tag">{{ tag }}</a>
             </li>
             {% endfor %}
         </ul>

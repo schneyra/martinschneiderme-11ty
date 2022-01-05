@@ -32,8 +32,8 @@
 
             navigator
                 .share({ url: url })
-                .then(() => console.log("Successful share"))
-                .catch((error) => console.log("Error sharing", error));
+                .then(() => console.log("Sharing successful"))
+                .catch((error) => console.log("Error while sharing", error));
         });
     }
 })();

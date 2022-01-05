@@ -11,11 +11,9 @@
     }
 
     &__content {
-        padding: 4rem 2rem;
+        padding: 4rem 0;
         align-self: center;
         justify-self: start;
-        margin-left: -4vw;
-        background: var(--color-bg-offset);
 
         & > * {
             max-width: 60ch;
@@ -33,7 +31,6 @@
 
         .contentgrid__content {
             justify-self: end;
-            margin-right: -4vw;
             margin-left: 0;
         }
     }

@@ -15,6 +15,6 @@ Build with [Eleventy](https://www.11ty.dev/), articles written in [WordPress](ht
 
 ## Local development
 
-    ./c start
-    ./c npm install
-    ./c serve
+    ./console start
+    ./console npm install
+    ./console serve
