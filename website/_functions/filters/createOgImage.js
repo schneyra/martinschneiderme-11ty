@@ -2,7 +2,7 @@ const Image = require("@11ty/eleventy-img");
 const TextToSVG = require("text-to-svg");
 
 const createOgImage = async (title) => {
-    if (global.environment !== "production") {
+    if (process.env.ELEVENTY_ENV !== "production") {
         return "/og-images-only-in-production.jpg";
     }
 
@@ -93,6 +93,7 @@ const createOgImage = async (title) => {
     };
 
     const ogImage = await Image(buffer, options);
+    console.log(`[msme] OG image generated: ${title}`);
     return ogImage.jpeg[0].url;
 };
 
