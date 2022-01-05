@@ -5,6 +5,7 @@ excerpt: 'After using Firefox as my main browser for a while, I''ve recently sta
 tags:
     - articles
     - til
+permalink: "/articles/firefox-is-shortening-long-attributes-in-its-developer-tools/"
 ---
 
 I noticed that behavior while refactoring a blog template and it took me some time to find out that there's no problem with the API that's delivering the content for the blog. The picture tag is perfectly fine - Firefox is just cutting off the middle of the `srcset` attribute.
