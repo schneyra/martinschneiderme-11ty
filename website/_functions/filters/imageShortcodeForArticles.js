@@ -20,7 +20,7 @@ module.exports = async function imageShortcodeForArticles(
     }
 
     const widths = [400, 800, 1100, 2200];
-    const sizes = "(min-width: 1100px) 1100px, 1vw";
+    const sizes = "(min-width: 1100px) 1100px, 100vw";
 
     let metadata = await Image(src, {
         widths,
