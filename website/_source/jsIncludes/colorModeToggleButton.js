@@ -29,8 +29,8 @@
         const metaTagThemeColor = document.querySelector(
             '[name="theme-color"]'
         );
-        const lightColor = "hsl(0, 0%, 95%)";
-        const darkColor = "hsl(216, 25%, 12%)";
+        const lightColor = "hsl(240, 13%, 98%)";
+        const darkColor = "hsl(205, 55%, 10%)";
 
         // Switches between "auto" and "opposite of 'auto'"
         switch (currentColorMode) {
