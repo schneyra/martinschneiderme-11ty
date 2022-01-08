@@ -3,7 +3,6 @@ title: "Firefox Is Shortening Long Attributes in It's Developer Tools"
 date: 2020-06-22
 excerpt: 'After using Firefox as my main browser for a while, I''ve recently started to use Firefox Developer Edition for developing websites. I am really happy with the developer tools. Especially the highlighting of CSS-grids is really useful. <em>Today I learned</em> about a "feature" that I really don''t like.'
 tags:
-    - articles
     - til
 permalink: "/articles/firefox-is-shortening-long-attributes-in-its-developer-tools/"
 ---

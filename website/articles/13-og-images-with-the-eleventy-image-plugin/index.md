@@ -3,7 +3,6 @@ title: "OG Images with the Eleventy Image Plugin"
 date: 2021-04-04
 excerpt: "In the changelog I’m documenting modifications to this site that might be of interest, but are not necessarily my own ideas or work. This time it's about OG images."
 tags:
-    - articles
     - changelog
 ---
 

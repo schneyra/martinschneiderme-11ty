@@ -3,7 +3,6 @@ title: "Using the Eleventy Image Plugin to Generate Images"
 date: 2021-03-03
 excerpt: "In the changelog I'm documenting  modifications to this site that might be of interest, but are not necessarily my own ideas or work."
 tags:
-    - articles
     - changelog
 ---
 

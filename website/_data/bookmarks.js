@@ -82,6 +82,11 @@ async function generateTagList(tags, bookmarks) {
 }
 
 module.exports = async () => {
+    return {
+        bookmarks: [],
+        tags: []
+    };
+
     const bookmarksFromPinboard = await fetchBookmarks();
     const tagsFromPinboard = await fetchTags();
     const processedBookmarks = await processBookmarks(bookmarksFromPinboard);
@@ -89,11 +94,6 @@ module.exports = async () => {
         tagsFromPinboard,
         processedBookmarks
     );
-
-    return {
-        bookmarks: [],
-        tags: []
-    };
 
     return {
         bookmarks: processedBookmarks,
