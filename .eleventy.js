@@ -53,15 +53,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTemplateFormats("scss");
     eleventyConfig.addExtension("scss", {
         outputFileExtension: "css",
-        compile: function (contents, inputPath) {
+        compile: (contents, inputPath) => {
             if (inputPath.startsWith(`./website/_`)) {
                 return;
             }
 
             return () => {
-                let ret = sass.compile(inputPath);
-
-                const css = ret.css.toString("utf8");
+                let compiledCss = sass.compile(inputPath);
+                let css = compiledCss.css.toString("utf8");
 
                 return postcss([autoprefixer])
                     .process(css, { from: inputPath })
