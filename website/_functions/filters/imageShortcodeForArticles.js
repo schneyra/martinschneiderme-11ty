@@ -63,6 +63,9 @@ module.exports = async function imageShortcodeForArticles(
         html += `<figcaption>${caption}</figcaption></figure>`;
     }
 
-    console.log(`[msme] Generated images for ${src}`);
+    if (process.env.ELEVENTY_ENV === "production") {
+        console.log(`[msme] Generated images for ${src}`);
+    }
+
     return html;
 };

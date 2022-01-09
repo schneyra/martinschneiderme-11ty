@@ -1,6 +1,9 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const sass = require("sass");
+const terser = require("terser");
+const autoprefixer = require("autoprefixer");
+const postcss = require("postcss");
 
 const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
 const longDate = require("./website/_functions/filters/longDate.js");
@@ -14,13 +17,13 @@ const createOgImage = require("./website/_functions/filters/createOgImage");
 const stripTags = require("./website/_functions/filters/stripTags");
 
 module.exports = function (eleventyConfig) {
-    console.log(
-        "[msme] Build mode: " + process.env.ELEVENTY_ENV || "development"
-    );
+    console.log("[msme] Build mode: " + process.env.ELEVENTY_ENV);
 
+    // PLUGINS
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(syntaxHighlight);
 
+    // FILE HANDLING
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml", "md"]);
     eleventyConfig.addWatchTarget("./website/articles");
 
@@ -32,7 +35,7 @@ module.exports = function (eleventyConfig) {
         "./node_modules/instant.page/instantpage.js": "instantpage.js"
     });
 
-    // Filters are used in templates
+    // FILTERS
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);
     eleventyConfig.addFilter("longDate", longDate);
     eleventyConfig.addFilter("recentArticles", recentArticles);
@@ -55,24 +58,44 @@ module.exports = function (eleventyConfig) {
                 return;
             }
 
-            let includesPaths = this.config.dir.includes;
+            return () => {
+                let ret = sass.compile(inputPath);
 
-            return (data) => {
-                let ret = sass.renderSync({
-                    file: inputPath,
-                    includesPaths: ["website/_source", includesPaths],
-                    data: contents
-                });
+                const css = ret.css.toString("utf8");
 
-                console.log(`[msme] SCSS compiled (${inputPath})`);
-                return ret.css.toString("utf8");
+                return postcss([autoprefixer])
+                    .process(css, { from: inputPath })
+                    .then((result) => {
+                        result.warnings().forEach((warn) => {
+                            console.warn(warn.toString());
+                        });
+
+                        console.log(`[msme] SCSS compiled (${inputPath})`);
+                        return result.css;
+                    });
             };
         }
     });
 
-    // Transforms run after HTML-generation
+    eleventyConfig.addTemplateFormats("js");
+    eleventyConfig.addExtension("js", {
+        outputFileExtension: "js",
+        compile: function (contents, inputPath) {
+            if (inputPath.startsWith(`./website/_`)) {
+                return;
+            }
+
+            return async (data) => {
+                let ret = await terser.minify(contents);
+                return ret.code;
+            };
+        }
+    });
+
+    // TRANSFORMS
     if (process.env.ELEVENTY_ENV === "production") {
         eleventyConfig.addTransform("htmlmin", htmlmin);
+        // purgeCSS needs to be rewritten to work with the linked css-file
         //eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
     }
 
