@@ -40,6 +40,8 @@ module.exports = async function imageShortcode(
     pictureClass = pictureClass ? `class="${pictureClass}"` : "";
     imageClass = imageClass ? `class="${imageClass}"` : "";
 
+    console.log(`[msme] Generated images for ${src}`);
+
     return `<picture ${pictureClass}>
         ${Object.values(metadata)
             .map((imageFormat) => {

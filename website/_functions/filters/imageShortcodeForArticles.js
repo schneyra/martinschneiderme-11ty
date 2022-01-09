@@ -63,5 +63,6 @@ module.exports = async function imageShortcodeForArticles(
         html += `<figcaption>${caption}</figcaption></figure>`;
     }
 
+    console.log(`[msme] Generated images for ${src}`);
     return html;
 };

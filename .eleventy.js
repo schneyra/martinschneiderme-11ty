@@ -73,7 +73,7 @@ module.exports = function (eleventyConfig) {
     // Transforms run after HTML-generation
     if (process.env.ELEVENTY_ENV === "production") {
         eleventyConfig.addTransform("htmlmin", htmlmin);
-        eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
+        //eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
     }
 
     return {
