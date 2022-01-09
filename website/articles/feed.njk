@@ -32,10 +32,10 @@ eleventyExcludeFromCollections: true
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
         <item>
             <title>{{ article.data.title }}</title>
-            <link>{{ absoluteUrl }}</link>
+            <link>{{ absolutePostUrl }}</link>
             <dc:creator><![CDATA[Martin Schneider]]></dc:creator>
             <pubDate>{{ article.date | dateToRfc3339 }}</pubDate>
-            <guid isPermaLink="false">{{ absoluteUrl }}</guid>
+            <guid isPermaLink="false">{{ absolutePostUrl }}</guid>
             <description><![CDATA[{{ article.data.excerpt | safe }}]]></description>
             <content:encoded><![CDATA[{% if article.data.excerpt %}<p><b>{{ article.data.excerpt | safe }}</b></p>{% endif %} {{ article.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}]]></content:encoded>
         </item>
