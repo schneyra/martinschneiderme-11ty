@@ -29,7 +29,7 @@ eleventyExcludeFromCollections: true
     </image> 
 
     {%- for article in collections.articles | reverse %}
-    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+    {% set absolutePostUrl %}{{ site.url ~ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
         <item>
             <title>{{ article.data.title }}</title>
             <link>{{ absolutePostUrl }}</link>
