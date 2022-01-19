@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const sass = require("sass");
 const terser = require("terser");
 const autoprefixer = require("autoprefixer");
@@ -22,6 +23,9 @@ module.exports = function (eleventyConfig) {
     // PLUGINS
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(syntaxHighlight);
+
+    eleventyConfig.setQuietMode(true);
+    eleventyConfig.addPlugin(directoryOutputPlugin);
 
     // FILE HANDLING
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml", "md"]);
@@ -76,7 +80,7 @@ module.exports = function (eleventyConfig) {
         }
     });
 
-    eleventyConfig.addTemplateFormats("js");
+    //eleventyConfig.addTemplateFormats("js");
     eleventyConfig.addExtension("js", {
         outputFileExtension: "js",
         compile: function (contents, inputPath) {
