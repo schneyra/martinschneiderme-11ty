@@ -24,6 +24,12 @@ NODE_VERSION = "17"
 [[plugins]]
     package = "netlify-plugin-html-validate"
 
+[[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [ ".cache" ]
+
 [[headers]]
   for = "/*"
   [headers.values]

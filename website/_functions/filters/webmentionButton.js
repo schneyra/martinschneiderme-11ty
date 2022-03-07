@@ -1,14 +1,13 @@
-const AssetCache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 async function getWebmentionCount(slug) {
     try {
-        return AssetCache(
-            `https://webmention.io/api/count.json?target=https://martinschneider.me${slug}`,
-            {
-                duration: "1d",
-                type: "json"
-            }
-        );
+        let url = `https://webmention.io/api/count.json?target=https://martinschneider.me${slug}`;
+
+        return EleventyFetch(url, {
+            duration: "1d",
+            type: "json"
+        });
     } catch (error) {
         console.error(`Error: ${error}`);
         return [];

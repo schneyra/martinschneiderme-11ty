@@ -1,18 +1,16 @@
-const AssetCache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 /**
  * Get the bookmarks from Pinboard
- * Uses eleventy-cache-assets to speed up build time
  */
 async function fetchBookmarks() {
     try {
-        return AssetCache(
-            `https://api.pinboard.in/v1/posts/all?format=json&auth_token=${process.env.PINBOARD_API_TOKEN}`,
-            {
-                duration: "10m",
-                type: "json"
-            }
-        );
+        let url = `https://api.pinboard.in/v1/posts/all?format=json&auth_token=${process.env.PINBOARD_API_TOKEN}`;
+
+        return EleventyFetch(url, {
+            duration: "10m",
+            type: "json"
+        });
     } catch (error) {
         console.error(`Error: ${error}`);
         return [];
@@ -21,13 +19,12 @@ async function fetchBookmarks() {
 
 async function fetchTags() {
     try {
-        return AssetCache(
-            `https://api.pinboard.in/v1/tags/get?format=json&auth_token=${process.env.PINBOARD_API_TOKEN}`,
-            {
-                duration: "10m",
-                type: "json"
-            }
-        );
+        let url = `https://api.pinboard.in/v1/tags/get?format=json&auth_token=${process.env.PINBOARD_API_TOKEN}`;
+
+        return EleventyFetch(url, {
+            duration: "10m",
+            type: "json"
+        });
     } catch (error) {
         console.error(`Error: ${error}`);
         return [];
