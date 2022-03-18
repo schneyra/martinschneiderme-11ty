@@ -36,7 +36,14 @@
             </ul>
         </div>
         <div class="footer-grid__item footer-grid__image">
-            {% image martin.image, "Smiling Martin looking into the camera.", [250], "250px", "image", "image__image" %}
+            {% pictureElement
+                "src" = martin.image,
+                "alt" = "Smiling Martin looking into the camera.",
+                "widths" = [250],
+                "sizes" = "250px",
+                "pictureElementClasses" = "image",
+                "imageElementClasses" = "image__image"
+            %}
         </div>
     </div>
 </footer>

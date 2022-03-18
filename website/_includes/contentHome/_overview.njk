@@ -8,14 +8,14 @@
     </div>
 
     <div class="contentgrid__image flow">
-        {% image "./website/_source/images/avatar.jpg",
-        "Smiling Martin looking into the camera.",
-        [
-            350, 700, 1050
-        ],
-        "350px",
-        "image",
-        "image__image",
-        false %}
+        {% pictureElement
+            "src" = "./website/_source/images/avatar.jpg",
+            "alt" = "Smiling Martin looking into the camera.",
+            "widths" = [350, 700, 1050],
+            "sizes" = "350px",
+            "pictureElementClasses" = "image",
+            "imageElementClasses" = "image__image",
+            "lazyloading" = false
+        %}
     </div>
 </div>

@@ -1,28 +1,27 @@
 const Image = require("@11ty/eleventy-img");
 
 /**
- * Generates a `picture`-tag
+ * Generates a `<picture>` element
  *
- * @param {string} src
- * @param {string} alt
- * @param {array} widths
- * @param {string} sizes
- * @param {string} pictureClass
- * @param {string} imageClass
  * @returns
  */
-module.exports = async function imageShortcode(
-    src,
-    alt,
-    widths,
-    sizes,
-    pictureClass = "",
-    imageClass = "",
-    lazyloading = true
-) {
-    if (alt === undefined) {
-        // You bet we throw an error on missing alt (alt="" works okay)
-        throw new Error(`Missing \`alt\` on image from: ${src}`);
+module.exports = async function pictureElementShortcode(options) {
+    let {
+        src = null,
+        alt = null,
+        widths = null,
+        sizes = null,
+        pictureElementClasses = "",
+        imageElementClasses = "",
+        lazyloading = true
+    } = options;
+
+    if (!src || !alt || !widths || !sizes) {
+        console.warn(
+            `[msme] Missing \`src\` or \`widths\` or \`sizes\` on image from: ${src}`
+        );
+
+        return;
     }
 
     let metadata = await Image(src, {
@@ -37,14 +36,18 @@ module.exports = async function imageShortcode(
 
     let lowsrc = metadata.jpeg[0];
 
-    pictureClass = pictureClass ? `class="${pictureClass}"` : "";
-    imageClass = imageClass ? `class="${imageClass}"` : "";
+    pictureElementClasses = pictureElementClasses
+        ? `class="${pictureElementClasses}"`
+        : "";
+    imageElementClasses = imageElementClasses
+        ? `class="${imageElementClasses}"`
+        : "";
 
     if (process.env.ELEVENTY_ENV === "production") {
         console.log(`[msme] Generated images for ${src}`);
     }
 
-    return `<picture ${pictureClass}>
+    return `<picture ${pictureElementClasses}>
         ${Object.values(metadata)
             .map((imageFormat) => {
                 return `  <source type="${
@@ -59,7 +62,7 @@ module.exports = async function imageShortcode(
             width="${lowsrc.width}"
             height="${lowsrc.height}"
             alt="${alt}"
-            ${imageClass}
+            ${imageElementClasses}
             ${lazyloading ? 'loading="lazy"' : ""}
             decoding="async">
         </picture>`;

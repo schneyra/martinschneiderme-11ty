@@ -1,6 +1,7 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+const path = require("path");
 const sass = require("sass");
 const terser = require("terser");
 const autoprefixer = require("autoprefixer");
@@ -12,8 +13,8 @@ const recentArticles = require("./website/_functions/filters/recentArticles.js")
 const webmentionButton = require("./website/_functions/filters/webmentionButton.js");
 const htmlmin = require("./website/_functions/transforms/htmlmin");
 const purgeInlineCSS = require("./website/_functions/transforms/purgeInlineCSS");
-const imageShortcode = require("./website/_functions/filters/imageShortcode");
-const imageShortcodeForArticles = require("./website/_functions/filters/imageShortcodeForArticles");
+const pictureElementShortcode = require("./website/_functions/filters/pictureElementShortcode");
+const figureShortcodeForArticles = require("./website/_functions/filters/figureShortcodeForArticles");
 const createOgImage = require("./website/_functions/filters/createOgImage");
 const stripTags = require("./website/_functions/filters/stripTags");
 
@@ -34,7 +35,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget("./website/_source");
     eleventyConfig.addPassthroughCopy("./website/fonts");
     eleventyConfig.addPassthroughCopy("./website/images");
-    eleventyConfig.addPassthroughCopy("./website/articles/**/*.(jpg|jpeg|png)");
     eleventyConfig.addPassthroughCopy({
         "./node_modules/instant.page/instantpage.js": "instantpage.js"
     });
@@ -46,10 +46,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("stripTags", stripTags);
     eleventyConfig.addNunjucksAsyncFilter("createOgImage", createOgImage);
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
-    eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
     eleventyConfig.addNunjucksAsyncShortcode(
-        "imageForArticles",
-        imageShortcodeForArticles
+        "pictureElement",
+        pictureElementShortcode
+    );
+    eleventyConfig.addNunjucksAsyncShortcode(
+        "figureElement",
+        figureShortcodeForArticles
     );
 
     // SCSS- and JS-Compilation thanks to David Darnes from:
@@ -58,7 +61,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addExtension("scss", {
         outputFileExtension: "css",
         compile: (contents, inputPath) => {
-            if (inputPath.startsWith(`./website/_`)) {
+            let parsed = path.parse(inputPath);
+            if (parsed.name.startsWith("_")) {
                 return;
             }
 

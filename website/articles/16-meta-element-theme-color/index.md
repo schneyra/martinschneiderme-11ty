@@ -26,7 +26,7 @@ Unfortunately, CSS custom properties are seemingly not (yet?) supported so the c
 
 But since the neccessary code is already in place, it's just a small change in two parts of the site. The correct color on the meta element needs to be set when a page is loading and when someone switches the color mode. Now I can change the color with my own JavaScript based switcher almost that easy. Here's the <a href="https://github.com/schneyra/martinschneiderme-11ty/commit/14adcf6143f1e300df43fc99acc43f7f362816b4">commit with these changes</a>.
 
-{% imageForArticles 'website/articles/16-meta-element-theme-color/screenshot-martinschneiderme-safari.png', 'Two screenshots of my website with colored tab bars - one light and one dark.' %}
+{% figureElement 'website/articles/16-meta-element-theme-color/screenshot-martinschneiderme-safari.png', 'Two screenshots of my website with colored tab bars - one light and one dark.' %}
 
 Im pretty happy with that solution for the moment, although I'm a bit concerned that I might forget to change the color in these two additional places when I'm fiddling around in the stylesheets next time. Maybe this is the right point to think about design tokens. I like this small detail and I'm curious if other browser vendors will provide something similar in the future. People have for example also used it to make notifications more obvious.
 

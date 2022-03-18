@@ -8,7 +8,7 @@ A few years back, operating-system-manufacturers started implementing the so-cal
 
 When developing my last placeholder-site on this domain, I've had implemented a dark version which changed some of the sites colors and even a picture. Here's a comparison of the two versions:
 
-{% imageForArticles 'website/articles/04-going-dark-switching-color-modes-on-my-website/martinschneiderme-old.png', 'Side-by-side-comparison of light- and dark-mode my old website.' %}
+{% figureElement 'website/articles/04-going-dark-switching-color-modes-on-my-website/martinschneiderme-old.png', 'Side-by-side-comparison of light- and dark-mode my old website.' %}
 
 This time I also wanted to give the user the opportunity to switch manually between the two color-themes. You've seen this on countless websites and you can try it right here by clicking on the icon-button right of the navigation.
 

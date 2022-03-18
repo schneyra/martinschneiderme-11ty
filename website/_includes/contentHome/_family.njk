@@ -1,7 +1,15 @@
 <div class="max-wrapper contentgrid contentgrid--reverse" id="family">
     <div class="contentgrid__image flow">
         <figure>
-            {% image "./website/_source/images/martin-and-max.jpg", "Martin looking at Max.", [400, 800, 1200], "400px", "image", "image__image" %}
+            {% pictureElement
+                "src" = "./website/_source/images/martin-and-max.jpg",
+                "alt" = "Martin looking at Max.",
+                "widths" = [400, 800, 1200],
+                "sizes" = "400px",
+                "pictureElementClasses" = "image",
+                "imageElementClasses" = "image__image"
+            %}
+
             <figcaption>
                 Max and me, January 2020.
             </figcaption>
