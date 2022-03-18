@@ -9,7 +9,7 @@ permalink: articles/{{ title | slugify }}/index.html
                 {{ title | safe }}
             </h1>
 
-            <a class="article__link u-url" href="{{ site.url }}/articles/{{ title | slugify }}/">
+            <a class="article__link u-url" href="{{ site.url }}{{ page.url }}">
                 <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | longDate }}</time>
             </a>
         </header>
@@ -25,7 +25,14 @@ permalink: articles/{{ title | slugify }}/index.html
         </div>
     </article>
 
-    {% include '_sharingButton.njk' %}
+    <msme-sharing-button
+        data-buttontext="share this page"
+        data-buttonclass="icon-button icon-button--has-text"
+        data-sharing-url="{{ site.url }}{{ page.url }}"
+        data-sharing-title="{{ title | safe }}"
+        data-sharing-text="{{ title | safe }}"
+    ></msme-sharing-button>
+
     {% include '_webmentionsArticle.njk' %}
     {% include '_recentArticles.njk' %}
 </div>
@@ -33,3 +40,5 @@ permalink: articles/{{ title | slugify }}/index.html
 {% include "readingIndicator/readingIndicatorJs.njk" %}
 
 {% include "jsonld/blogposting.njk" %}
+
+<script src="/msme-sharing-button.js" defer></script>

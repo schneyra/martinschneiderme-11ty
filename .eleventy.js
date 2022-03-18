@@ -36,7 +36,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./website/fonts");
     eleventyConfig.addPassthroughCopy("./website/images");
     eleventyConfig.addPassthroughCopy({
-        "./node_modules/instant.page/instantpage.js": "instantpage.js"
+        "./node_modules/instant.page/instantpage.js": "instantpage.js",
+        "./node_modules/msme-sharing-button/msme-sharing-button.js":
+            "msme-sharing-button.js"
     });
 
     // FILTERS

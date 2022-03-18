@@ -54,17 +54,17 @@
         text-transform: uppercase;
         text-decoration: none;
         font-weight: 500;
-        line-height: inherit;
+        line-height: 1;
 
-        .icon-button__text {
-            margin-left: 0.5em;
-            line-height: 1;
-        }
-
-        .icon-button__icon {
+        svg {
             width: 0.9em;
             height: 0.9em;
             stroke-width: 3px;
+            margin-right: 0.5em;
         }
     }
+}
+
+msme-sharing-button:not(:empty) {
+    display: inline-block;
 }
