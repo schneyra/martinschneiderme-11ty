@@ -1,13 +1,17 @@
 .contentgrid {
     min-height: 90vh;
+    width: fit-content;
+    max-width: calc(100% - 3rem);
+    margin-left: auto;
+    margin-right: auto;
 
     padding-top: var(--header-height);
     padding-bottom: var(--header-height);
 
     @media (min-width: 900px) {
         display: grid;
-        grid-template-columns: 4fr 3fr;
-        grid-gap: 2vw;
+        grid-template-columns: max-content 1fr;
+        grid-gap: 4rem;
     }
 
     &__content {
@@ -26,7 +30,7 @@
 
     &--reverse {
         @media (min-width: 900px) {
-            grid-template-columns: 3fr 4fr;
+            grid-template-columns: 1fr max-content;
         }
 
         .contentgrid__content {
