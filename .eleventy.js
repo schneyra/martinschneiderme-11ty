@@ -87,7 +87,7 @@ module.exports = function (eleventyConfig) {
     });
 
     //eleventyConfig.addTemplateFormats("js");
-    eleventyConfig.addExtension("js", {
+    /*eleventyConfig.addExtension("js", {
         outputFileExtension: "js",
         compile: function (contents, inputPath) {
             if (inputPath.startsWith(`./website/_`)) {
@@ -99,14 +99,12 @@ module.exports = function (eleventyConfig) {
                 return ret.code;
             };
         }
-    });
+    });*/
 
     // TRANSFORMS
-    if (process.env.ELEVENTY_ENV === "production") {
-        eleventyConfig.addTransform("htmlmin", htmlmin);
-        // purgeCSS needs to be rewritten to work with the linked css-file
-        //eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
-    }
+    eleventyConfig.addTransform("htmlmin", htmlmin);
+    // purgeCSS needs to be rewritten to work with the linked css-file
+    // eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
 
     return {
         markdownTemplateEngine: "njk",
