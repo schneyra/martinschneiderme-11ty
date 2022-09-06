@@ -5,6 +5,7 @@ module.exports = defineConfig({
         baseUrl: "http://localhost:8080",
         video: false,
         projectId: "j2nfw9",
-        chromeWebSecurity: false
+        chromeWebSecurity: false,
+        supportFile: false
     }
 });
