@@ -67,6 +67,8 @@ Colors: https://coolors.co/69995d-cd4631-ffc857-3d5467-eeeef2
 
 // if the user has switched mode, a data-attribute
 // on the html-element is set to either "dark" or "light"
+/*! purgecss start ignore */
 [data-user-color-scheme="dark"] {
     @include darkModeCustomProperties;
 }
+/*! purgecss end ignore */

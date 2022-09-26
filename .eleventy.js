@@ -4,8 +4,6 @@ const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const path = require("path");
 const sass = require("sass");
 const terser = require("terser");
-const autoprefixer = require("autoprefixer");
-const postcss = require("postcss");
 
 const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
 const longDate = require("./website/_functions/filters/longDate.js");
@@ -24,9 +22,9 @@ module.exports = function (eleventyConfig) {
     // PLUGINS
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(directoryOutputPlugin);
 
     eleventyConfig.setQuietMode(true);
-    eleventyConfig.addPlugin(directoryOutputPlugin);
 
     // FILE HANDLING
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml", "md"]);
@@ -48,10 +46,19 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("stripTags", stripTags);
     eleventyConfig.addNunjucksAsyncFilter("createOgImage", createOgImage);
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
+    eleventyConfig.addNunjucksAsyncFilter(
+        "mangleJs",
+        async (code, callback) => {
+            const mangledCode = await terser.minify(code);
+            callback(null, mangledCode.code);
+        }
+    );
+
     eleventyConfig.addNunjucksAsyncShortcode(
         "pictureElement",
         pictureElementShortcode
     );
+
     eleventyConfig.addNunjucksAsyncShortcode(
         "figureElement",
         figureShortcodeForArticles
@@ -61,50 +68,45 @@ module.exports = function (eleventyConfig) {
     // https://gist.github.com/daviddarnes/8d70d7b8eaee474bcb19e30fc45e63ff
     eleventyConfig.addTemplateFormats("scss");
     eleventyConfig.addExtension("scss", {
-        outputFileExtension: "css",
+        outputFileExtension: "min.css",
         compile: (contents, inputPath) => {
             let parsed = path.parse(inputPath);
+
             if (parsed.name.startsWith("_")) {
                 return;
             }
 
-            return () => {
-                let compiledCss = sass.compile(inputPath);
-                let css = compiledCss.css.toString("utf8");
-
-                return postcss([autoprefixer])
-                    .process(css, { from: inputPath })
-                    .then((result) => {
-                        result.warnings().forEach((warn) => {
-                            console.warn(warn.toString());
-                        });
-
-                        console.log(`[msme] SCSS compiled (${inputPath})`);
-                        return result.css;
-                    });
+            return (data) => {
+                let ret = sass.compile(inputPath, {
+                    style: "compressed"
+                });
+                console.log(`[msme] SCSS compiled (${inputPath})`);
+                return ret.css;
             };
         }
     });
 
-    //eleventyConfig.addTemplateFormats("js");
-    /*eleventyConfig.addExtension("js", {
-        outputFileExtension: "js",
+    eleventyConfig.addTemplateFormats("js");
+    eleventyConfig.addExtension("js", {
+        outputFileExtension: "min.js",
         compile: function (contents, inputPath) {
-            if (inputPath.startsWith(`./website/_`)) {
+            let parsed = path.parse(inputPath);
+
+            if (parsed.name.startsWith("_") || parsed.dir !== "./website/js") {
                 return;
             }
 
-            return async (data) => {
+            return async () => {
                 let ret = await terser.minify(contents);
+                console.log(`[msme] JS compiled (${inputPath})`);
                 return ret.code;
             };
         }
-    });*/
+    });
 
     // TRANSFORMS
+    eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
     eleventyConfig.addTransform("htmlmin", htmlmin);
-    // purgeCSS needs to be rewritten to work with the linked css-file
-    // eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
 
     return {
         markdownTemplateEngine: "njk",

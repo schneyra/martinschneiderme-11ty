@@ -7,8 +7,6 @@ title:
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="hsl(240, 13%, 98%)">
-        <meta name="generator" content="{{ eleventy.generator }}">
         
         <title>
             {{ title | safe }}
@@ -16,15 +14,19 @@ title:
             {{ site.name }}
         </title>
 
+        <meta name="theme-color" content="hsl(240, 13%, 98%)">
         <script>
-            {% include "compiledassets/colorModeHeader.js" %}
+            {% set colormodeHeader %}
+                {% include 'website/js/_colormode-header.js' %}
+            {% endset %}
+            {{ colormodeHeader | mangleJs | safe}}
         </script>
 
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-500.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
-        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="/main.min.css">
         
         {% include 'layout/head-meta.njk' %}
     </head>
@@ -41,15 +43,16 @@ title:
 
         {% include "layout/footer.njk" %}
 
-        <script>
-            {% include "compiledassets/colorModeToggleButton.js" %}
-        </script>        
+        <script src="/js/colormode-togglebutton.min.js" async></script>
 
         <script>
-            {% include "compiledassets/serviceworkerEmbed.js" %}
+            {% set serviceworkerEmbed %}
+                {% include 'website/js/_serviceworker-embed.js' %}
+            {% endset %}
+            {{ serviceworkerEmbed | mangleJs | safe}}
         </script>
-        
-        <script src="/instantpage.js" defer></script>
+
+        <script src="/instantpage.js" async></script>
 
         {% include "jsonld/website.njk" %}
     </body>
