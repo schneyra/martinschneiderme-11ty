@@ -1,23 +1,13 @@
-// https://manu.ninja/turning-manu.ninja-up-to-11ty/#purge-css-for-each-html-file-separately
-
 const { PurgeCSS } = require("purgecss");
-const pattern = /<style>.*?<\/style>/s;
 
 module.exports = async (content, outputPath) => {
     if (
         outputPath.endsWith(".html") &&
         outputPath.indexOf("bookmarks/includes") === -1
     ) {
-        // get CSS from content and remove tags
-        const extractedCSS = await content
-            .match(/<style>(.*?)<\/style>/g)
-            .map(function (val) {
-                return val.replace(/<\/?style>/g, "");
-            });
-
         const [{ css: result }] = await new PurgeCSS().purge({
-            content: [{ raw: content.replace(pattern, ""), extension: "html" }],
-            css: [{ raw: extractedCSS[0] }],
+            content: [{ raw: content, extension: "html" }],
+            css: ["_site/main.min.css"],
             safelist: [
                 "::-webkit-progress-bar",
                 "::-webkit-progress-value",
@@ -26,7 +16,10 @@ module.exports = async (content, outputPath) => {
             ]
         });
 
-        return content.replace(pattern, `<style>${result}</style>`);
+        return content.replace(
+            '<link rel="stylesheet" href="/main.min.css">',
+            `<style>${result}</style>`
+        );
     }
 
     return content;

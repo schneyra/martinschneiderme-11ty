@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
     // https://gist.github.com/daviddarnes/8d70d7b8eaee474bcb19e30fc45e63ff
     eleventyConfig.addTemplateFormats("scss");
     eleventyConfig.addExtension("scss", {
-        outputFileExtension: "css",
+        outputFileExtension: "min.css",
         compile: (contents, inputPath) => {
             let parsed = path.parse(inputPath);
             if (parsed.name.startsWith("_")) {
@@ -106,8 +106,7 @@ module.exports = function (eleventyConfig) {
 
     // TRANSFORMS
     eleventyConfig.addTransform("htmlmin", htmlmin);
-    // purgeCSS needs to be rewritten to work with the linked css-file
-    // eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
+    eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
 
     return {
         markdownTemplateEngine: "njk",
