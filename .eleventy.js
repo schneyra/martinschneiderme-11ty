@@ -48,10 +48,19 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("stripTags", stripTags);
     eleventyConfig.addNunjucksAsyncFilter("createOgImage", createOgImage);
     eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
+    eleventyConfig.addNunjucksAsyncFilter(
+        "mangleJs",
+        async (code, callback) => {
+            const mangledCode = await terser.minify(code);
+            callback(null, mangledCode.code);
+        }
+    );
+
     eleventyConfig.addNunjucksAsyncShortcode(
         "pictureElement",
         pictureElementShortcode
     );
+
     eleventyConfig.addNunjucksAsyncShortcode(
         "figureElement",
         figureShortcodeForArticles
@@ -64,24 +73,17 @@ module.exports = function (eleventyConfig) {
         outputFileExtension: "min.css",
         compile: (contents, inputPath) => {
             let parsed = path.parse(inputPath);
+
             if (parsed.name.startsWith("_")) {
                 return;
             }
 
-            return () => {
-                let compiledCss = sass.compile(inputPath);
-                let css = compiledCss.css.toString("utf8");
-
-                return postcss([autoprefixer])
-                    .process(css, { from: inputPath })
-                    .then((result) => {
-                        result.warnings().forEach((warn) => {
-                            console.warn(warn.toString());
-                        });
-
-                        console.log(`[msme] SCSS compiled (${inputPath})`);
-                        return result.css;
-                    });
+            return (data) => {
+                let ret = sass.compile(inputPath, {
+                    style: "compressed"
+                });
+                console.log(`[msme] SCSS compiled (${inputPath})`);
+                return ret.css;
             };
         }
     });
@@ -105,8 +107,8 @@ module.exports = function (eleventyConfig) {
     });
 
     // TRANSFORMS
-    eleventyConfig.addTransform("htmlmin", htmlmin);
     eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
+    eleventyConfig.addTransform("htmlmin", htmlmin);
 
     return {
         markdownTemplateEngine: "njk",

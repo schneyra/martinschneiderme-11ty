@@ -15,7 +15,12 @@ title:
         </title>
 
         <meta name="theme-color" content="hsl(240, 13%, 98%)">
-        <script src="/js/colormode-header.min.js"></script>
+        <script>
+            {% set colormodeHeader %}
+                {% include 'website/js/colormode-header.js' %}
+            {% endset %}
+            {{ colormodeHeader | mangleJs }}
+        </script>
 
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-500.woff2" as="font" type="font/woff2" crossorigin>
