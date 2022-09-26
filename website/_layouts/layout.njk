@@ -17,9 +17,9 @@ title:
         <meta name="theme-color" content="hsl(240, 13%, 98%)">
         <script>
             {% set colormodeHeader %}
-                {% include 'website/js/colormode-header.js' %}
+                {% include 'website/js/_colormode-header.js' %}
             {% endset %}
-            {{ colormodeHeader | safe}}
+            {{ colormodeHeader | mangleJs | safe}}
         </script>
 
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -44,7 +44,14 @@ title:
         {% include "layout/footer.njk" %}
 
         <script src="/js/colormode-togglebutton.min.js" async></script>
-        <script src="/js/serviceworker-embed.min.js" async></script>
+
+        <script>
+            {% set serviceworkerEmbed %}
+                {% include 'website/js/_serviceworker-embed.js' %}
+            {% endset %}
+            {{ serviceworkerEmbed | mangleJs | safe}}
+        </script>
+
         <script src="/instantpage.js" async></script>
 
         {% include "jsonld/website.njk" %}
