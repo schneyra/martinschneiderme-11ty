@@ -4,8 +4,6 @@ const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const path = require("path");
 const sass = require("sass");
 const terser = require("terser");
-const autoprefixer = require("autoprefixer");
-const postcss = require("postcss");
 
 const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
 const longDate = require("./website/_functions/filters/longDate.js");

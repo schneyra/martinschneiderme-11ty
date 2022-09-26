@@ -19,7 +19,7 @@ title:
             {% set colormodeHeader %}
                 {% include 'website/js/colormode-header.js' %}
             {% endset %}
-            {{ colormodeHeader | mangleJs }}
+            {{ colormodeHeader | mangleJs | safe }}
         </script>
 
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
