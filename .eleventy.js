@@ -24,9 +24,9 @@ module.exports = function (eleventyConfig) {
     // PLUGINS
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(directoryOutputPlugin);
 
     eleventyConfig.setQuietMode(true);
-    eleventyConfig.addPlugin(directoryOutputPlugin);
 
     // FILE HANDLING
     eleventyConfig.setTemplateFormats(["ico", "njk", "opml", "md"]);
@@ -86,20 +86,23 @@ module.exports = function (eleventyConfig) {
         }
     });
 
-    //eleventyConfig.addTemplateFormats("js");
-    /*eleventyConfig.addExtension("js", {
-        outputFileExtension: "js",
+    eleventyConfig.addTemplateFormats("js");
+    eleventyConfig.addExtension("js", {
+        outputFileExtension: "min.js",
         compile: function (contents, inputPath) {
-            if (inputPath.startsWith(`./website/_`)) {
+            let parsed = path.parse(inputPath);
+
+            if (parsed.name.startsWith("_") || parsed.dir !== "./website/js") {
                 return;
             }
 
-            return async (data) => {
+            return async () => {
                 let ret = await terser.minify(contents);
+                console.log(`[msme] JS compiled (${inputPath})`);
                 return ret.code;
             };
         }
-    });*/
+    });
 
     // TRANSFORMS
     eleventyConfig.addTransform("htmlmin", htmlmin);
