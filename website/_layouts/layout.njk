@@ -19,7 +19,7 @@ title:
             {% set colormodeHeader %}
                 {% include 'website/js/colormode-header.js' %}
             {% endset %}
-            {{ colormodeHeader | mangleJs | safe }}
+            {{ colormodeHeader | safe}}
         </script>
 
         <link rel="preload" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -43,9 +43,9 @@ title:
 
         {% include "layout/footer.njk" %}
 
-        <script src="/js/colormode-togglebutton.min.js" defer></script>
-        <script src="/js/serviceworker-embed.min.js" defer></script>
-        <script src="/instantpage.js" defer></script>
+        <script src="/js/colormode-togglebutton.min.js" async></script>
+        <script src="/js/serviceworker-embed.min.js" async></script>
+        <script src="/instantpage.js" async></script>
 
         {% include "jsonld/website.njk" %}
     </body>
