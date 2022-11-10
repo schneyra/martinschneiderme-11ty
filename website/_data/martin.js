@@ -31,6 +31,11 @@ module.exports = async () => {
                 title: "My account on Github"
             },
             {
+                name: "mastodon",
+                url: "https://mastodon.social/@schneyra",
+                title: "My account on mastodon"
+            },
+            {
                 name: "twitter",
                 url: "https://www.twitter.com/schneyra/",
                 title: "My account on twitter"
