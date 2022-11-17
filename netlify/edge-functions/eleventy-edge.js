@@ -14,12 +14,13 @@ export default async (request, context) => {
             cookies: []
         });
 
+        let slug = edge.url.pathname;
+
+        const webmentionsResponse = await fetch(`https://webmention.io/api/mentions.jf2?domain=martinschneider.me&per-page=200&sort-dir=up&target=https://martinschneider.me${slug}`);
+        const webmentions = await webmentionsResponse.json();
+
         edge.config((eleventyConfig) => {
-            // Run some more Edge-specific configuration
-            // e.g. Add a sample filter
-            eleventyConfig.addFilter("json", (obj) =>
-                JSON.stringify(obj, null, 2)
-            );
+            eleventyConfig.addGlobalData('webmentions', webmentions)
         });
 
         return await edge.handleResponse();

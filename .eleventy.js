@@ -9,7 +9,6 @@ const terser = require("terser");
 const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
 const longDate = require("./website/_functions/filters/longDate.js");
 const recentArticles = require("./website/_functions/filters/recentArticles.js");
-const webmentionButton = require("./website/_functions/filters/webmentionButton.js");
 const htmlmin = require("./website/_functions/transforms/htmlmin");
 const purgeInlineCSS = require("./website/_functions/transforms/purgeInlineCSS");
 const pictureElementShortcode = require("./website/_functions/filters/pictureElementShortcode");
@@ -47,7 +46,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("recentArticles", recentArticles);
     eleventyConfig.addFilter("stripTags", stripTags);
     eleventyConfig.addNunjucksAsyncFilter("createOgImage", createOgImage);
-    eleventyConfig.addNunjucksAsyncFilter("webmentionButton", webmentionButton);
     eleventyConfig.addNunjucksAsyncFilter(
         "mangleJs",
         async (code, callback) => {
@@ -108,6 +106,7 @@ module.exports = function (eleventyConfig) {
 
     // TRANSFORMS
     eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
+    //Minification is deactivated because of edge-rendering
     //eleventyConfig.addTransform("htmlmin", htmlmin);
 
     return {
