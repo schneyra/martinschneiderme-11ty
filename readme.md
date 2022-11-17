@@ -11,7 +11,7 @@ Build with [Eleventy](https://www.11ty.dev/), articles written in [WordPress](ht
 ## Codespace development
 
     npm install
-    npx @11ty/eleventy --serve
+    npx netlify dev
 
 ## Local development (with Docker)
 

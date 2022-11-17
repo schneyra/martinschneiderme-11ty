@@ -1,11 +1,19 @@
+[dev]
+framework = "#static"
+command = "npx @11ty/eleventy@2.0.0-canary.16 --quiet --watch"
+
 [build]
-command = "ELEVENTY_ENV='production' npx @11ty/eleventy --input=./website"
+command = "ELEVENTY_ENV='production' npx @11ty/eleventy@2.0.0-canary.16 --input=./website"
 publish = "_site"
 
 [build.environment]
 CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
 TERM = "xterm"
 NODE_VERSION = "17"
+
+[[edge_functions]]
+function = "eleventy-edge"
+path = "/test"
 
 [[plugins]]
     package = "netlify-plugin-cypress"

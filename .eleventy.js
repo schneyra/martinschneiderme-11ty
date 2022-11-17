@@ -1,6 +1,7 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+const { EleventyEdgePlugin } = require("@11ty/eleventy");
 const path = require("path");
 const sass = require("sass");
 const terser = require("terser");
@@ -23,6 +24,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(directoryOutputPlugin);
+    eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     eleventyConfig.setQuietMode(true);
 
@@ -106,7 +108,7 @@ module.exports = function (eleventyConfig) {
 
     // TRANSFORMS
     eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
-    eleventyConfig.addTransform("htmlmin", htmlmin);
+    //eleventyConfig.addTransform("htmlmin", htmlmin);
 
     return {
         markdownTemplateEngine: "njk",
