@@ -106,8 +106,7 @@ module.exports = function (eleventyConfig) {
 
     // TRANSFORMS
     eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
-    //Minification is deactivated because of edge-rendering
-    //eleventyConfig.addTransform("htmlmin", htmlmin);
+    eleventyConfig.addTransform("htmlmin", htmlmin);
 
     return {
         markdownTemplateEngine: "njk",
