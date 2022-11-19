@@ -70,6 +70,11 @@ self.addEventListener("fetch", (evt) => {
         return;
     }
 
+    // Do not cache HTML-Files
+    if (evt.request.destination == "document") {
+        return;
+    }
+
     evt.respondWith(
         caches.match(evt.request).then((cachedResponse) => {
             // Item found in cache so return
