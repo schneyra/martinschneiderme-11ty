@@ -1,12 +1,12 @@
 const CACHE_KEYS = {
     PRE_CACHE: `precache-${VERSION}`,
-    RUNTIME: `runtime-${VERSION}`,
+    RUNTIME: `runtime-${VERSION}`
 };
 
 // URLS that we don’t want to end up in the cache
 const EXCLUDED_URLS = [
     "http://localhost:8080/browser-sync/browser-sync-client.js",
-    "http://localhost:8080/browser-sync/socket.io/",
+    "http://localhost:8080/browser-sync/socket.io/"
 ];
 
 // URLS that we want to be cached when the worker is installed
@@ -14,7 +14,7 @@ const PRE_CACHE_URLS = [
     "/",
     "/fonts/ibm-plex-sans-v7-latin-500.woff2",
     "/fonts/ibm-plex-sans-v7-latin-700.woff2",
-    "/fonts/ibm-plex-sans-v7-latin-regular.woff2",
+    "/fonts/ibm-plex-sans-v7-latin-regular.woff2"
 ];
 
 // You might want to bypass a certain host
@@ -43,17 +43,17 @@ self.addEventListener("activate", (evt) => {
             .keys()
             .then((cacheNames) => {
                 return cacheNames.filter(
-                    (item) => !Object.values(CACHE_KEYS).includes(item),
+                    (item) => !Object.values(CACHE_KEYS).includes(item)
                 );
             })
             .then((itemsToDelete) => {
                 return Promise.all(
                     itemsToDelete.map((item) => {
                         return caches.delete(item);
-                    }),
+                    })
                 );
             })
-            .then(() => self.clients.claim()),
+            .then(() => self.clients.claim())
     );
 });
 
@@ -67,6 +67,11 @@ self.addEventListener("fetch", (evt) => {
 
     // Check we don't want to ignore this URL
     if (EXCLUDED_URLS.some((page) => evt.request.url.indexOf(page) > -1)) {
+        return;
+    }
+
+    // Do not cache HTML-Files
+    if (evt.request.url.endsWith(".html")) {
         return;
     }
 
@@ -92,6 +97,6 @@ self.addEventListener("fetch", (evt) => {
                         return;
                     });
             });
-        }),
+        })
     );
 });

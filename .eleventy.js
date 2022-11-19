@@ -105,7 +105,7 @@ module.exports = function (eleventyConfig) {
     });
 
     // TRANSFORMS
-    eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
+    //eleventyConfig.addTransform("purgeInlineCSS", purgeInlineCSS);
     eleventyConfig.addTransform("htmlmin", htmlmin);
 
     return {
