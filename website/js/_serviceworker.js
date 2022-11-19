@@ -62,19 +62,11 @@ self.addEventListener("fetch", (evt) => {
 
     // Check we don't want to ignore this host
     if (IGNORED_HOSTS.indexOf(hostname) >= 0) {
-        console.log("ignored host" + evt.request.url);
         return;
     }
 
     // Check we don't want to ignore this URL
     if (EXCLUDED_URLS.some((page) => evt.request.url.indexOf(page) > -1)) {
-        console.log("ignored url" + evt.request.url);
-        return;
-    }
-
-    // Do not cache HTML-Files
-    if (evt.request.url.endsWith(".html")) {
-        console.log("ignored ending" + evt.request.url);
         return;
     }
 
