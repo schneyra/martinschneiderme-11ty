@@ -6,7 +6,7 @@ This is the repository for my personal website 👨🏼‍💻 [martinschneider.
 Feel free to grab the bits and pieces that might be handy for you. Attribution is appreciated.
 Any questions or suggestions? Send me a message [on Mastodon](https://mastodon.social/@schneyra).
 
-Build with [Eleventy](https://www.11ty.dev/), articles written in [WordPress](https://wordpress.org/), hosted on [Netlify](https://www.netlify.com/).
+Build with [Eleventy](https://www.11ty.dev/) and hosted on [Netlify](https://www.netlify.com/).
 
 ## Codespace development
 
