@@ -4,7 +4,7 @@
 
 This is the repository for my personal website 👨🏼‍💻 [martinschneider.me](https://martinschneider.me).
 Feel free to grab the bits and pieces that might be handy for you. Attribution is appreciated.
-Any questions or suggestions? Send me a message [on twitter](https://twitter.com/schneyra).
+Any questions or suggestions? Send me a message [on Mastodon](https://mastodon.social/@schneyra).
 
 Build with [Eleventy](https://www.11ty.dev/), articles written in [WordPress](https://wordpress.org/), hosted on [Netlify](https://www.netlify.com/).
 
