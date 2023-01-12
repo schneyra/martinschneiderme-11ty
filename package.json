@@ -38,7 +38,7 @@
         "html-minifier": "^4.0.0",
         "instant.page": "^5.1.1",
         "msme-sharing-button": "^2.0.1",
-        "netlify-cli": "^12.2.1",
+        "netlify-cli": "^12.7.2",
         "netlify-plugin-cache": "^1.0.3",
         "prettier": "^2.7.1",
         "purgecss": "^5.0.0",
