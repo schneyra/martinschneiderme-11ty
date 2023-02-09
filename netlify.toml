@@ -1,9 +1,9 @@
 [dev]
 framework = "#static"
-command = "npx @11ty/eleventy@2.0.0-canary.16 --quiet --watch"
+command = "npx @11ty/eleventy --quiet --watch"
 
 [build]
-command = "ELEVENTY_ENV='production' npx @11ty/eleventy@2.0.0-canary.16 --input=./website"
+command = "ELEVENTY_ENV='production' npx @11ty/eleventy --input=./website"
 publish = "_site"
 
 [build.environment]
