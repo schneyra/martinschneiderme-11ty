@@ -1,21 +1,18 @@
-<div class="contentgrid">
-    <div class="contentgrid__content flow">
-        <h1 class="headline glitch" data-glitch="Hey, my name is Martin!">Hey, my name is Martin!</h1>
+<section class="section hero">
+    <div class="hero__content">
+        <h1 class="hero__headline">Hej! My name is Martin.</h1>
         <p>I'm a
-            <a href="#webdevelopment">frontend developer</a>,
+            <a href="#webdevelopment">frontend web developer</a>,
             <a href="#family">father and boyfriend</a>,
             <a href="#photography">hobby photographer</a>, avid reader, music lover, long-time blogger and lifelong scout.</p>
     </div>
-
-    <div class="contentgrid__image flow">
         {% pictureElement
             "src" = "./website/_source/images/avatar.jpg",
             "alt" = "Smiling Martin looking into the camera.",
             "widths" = [350, 700, 1050],
             "sizes" = "350px",
-            "pictureElementClasses" = "image",
-            "imageElementClasses" = "image__image",
+            "pictureElementClasses" = "hero__image",
+            "imageElementClasses" = "",
             "lazyloading" = false
         %}
-    </div>
-</div>
+</section>
