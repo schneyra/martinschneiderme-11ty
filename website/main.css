@@ -48,23 +48,31 @@
 
     --color-headlines: hsl(215deg 17% 15%);
     --color-body: hsl(215deg 17% 0%);
+    --color-invert: hsl(215deg 17% 100%);
+
+
+    /* https://www.joshwcomeau.com/gradient-generator?colors=cbd2dc|eff1f5&angle=130&colorMode=hcl&precision=8&easingCurve=0.6056034482758621|0.75|0.2521551724137931|0.3448275862068966 */
+    --gradient-background: linear-gradient(
+        130deg,
+        hsl(215deg 20% 83%) 0%,
+        hsl(216deg 20% 84%) 20%,
+        hsl(216deg 20% 86%) 31%,
+        hsl(217deg 20% 87%) 38%,
+        hsl(217deg 20% 88%) 44%,
+        hsl(218deg 20% 90%) 49%,
+        hsl(218deg 21% 91%) 56%,
+        hsl(219deg 21% 92%) 66%,
+        hsl(219deg 22% 94%) 80%,
+        hsl(220deg 23% 95%) 100%
+      );
 }
 
 body {
     font-family: var(--font-family-body);
-    background-image: linear-gradient(140deg,
-            hsl(214deg 18% 77%) 0%,
-            hsl(215deg 18% 79%) 19%,
-            hsl(215deg 18% 81%) 27%,
-            hsl(215deg 18% 82%) 34%,
-            hsl(215deg 18% 84%) 41%,
-            hsl(216deg 18% 86%) 47%,
-            hsl(216deg 18% 87%) 53%,
-            hsl(217deg 19% 89%) 59%,
-            hsl(217deg 19% 90%) 66%,
-            hsl(218deg 20% 92%) 73%,
-            hsl(219deg 21% 93%) 81%,
-            hsl(220deg 23% 95%) 100%);
+    background-image: var(--gradient-background);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     line-height: 1.7;
     font-weight: 300;
     font-size: var(--step-0);
@@ -103,41 +111,32 @@ h6 {
 }
 
 .hero__image {
-    background-image: linear-gradient(140deg,
-            hsl(345deg 11% 93%) 0%,
-            hsl(345deg 12% 93%) 11%,
-            hsl(0deg 10% 94%) 22%,
-            hsl(340deg 12% 95%) 33%,
-            hsl(340deg 14% 96%) 44%,
-            hsl(0deg 6% 97%) 56%,
-            hsl(0deg 8% 97%) 67%,
-            hsl(300deg 11% 98%) 78%,
-            hsl(0deg 0% 99%) 89%,
-            hsl(0deg 0% 100%) 100%);
+    background-color: hsl(240deg 33% 100%);
     padding: var(--space-xs-s);
     aspect-ratio: 1 / 1;
 }
 
-.hero__image img {
-    aspect-ratio: 1 / 1;
-}
-
 p {
-    max-width: 70ch;
+    max-width: 65ch;
     margin-top: 1em;
 }
 
 a {
     color: inherit;
     font-weight: 600;
-    text-decoration-color: hsl(190, 100%, 50%);
+    text-decoration-color: hsl(25deg 100% 50%);
     text-decoration-thickness: 0.15em;
 }
 
 a:visited {
-    text-decoration-color: hsl(45deg 100% 50%);
+    text-decoration-color: hsl(190, 100%, 50%);
 }
 
 a:hover {
-    text-decoration-color: hsl(25deg 100% 50%);
+    text-decoration-color: hsl(45deg 100% 50%);
+}
+
+::selection {
+    background: var(--color-headlines);
+    color: var(--color-invert);
 }

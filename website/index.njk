@@ -1,11 +1,12 @@
 ---
 layout: layout
 ---
-
-{% include "contentHome/_overview.njk" %}
-{% include "contentHome/_development.njk" %}
-{% include "contentHome/_family.njk" %}
-{% include "contentHome/_photography.njk" %}
+<div data-scroll-container>
+    {% include "contentHome/_overview.njk" %}
+    {% include "contentHome/_development.njk" %}
+    {% include "contentHome/_family.njk" %}
+    {% include "contentHome/_photography.njk" %}
+</div>
 
 {#}
 {% include "contentHome/_reading.njk" %}
@@ -15,3 +16,14 @@ layout: layout
 #}
 
 {% include "jsonld/person.njk" %}
+
+<link rel="stylesheet" href="locomotive-scroll.min.css">
+<script src="locomotive-scroll.min.js"></script>
+<script>
+    /*(function () {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+        });
+    })();*/
+</script>
