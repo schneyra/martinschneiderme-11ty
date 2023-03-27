@@ -1,105 +1,69 @@
-<div class="max-wrapper">
-    <div class="image-cards">
-        <div class="image-cards__item">
-            <div class="textbox">
-                <div class="flow image-cards__overflow">
-                    <h2 class="glitch" data-glitch="Photography" id="photography">Photography</h2>
-                    <p>
-                        After starting to make a living of my biggest hobby, there was the need
-                        for a new one. Since have always been interested in documenting my life
-                        and travels <em>and</em> being generally interested in technical things, 
-                        choosing photography as a hobby was quite obvious.
-                    </p>
-                    <p>
-                        Bringing the technical (the camera and its settings) and non-technical 
-                        elements (finding a composition) together brings me a lot of joy. If 
-                        you're interested in my pictures have a look at my 
-                        <a href="https://www.dertagundich.de">personal blog</a> where I post 
-                        some of them from time to time. Sadly, I did not take much time lately 
-                        to go out and take some pictures.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="image-cards__item">
-            <figure class="image-cards__image">                
-                {% pictureElement
-                    "src" = "./website/_source/images/photography/arcdetriumphe.jpg",
-                    "alt" = "Arc de Triumphe in Paris.",
-                    "widths" = [400, 900, 1200],
-                    "sizes" = "(min-width: 1200px) 1200px, 100vw"
-                %}
-                
-                <figcaption>
-                    Arc de Triumphe, Paris, June 2018
-                </figcaption>
-            </figure>
+<section class="section">
+    <h2 class="glitch" data-glitch="Photography" id="photography">Photography</h2>
+    <p>
+        After starting to make a living of my biggest hobby, there was the need
+        for a new one. Since have always been interested in documenting my life
+        and travels <em>and</em> being generally interested in technical things, 
+        choosing photography as a hobby was quite obvious.
+    </p>
+    <p>
+        Bringing the technical (the camera and its settings) and non-technical 
+        elements (finding a composition) together brings me a lot of joy. If 
+        you're interested in my pictures have a look at my 
+        <a href="https://www.dertagundich.de">personal blog</a> where I post 
+        some of them from time to time. Sadly, I did not take much time lately 
+        to go out and take some pictures.
+    </p>
+        
+        
+    <figure class="image-cards__image">                
+        {% pictureElement
+            "src" = "./website/_source/images/photography/arcdetriumphe.jpg",
+            "alt" = "Arc de Triumphe in Paris.",
+            "widths" = [400, 900, 1200],
+            "sizes" = "(min-width: 1200px) 1200px, 100vw"
+        %}
+        
+        <figcaption>
+            Arc de Triumphe, Paris, June 2018
+        </figcaption>
+    </figure>
 
-        </div>
-        <div class="image-cards__item">
-            <figure class="image-cards__image">
-                {% pictureElement
-                    "src" = "./website/_source/images/photography/icelandroad.jpg",
-                    "alt" = "A road until the horizon.",
-                    "widths" = [400, 900, 1200],
-                    "sizes" = "(min-width: 1200px) 1200px, 100vw"
-                %}
-                <figcaption>
-                    A road in Iceland, June 2015
-                </figcaption>
-            </figure>
-        </div>
-        {#
-        <div class="image-cards__item">
-            <figure class="image-cards__image">
-                <picture>
-                    <source srcset="/images/photography/worldtradecenter1600.webp 1600w, /images/photography/worldtradecenter1200.webp 1200w, /images/photography/worldtradecenter800.webp 800w" sizes="(min-width: 700px) 800px, 100vw" type="image/webp">
-                    <source srcset="/images/photography/worldtradecenter1600.jpg 1600w, /images/photography/worldtradecenter1200.jpg 1200w, /images/photography/worldtradecenter800.jpg 800w" sizes="(min-width: 700px) 800px, 100vw" type="image/jpg">
-                    <img src="/images/photography/worldtradecenter400.jpg" alt="A crowded train station." loading="lazy" width="2400" height="1600">
-                </picture>
-                <figcaption>
-                    World Trade Center Transportation Hub, New York City, October 2016
-                </figcaption>
-            </figure>
-        </div>
-        <div class="image-cards__item">
-            <figure class="image-cards__image">
-                <picture>
-                    <source srcset="/images/photography/flyingobjects1600.webp 1600w, /images/photography/flyingobjects1200.webp 1200w, /images/photography/flyingobjects800.webp 800w" sizes="(min-width: 700px) 800px, 100vw" type="image/webp">
-                    <source srcset="/images/photography/flyingobjects1600.jpg 1600w, /images/photography/flyingobjects1200.jpg 1200w, /images/photography/flyingobjects800.jpg 800w" sizes="(min-width: 700px) 800px, 100vw" type="image/jpg">
-                    <img src="/images/photography/flyingobjects400.jpg" alt="A polaroid picture is hovering in the air." loading="lazy" width="2400" height="1600">
-                </picture>
-                <figcaption>
-                    Flying Objects, January 2019
-                </figcaption>
-            </figure>
-        </div>
-        #}
-        <div class="image-cards__item">
-            <figure class="image-cards__image">
-                {% pictureElement
-                    "src" = "./website/_source/images/photography/hofgartenbonn.jpg",
-                    "alt" = "The sun is shining through some trees.",
-                    "widths" = [400, 900, 1200],
-                    "sizes" = "(min-width: 1200px) 1200px, 100vw"
-                %}
-                <figcaption>
-                    Hofgarten, Bonn, August 2018
-                </figcaption>
-            </figure>
-        </div>
-        <div class="image-cards__item">
-            <figure class="image-cards__image">
-                {% pictureElement
-                    "src" = "./website/_source/images/photography/swollenrhine.jpg",
-                    "alt" = "A ship besides a bridge.",
-                    "widths" = [400, 900, 1200],
-                    "sizes" = "(min-width: 1200px) 1200px, 100vw"
-                %}
-                <figcaption>
-                    Swollen Rhine, Bonn, January 2018
-                </figcaption>
-            </figure>
-        </div>
-    </ul>
-</div>
+
+    <figure class="image-cards__image">
+        {% pictureElement
+            "src" = "./website/_source/images/photography/icelandroad.jpg",
+            "alt" = "A road until the horizon.",
+            "widths" = [400, 900, 1200],
+            "sizes" = "(min-width: 1200px) 1200px, 100vw"
+        %}
+        <figcaption>
+            A road in Iceland, June 2015
+        </figcaption>
+    </figure>
+
+    <figure class="image-cards__image">
+        {% pictureElement
+            "src" = "./website/_source/images/photography/hofgartenbonn.jpg",
+            "alt" = "The sun is shining through some trees.",
+            "widths" = [400, 900, 1200],
+            "sizes" = "(min-width: 1200px) 1200px, 100vw"
+        %}
+        <figcaption>
+            Hofgarten, Bonn, August 2018
+        </figcaption>
+    </figure>
+
+
+    <figure class="image-cards__image">
+        {% pictureElement
+            "src" = "./website/_source/images/photography/swollenrhine.jpg",
+            "alt" = "A ship besides a bridge.",
+            "widths" = [400, 900, 1200],
+            "sizes" = "(min-width: 1200px) 1200px, 100vw"
+        %}
+        <figcaption>
+            Swollen Rhine, Bonn, January 2018
+        </figcaption>
+    </figure>
+</section>

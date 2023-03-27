@@ -44,12 +44,17 @@
     --step-input: clamp(1rem, calc(0.91rem + 0.45vw), 1.1rem);
 
     --font-family-headlines: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    --font-family-headlines: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
     --font-family-body: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+    --font-family-body: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
 
     --color-headlines: hsl(215deg 17% 15%);
-    --color-body: hsl(215deg 17% 0%);
+    --color-body: hsl(215deg 25% 25%);
     --color-invert: hsl(215deg 17% 100%);
 
+    --z-index-footer: 0;
+    --z-index-content: 1;
+    --z-index-header: 3;
 
     /* https://www.joshwcomeau.com/gradient-generator?colors=cbd2dc|eff1f5&angle=130&colorMode=hcl&precision=8&easingCurve=0.6056034482758621|0.75|0.2521551724137931|0.3448275862068966 */
     --gradient-background: linear-gradient(
@@ -69,19 +74,13 @@
 
 body {
     font-family: var(--font-family-body);
-    background-image: var(--gradient-background);
-    background-size: 100% 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 400;
     font-size: var(--step-0);
     color: var(--color-body);
     display: grid;
     grid-template-rows: max-content auto max-content;
     grid-template-columns: 100%;
-    gap: var(--space-3xl-4xl);
-    padding: 0 var(--space-xs);
 }
 
 h1,
@@ -92,18 +91,22 @@ h5,
 h6 {
     font-family: var(--font-family-headlines);
     color: var(--color-headlines);
-    letter-spacing: 0.02em;
     line-height: 1.1em;
+    font-weight: 900;
 }
 
 .hero {
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: center;
     gap: var(--space-l);
-    padding: var(--space-xs) 0;
+    padding: var(--space-3xl) var(--space-xs);
+    background-image: var(--gradient-background);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero__headline {
@@ -111,8 +114,6 @@ h6 {
 }
 
 .hero__image {
-    background-color: hsl(240deg 33% 100%);
-    padding: var(--space-xs-s);
     aspect-ratio: 1 / 1;
 }
 
@@ -139,4 +140,145 @@ a:hover {
 ::selection {
     background: var(--color-headlines);
     color: var(--color-invert);
+}
+
+.section {
+    padding: var(--space-3xl) var(--space-xs);
+}
+
+.section > * {
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section > * + * {
+    margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+.upper-part {
+    min-height: 95vh;
+    position: relative;
+    z-index: var(--z-index-content);
+    background: var(--color-bg);
+    padding-bottom: var(--flow-large);
+    box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.07),
+        0 0 20px -4px rgba(0, 0, 0, 0.07), 0 0 30px -6px rgba(0, 0, 0, 0.07);
+        background: var(--color-invert);
+}
+
+
+
+
+.footer-grid {
+    padding: var(--space-xl-2xl) var(--space-xs);
+    display: grid;
+    gap: var(--space-l);
+    grid-template-columns: 1fr;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.footer-grid__image {
+    text-align: center;
+}
+
+.footer-grid__image .image {
+    display: inline-block;
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .footer-grid__image {
+        grid-column: 1 / span 2;
+    }
+}
+
+
+.footer {
+    background-image: var(--gradient-background);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    line-height: 2;
+    position: relative;
+}
+
+@media screen and (min-width: 600px) {
+    .footer {
+        z-index: var(--z-index-footer);
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .footer::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        content: "Martin Schneider";
+        display: block;
+        color: hsl(220deg 23% 95%);
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 9vw;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 0.4vw;
+        opacity: 0.75;
+    }
+}
+
+.footer__name {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+.link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+
+.link-list__icon {
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.5rem;
+}
+
+.flow > * + * {
+    margin-top: var(--space-l); 
+}
+
+.image {
+    background-color: var(--color-invert);
+    padding: var(--space-xs-s);
 }
