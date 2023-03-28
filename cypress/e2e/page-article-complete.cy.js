@@ -46,9 +46,6 @@ describe("Page - Article 'Welcome to My New Website'", () => {
     });
 
     it("has links to other posts", () => {
-        cy.contains(
-            "[data-cy-reading-indicator]",
-            "Other articles I've written recently"
-        );
+        cy.contains("Other articles I've written recently");
     });
 });

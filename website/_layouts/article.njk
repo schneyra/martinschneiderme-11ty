@@ -13,9 +13,6 @@ permalink: articles/{{ title | slugify }}/index.html
                 <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | longDate }}</time>
             </a>
         </header>
-
-        {% include "readingIndicator/readingIndicatorMarkup.njk" %}
-
         <div class="flow e-content">
             {% if excerpt %}
                 <p class="article__excerpt">{{ excerpt }}</p>
@@ -36,8 +33,6 @@ permalink: articles/{{ title | slugify }}/index.html
     {% include '_webmentionsArticle.njk' %}
     {% include '_recentArticles.njk' %}
 </div>
-
-{% include "readingIndicator/readingIndicatorJs.njk" %}
 
 {% include "jsonld/blogposting.njk" %}
 
