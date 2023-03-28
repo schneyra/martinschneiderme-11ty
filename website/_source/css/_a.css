@@ -1,0 +1,14 @@
+a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration-color: hsl(25deg 100% 50%);
+    text-decoration-thickness: 0.15em;
+}
+
+a:visited {
+    text-decoration-color: hsl(190, 100%, 50%);
+}
+
+a:hover {
+    text-decoration-color: hsl(45deg 100% 50%);
+}

@@ -1,0 +1,10 @@
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: var(--step-0);
+    color: var(--color-body);
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+    grid-template-columns: 100%;
+}

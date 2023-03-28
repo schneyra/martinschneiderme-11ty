@@ -1,0 +1,11 @@
+.container {
+    width: min(
+        100% - var(--space-xs) - var(--space-xs),
+        var(--container-max, 65ch)
+    );
+    margin-inline: auto;
+}
+
+.container--wide {
+    --container-max: var(--container-wide);
+}

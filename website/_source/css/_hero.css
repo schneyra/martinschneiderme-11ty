@@ -1,0 +1,25 @@
+.hero-wrapper {
+    --container-max: var(--container-wide);
+
+    padding-block: var(--space-3xl);
+    background-image: var(--gradient-background);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-l);
+}
+
+.hero__headline {
+    font-size: var(--step-5);
+}
+
+.hero__image {
+    aspect-ratio: 1 / 1;
+}

@@ -1,20 +1,22 @@
-<section class="hero" data-scroll-section>
-    <div class="hero__content" data-scroll data-scroll-speed="1">
-        <h1 class="hero__headline">Hey! My name is Martin.</h1>
-        <p>I'm a
-            <a href="#webdevelopment">frontend web developer</a>,
-            <a href="#family">father and boyfriend</a>,
-            <a href="#photography">hobby photographer</a>, avid reader, music lover, long-time blogger and lifelong scout.</p>
-    </div>
-    <div data-scroll data-scroll-speed="2">
-        {% pictureElement
-            "src" = "./website/_source/images/avatar.jpg",
-            "alt" = "Smiling Martin looking into the camera.",
-            "widths" = [350, 700, 1050],
-            "sizes" = "350px",
-            "pictureElementClasses" = "hero__image image",
-            "imageElementClasses" = "",
-            "lazyloading" = false
-        %}
+<section class="hero-wrapper" data-scroll-section>
+    <div class="hero container">
+        <div class="hero__content flow" data-scroll data-scroll-speed="1">
+            <h1 class="hero__headline">Hey! My name is Martin.</h1>
+            <p>I'm a
+                <a href="#webdevelopment">frontend web developer</a>,
+                <a href="#family">father and boyfriend</a>,
+                <a href="#photography">hobby photographer</a>, avid reader, music lover, <a href="#blogging">long-time blogger</a> and lifelong scout. Not necessarily in that order.</p>
+        </div>
+        <div data-scroll data-scroll-speed="2">
+            {% pictureElement
+                "src" = "./website/_source/images/avatar.jpg",
+                "alt" = "Smiling Martin looking into the camera.",
+                "widths" = [350, 700, 1050],
+                "sizes" = "350px",
+                "pictureElementClasses" = "hero__image image",
+                "imageElementClasses" = "",
+                "lazyloading" = false
+            %}
+        </div>
     </div>
 </section>

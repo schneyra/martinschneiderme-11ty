@@ -1,0 +1,78 @@
+.footer-grid {
+    padding-block: var(--space-xl-2xl);
+    display: grid;
+    gap: var(--space-l);
+    grid-template-columns: 1fr;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.footer-grid__image {
+    text-align: center;
+}
+
+.footer-grid__image .image {
+    display: inline-block;
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .footer-grid__image {
+        grid-column: 1 / span 2;
+    }
+}
+
+.footer {
+    background-image: var(--gradient-background);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    line-height: 2;
+    position: relative;
+}
+
+@media screen and (min-width: 600px) {
+    .footer {
+        z-index: var(--z-index-footer);
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .footer::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        content: "Martin Schneider";
+        display: block;
+        color: hsl(220deg 23% 95%);
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 9vw;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 0.4vw;
+        opacity: 0.75;
+    }
+}
+
+.footer__name {
+    text-transform: uppercase;
+    font-weight: 500;
+}

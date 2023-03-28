@@ -1,3 +1,19 @@
-<div class="content-wrapper contentpadding flow">
-    <h2 class="glitch" data-glitch="Blogging" id="blogging">Blogging</h2>
-</div>
+<section class="section container flow">
+    <h2 id="blogging">Blogging</h2>
+    <h3>articles</h3>
+    <ul>
+        {% set articles = collections.articles | reverse %}
+        {%- for article in articles.slice(0,5) -%}
+            <li><h4><a href="{{ article.url }}">{{ article.data.title }}</a></h4></li>
+        {%- endfor -%}
+    </ul>
+
+    <h3>der tag und ich</h3>
+    {% if dtuiposts.status === "ok" %}
+        <ul>
+            {%- for article in dtuiposts.data -%}
+                <li><h4><a href="{{ article.url }}">{{ article.title }}</a></h4></li>
+            {%- endfor -%}
+        </ul>
+    {% endif %}
+</section>
