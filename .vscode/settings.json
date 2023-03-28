@@ -1,8 +1,10 @@
 {
     "editor.formatOnSave": true,
-    //"editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "files.autoSave": "off"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "off",
+    "workbench.colorTheme": "GitHub Dark",
+    "editor.fontSize": 13,
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.fontSize": 14,
+    "editor.fontLigatures": true
 }
