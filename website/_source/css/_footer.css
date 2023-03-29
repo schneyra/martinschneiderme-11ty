@@ -4,7 +4,7 @@
     gap: var(--space-l);
     grid-template-columns: 1fr;
     position: relative;
-    max-width: 1200px;
+    max-width: var(--container-wide);
     margin: 0 auto;
 }
 

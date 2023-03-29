@@ -60,8 +60,8 @@
     --z-index-content: 1;
     --z-index-header: 3;
 
-    --container: 800px;
-    --container-wide: 1400px;
+    --container: 850px;
+    --container-wide: calc(450px + 850px + var(--space-xl));
 
     /* https://www.joshwcomeau.com/gradient-generator?colors=cbd2dc|eff1f5&angle=130&colorMode=hcl&precision=8&easingCurve=0.6056034482758621|0.75|0.2521551724137931|0.3448275862068966 */
     --gradient-background: linear-gradient(

@@ -1,6 +1,9 @@
-<section class="section container flow">
-    <h2 id="blogging">Blogging</h2>
-    <h3>articles</h3>
+<section class="section flow">
+    <div class="container flow">
+        <h2 id="blogging">Blogging</h2>
+        <h3>The technical stuff</h3>
+        <p>This is my personal website where I write about web development from time to time.</p>
+    </div>
     <ul>
         {% set articles = collections.articles | reverse %}
         {%- for article in articles.slice(0,5) -%}
@@ -8,7 +11,11 @@
         {%- endfor -%}
     </ul>
 
-    <h3>der tag und ich</h3>
+    <div class="container flow">
+        <h3>The trivialities</h3>
+        <p> I also have a german blog at
+                    <a href="https://www.dertagundich.de">dertagundich.de</a> where I post more frequently about the trivialities of my life.</p>
+    </div>
     {% if dtuiposts.status === "ok" %}
         <ul>
             {%- for article in dtuiposts.data -%}

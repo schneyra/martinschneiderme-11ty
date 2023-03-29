@@ -1,6 +1,4 @@
 .hero-wrapper {
-    --container-max: var(--container-wide);
-
     padding-block: var(--space-3xl);
     background-image: var(--gradient-background);
     background-size: 100% 100vh;
@@ -13,7 +11,7 @@
     flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: center;
-    gap: var(--space-l);
+    gap: var(--space-xl);
 }
 
 .hero__headline {
