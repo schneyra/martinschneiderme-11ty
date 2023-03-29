@@ -1,26 +1,24 @@
-<section class="section flow">
+<section class="section">
     <div class="container flow">
         <h2 id="blogging">Blogging</h2>
         <h3>The technical stuff</h3>
-        <p>This is my personal website where I write about web development from time to time.</p>
-    </div>
-    <ul>
-        {% set articles = collections.articles | reverse %}
-        {%- for article in articles.slice(0,5) -%}
-            <li><h4><a href="{{ article.url }}">{{ article.data.title }}</a></h4></li>
-        {%- endfor -%}
-    </ul>
-
-    <div class="container flow">
-        <h3>The trivialities</h3>
-        <p> I also have a german blog at
-                    <a href="https://www.dertagundich.de">dertagundich.de</a> where I post more frequently about the trivialities of my life.</p>
-    </div>
-    {% if dtuiposts.status === "ok" %}
-        <ul>
-            {%- for article in dtuiposts.data -%}
-                <li><h4><a href="{{ article.url }}">{{ article.title }}</a></h4></li>
+        <p>This is my personal website where I write about web development from time to time. These are my latest articles.</p>
+        <ul class="article-list flow">
+            {% set articles = collections.articles | reverse %}
+            {%- for article in articles.slice(0,5) -%}
+                <li class="article-list-article"><h4><a href="{{ article.url }}">{{ article.data.title }}</a></h4></li>
             {%- endfor -%}
         </ul>
-    {% endif %}
+
+        <h3>The trivialities</h3>
+        <p> I also have a german blog at
+                    <a href="https://www.dertagundich.de">dertagundich.de</a> where I post more frequently about the trivialities of my life. There's content from over twenty years now, these are my most recent posts.</p>
+        {% if dtuiposts.status === "ok" %}
+            <ul class="article-list flow">
+                {%- for article in dtuiposts.data -%}
+                    <li class="article-list-article"><h4><a href="{{ article.url }}">{{ article.title }}</a></h4></li>
+                {%- endfor -%}
+            </ul>
+        {% endif %}
+    </div>
 </section>

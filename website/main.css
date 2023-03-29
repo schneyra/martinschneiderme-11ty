@@ -12,6 +12,7 @@
 @import url("_source/css/_footer.css");
 @import url("_source/css/_link-list.css");
 @import url("_source/css/_upper-part.css");
+@import url("_source/css/_article-list.css");
 
 ::selection {
     background: var(--color-headlines);

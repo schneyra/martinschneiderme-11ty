@@ -1,0 +1,21 @@
+.article-list {
+    list-style: none;
+}
+
+.article-list + * {
+    margin-block-start: var(--space-xl);
+}
+
+.article-list-article {
+    padding-inline-start: var(--space-2xs);
+    padding-block: var(--space-3xs);
+    border-inline-start: 0.15em solid hsl(215deg 20% 83%);
+}
+
+.article-list-article:hover {
+    border-inline-start-color: hsl(190, 100%, 50%);
+}
+
+.article-list-article a {
+    text-decoration: none;
+}
