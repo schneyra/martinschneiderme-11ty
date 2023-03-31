@@ -1,6 +1,18 @@
 .hero-wrapper {
     padding-block: var(--space-3xl);
-    background-image: var(--gradient-background);
+    background-image: linear-gradient(
+        130deg,
+        hsl(var(--gradient-color, 215deg 20%) 83%) 0%,
+        hsl(var(--gradient-color, 215deg 20%) 84%) 20%,
+        hsl(var(--gradient-color, 215deg 20%) 86%) 33%,
+        hsl(var(--gradient-color, 215deg 20%) 87%) 38%,
+        hsl(var(--gradient-color, 215deg 20%) 88%) 44%,
+        hsl(var(--gradient-color, 215deg 20%) 90%) 49%,
+        hsl(var(--gradient-color, 215deg 20%) 91%) 56%,
+        hsl(var(--gradient-color, 215deg 20%) 92%) 66%,
+        hsl(var(--gradient-color, 215deg 20%) 94%) 80%,
+        hsl(var(--gradient-color, 215deg 20%) 95%) 100%
+    );
     background-size: 100% 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
