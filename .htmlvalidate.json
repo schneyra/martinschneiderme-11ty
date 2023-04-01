@@ -2,6 +2,7 @@
     "extends": ["html-validate:recommended"],
     "rules": {
         "long-title": ["warn", { "maxlength": 70 }],
-        "no-raw-characters" : "warn"
+        "no-raw-characters": "warn",
+        "no-inline-style": "warn"
     }
 }
