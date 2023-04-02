@@ -35,10 +35,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget("./website/*.css");
 
     eleventyConfig.addPassthroughCopy({
-        "./node_modules/locomotive-scroll/dist/locomotive-scroll.min.js":
-            "locomotive-scroll.min.js",
-        "./node_modules/locomotive-scroll/dist/locomotive-scroll.min.css":
-            "locomotive-scroll.min.css",
         "./node_modules/instant.page/instantpage.js": "instantpage.js",
         "./node_modules/msme-sharing-button/msme-sharing-button.js":
             "msme-sharing-button.js"

@@ -1,5 +1,5 @@
 .hero-wrapper {
-    padding-block: var(--space-3xl);
+    padding-block: var(--space-3xl-4xl);
     background-image: linear-gradient(
         130deg,
         hsl(var(--gradient-color, 215deg 20%) 83%) 0%,

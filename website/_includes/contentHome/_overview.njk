@@ -1,6 +1,6 @@
-<section class="hero-wrapper" data-scroll-section style="--gradient-color: 37deg 50%;">
+<section class="hero-wrapper" style="--gradient-color: 37deg 50%;">
     <div class="hero container container--wide">
-        <div class="hero__content flow" data-scroll data-scroll-speed="1">
+        <div class="hero__content flow">
             <h1 class="hero__headline">Hey! My name is Martin.</h1>
             <p>I'm a
                 <a href="#webdevelopment">frontend web developer</a>,
@@ -8,16 +8,15 @@
                 <a href="#photography">hobby photographer</a>, avid reader, music lover, <a href="#blogging">long-time blogger</a> 
                 and lifelong scout. Not necessarily in that order.</p>
         </div>
-        <div data-scroll data-scroll-speed="2">
-            {% pictureElement
-                "src" = "./website/_source/images/avatar.jpg",
-                "alt" = "Smiling Martin looking into the camera.",
-                "widths" = [400, 800, 1600],
-                "sizes" = "400px",
-                "pictureElementClasses" = "hero__image image",
-                "imageElementClasses" = "",
-                "lazyloading" = false
-            %}
-        </div>
+
+        {% pictureElement
+            "src" = "./website/_source/images/avatar.jpg",
+            "alt" = "Smiling Martin looking into the camera.",
+            "widths" = [400, 800, 1600],
+            "sizes" = "400px",
+            "pictureElementClasses" = "hero__image image",
+            "imageElementClasses" = "",
+            "lazyloading" = false
+        %}
     </div>
 </section>

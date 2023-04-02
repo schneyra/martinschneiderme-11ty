@@ -37,7 +37,6 @@
         "@netlify/functions": "^1.4.0",
         "html-minifier": "^4.0.0",
         "instant.page": "^5.2.0",
-        "locomotive-scroll": "^4.1.4",
         "msme-sharing-button": "^2.0.1",
         "netlify-cli": "^13.2.1",
         "netlify-plugin-cache": "^1.0.3",
