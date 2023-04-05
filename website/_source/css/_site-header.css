@@ -1,0 +1,35 @@
+.site-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: var(--z-index-header);
+    height: var(--header-height);
+    padding-block-end: var(--space-s);
+}
+
+.site-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--space-s);
+}
+
+main > *:first-child {
+    padding-block-start: var(--header-height);
+}
+
+.site-title {
+    font-size: var(--step-2);
+    text-transform: uppercase;
+    text-decoration-color: transparent;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    gap: var(--space-s);
+}
+
+.navigation__element {
+    display: inline-block;
+}

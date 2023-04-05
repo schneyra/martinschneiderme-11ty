@@ -21,12 +21,12 @@ title:
         {% include 'layout/head-meta.njk' %}
     </head>
     <body>
-        {#<a href="#main" class="screen-reader-text skiplink">
+        <a href="#main" class="visually-hidden skiplink">
             Skip to content.
         </a>
         
         {% include "layout/header.njk" %}
-#}
+
         <main class="upper-part" id="main" tabindex="-1">
             {{ content | safe }}
         </main>

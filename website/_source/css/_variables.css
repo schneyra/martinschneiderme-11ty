@@ -60,6 +60,7 @@
     --z-index-content: 1;
     --z-index-header: 3;
 
+    --header-height: calc(var(--space-3xl-4xl) + var(--space-l));
     --container: 850px;
     --container-wide: calc(450px + 850px + var(--space-xl));
 
