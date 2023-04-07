@@ -1,22 +1,32 @@
 {% set recentArticles = collections.articles | recentArticles(page) %}
 
-<details class="flow-small">
+<details class="flow">
     <summary>
         <h2>Other articles I've written recently</h2>
     </summary>
 
-    <ol class="article-list article-list--small">
-        {%- for recentArticle in recentArticles | reverse %}
-            <li class="article-list__article">
-                <article class="flow-small">
-                    <h3 class="article-list__title">
-                        <a href="{{ recentArticle.url }}" class="article-list__link">
-                            {{ recentArticle.data.title | safe }}
-                        </a>
-                    </h3>
-                    <time class="article-list__date" datetime="{{ recentArticle.data.date | w3DateFilter }}">{{ recentArticle.data.date | longDate }}</time>
-                </article>
-            </li>
-        {%- endfor %}
-    </ol>
+
+    {%- for article in recentArticles|reverse -%}
+
+    {%- set isTilPost = 'til' in article.data.tags -%}
+    {%- set isChangelogPost = 'changelog' in article.data.tags -%}
+
+    {% if loop.first %}
+        <ol class="article-list flow">
+        {% endif %}
+        <li class="article-list-article" data-cy="articleListArticle">
+        <article>
+            <h2 class="article-list-article__headline">
+            {% if isTilPost %}TIL:{% endif %}
+            {% if isChangelogPost %}Changelog:{% endif %}
+            <a href="{{ article.url }}">{{ article.data.title | safe }}</a>
+            </h2>
+
+            <time datetime="{{ article.date | w3DateFilter }}" class="article-list-article__date">{{ article.date | longDate }}</time>
+        </article>
+        </li>
+        {% if loop.last %}
+        </ol>
+    {% endif %}
+    {%- endfor -%}
 </details>

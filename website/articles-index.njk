@@ -4,58 +4,50 @@ title: Articles
 pagination:
   alias: articlelist
   data: collections.articles
-  size: 10
+  size: 50
   reverse: true
 permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
-<h1 class="headline glitch" data-glitch="Articles">Articles</h1>
+<div class="flow-large">
+  <div class="flow">
+    <h1>Articles</h1>
 
-<p>
-  The internet is giving us the ability to share ideas, knowledge and thoughts and so I'm writing articles on development-related topics from time to time. Grab
-  <a href="/articles/feed.xml">the RSS-feed</a>
-  and stay updated!
-</p>
+    <p>
+      The internet is giving us the ability to share ideas, knowledge and thoughts and so I'm writing articles on development-related topics from time to time. Grab
+      <a href="/articles/feed.xml">the RSS-feed</a>
+      and stay updated!
+    </p>
 
-<p>
-  I'm happy to receive any feedback both on my writing and the content itself. Feel free to send me a message on
-  <a href="https://twitter.com/schneyra">my twitter</a>!
-</p>
+    <p>
+      I'm happy to receive any feedback both on my writing and the content itself. Feel free to send me a message on
+      <a href="https://mastodon.social/@schneyra">mastodon</a>!
+    </p>
+  </div>
 
-{%- for article in articlelist -%}
+  {%- for article in articlelist -%}
 
-  {%- set isTilPost = 'til' in article.data.tags -%}
-  {%- set isChangelogPost = 'changelog' in article.data.tags -%}
+    {%- set isTilPost = 'til' in article.data.tags -%}
+    {%- set isChangelogPost = 'changelog' in article.data.tags -%}
 
-  {% if loop.first %}
-    <ol class="article-list">
+    {% if loop.first %}
+      <ol class="article-list">
+      {% endif %}
+      <li class="article-list-article" data-cy="articleListArticle">
+        <article>
+          <h2 class="article-list-article__headline">
+            {% if isTilPost %}TIL:{% endif %}
+            {% if isChangelogPost %}Changelog:{% endif %}
+            <a href="{{ article.url }}">{{ article.data.title | safe }}</a>
+          </h2>
+
+          <time datetime="{{ article.date | w3DateFilter }}" class="article-list-article__date">{{ article.date | longDate }}</time>
+        </article>
+      </li>
+      {% if loop.last %}
+      </ol>
     {% endif %}
-    <li class="article-list__article{% if isTilPost %} article-list__article--til{% endif %}{% if isChangelogPost %} article-list__article--changelog{% endif %}" data-cy="articleListArticle">
-      {% if isTilPost %}
-        {% include 'svg/lightbulb.svg' %}
-      {% endif %}
+  {%- endfor -%}
 
-      {% if isChangelogPost %}
-        {% include 'svg/changelog.svg' %}
-      {% endif %}
-
-      <article class="flow-small">
-        <h2 class="article-list__title">
-          {% if isTilPost %}TIL:{% endif %}
-          {% if isChangelogPost %}Changelog:{% endif %}
-          <a href="{{ article.url }}" class="article-list__link">{{ article.data.title | safe }}</a>
-        </h2>
-
-        <time datetime="{{ article.date | w3DateFilter }}" class="article-list__date">{{ article.date | longDate }}</time>
-
-        {% if not isTilPost and not isChangelogPost %}
-          <div class="article-list__excerpt">{{ article.data.excerpt | safe }}</div>
-        {% endif %}
-      </article>
-    </li>
-    {% if loop.last %}
-    </ol>
-  {% endif %}
-{%- endfor -%}
-
-{% include '_pagination.njk' %}
+  {% include '_pagination.njk' %}
+</div>

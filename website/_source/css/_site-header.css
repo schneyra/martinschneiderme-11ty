@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     padding-block: var(--space-s);
+    flex-wrap: wrap;
 }
 
 main > *:first-child {
