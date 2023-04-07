@@ -55,6 +55,7 @@
     --color-headlines: hsl(215deg 17% 15%);
     --color-body: hsl(215deg 25% 25%);
     --color-invert: hsl(215deg 17% 100%);
+    --color-background-highlight: hsl(215deg 17% 100%);
 
     --z-index-footer: 0;
     --z-index-content: 1;
