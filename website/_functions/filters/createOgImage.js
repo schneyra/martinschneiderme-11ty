@@ -23,7 +23,7 @@ const createOgImage = async (title) => {
     }
 
     // Title
-    let textToSVG = TextToSVG;
+    let textToSVG = TextToSVG.loadSync();
 
     const optionsTitle1 = {
         x: 75,
