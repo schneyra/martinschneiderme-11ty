@@ -32,6 +32,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./website/fonts");
     eleventyConfig.addPassthroughCopy("./website/images");
     eleventyConfig.addPassthroughCopy("./website/main.css");
+    eleventyConfig.addPassthroughCopy("./website/prism.css");
     eleventyConfig.addWatchTarget("./website/*.css");
 
     eleventyConfig.addPassthroughCopy({

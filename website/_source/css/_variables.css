@@ -43,11 +43,7 @@
     /* Extra Schriftgröße für Eingabefelder: Mindestens 16px, aber nicht so groß wie --step-0 am Ende */
     --step-input: clamp(1rem, calc(0.91rem + 0.45vw), 1.1rem);
 
-    --font-family-headlines: Seravek, "Gill Sans Nova", Ubuntu, Calibri,
-        "DejaVu Sans", source-sans-pro, sans-serif;
     --font-family-headlines: Optima, Candara, "Noto Sans", source-sans-pro,
-        sans-serif;
-    --font-family-body: Optima, Candara, "Noto Sans", source-sans-pro,
         sans-serif;
     --font-family-body: Seravek, "Gill Sans Nova", Ubuntu, Calibri,
         "DejaVu Sans", source-sans-pro, sans-serif;

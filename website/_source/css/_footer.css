@@ -36,7 +36,7 @@
 
 .footer {
     background-image: var(--gradient-background);
-    background-size: 100% 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     line-height: 2;

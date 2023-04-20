@@ -10,12 +10,7 @@ const EXCLUDED_URLS = [
 ];
 
 // URLS that we want to be cached when the worker is installed
-const PRE_CACHE_URLS = [
-    "/",
-    "/fonts/ibm-plex-sans-v7-latin-500.woff2",
-    "/fonts/ibm-plex-sans-v7-latin-700.woff2",
-    "/fonts/ibm-plex-sans-v7-latin-regular.woff2"
-];
+const PRE_CACHE_URLS = ["/"];
 
 // You might want to bypass a certain host
 const IGNORED_HOSTS = ["localhost"];

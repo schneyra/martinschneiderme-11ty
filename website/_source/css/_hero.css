@@ -13,9 +13,8 @@
         hsl(var(--gradient-color, 215deg 20%) 94%) 80%,
         hsl(var(--gradient-color, 215deg 20%) 95%) 100%
     );
-    background-size: 100% 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .hero {
