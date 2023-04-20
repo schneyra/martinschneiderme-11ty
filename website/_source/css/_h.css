@@ -4,6 +4,7 @@ h3,
 h4,
 h5,
 h6 {
+    scroll-margin-block-start: var(--space-s);
     font-family: var(--font-family-headlines);
     color: var(--color-headlines);
     line-height: 1.2em;
