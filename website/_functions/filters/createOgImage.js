@@ -23,9 +23,7 @@ const createOgImage = async (title) => {
     }
 
     // Title
-    let textToSVG = TextToSVG.loadSync(
-        __dirname + "/../../fonts/IBMPlexSans-SemiBold.otf"
-    );
+    let textToSVG = TextToSVG;
 
     const optionsTitle1 = {
         x: 75,
@@ -44,10 +42,6 @@ const createOgImage = async (title) => {
     const title2 = textToSVG.getPath(titleAsArray.join(" "), optionsTitle2);
 
     // Website
-    textToSVG = TextToSVG.loadSync(
-        __dirname + "/../../fonts/IBMPlexMono-Regular.otf"
-    );
-
     const optionsWebsite = {
         x: 75,
         y: 520,
