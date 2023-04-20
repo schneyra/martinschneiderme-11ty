@@ -7,7 +7,11 @@
         <ul class="article-list flow">
             {% set articles = collections.articles | reverse %}
             {%- for article in articles.slice(0,5) -%}
-                <li class="article-list-article"><h4><a href="{{ article.url }}">{{ article.data.title }}</a></h4></li>
+                <li class="article-list-article">
+                    <h4 class="article-list-article__headline">
+                        <a href="{{ article.url }}">{{ article.data.title }}</a>
+                    </h4>
+                </li>
             {%- endfor -%}
         </ul>
 
@@ -17,7 +21,11 @@
         {% if dtuiposts.status === "ok" %}
             <ul class="article-list flow">
                 {%- for article in dtuiposts.data -%}
-                    <li class="article-list-article"><h4><a href="{{ article.url }}">{{ article.title }}</a></h4></li>
+                    <li class="article-list-article">
+                        <h4 class="article-list-article__headline">
+                            <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h4>
+                    </li>
                 {%- endfor -%}
             </ul>
         {% endif %}

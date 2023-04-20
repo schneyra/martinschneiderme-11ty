@@ -47,6 +47,8 @@
         sans-serif;
     --font-family-body: Seravek, "Gill Sans Nova", Ubuntu, Calibri,
         "DejaVu Sans", source-sans-pro, sans-serif;
+    --font-family-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+        Consolas, "DejaVu Sans Mono", monospace;
 
     --color-headlines: hsl(215deg 17% 15%);
     --color-body: hsl(215deg 25% 25%);

@@ -27,6 +27,7 @@
 
 .hero__headline {
     font-size: var(--step-5);
+    margin-block-start: 0;
 }
 
 .hero__image {

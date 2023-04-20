@@ -3,19 +3,19 @@ layout: page
 permalink: articles/{{ title | slugify }}/index.html
 ---
 <div class="flow-large">
-    <article data-js-article="data-js-article" class="article flow h-entry">
+    <article data-js-article="data-js-article" class="flow h-entry">
         <header class="flow-small">
-            <h1 class="headline p-name glitch" data-glitch="{{ title | safe }}">
+            <h1 class="headline p-name">
                 {{ title | safe }}
             </h1>
 
-            <a class="article__link u-url" href="{{ site.url }}{{ page.url }}">
+            <a class="u-url" href="{{ site.url }}{{ page.url }}">
                 <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | longDate }}</time>
             </a>
         </header>
         <div class="flow e-content">
             {% if excerpt %}
-                <p class="article__excerpt">{{ excerpt }}</p>
+                <p class="excerpt">{{ excerpt }}</p>
             {% endif %}
 
             {{ content | safe }}

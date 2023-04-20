@@ -2,6 +2,10 @@
     margin-block-start: var(--flow, 1em);
 }
 
+.flow-small > * + * {
+    margin-block-start: var(--flow, var(--space-xs));
+}
+
 .flow-large > * + * {
     margin-block-start: var(--flow, var(--space-xl));
 }
