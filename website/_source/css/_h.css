@@ -35,5 +35,5 @@ h6 {
 * + h4,
 * + h5,
 * + h6 {
-    margin-block-start: 1.75em;
+    --flow: 1.75em;
 }
