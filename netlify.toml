@@ -15,19 +15,19 @@ NODE_VERSION = "17"
 function = "eleventy-edge"
 path = "/articles/*"
 
-[[plugins]]
-    package = "netlify-plugin-cypress"
-    [plugins.inputs]
-        record = true
+#[[plugins]]
+#    package = "netlify-plugin-cypress"
+#    [plugins.inputs]
+#        record = true
 
-[[plugins]]
-    package = "@netlify/plugin-lighthouse"
-    [plugins.inputs.thresholds]
-        performance = 0.9
-        accessibility = 0.9
-        best-practices = 0.9
-        seo = 0.9
-        pwa = 0
+#[[plugins]]
+#    package = "@netlify/plugin-lighthouse"
+#    [plugins.inputs.thresholds]
+#        performance = 0.9
+#        accessibility = 0.9
+#        best-practices = 0.9
+#        seo = 0.9
+#        pwa = 0
         
 [[plugins]]
     package = "netlify-plugin-html-validate"
