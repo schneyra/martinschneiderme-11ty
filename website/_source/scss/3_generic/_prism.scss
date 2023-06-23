@@ -63,6 +63,13 @@ pre.language-scss {
     }
 }
 
+pre.language-toml {
+    &::before {
+        content: "TOML";
+    }
+}
+
+
 code[class*="language-"] {
     color: var(--color-text-offset);
     background: var(--color-bg-offset);
