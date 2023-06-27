@@ -1,8 +1,0 @@
-ul:not([class]),
-ol:not([class]) {
-    margin-inline-start: var(--space-s-m);
-}
-
-ul:not([class]) > li + li {
-    margin-block-start: 1em;
-}
