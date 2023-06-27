@@ -39,7 +39,7 @@ title:
             {% set serviceworkerEmbed %}
                 {% include 'website/js/_serviceworker-embed.js' %}
             {% endset %}
-            {{ serviceworkerEmbed | mangleJs | safe}}
+            {{ serviceworkerEmbed | safe}}
         </script>
 
         <script src="/instantpage.js" async></script>

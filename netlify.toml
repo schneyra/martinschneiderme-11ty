@@ -11,10 +11,6 @@ CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
 TERM = "xterm"
 NODE_VERSION = "17"
 
-[[edge_functions]]
-function = "eleventy-edge"
-path = "/articles/*"
-
 #[[plugins]]
 #    package = "netlify-plugin-cypress"
 #    [plugins.inputs]
