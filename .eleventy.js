@@ -42,6 +42,9 @@ module.exports = function (eleventyConfig) {
         figureShortcodeForArticles
     );
 
+    eleventyConfig.on('eleventy.before', function (config) {
+        console.log('before')
+    });
     
     // TRANSFORMS
     eleventyConfig.addTransform("htmlmin", htmlmin);
