@@ -1,49 +1,42 @@
-<footer class="footer h-card">
-    <div class="container container--wide footer-grid">
-        <div class="footer-grid__item flow">
-            <div>
-                <strong class="footer__name p-name">
-                    <a href="{{ site.url }}" class="u-url u-uid">{{ martin.name }}</a>
-                </strong>
-                <br>
-                <span class="p-job-title">{{ martin.jobtitle1 }}</span>
-                <br>
-                <span class="p-job-title">{{ martin.jobtitle2 }}</span>
-                <br>
-                <a href="mailto:{{ martin.email }}" class="u-email" rel="me">{{ martin.email }}</a>
-            </div>
-            <div>
-                <ul class="link-list">
-                    <li class="link-list__element"><a href="/articles/feed.xml">RSS-Feed</a></li>
-                    <li class="link-list__element"><a href="/colophon/">Colophon</a></li>
-                    <li class="link-list__element"><a href="/accessibility/">Accessibility</a></li>
-                    <li class="link-list__element"><a href="/legal/">Legal Information</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-grid__item">
-            <ul class="link-list">
-                {% for account in martin.sameAs %}
-                    <li class="link-list__element">
-                        <a href="{{ account.url }}" 
-                            class="link-list__link" 
-                            rel="me" 
-                            target="_blank" 
-                            title="{{ account.title }}">
-                            {% include 'svg/' ~ account.name ~ '.svg' %}{{ account.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="footer-grid__item footer-grid__image">
-            {% pictureElement
-                "src" = martin.image,
-                "alt" = "Smiling Martin looking into the camera.",
-                "widths" = [250],
-                "sizes" = "250px",
-                "pictureElementClasses" = "image",
-                "imageElementClasses" = "image__image"
-            %}
-        </div>
-    </div>
+<footer class="h-card">
+    <p>
+        <strong class="p-name">
+            <a href="{{ site.url }}" class="u-url u-uid">{{ martin.name }}</a>
+        </strong>
+        <br>
+        <span class="p-job-title">{{ martin.jobtitle1 }}</span>
+        <br>
+        <span class="p-job-title">{{ martin.jobtitle2 }}</span>
+        <br>
+        <a href="mailto:{{ martin.email }}" class="u-email" rel="me">{{ martin.email }}</a>
+    </p>
+
+    <ul>
+        <li><a href="/articles/feed.xml">RSS-Feed</a></li>
+        <li><a href="/colophon/">Colophon</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="/legal/">Legal Information</a></li>
+    </ul>
+
+
+    <ul>
+        {% for account in martin.sameAs %}
+            <li>
+                <a href="{{ account.url }}" 
+                    rel="me" 
+                    target="_blank" 
+                    title="{{ account.title }}">
+                    {% include 'svg/' ~ account.name ~ '.svg' %}{{ account.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% pictureElement
+        "src" = martin.image,
+        "alt" = "Smiling Martin looking into the camera.",
+        "widths" = [250],
+        "sizes" = "250px",
+        "pictureElementClasses" = "",
+        "imageElementClasses" = ""
+    %}
 </footer>

@@ -2,37 +2,37 @@
 layout: page
 permalink: articles/{{ title | slugify }}/index.html
 ---
-<div class="flow-large">
-    <article data-js-article="data-js-article" class="flow h-entry">
-        <header class="flow-small">
-            <h1 class="headline p-name">
-                {{ title | safe }}
-            </h1>
 
-            <a class="u-url" href="{{ site.url }}{{ page.url }}">
-                <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | longDate }}</time>
-            </a>
-        </header>
-        <div class="flow e-content">
-            {% if excerpt %}
-                <p class="excerpt">{{ excerpt }}</p>
-            {% endif %}
+<article data-js-article="data-js-article" class="h-entry">
+    <header>
+        <h1 class="p-name">
+            {{ title | safe }}
+        </h1>
 
-            {{ content | safe }}
-        </div>
-    </article>
+        <a class="u-url" href="{{ site.url }}{{ page.url }}">
+            <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | longDate }}</time>
+        </a>
+    </header>
 
-    <msme-sharing-button
-        data-buttontext="share this page"
-        data-buttonclass="icon-button icon-button--has-text"
-        data-sharing-url="{{ site.url }}{{ page.url }}"
-        data-sharing-title="{{ title | safe }}"
-        data-sharing-text="{{ title | safe }}"
-    ></msme-sharing-button>
+    <div class="e-content">
+        {% if excerpt %}
+            <p>{{ excerpt }}</p>
+        {% endif %}
 
-    {% include '_webmentionsArticle.njk' %}
-    {% include '_recentArticles.njk' %}
-</div>
+        {{ content | safe }}
+    </div>
+</article>
+
+<msme-sharing-button
+    data-buttontext="share this page"
+    data-buttonclass=""
+    data-sharing-url="{{ site.url }}{{ page.url }}"
+    data-sharing-title="{{ title | safe }}"
+    data-sharing-text="{{ title | safe }}"
+></msme-sharing-button>
+
+{% include '_webmentionsArticle.njk' %}
+{% include '_recentArticles.njk' %}
 
 {% include "jsonld/blogposting.njk" %}
 

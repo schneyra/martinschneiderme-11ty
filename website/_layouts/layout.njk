@@ -29,7 +29,7 @@ title:
         
         {% include "layout/header.njk" %}
 
-        <main class="upper-part" id="main" tabindex="-1">
+        <main id="main" tabindex="-1">
             {{ content | safe }}
         </main>
 
@@ -39,7 +39,7 @@ title:
             {% set serviceworkerEmbed %}
                 {% include 'website/js/_serviceworker-embed.js' %}
             {% endset %}
-            {{ serviceworkerEmbed | safe}}
+            {{ serviceworkerEmbed | safe }}
         </script>
 
         <script src="/instantpage.js" async></script>

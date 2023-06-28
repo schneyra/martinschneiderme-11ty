@@ -11,7 +11,7 @@ Build with [Eleventy](https://www.11ty.dev/) and hosted on [Netlify](https://www
 ## Codespace development
 
     npm install
-    npx netlify dev
+    npx @11ty/eleventy --serve
 
 ## Local development (with Docker)
 

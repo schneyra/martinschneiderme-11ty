@@ -1,57 +1,56 @@
-<details class="flow-small">
+<details>
     <summary>
         <h2>
             {{ webmentions.children.length }}
             {% if webmentions.children.length != 1 %}Webmentions{% else %}Webmention{% endif %}
         </h2>
     </summary>
-    <div>
-        {% if webmentions.children.length %}
-            <ol class="webmentions">
-                {% for webmention in webmentions.children %}
-                    <li class="webmentions__mention">
-                        <span class="webmentions__head">
-                            {% if webmention.author.photo %}
-                                {# pictureElement
-                                    "src" = webmention.author.photo,
-                                    "alt" = "Avatar of " + webmention.author.name,
-                                    "widths" = [60],
-                                    "sizes" = "60px",
-                                    "pictureElementClasses" = "webmentions__avatar",
-                                    "imageElementClasses" = ""
-                                #}
 
-                                <img src="{{ webmention.author.photo }}" class="webmentions__avatar" loading="lazy" height="256" width="256" alt=""/>
-                            {% endif %}
-                            <span>{% if webmention.author.name %}{{ webmention.author.name }}{% else %}<em>Someone</em>{% endif %}
+    {% if webmentions.children.length %}
+        <ol>
+            {% for webmention in webmentions.children %}
+                <li>
+                    {% if webmention.author.photo %}
+                        {# pictureElement
+                            "src" = webmention.author.photo,
+                            "alt" = "Avatar of " + webmention.author.name,
+                            "widths" = [60],
+                            "sizes" = "60px",
+                            "pictureElementClasses" = "webmentions__avatar",
+                            "imageElementClasses" = ""
+                        #}
 
-                            {% if webmention.url.includes("twitter.com") %}
-                                {% set twitterString = " on twitter" %}
-                            {% else %}
-                                {% set twitterString = "" %}
-                            {% endif %}
+                        <img src="{{ webmention.author.photo }}" loading="lazy" height="256" width="256" alt=""/>
+                    {% endif %}
+                    
+                    {% if webmention.author.name %}{{ webmention.author.name }}{% else %}<em>Someone</em>{% endif %}
 
-                            {% if webmention["wm-property"] === "like-of" %}
-                                liked <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.</span></span>
-                            {% endif %}
+                    {% if webmention.url.includes("twitter.com") %}
+                        {% set twitterString = " on twitter" %}
+                    {% else %}
+                        {% set twitterString = "" %}
+                    {% endif %}
 
-                            {% if webmention["wm-property"] === "in-reply-to" and webmention.content %}
-                                replied to <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.</span></span>
-                                <blockquote class="webmentions__quote">{{ webmention.content.text }}</blockquote>
-                            {% endif %}
+                    {% if webmention["wm-property"] === "like-of" %}
+                        liked <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
+                    {% endif %}
 
-                            {% if webmention["wm-property"] === "repost-of" %}
-                                reposted <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.</span></span>
-                            {% endif %}
+                    {% if webmention["wm-property"] === "in-reply-to" and webmention.content %}
+                        replied to <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
+                        <blockquote>{{ webmention.content.text }}</blockquote>
+                    {% endif %}
 
-                            {% if webmention["wm-property"] === "mention-of" %}
-                                mentioned the article in <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.</span></span>
-                            {% endif %}
-                    </li>
-                {% endfor %}
-            </ol>
-        {% else %}
-            <p>No mentions yet. Be the first to share this post!</p>
-        {% endif %}
-    </div>
+                    {% if webmention["wm-property"] === "repost-of" %}
+                        reposted <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
+                    {% endif %}
+
+                    {% if webmention["wm-property"] === "mention-of" %}
+                        mentioned the article in <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>No mentions yet. Be the first to share this post!</p>
+    {% endif %}
 </details>

@@ -9,45 +9,41 @@ pagination:
 permalink: articles{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
 ---
 
-<div class="flow-large">
-  <div class="flow">
-    <h1>Articles</h1>
+<h1>Articles</h1>
 
-    <p>
-      The internet is giving us the ability to share ideas, knowledge and thoughts and so I'm writing articles on development-related topics from time to time. Grab
-      <a href="/articles/feed.xml">the RSS-feed</a>
-      and stay updated!
-    </p>
+<p>
+  The internet is giving us the ability to share ideas, knowledge and thoughts and so I'm writing articles on development-related topics from time to time. Grab
+  <a href="/articles/feed.xml">the RSS-feed</a>
+  and stay updated!
+</p>
 
-    <p>
-      I'm happy to receive any feedback both on my writing and the content itself. Feel free to send me a message on
-      <a href="https://mastodon.social/@schneyra">mastodon</a>!
-    </p>
-  </div>
+<p>
+  I'm happy to receive any feedback both on my writing and the content itself. Feel free to send me a message on
+  <a href="https://mastodon.social/@schneyra">mastodon</a>!
+</p>
 
-  {%- for article in articlelist -%}
+{%- for article in articlelist -%}
 
-    {%- set isTilPost = 'til' in article.data.tags -%}
-    {%- set isChangelogPost = 'changelog' in article.data.tags -%}
+  {%- set isTilPost = 'til' in article.data.tags -%}
+  {%- set isChangelogPost = 'changelog' in article.data.tags -%}
 
-    {% if loop.first %}
-      <ol class="article-list">
-      {% endif %}
-      <li class="article-list-article" data-cy="articleListArticle">
-        <article>
-          <h2 class="article-list-article__headline">
-            {% if isTilPost %}TIL:{% endif %}
-            {% if isChangelogPost %}Changelog:{% endif %}
-            <a href="{{ article.url }}">{{ article.data.title | safe }}</a>
-          </h2>
-
-          <time datetime="{{ article.date | w3DateFilter }}" class="article-list-article__date">{{ article.date | longDate }}</time>
-        </article>
-      </li>
-      {% if loop.last %}
-      </ol>
+  {% if loop.first %}
+    <ol>
     {% endif %}
-  {%- endfor -%}
+    <li data-cy="articleListArticle">
+      <article>
+        <h2>
+          {% if isTilPost %}TIL:{% endif %}
+          {% if isChangelogPost %}Changelog:{% endif %}
+          <a href="{{ article.url }}">{{ article.data.title | safe }}</a>
+        </h2>
 
-  {% include '_pagination.njk' %}
-</div>
+        <time datetime="{{ article.date | w3DateFilter }}">{{ article.date | longDate }}</time>
+      </article>
+    </li>
+    {% if loop.last %}
+    </ol>
+  {% endif %}
+{%- endfor -%}
+
+{% include '_pagination.njk' %}
