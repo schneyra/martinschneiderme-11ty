@@ -1,0 +1,11 @@
+@import url("./_button.css");
+
+body {
+    background-color: whitesmoke;
+
+    & div {
+        & button {
+            background-color: green;
+        }
+    }
+}

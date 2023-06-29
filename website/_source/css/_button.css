@@ -1,0 +1,11 @@
+button {
+    background-color: green;
+}
+
+.button {
+    color: orange;
+
+    &--blue {
+        color: violet;
+    }
+}

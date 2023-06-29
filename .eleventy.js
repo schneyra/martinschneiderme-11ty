@@ -6,10 +6,12 @@ const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
 const longDate = require("./website/_functions/filters/longDate.js");
 const recentArticles = require("./website/_functions/filters/recentArticles.js");
 const htmlmin = require("./website/_functions/transforms/htmlmin");
+const purgecss = require("./website/_functions/transforms/purgecss");
 const pictureElementShortcode = require("./website/_functions/filters/pictureElementShortcode");
 const figureShortcodeForArticles = require("./website/_functions/filters/figureShortcodeForArticles");
 const createOgImage = require("./website/_functions/filters/createOgImage");
 const stripTags = require("./website/_functions/filters/stripTags");
+const postCSS = require("./website/_functions/before/postCSS");
 
 module.exports = function (eleventyConfig) {
     // PLUGINS
@@ -20,6 +22,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.setQuietMode(true);
 
     eleventyConfig.addPassthroughCopy({
+        "./website/dist/": "dist",
         "./node_modules/instant.page/instantpage.js": "instantpage.js",
         "./node_modules/msme-sharing-button/msme-sharing-button.js":
             "msme-sharing-button.js"
@@ -42,12 +45,15 @@ module.exports = function (eleventyConfig) {
         figureShortcodeForArticles
     );
 
-    eleventyConfig.on('eleventy.before', function (config) {
-        console.log('before')
-    });
-    
+    // ASSETS
+    eleventyConfig.addWatchTarget("./website/_source");
+    eleventyConfig.watchIgnores.add("./website/dist/**/*");
+
+    eleventyConfig.on("eleventy.before", postCSS);
+
     // TRANSFORMS
     eleventyConfig.addTransform("htmlmin", htmlmin);
+    //eleventyConfig.addTransform("purgecss", purgecss);
 
     return {
         markdownTemplateEngine: "njk",
