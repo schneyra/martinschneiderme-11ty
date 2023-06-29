@@ -60,4 +60,4 @@ eleventyConfig.on("eleventy.before", async () => {
 });
 ```
 
-I'm pretty happy about my little solution, which has not too many dependencies and is blazing fast. There are some things that I'm going to change in the future. For example, there will be more than one CSS file that the function will have to deal with. But for now, I'm really looking forward to rewriting the CSS for this site.
+I'm pretty happy about my little solution, which has not too many dependencies, is blazing fast and writes the CSS before the pages are generated. There are some things that I'm going to change in the future. For example, there will be more than one CSS file that the function will have to deal with. But for now, I'm really looking forward to rewriting the CSS for this site.
