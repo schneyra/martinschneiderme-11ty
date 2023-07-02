@@ -1,0 +1,7 @@
+.section {
+    min-height: 100vh;
+
+    & > * + * {
+        margin-block-start: 1em;
+    }
+}

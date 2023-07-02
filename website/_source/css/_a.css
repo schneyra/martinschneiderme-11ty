@@ -1,0 +1,12 @@
+a {
+    text-decoration-thickness: 0.1em;
+    transition: text-underline-offset linear 100ms;
+    text-decoration-color: #ee9b00;
+    color: currentColor;
+    text-underline-offset: 0.2em;
+
+    &:hover {
+        text-underline-offset: 0.1em;
+        text-decoration-color: #ee9b00;
+    }
+}

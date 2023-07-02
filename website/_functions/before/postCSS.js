@@ -6,12 +6,12 @@ const postcssImport = require("postcss-import");
 const fs = require("fs/promises");
 
 module.exports = async () => {
-    await fs.mkdir("./website/css/", { recursive: true }, (err, path) => {
+    await fs.mkdir("./website/dist/", { recursive: true }, (err, path) => {
         if (err) throw err;
     });
 
     const sourceFile = "./website/_source/css/msme.css";
-    const distFile = "./website/css/msme.min.css";
+    const distFile = "./website/dist/msme.min.css";
 
     const css = await fs.readFile(sourceFile, (err, css) => {
         if (err) throw err;

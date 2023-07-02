@@ -1,0 +1,12 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Rasa", serif;
+    font-family: "Labrada", serif;
+    font-weight: 500;
+    color: #123;
+    line-height: 1.2;
+}

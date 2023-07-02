@@ -1,11 +1,21 @@
+@import url("./_reset.css");
 @import url("./_button.css");
+@import url("./_a.css");
+@import url("./_headlines.css");
+@import url("./_article.css");
+@import url("./_visually-hidden.css");
+@import url("./_section.css");
+@import url("./_hero.css");
 
 body {
+    font-size: 22px;
+    color: #111;
     background-color: whitesmoke;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
 
-    & div {
-        & button {
-            background-color: green;
-        }
-    }
+header {
+    display: none;
 }
