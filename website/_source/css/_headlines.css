@@ -5,8 +5,26 @@ h4,
 h5,
 h6 {
     font-family: "Labrada", serif;
-    font-weight: 500;
+    font-weight: 300;
     color: #123;
     line-height: 1.2;
-    margin-block-start: 1.5em;
+    transform: rotate(-0.25deg);
+}
+
+h1 {
+    font-size: var(--step-5);
+}
+
+h2 {
+    font-size: var(--step-3);
+}
+
+h3 {
+    font-size: var(--step-2);
+}
+
+.headline {
+    & span {
+        font-weight: 500;
+    }
 }

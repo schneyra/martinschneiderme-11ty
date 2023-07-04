@@ -1,9 +1,11 @@
-<section>
+<section class="section">
     <h2 id="blogging">Blogging</h2>
     <p>I've been blogging for over 20 years now. The first posts in my german blog date back to february 2003. To challenge myself a bit more and to have an opportunity to work on my english skills I've started a second blog almost two years ago.</p>
-    <h3>The technical stuff</h3>
+    
+    <h3>All things web development</h3>
     <p>You are currently on my personal website where I write about web development from time to time. These are my latest articles.</p>
-    <ul>
+
+    <ul class="section__fullwidth post-list">
         {% set articles = collections.articles | reverse %}
         {%- for article in articles.slice(0,5) -%}
             <li>
@@ -16,9 +18,10 @@
 
     <h3>The trivialities</h3>
     <p> I also have a german blog at
-                <a href="https://www.dertagundich.de">dertagundich.de</a> where I post more frequently about the trivialities of my life. There's content from over twenty years now, these are my most recent posts.</p>
+            <a href="https://www.dertagundich.de">dertagundich.de</a> where I post more frequently about the trivialities of my life. There's content from over twenty years now, these are my most recent posts.</p>
+
     {% if dtuiposts.status === "ok" %}
-        <ul>
+        <ul class="section__fullwidth post-list">
             {%- for article in dtuiposts.data -%}
                 <li>
                     <h4>

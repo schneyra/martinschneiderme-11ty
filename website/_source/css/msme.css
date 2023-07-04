@@ -10,7 +10,7 @@
 @import url("./_article.css");
 @import url("./_visually-hidden.css");
 @import url("./_section.css");
-@import url("./_hero.css");
+@import url("./_post-list.css");
 
 header {
     display: none;

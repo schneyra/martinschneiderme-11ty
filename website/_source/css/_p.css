@@ -1,3 +1,5 @@
 p {
-    margin-block-start: 1em;
+    max-width: var(--content-width-main);
+    text-align: justify;
+    hyphens: auto;
 }
