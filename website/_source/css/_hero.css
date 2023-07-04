@@ -29,10 +29,12 @@
 
     &__image {
         text-align: center;
-        border: var(--space-2xs) solid white;
 
         & img {
-            display: block;
+            display: inline-block;
+            border: var(--space-2xs) solid white;
+            border-radius: 50%;
+            overflow: hidden;
         }
     }
 }
