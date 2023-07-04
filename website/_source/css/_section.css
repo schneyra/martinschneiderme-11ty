@@ -1,7 +1,6 @@
 .section {
-    min-height: 100vh;
-
-    & > * + * {
-        margin-block-start: 1em;
-    }
+    min-height: 50vh;
+    display: grid;
+    align-items: center;
+    padding: var(--space-s);
 }

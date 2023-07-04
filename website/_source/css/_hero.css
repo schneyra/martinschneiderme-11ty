@@ -1,21 +1,56 @@
 .hero {
-    display: flex;
+    max-width: var(--content-width-wide);
+    width: 100%;
+    margin: auto;
     align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-block: var(--space-xl);
 
-    &__text p {
-        margin-top: 0.5em;
-        max-width: 800px;
+    @media (min-width: 60rem) {
+        grid-template-columns: minmax(320px, 2fr) minmax(400px, 1fr);
     }
 
     &__headline {
-        font-size: 4rem;
-        letter-spacing: -0.01em;
+        font-size: var(--step-5);
         font-weight: 300;
+        margin-block-start: 0;
 
         & span {
             font-weight: 600;
             letter-spacing: 0.01em;
         }
     }
+
+    &__text {
+        max-width: 800px;
+    }
+
+    &__image {
+        text-align: center;
+        border: var(--space-2xs) solid white;
+
+        & img {
+            display: block;
+        }
+    }
+}
+
+.hero-section {
+    background-image: linear-gradient(
+        140deg,
+        hsl(44deg 100% 97%) 0%,
+        hsl(44deg 92% 97%) 19%,
+        hsl(45deg 83% 97%) 27%,
+        hsl(46deg 73% 97%) 34%,
+        hsl(47deg 63% 97%) 41%,
+        hsl(48deg 52% 97%) 47%,
+        hsl(51deg 41% 98%) 53%,
+        hsl(56deg 29% 98%) 59%,
+        hsl(68deg 19% 98%) 66%,
+        hsl(104deg 11% 98%) 73%,
+        hsl(176deg 13% 98%) 81%,
+        hsl(200deg 27% 98%) 100%
+    );
 }
