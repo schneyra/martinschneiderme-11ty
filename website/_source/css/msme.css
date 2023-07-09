@@ -11,6 +11,7 @@
 @import url("./_visually-hidden.css");
 @import url("./_section.css");
 @import url("./_post-list.css");
+@import url("./_flow.css");
 
 header {
     display: none;
