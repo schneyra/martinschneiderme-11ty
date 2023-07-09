@@ -1,0 +1,11 @@
+{% set recentArticles = collections.articles | recentArticles(page) %}
+
+<details>
+    <summary>
+        <h2>Other articles I've written recently</h2>
+    </summary>
+
+    {%- for article in recentArticles|reverse -%}
+            {% include '_article-list.njk' %}
+    {%- endfor -%}
+</details>

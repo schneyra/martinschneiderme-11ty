@@ -1,0 +1,22 @@
+{%- set isTilPost = 'til' in article.data.tags -%}
+{%- set isChangelogPost = 'changelog' in article.data.tags -%}
+
+{% if loop.first %}
+    <ol class="article-list flow">
+    {% endif %}
+    <li data-cy="articleListArticle">
+    <article class="teaser flow">
+        <a href="{{ article.url }}" class="teaser__link">
+        <h2 class="teaser__headline">
+            {% if isTilPost %}TIL:{% endif %}
+            {% if isChangelogPost %}Changelog:{% endif %}
+            {{ article.data.title | safe }}
+        </h2>
+        </a>
+
+        <time class="teaser__date" datetime="{{ article.date | w3DateFilter }}">{{ article.date | longDate }}</time>
+    </article>
+    </li>
+    {% if loop.last %}
+    </ol>
+{% endif %}

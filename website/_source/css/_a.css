@@ -1,13 +1,13 @@
 a {
     text-decoration-thickness: 0.1em;
     transition: text-underline-offset linear 100ms;
-    text-decoration-color: #ee9b00;
+    text-decoration-color: var(--color-primary);
     color: currentColor;
     text-underline-offset: 0.25em;
     font-weight: 500;
 
     &:hover {
         text-underline-offset: 0.15em;
-        text-decoration-color: #ee9b00;
+        text-decoration-color: var(--color-primary);
     }
 }

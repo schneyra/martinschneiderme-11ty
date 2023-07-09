@@ -45,5 +45,10 @@
             var(--content-width-gap)
     );
 
+    --space-default: 1.25em;
+
     --font-family-headlines: "Labrada", serif;
+
+    --color-primary: #ee9b00;
+    --color-teaser-background-hover: #fff;
 }
