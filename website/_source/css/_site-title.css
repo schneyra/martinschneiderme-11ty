@@ -1,0 +1,5 @@
+.site-title {
+    font-family: var(--font-family-headlines);
+    text-transform: uppercase;
+    font-size: var(--step-1);
+}

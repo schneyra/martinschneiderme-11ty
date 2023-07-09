@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Labrada", serif;
+    font-family: var(--font-family-headlines);
     font-weight: 300;
     color: #123;
     line-height: 1.2;

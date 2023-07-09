@@ -1,0 +1,6 @@
+.site-navigation {
+    list-style: none;
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    line-height: 1;
+}

@@ -7,12 +7,14 @@
 @import url("./_button.css");
 @import url("./_a.css");
 @import url("./_headlines.css");
-@import url("./_article.css");
-@import url("./_visually-hidden.css");
-@import url("./_section.css");
-@import url("./_post-list.css");
-@import url("./_flow.css");
 
-header {
-    display: none;
-}
+@import url("./_site-header.css");
+@import url("./_site-navigation.css");
+@import url("./_site-title.css");
+@import url("./_section.css");
+@import url("./_article.css");
+
+@import url("./_post-list.css");
+
+@import url("./_flow.css");
+@import url("./_visually-hidden.css");

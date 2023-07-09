@@ -44,4 +44,6 @@
         var(--content-width-main) + var(--content-width-side) +
             var(--content-width-gap)
     );
+
+    --font-family-headlines: "Labrada", serif;
 }
