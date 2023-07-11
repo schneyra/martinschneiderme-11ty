@@ -42,9 +42,10 @@
     --content-width-gap: var(--space-l);
     --content-width-wrapper: calc(
         var(--content-width-main) + var(--content-width-side) +
-            var(--content-width-gap)
+            var(--content-width-gap) + var(--padding-default) * 2
     );
 
+    --padding-default: var(--space-s);
     --space-default: 1.25em;
 
     --font-family-headlines: "Labrada", serif;
