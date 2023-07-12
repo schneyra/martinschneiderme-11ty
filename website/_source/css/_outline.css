@@ -1,0 +1,11 @@
+:is(a, button, input, textarea) {
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus-visible {
+        text-decoration: none;
+        outline-offset: 0.15rem;
+        outline: 0.2rem dashed var(--color-primary);
+    }
+}

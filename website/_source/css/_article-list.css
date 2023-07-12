@@ -21,6 +21,14 @@
         background-color: var(--color-teaser-background-hover);
     }
 
+    &:focus-within {
+        background-color: var(--color-teaser-background-hover);
+
+        & *:focus {
+            outline: 0;
+        }
+    }
+
     &__link {
         text-decoration: none;
 
