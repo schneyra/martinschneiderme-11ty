@@ -1,8 +1,10 @@
 .section {
+    --space: var(--space-3xl);
+
     width: var(--content-width-wrapper);
     max-width: 100%;
     margin-inline: auto;
-    padding: var(--space-xl) var(--space-s);
+    padding-inline: var(--space-s);
 
     @media (min-width: 1300px) {
         display: grid;
@@ -10,6 +12,10 @@
         grid-template-columns:
             [main] var(--content-width-main) [side]
             var(--content-width-side);
+    }
+
+    & > * {
+        --space: var(--space-default);
     }
 
     & > *:not(&__side) {

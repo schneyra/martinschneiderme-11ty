@@ -1,0 +1,9 @@
+ul:not([class]),
+ol:not([class]) {
+    max-width: var(--content-width-main);
+    padding-inline-start: var(--space-s);
+
+    & li {
+        margin-block-start: 1em;
+    }
+}
