@@ -5,7 +5,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-family-headlines);
-    font-weight: 300;
+    font-weight: 400;
     color: #123;
     line-height: 1.2;
     transform: rotate(-0.25deg);
@@ -25,6 +25,6 @@ h3 {
 
 .headline {
     & span {
-        font-weight: 500;
+        font-weight: 600;
     }
 }

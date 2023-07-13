@@ -4,7 +4,7 @@ node_modules/
 # Local Netlify folder
 .netlify
 .cache
-website/css
+website/dist
 
 # Eleventy Edge Build Data files
 netlify/edge-functions/_generated
