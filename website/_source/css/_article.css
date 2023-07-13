@@ -4,7 +4,7 @@
     }
 
     &__date-link {
-        --space: var(--space-s);
+        --space: var(--space-3xs);
 
         font-weight: inherit;
         text-decoration: none;

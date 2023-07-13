@@ -54,16 +54,16 @@
     --color-teaser-background-hover: #fff;
 
     --gradient-body-background: linear-gradient(
-        145deg,
+        140deg,
         hsl(0deg 0% 98%) 0%,
-        hsl(0deg 0% 97%) 11%,
-        hsl(0deg 0% 96%) 22%,
-        hsl(0deg 0% 95%) 33%,
-        hsl(0deg 0% 93%) 44%,
-        hsl(0deg 0% 92%) 56%,
-        hsl(0deg 0% 91%) 67%,
-        hsl(0deg 0% 90%) 78%,
-        hsl(0deg 0% 89%) 89%,
-        hsl(0deg 0% 88%) 100%
+        hsl(0deg 0% 98%) 11%,
+        hsl(0deg 0% 97%) 22%,
+        hsl(0deg 0% 97%) 33%,
+        hsl(0deg 0% 96%) 44%,
+        hsl(0deg 0% 96%) 56%,
+        hsl(0deg 0% 95%) 67%,
+        hsl(0deg 0% 95%) 78%,
+        hsl(0deg 0% 95%) 89%,
+        hsl(0deg 0% 94%) 100%
     );
 }
