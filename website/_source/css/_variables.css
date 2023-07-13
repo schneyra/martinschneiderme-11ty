@@ -53,6 +53,7 @@
     --color-primary: #ee9b00;
     --color-teaser-background-hover: #fff;
 
+    /* https://www.joshwcomeau.com/gradient-generator?colors=fafafa|f0f0f0&angle=140&colorMode=hsl&precision=8&easingCurve=0.25|0.75|0.75|0.25 */
     --gradient-body-background: linear-gradient(
         140deg,
         hsl(0deg 0% 98%) 0%,

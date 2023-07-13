@@ -10,21 +10,27 @@ module.exports = async () => {
         if (err) throw err;
     });
 
-    const sourceFile = "./website/_source/css/msme.css";
-    const distFile = "./website/dist/msme.min.css";
+    const sourceFiles = ["msme", "prism"];
 
-    const css = await fs.readFile(sourceFile, (err, css) => {
-        if (err) throw err;
-        return css;
-    });
+    await Promise.all(
+        sourceFiles.map(async (filename) => {
+            const sourceFile = `./website/_source/css/${filename}.css`;
+            const distFile = `./website/dist/${filename}.min.css`;
 
-    await postcss([postcssImport, autoprefixer, postcssNested, cssnano])
-        .process(css, {
-            from: sourceFile,
-            to: distFile
+            const css = await fs.readFile(sourceFile, (err, css) => {
+                if (err) throw err;
+                return css;
+            });
+
+            await postcss([postcssImport, autoprefixer, postcssNested, cssnano])
+                .process(css, {
+                    from: sourceFile,
+                    to: distFile
+                })
+                .then((result) => {
+                    fs.writeFile(distFile, result.css, () => true);
+                    console.log(`[msme] Wrote CSS (${filename}.css)`);
+                });
         })
-        .then((result) => {
-            fs.writeFile(distFile, result.css, () => true);
-            console.log("[msme] Wrote CSS");
-        });
+    );
 };
