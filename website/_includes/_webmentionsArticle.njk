@@ -1,26 +1,28 @@
-<details>
+<details open>
+
+{% set url %}https://martinschneider.me{{ page.url }}{% endset %}
+{% set mentionsForPage = webmentions | webmentionsForUrl(url) %}
+
     <summary>
         <h2>
-            {{ webmentions.children.length }}
-            {% if webmentions.children.length != 1 %}Webmentions{% else %}Webmention{% endif %}
+            {{ mentionsForPage.length }}
+            {% if mentionsForPage.length != 1 %}Webmentions{% else %}Webmention{% endif %}
         </h2>
     </summary>
 
-    {% if webmentions.children.length %}
+    {% if mentionsForPage.length %}
         <ol>
-            {% for webmention in webmentions.children %}
+            {% for webmention in mentionsForPage %}
                 <li>
                     {% if webmention.author.photo %}
-                        {# pictureElement
+                        {% pictureElement
                             "src" = webmention.author.photo,
                             "alt" = "Avatar of " + webmention.author.name,
                             "widths" = [60],
                             "sizes" = "60px",
                             "pictureElementClasses" = "webmentions__avatar",
                             "imageElementClasses" = ""
-                        #}
-
-                        <img src="{{ webmention.author.photo }}" loading="lazy" height="256" width="256" alt=""/>
+                        %}
                     {% endif %}
                     
                     {% if webmention.author.name %}{{ webmention.author.name }}{% else %}<em>Someone</em>{% endif %}

@@ -8,5 +8,6 @@ module.exports = {
         return `${segment()}-${segment()}-${segment()}`;
     },
     now: Date.now(),
-    environment: process.env.ELEVENTY_ENV
+    environment: process.env.ELEVENTY_ENV,
+    webmention_io_token: process.env.WEBMENTION_IO_TOKEN
 };
