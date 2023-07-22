@@ -51,6 +51,8 @@
     --font-family-headlines: "Labrada", serif;
 
     --color-primary: #ee9b00;
+    --color-secondary: #123;
+    --color-secondary-invert: #fff;
     --color-teaser-background-hover: #fff;
 
     /* https://www.joshwcomeau.com/gradient-generator?colors=fafafa|f0f0f0&angle=140&colorMode=hsl&precision=8&easingCurve=0.25|0.75|0.75|0.25 */

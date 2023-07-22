@@ -6,7 +6,7 @@ h5,
 h6 {
     font-family: var(--font-family-headlines);
     font-weight: 400;
-    color: #123;
+    color: var(--color-secondary);
     line-height: 1.2;
     transform: rotate(-0.25deg);
 }
