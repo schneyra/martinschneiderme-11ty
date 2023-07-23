@@ -1,5 +1,7 @@
 msme-sharing-button {
-    display: inline-block;
+    &:not(:empty) {
+        display: inline-block;
+    }
 
     & button {
         background-color: transparent;

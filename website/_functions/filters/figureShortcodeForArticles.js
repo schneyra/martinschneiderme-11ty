@@ -1,5 +1,5 @@
 const Image = require("@11ty/eleventy-img");
-const htmlmin = require("../transforms/htmlmin");
+const sizeOf = require("image-size");
 
 /**
  * Generates a `picture`-tag with optional `figure` for images in articles
@@ -32,6 +32,8 @@ module.exports = async function imageShortcodeForArticles(
         urlPath: "/images/articles/"
     });
 
+    const dimensions = sizeOf(src);
+
     let lowsrc = metadata.jpeg[0];
 
     let html = "";
@@ -52,8 +54,8 @@ module.exports = async function imageShortcodeForArticles(
             .join("\n")}
         <img
             src="${lowsrc.url}"
-            width="${lowsrc.width}"
-            height="${lowsrc.height}"
+            width="${dimensions.width}"
+            height="${dimensions.height}"
             alt="${alt}"
             loading="lazy"
             decoding="async">

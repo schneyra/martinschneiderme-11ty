@@ -5,7 +5,9 @@
 
     <summary>
         <h2>
-            {{ mentionsForPage.length }}
+            
+            {% if mentionsForPage.length != 0 %}{{ mentionsForPage.length }}{% else %}No{% endif %}
+
             {% if mentionsForPage.length != 1 %}Webmentions{% else %}Webmention{% endif %}
         </h2>
     </summary>
