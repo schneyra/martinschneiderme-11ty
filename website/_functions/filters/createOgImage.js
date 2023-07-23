@@ -53,8 +53,6 @@ const createOgImage = async (title) => {
 
     const website = textToSVG.getPath("martinschneider.me", optionsWebsite);
 
-    const base64Image = toBase64(__dirname + "/../../images/logo512.png");
-
     let svg = () => `
         <svg width="2400" height="1200" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             
