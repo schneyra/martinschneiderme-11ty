@@ -1,9 +1,11 @@
 const getBaseUrl = () => {
-    if (process.env.ELEVENTY_ENV === "production") {
-        return "https://martinschneider.me";
-    }
+    if (process.env.NETLIFY) {
+        console.log(process.env.DEPLOY_PRIME_URL);
 
-    if (process.env.DEPLOY_PRIME_URL) {
+        if (process.env.CONTEXT === "production") {
+            return "https://martinschneider.me";
+        }
+
         return process.env.DEPLOY_PRIME_URL;
     }
 
