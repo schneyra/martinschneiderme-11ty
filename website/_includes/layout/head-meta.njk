@@ -23,7 +23,7 @@
 
 <meta name="google-site-verification" content="q30M0p1A4chHEQhW3ypsQYO7sz1EU7ACd3ng6IXqu-I"/>
 
-<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="https://martinschneider.me/articles/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ helper.baseUrl }}/articles/feed.xml">
 
 {% if metaRobots %}
     <meta name="robots" content="{{ metaRobots }}"/>
@@ -39,7 +39,7 @@
 <meta property="twitter:description" content="{{ description | stripTags }}">
 
 {% if title %}
-    <meta property="twitter:image" content="https://martinschneider.me{{ title | createOgImage }}">
+    <meta property="twitter:image" content="{{ helper.baseUrl }}{{ title | createOgImage }}">
 {% else %}
-    <meta property="twitter:image" content="https://martinschneider.me{{ "Martin Schneider Frontend Web Developer" | createOgImage }}">
+    <meta property="twitter:image" content="{{ helper.baseUrl }}{{ "Martin Schneider Frontend Web Developer" | createOgImage }}">
 {% endif %}

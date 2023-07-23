@@ -1,3 +1,22 @@
+const getBaseUrl = () => {
+    if (process.env.ELEVENTY_ENV === "production") {
+        return "https://martinschneider.me";
+    }
+
+    if (process.env.DEPLOY_PRIME_URL) {
+        return process.env.DEPLOY_PRIME_URL;
+    }
+
+    if (process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN) {
+        return (
+            "https://" +
+            process.env.CODESPACE_NAME +
+            "-8080." +
+            process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN
+        );
+    }
+};
+
 module.exports = {
     random() {
         const segment = () => {
@@ -9,5 +28,6 @@ module.exports = {
     },
     now: Date.now(),
     environment: process.env.ELEVENTY_ENV,
-    webmention_io_token: process.env.WEBMENTION_IO_TOKEN
+    webmention_io_token: process.env.WEBMENTION_IO_TOKEN,
+    baseUrl: getBaseUrl()
 };
