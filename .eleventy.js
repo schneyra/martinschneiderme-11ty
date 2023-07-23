@@ -27,6 +27,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.setQuietMode(true);
 
     eleventyConfig.addPassthroughCopy({
+        "./website/favicon.ico": "favicon.ico",
+        "./website/images/": "images",
         "./website/fonts/": "fonts",
         "./website/dist/": "dist",
         "./node_modules/instant.page/instantpage.js": "instantpage.js",
