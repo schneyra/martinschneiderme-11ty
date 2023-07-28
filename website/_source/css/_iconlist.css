@@ -1,0 +1,20 @@
+.iconlist {
+    list-style: none;
+    text-transform: uppercase;
+    width: max-content;
+
+    & > * + * {
+        margin-block-start: 1em;
+    }
+
+    & a {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2xs);
+    }
+
+    & svg {
+        height: 1em;
+        width: 1em;
+    }
+}

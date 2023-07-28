@@ -1,5 +1,5 @@
 <footer class="site-footer h-card">
-    <div>
+    <div class="flow">
         <p>
             <strong class="p-name">
                 <a href="{{ site.url }}" class="u-url u-uid">{{ martin.name }}</a>
@@ -20,7 +20,7 @@
         </ul>
     </div>
 
-    <ul>
+    <ul class="iconlist">
         {% for account in martin.sameAs %}
             <li>
                 <a href="{{ account.url }}" 
@@ -32,7 +32,7 @@
         {% endfor %}
     </ul>
 
-    <div>
+    <div class="site-footer__image">
         {% pictureElement
             "src" = martin.image,
             "alt" = "Smiling Martin looking into the camera.",
