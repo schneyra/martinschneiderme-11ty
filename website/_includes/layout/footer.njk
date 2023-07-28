@@ -1,23 +1,24 @@
-<footer class="h-card">
-    <p>
-        <strong class="p-name">
-            <a href="{{ site.url }}" class="u-url u-uid">{{ martin.name }}</a>
-        </strong>
-        <br>
-        <span class="p-job-title">{{ martin.jobtitle1 }}</span>
-        <br>
-        <span class="p-job-title">{{ martin.jobtitle2 }}</span>
-        <br>
-        <a href="mailto:{{ martin.email }}" class="u-email" rel="me">{{ martin.email }}</a>
-    </p>
+<footer class="site-footer h-card">
+    <div>
+        <p>
+            <strong class="p-name">
+                <a href="{{ site.url }}" class="u-url u-uid">{{ martin.name }}</a>
+            </strong>
+            <br>
+            <span class="p-job-title">{{ martin.jobtitle1 }}</span>
+            <br>
+            <span class="p-job-title">{{ martin.jobtitle2 }}</span>
+            <br>
+            <a href="mailto:{{ martin.email }}" class="u-email" rel="me">{{ martin.email }}</a>
+        </p>
 
-    <ul>
-        <li><a href="/articles/feed.xml">RSS-Feed</a></li>
-        <li><a href="/colophon/">Colophon</a></li>
-        <li><a href="/accessibility/">Accessibility</a></li>
-        <li><a href="/legal/">Legal Information</a></li>
-    </ul>
-
+        <ul>
+            <li><a href="/articles/feed.xml">RSS-Feed</a></li>
+            <li><a href="/colophon/">Colophon</a></li>
+            <li><a href="/accessibility/">Accessibility</a></li>
+            <li><a href="/legal/">Legal Information</a></li>
+        </ul>
+    </div>
 
     <ul>
         {% for account in martin.sameAs %}
@@ -31,12 +32,14 @@
         {% endfor %}
     </ul>
 
-    {% pictureElement
-        "src" = martin.image,
-        "alt" = "Smiling Martin looking into the camera.",
-        "widths" = [250],
-        "sizes" = "250px",
-        "pictureElementClasses" = "",
-        "imageElementClasses" = ""
-    %}
+    <div>
+        {% pictureElement
+            "src" = martin.image,
+            "alt" = "Smiling Martin looking into the camera.",
+            "widths" = [250],
+            "sizes" = "250px",
+            "pictureElementClasses" = "",
+            "imageElementClasses" = ""
+        %}
+    </div>
 </footer>

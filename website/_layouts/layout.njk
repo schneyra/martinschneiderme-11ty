@@ -29,13 +29,17 @@ title:
             Skip to content.
         </a>
         
-        {% include "layout/header.njk" %}
+        <div class="page-wrapper">
+            {% include "layout/header.njk" %}
 
-        <main id="main" tabindex="-1">
-            {{ content | safe }}
-        </main>
+            <main id="main" tabindex="-1">
+                {{ content | safe }}
+            </main>
+        </div>
 
-        {% include "layout/footer.njk" %}
+        <div class="footer-wrapper">
+            {% include "layout/footer.njk" %}
+        </div>
 
         <script>
             {% set serviceworkerEmbed %}

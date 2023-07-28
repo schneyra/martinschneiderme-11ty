@@ -1,0 +1,20 @@
+.page-wrapper {
+    min-height: 100vh;
+    background: var(--gradient-body-background);
+    border-bottom: 3rem solid #fff;
+    padding-block-end: var(--space-2xl);
+    z-index: 2;
+    position: relative;
+}
+
+.footer-wrapper {
+    padding-block: var(--space-2xl) var(--space-3xl);
+
+    @media (min-width: 60rem) {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+}

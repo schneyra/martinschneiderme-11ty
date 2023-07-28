@@ -24,7 +24,6 @@
 
     &__side {
         grid-column-start: side;
-        transform: rotate(0.25deg);
     }
 
     &__fullwidth {

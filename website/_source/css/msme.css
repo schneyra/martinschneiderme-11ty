@@ -7,6 +7,7 @@
 @import url("./_html-body.css");
 
 @import url("./_p.css");
+@import url("./_picture.css");
 @import url("./_button.css");
 @import url("./_a.css");
 @import url("./_headlines.css");
@@ -17,6 +18,7 @@
 @import url("./_wrapper.css");
 @import url("./_site-header.css");
 @import url("./_site-navigation.css");
+@import url("./_site-footer.css");
 @import url("./_site-title.css");
 @import url("./_section.css");
 @import url("./_article.css");
@@ -27,3 +29,4 @@
 @import url("./_flow.css");
 @import url("./_visually-hidden.css");
 @import url("./_msme-sharing-button.css");
+@import url("./_reveal-footer.css");
