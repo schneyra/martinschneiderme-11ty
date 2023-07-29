@@ -8,7 +8,7 @@ body {
     background-image: var(--gradient-body-background);
     background-size: 100% 100%;
     background-attachment: fixed;
-    font-family: system-ui, sans-serif;
+    font-family: var(--font-family-text);
     font-weight: 300;
     line-height: 1.6;
 }

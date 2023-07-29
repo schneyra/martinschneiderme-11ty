@@ -12,6 +12,7 @@
     }
 
     & blockquote {
+        width: 100%;
         max-width: var(--content-width-main);
         border-inline-start: 0.2em solid var(--color-primary);
         padding-inline-start: 0.5em;

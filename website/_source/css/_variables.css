@@ -49,6 +49,9 @@
     --space-default: 1.25em;
 
     --font-family-headlines: "Labrada", serif;
+    --font-family-text: system-ui, sans-serif;
+    --font-family-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+        Consolas, "DejaVu Sans Mono", monospace;
 
     --color-text: #111;
     --color-primary: #ee9b00;
