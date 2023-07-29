@@ -1,0 +1,4 @@
+figcaption {
+    font-size: var(--step--1);
+    font-style: italic;
+}

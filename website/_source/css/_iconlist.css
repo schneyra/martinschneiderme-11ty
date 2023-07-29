@@ -4,7 +4,7 @@
     width: max-content;
 
     & > * + * {
-        margin-block-start: 1em;
+        margin-block-start: var(--space-2xs);
     }
 
     & a {

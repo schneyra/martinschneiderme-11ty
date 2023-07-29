@@ -6,6 +6,12 @@
     gap: var(--space-l);
     padding-inline: var(--padding-default);
 
+    &__left {
+        & > * + * {
+            margin-block-start: var(--space-l);
+        }
+    }
+
     &__image {
         text-align: center;
     }
