@@ -1,0 +1,23 @@
+.webmentions {
+    &__avatar {
+        width: 1em;
+        height: 1em;
+    }
+
+    & li {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--space-3xs);
+    }
+
+    & blockquote {
+        max-width: var(--content-width-main);
+        border-inline-start: 0.2em solid var(--color-primary);
+        padding-inline-start: 0.5em;
+    }
+
+    & picture {
+        background-color: var(--color-primary);
+    }
+}
