@@ -4,7 +4,7 @@
         height: 1em;
     }
 
-    & li {
+    &__header {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -16,6 +16,7 @@
         max-width: var(--content-width-main);
         border-inline-start: 0.2em solid var(--color-primary);
         padding-inline-start: 0.5em;
+        font-size: 0.85em;
     }
 
     & picture {

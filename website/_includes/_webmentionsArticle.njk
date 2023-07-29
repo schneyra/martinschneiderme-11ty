@@ -14,41 +14,43 @@
         <ol class="webmentions flow">
             {% for webmention in mentionsForPage %}
                 <li>
-                    {% if webmention.author.photo %}
-                        {% pictureElement
-                            "src" = webmention.author.photo,
-                            "alt" = "Avatar of " + webmention.author.name,
-                            "widths" = [20, 40],
-                            "sizes" = "20px",
-                            "pictureElementClasses" = "webmentions__avatar",
-                            "imageElementClasses" = ""
-                        %}
-                    {% endif %}
-                    <span>
-                        {% if webmention.author.name %}{{ webmention.author.name }}{% else %}<em>Someone</em>{% endif %}
-
-                        {% if webmention.url.includes("twitter.com") %}
-                            {% set twitterString = " on twitter" %}
-                        {% else %}
-                            {% set twitterString = "" %}
+                    <div class="webmentions__header">
+                        {% if webmention.author.photo %}
+                            {% pictureElement
+                                "src" = webmention.author.photo,
+                                "alt" = "Avatar of " + webmention.author.name,
+                                "widths" = [20, 40],
+                                "sizes" = "20px",
+                                "pictureElementClasses" = "webmentions__avatar",
+                                "imageElementClasses" = ""
+                            %}
                         {% endif %}
+                        <span>
+                            {% if webmention.author.name %}{{ webmention.author.name }}{% else %}<em>Someone</em>{% endif %}
 
-                        {% if webmention["wm-property"] === "like-of" %}
-                            liked <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
-                        {% endif %}
+                            {% if webmention.url.includes("twitter.com") %}
+                                {% set twitterString = " on twitter" %}
+                            {% else %}
+                                {% set twitterString = "" %}
+                            {% endif %}
 
-                        {% if webmention["wm-property"] === "repost-of" %}
-                            reposted <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
-                        {% endif %}
+                            {% if webmention["wm-property"] === "like-of" %}
+                                liked <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
+                            {% endif %}
 
-                        {% if webmention["wm-property"] === "mention-of" %}
-                            mentioned the article in <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
-                        {% endif %}
+                            {% if webmention["wm-property"] === "repost-of" %}
+                                reposted <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
+                            {% endif %}
 
-                        {% if webmention["wm-property"] === "in-reply-to" and webmention.content %}
-                            replied to <a href="{{ webmention.url }}">this post</a>{{ twitterString }}:
-                        {% endif %}
-                    </span>
+                            {% if webmention["wm-property"] === "mention-of" %}
+                                mentioned the article in <a href="{{ webmention.url }}">this post</a>{{ twitterString }}.
+                            {% endif %}
+
+                            {% if webmention["wm-property"] === "in-reply-to" and webmention.content %}
+                                replied to <a href="{{ webmention.url }}">this post</a>{{ twitterString }}:
+                            {% endif %}
+                        </span>
+                    </div> 
 
                     {% if webmention["wm-property"] === "in-reply-to" and webmention.content %}
                         <blockquote>{{ webmention.content.text }}</blockquote>
