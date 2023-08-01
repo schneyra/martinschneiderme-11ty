@@ -31,13 +31,13 @@ const createOgImage = async (title) => {
         x: 70,
         y: 360,
         fontSize: 65,
-        attributes: { fill: "#123" }
+        attributes: { fill: "hsl(210deg 50% 13%)" }
     };
     const optionsTitle2 = {
         x: 70,
         y: 435,
         fontSize: 65,
-        attributes: { fill: "#123" }
+        attributes: { fill: "hsl(210deg 50% 13%)" }
     };
 
     const title1 = textToSVG.getPath(firstPartOfTitle.join(" "), optionsTitle1);
@@ -48,7 +48,7 @@ const createOgImage = async (title) => {
         x: 70,
         y: 550,
         fontSize: 45,
-        attributes: { fill: "#333" }
+        attributes: { fill: "hsl(0deg 0% 7%)" }
     };
 
     const website = textToSVG.getPath("martinschneider.me", optionsWebsite);
@@ -64,9 +64,9 @@ const createOgImage = async (title) => {
             </defs>
 
             <rect width="1200" height="600" fill="url('#backgroundGradient')"/> 
-            <rect width="1060" height="3" x="70" y="480" fill="#ee9b00"/> 
+            <rect width="1060" height="3" x="70" y="480" fill="hsl(45deg 100% 63%)"/> 
 
-            <rect width="150" height="150" x="985" y="75" fill="#ee9b00"/>
+            <rect width="150" height="150" x="985" y="75" fill="hsl(45deg 100% 63%)"/>
 
             <image
             x="980"
