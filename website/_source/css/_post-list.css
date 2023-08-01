@@ -5,15 +5,61 @@
     overflow-x: auto;
     overflow-y: visible;
     gap: var(--space-s);
+    padding: var(--space-2xs);
 
     & li {
         display: inline-block;
         aspect-ratio: 3 / 4;
-        width: 12rem;
+        background: #fff;
+        width: 11rem;
+        flex-shrink: 0;
+        align-items: stretch;
+
+        &:nth-child(even) article {
+            transform: rotate(-0.5deg);
+        }
+
+        &:nth-child(odd) article {
+            transform: rotate(0.5deg);
+        }
+    }
+
+    & article {
         background: white;
         display: flex;
         align-items: end;
         padding: var(--space-2xs);
-        flex-shrink: 0;
+        position: relative;
+        border: 0.1rem solid var(--color-secondary);
+        height: 100%;
+        top: -0.2rem;
+        left: -0.2rem;
+    }
+
+    & a:before {
+        display: block;
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+
+    &__headline {
+        z-index: 2;
+        position: static;
+    }
+
+    &__picture {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.05;
+            transform: rotate(0);
+            inset: 0;
+        }
     }
 }

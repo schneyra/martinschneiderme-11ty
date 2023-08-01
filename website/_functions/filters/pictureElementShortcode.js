@@ -16,7 +16,13 @@ module.exports = async function pictureElementShortcode(options) {
         lazyloading = true
     } = options;
 
-    if (!src || !alt || !widths || !sizes) {
+    if (typeof alt !== "string") {
+        console.warn(`[msme] Missing \`alt\` on image from: ${src}`);
+
+        return;
+    }
+
+    if (!src || !widths || !sizes) {
         console.warn(
             `[msme] Missing \`src\` or \`widths\` or \`sizes\` on image from: ${src}`
         );

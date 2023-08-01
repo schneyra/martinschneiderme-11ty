@@ -9,9 +9,11 @@
         {% set articles = collections.articles | reverse %}
         {%- for article in articles.slice(0,5) -%}
             <li>
-                <h4>
-                    <a href="{{ article.url }}">{{ article.data.title }}</a>
-                </h4>
+                <article>
+                    <h4>
+                        <a href="{{ article.url }}">{{ article.data.title }}</a>
+                    </h4>
+                </article>
             </li>
         {%- endfor -%}
     </ul>
@@ -24,9 +26,22 @@
         <ul class="section__fullwidth post-list">
             {%- for article in dtuiposts.data -%}
                 <li>
-                    <h4>
-                        <a href="{{ article.url }}">{{ article.title }}</a>
-                    </h4>
+                    <article>
+                        {% if article.image %}
+                            {% pictureElement
+                                "src" = article.image,
+                                "alt" = "",
+                                "widths" = [200, 400],
+                                "sizes" = "200px",
+                                "pictureElementClasses" = "post-list__picture",
+                                "imageElementClasses" = ""
+                            %}
+                        {% endif %}
+
+                        <h4 class="post-list__headline">
+                            <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h4>
+                    </article>
                 </li>
             {%- endfor -%}
         </ul>
