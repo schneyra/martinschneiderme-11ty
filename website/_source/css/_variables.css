@@ -37,8 +37,8 @@
 }
 
 :root {
-    --content-width-main: 700px;
-    --content-width-side: 300px;
+    --content-width-main: 44rem;
+    --content-width-side: 19rem;
     --content-width-gap: var(--space-l);
     --content-width-wrapper: calc(
         var(--content-width-main) + var(--content-width-side) +
