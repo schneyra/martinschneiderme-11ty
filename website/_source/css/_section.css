@@ -6,7 +6,7 @@
     margin-inline: auto;
     padding-inline: var(--space-s);
 
-    @media (min-width: 1300px) {
+    @media (min-width: 80rem) {
         display: grid;
         column-gap: var(--content-width-gap);
         grid-template-columns:
