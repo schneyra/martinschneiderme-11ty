@@ -4,7 +4,7 @@ date: 2020-04-20
 excerpt: "Many people prefer the so called dark mode of their operating system. My website now also comes with a dark version. It is automatically shown if you are in dark mode, but you can also toggle it by button."
 ---
 
-A few years back, operating-system-manufacturers started implementing the so-called "dark modes" into their systems. Users can switch between a light or dark color-theme of the OS and the software supporting that feature. CSS gives us a `<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">prefers-color-scheme</a>` Media-Query which provides the selected mode for usage in our stylesheets. The people at Stack Overflow have written a detailed post about <a href="https://stackoverflow.blog/2020/03/31/building-dark-mode-on-stack-overflow/">their journey to the often requested dark mode</a>. Here is how I implemented it.
+A few years back, operating-system-manufacturers started implementing the so-called "dark modes" into their systems. Users can switch between a light or dark color-theme of the OS and the software supporting that feature. CSS gives us a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">`prefers-color-scheme`</a> Media-Query which provides the selected mode for usage in our stylesheets. The people at Stack Overflow have written a detailed post about <a href="https://stackoverflow.blog/2020/03/31/building-dark-mode-on-stack-overflow/">their journey to the often requested dark mode</a>. Here is how I implemented it.
 
 When developing my last placeholder-site on this domain, I've had implemented a dark version which changed some of the sites colors and even a picture. Here's a comparison of the two versions:
 
@@ -81,7 +81,7 @@ I also went a slightly other way to show the suitable icon in my button and wrot
 
 ## Remembering the Selected Mode
 
-I'm using localStorage to remember the visitors preference. While saving and getting the state is easy, I stumbled upon the problem that the pages flashed white when reloading the dark site. After fiddling around with various methods to set the data-attribute when loading the site initially, including the <a href="https://svelte.dev/docs#onMount">`onMount`-function of Svelte</a>, I've found the solution in swyx' blogpost with the suitable name <em><a href="https://www.swyx.io/writing/avoid-fotc/">Avoiding Flash of Unthemed Code</a></em>. Now I'm using the `&lt;svelte:head&gt;`-Tag to inject a `script`-tag with an <em>IIFE</em> into the head of my site. No flashes. Thanks.
+I'm using localStorage to remember the visitors preference. While saving and getting the state is easy, I stumbled upon the problem that the pages flashed white when reloading the dark site. After fiddling around with various methods to set the data-attribute when loading the site initially, including the <a href="https://svelte.dev/docs#onMount">`onMount`-function of Svelte</a>, I've found the solution in swyx' blogpost with the suitable name <em><a href="https://www.swyx.io/writing/avoid-fotc/">Avoiding Flash of Unthemed Code</a></em>. Now I'm using the `<svelte:head>`-Tag to inject a `script`-tag with an <em>IIFE</em> into the head of my site. No flashes. Thanks.
 
 ## In conclusion...
 

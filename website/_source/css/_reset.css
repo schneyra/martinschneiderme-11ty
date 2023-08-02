@@ -15,8 +15,3 @@ img {
     height: auto;
     display: block;
 }
-
-ul[class],
-ol[class] {
-    list-style: none;
-}

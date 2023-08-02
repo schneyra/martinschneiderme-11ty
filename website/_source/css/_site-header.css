@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: var(--space-s);
+    padding-block: var(--space-m);
     gap: var(--space-s);
     flex-wrap: wrap;
 

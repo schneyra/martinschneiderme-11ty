@@ -1,8 +1,9 @@
 .site-footer {
-    max-width: var(--content-width-wrapper);
+    max-width: 100%;
+    width: var(--content-width-wrapper);
     margin-inline: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: var(--space-l);
     padding-inline: var(--padding-default);
 

@@ -7,3 +7,8 @@ ol:not([class]) {
         margin-block-start: 1em;
     }
 }
+
+ul[class],
+ol[class] {
+    list-style: none;
+}

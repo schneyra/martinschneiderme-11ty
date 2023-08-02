@@ -1,0 +1,5 @@
+.navlist {
+    & > * + * {
+        margin-block-start: var(--space-2xs);
+    }
+}
