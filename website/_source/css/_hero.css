@@ -1,0 +1,45 @@
+.hero {
+    max-width: 100%;
+    width: var(--content-width-wrapper);
+    margin-inline: auto;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    padding-inline: var(--padding-default);
+    flex-wrap: wrap;
+
+    & > * {
+        margin-inline: auto;
+    }
+
+    &__headline {
+        font-size: var(--step-7);
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: var(--color-primary);
+            z-index: -1;
+            transform: rotate(-1deg);
+            inset: 0.75em 0 -0.1em -0.25em;
+        }
+
+        & + * {
+            margin-block-start: var(--space-l);
+        }
+    }
+
+    &__image {
+        min-width: 20rem;
+        background-color: var(--color-primary);
+
+        & img {
+            top: -0.5rem;
+            left: -0.5rem;
+        }
+    }
+}

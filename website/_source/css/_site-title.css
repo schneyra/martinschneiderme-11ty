@@ -1,6 +1,23 @@
 .site-title {
     font-family: var(--font-family-headlines);
     text-transform: uppercase;
-    font-size: var(--step-1);
+    font-size: var(--step-2);
     font-weight: 400;
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: var(--color-primary);
+        z-index: -1;
+        transform: rotate(-1.1deg);
+        inset: 1.5em -0.25em 0 -0.25em;
+        transition: background-color 100ms linear;
+    }
+
+    &:hover::before {
+        background-color: var(--color-secondary-invert);
+    }
 }
