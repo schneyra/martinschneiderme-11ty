@@ -17,7 +17,8 @@
     &__headline {
         font-size: var(--step-7);
         position: relative;
-
+        display: inline-block;
+        
         &::before {
             content: "";
             position: absolute;
