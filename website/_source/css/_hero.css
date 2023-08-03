@@ -39,8 +39,8 @@
         background-color: var(--color-primary);
 
         & img {
-            top: -0.5rem;
-            left: -0.5rem;
+            top: -0.75rem;
+            left: -0.75rem;
         }
     }
 }
