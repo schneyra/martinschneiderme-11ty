@@ -10,8 +10,19 @@
 
 .teaser {
     position: relative;
-    border-inline-start: 0.5rem solid var(--color-primary);
     padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-s);
+    transition: background-color 100ms linear;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 0;
+        border-inline-start: 0.5rem solid var(--color-primary);
+        position: absolute;
+        inset: -0.25em -0.1em;
+        transform: rotate(-0.75deg);
+        transition: transform 100ms linear;
+    }
 
     & > * {
         --space: var(--space-2xs);
@@ -19,6 +30,10 @@
 
     &:hover {
         background-color: var(--color-teaser-background-hover);
+
+        &::before {
+            transform: rotate(0.25deg);
+        }
     }
 
     &:focus-within {
