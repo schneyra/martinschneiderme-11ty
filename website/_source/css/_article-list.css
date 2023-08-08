@@ -12,6 +12,7 @@
     position: relative;
     padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-s);
     transition: background-color 100ms linear;
+    max-width: fit-content;
 
     &::before {
         content: "";
