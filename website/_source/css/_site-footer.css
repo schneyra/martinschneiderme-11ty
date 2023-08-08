@@ -15,5 +15,14 @@
 
     &__image {
         text-align: center;
+
+        & picture {
+            background-color: var(--color-primary);
+        }
+
+        & img {
+            top: -0.5rem;
+            left: -0.5rem;
+        }
     }
 }

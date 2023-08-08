@@ -10,9 +10,14 @@
     & li {
         display: inline-block;
         aspect-ratio: 3 / 4;
-        background: #fff;
+        background-color: white;
         width: 11rem;
         flex-shrink: 0;
         align-items: stretch;
+        transition: background-color 100ms linear;
+
+        &:hover {
+            background-color: var(--color-primary);
+        }
     }
 }

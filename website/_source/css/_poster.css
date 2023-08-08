@@ -1,13 +1,14 @@
 .poster {
-    background: white;
+    background-color: white;
     display: flex;
     align-items: end;
-    padding: var(--space-2xs);
+    padding: var(--space-xs);
     position: relative;
     border: 0.1rem solid var(--color-secondary);
     height: 100%;
     top: -0.2rem;
     left: -0.2rem;
+    transition: transform 100ms linear;
 
     & a:before {
         display: block;
@@ -19,6 +20,8 @@
     &__headline {
         transform: none;
         z-index: 2;
+        font-size: var(--step--1);
+        line-height: 1.5;
     }
 
     &__picture {
@@ -40,9 +43,17 @@
 .post-list li {
     &:nth-of-type(even) article {
         transform: rotate(-0.5deg);
+
+        &:hover {
+            transform: rotate(0.5deg);
+        }
     }
 
     &:nth-of-type(odd) article {
         transform: rotate(0.5deg);
+
+        &:hover {
+            transform: rotate(-0.5deg);
+        }
     }
 }
