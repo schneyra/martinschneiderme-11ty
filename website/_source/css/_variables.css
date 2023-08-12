@@ -61,10 +61,21 @@
     --color-secondary-invert: hsl(0deg 0% 100%);
     --color-teaser-background-hover: hsl(0deg 0% 100%);
 
-    /* https://www.joshwcomeau.com/gradient-generator?colors=fafafa|f0f0f0&angle=140&colorMode=hsl&precision=8&easingCurve=0.25|0.75|0.75|0.25 */
     --gradient-body-background: linear-gradient(
         140deg,
         hsl(220deg 25% 90%),
+        hsl(0deg 0% 100%)
+    );
+
+    --gradient-eleventy: linear-gradient(
+        140deg,
+        hsl(220deg 0% 75%),
+        hsl(0deg 0% 100%)
+    );
+
+    --gradient-js: linear-gradient(
+        140deg,
+        hsl(53deg 93% 90%),
         hsl(0deg 0% 100%)
     );
 }

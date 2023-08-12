@@ -2,6 +2,7 @@
 title: "Fetching Webmentions With Netlify and Eleventy Edge"
 date: 2023-06-23
 excerpt: "Sadly, I'm not too good at documenting what I'm sometimes building in the little free time that I have. At the end of last year, I implemented an interesting feature on this site, but never wrote about it."
+tags: "eleventy"
 ---
 
 As you might have seen, [this site supports Webmentions](/articles/adding-webmentions-to-my-website/). They are displayed under each article, and I'm collecting them using a service called [webmention.io](https://webmention.io/). For the longest time, I was doing this at build time, which means that I had to trigger a build at Netlify to update the Webmentions on my site. While it isn't too hard to automate that task, it wasn't quite a fulfilling experience for me. So I was quite interested in trying out the [Edge-Plugin for Netlify](https://www.11ty.dev/docs/plugins/edge/), which "is an exciting new way to add dynamic content to your Eleventy templates".
@@ -31,11 +32,13 @@ export default async (request, context) => {
 
         let slug = edge.url.pathname;
 
-        const webmentionsResponse = await fetch(`https://webmention.io/api/mentions.jf2?domain=martinschneider.me&per-page=200&sort-dir=up&target=https://martinschneider.me${slug}`);
+        const webmentionsResponse = await fetch(
+            `https://webmention.io/api/mentions.jf2?domain=martinschneider.me&per-page=200&sort-dir=up&target=https://martinschneider.me${slug}`
+        );
         const webmentions = await webmentionsResponse.json();
 
         edge.config((eleventyConfig) => {
-            eleventyConfig.addGlobalData('webmentions', webmentions)
+            eleventyConfig.addGlobalData("webmentions", webmentions);
         });
 
         return await edge.handleResponse();

@@ -1,14 +1,13 @@
 .poster {
-    background-color: white;
+    background-image: var(--gradient-body-background);
     display: flex;
     align-items: end;
-    padding: var(--space-xs);
     position: relative;
     border: 0.1rem solid var(--color-secondary);
     height: 100%;
     top: -0.2rem;
     left: -0.2rem;
-    transition: transform 100ms linear;
+    transition: transform 200ms ease-in;
 
     & a:before {
         display: block;
@@ -22,6 +21,14 @@
         z-index: 2;
         font-size: var(--step--1);
         line-height: 1.5;
+        padding: var(--space-xl) var(--space-xs) var(--space-xs) var(--space-xs);
+        background-image: linear-gradient(
+            0deg,
+            hsla(0 100% 100% / 1),
+            hsla(0 100% 100% / 0.75) 50%,
+            transparent
+        );
+        width: 100%;
     }
 
     &__picture {
@@ -33,10 +40,33 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.1;
+            opacity: 0.5;
             transform: rotate(0);
             inset: 0;
         }
+    }
+
+    &--eleventy {
+        background-image: url("../images/eleventy.svg"),
+            var(--gradient-eleventy);
+        background-size: 25%, 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: calc(100% - var(--space-xs)) var(--space-xs), 0 0;
+    }
+
+    &--css {
+        background-image: url("../images/css.svg"),
+            var(--gradient-body-background);
+        background-size: 25%, 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: calc(100% - var(--space-xs)) var(--space-xs), 0 0;
+    }
+
+    &--js {
+        background-image: url("../images/js.svg"), var(--gradient-js);
+        background-size: 25%, 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: calc(100% - var(--space-xs)) var(--space-xs), 0 0;
     }
 }
 

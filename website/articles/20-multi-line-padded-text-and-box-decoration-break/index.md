@@ -2,6 +2,7 @@
 title: "Multi-Line Padded Text and box-decoration-break"
 date: 2022-11-16
 excerpt: "Sometimes I get really happy when modern CSS solves a problem I've been fiddling around with for a long time."
+tags: "css"
 ---
 
 From time to time over the last years, I've had to build a headline element that is supposed to have a padded colored

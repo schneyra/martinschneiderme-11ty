@@ -2,6 +2,7 @@
 title: "Tinkering with Web Components – Part 2"
 date: 2023-06-27
 excerpt: "In part two of my little web components experiment I'm solving the problems from part one and release a package at npm."
+tags: "js"
 ---
 
 About a year and a half ago, I spent some time [tinkering with web components](/articles/tinkering-with-web-components/). I wasn't too happy about the outcome of my research at this point; both ways of styling the component weren't good enough, in my opinion. So I wrote the article and tweeted about my dilemma.

@@ -2,6 +2,7 @@
 title: "Generating CSS With PostCSS and eleventy.before"
 date: 2023-06-29
 excerpt: "I'm trying to keep the setup of my personal projects as simple as possible. Today, we're looking at how CSS is generated."
+tags: "css"
 ---
 
 I've been writing SCSS for many years now. But when I recently moved my [blog](https://www.dertagundich.de) from WordPress to Kirby, I decided to return to vanilla CSS.
