@@ -18,7 +18,13 @@
         font-size: var(--step-7);
         position: relative;
         display: inline;
-        background-image: repeating-linear-gradient(179deg, transparent, transparent .8em, var(--color-primary) .8em, var(--color-primary) 1.3em);
+        background-image: repeating-linear-gradient(
+            179deg,
+            transparent,
+            transparent 0.8em,
+            var(--color-primary) 0.8em,
+            var(--color-primary) 1.3em
+        );
         padding-bottom: 0.2em;
         box-decoration-break: clone;
 
@@ -29,7 +35,7 @@
 
     &__image {
         min-width: 20rem;
-        background-color: var(--color-primary);
+        background-image: var(--gradient-primary);
 
         & img {
             top: -0.75rem;

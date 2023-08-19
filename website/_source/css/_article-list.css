@@ -21,8 +21,8 @@
         border-inline-start: 0.5rem solid var(--color-primary);
         position: absolute;
         inset: -0.25em -0.1em;
-        transform: rotate(-0.75deg);
-        transition: transform 100ms linear;
+        transform: rotate(-1.25deg);
+        transition: transform 100ms linear, border-color 200ms linear;
     }
 
     & > * {
@@ -34,6 +34,7 @@
 
         &::before {
             transform: rotate(0.25deg);
+            border-color: var(--color-tertiary);
         }
     }
 

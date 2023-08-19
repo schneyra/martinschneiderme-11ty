@@ -1,13 +1,17 @@
 a {
     text-decoration-thickness: 0.1em;
-    transition: text-underline-offset linear 100ms;
-    text-decoration-color: var(--color-primary);
+    transition: text-underline-offset linear 50ms;
+    text-decoration-color: var(--color-primary-dark);
     color: currentColor;
-    text-underline-offset: .1em;
+    text-underline-offset: 0.1em;
     font-weight: 500;
+
+    &:visited {
+        text-decoration-color: var(--color-primary);
+    }
 
     &:hover {
         text-underline-offset: 0.2em;
-        text-decoration-color: var(--color-primary);
+        text-decoration-color: var(--color-tertiary);
     }
 }

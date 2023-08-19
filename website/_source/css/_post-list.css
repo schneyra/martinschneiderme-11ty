@@ -10,14 +10,14 @@
     & li {
         display: inline-block;
         aspect-ratio: 3 / 4;
-        background-color: white;
+        background-image: var(--gradient-body-background-invert);
         width: 11rem;
         flex-shrink: 0;
         align-items: stretch;
-        transition: background-color 100ms linear;
+        transition: background-image 200ms linear;
 
         &:hover {
-            background-color: var(--color-primary);
+            background-image: var(--gradient-primary);
         }
     }
 }

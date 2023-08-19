@@ -17,7 +17,7 @@
         text-align: center;
 
         & picture {
-            background-color: var(--color-primary);
+            background-image: var(--gradient-primary);
         }
 
         & img {

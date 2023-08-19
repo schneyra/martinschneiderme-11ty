@@ -18,7 +18,7 @@
     }
 
     &:hover::before {
-        background-color: var(--color-secondary-invert);
+        background-color: var(--color-tertiary);
         transform: rotate(0);
     }
 }

@@ -1,11 +1,11 @@
 picture {
-    background: #fff;
+    background-image: var(--gradient-body-background-invert);
 
     & img {
         transform: rotate(0.5deg);
         position: relative;
-        top: -0.2rem;
-        left: -0.2rem;
+        top: -0.5rem;
+        left: -0.5rem;
         width: 100%;
     }
 }
