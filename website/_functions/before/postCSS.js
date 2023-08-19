@@ -3,6 +3,7 @@ const postcss = require("postcss");
 const cssnano = require("cssnano");
 const postcssNested = require("postcss-nested");
 const postcssImport = require("postcss-import");
+const litePreset = require("cssnano-preset-lite");
 const fs = require("fs/promises");
 
 module.exports = async () => {
@@ -22,7 +23,11 @@ module.exports = async () => {
                 return css;
             });
 
-            await postcss([postcssImport, autoprefixer, postcssNested, cssnano])
+            await postcss([
+                postcssImport,
+                postcssNested,
+                cssnano({ litePreset, plugins: [autoprefixer] })
+            ])
                 .process(css, {
                     from: sourceFile,
                     to: distFile
