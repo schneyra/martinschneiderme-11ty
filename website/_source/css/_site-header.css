@@ -7,6 +7,6 @@
     flex-wrap: wrap;
 
     & + * {
-        margin-block-start: var(--space-l-xl);
+        margin-block-start: var(--space-xl-2xl);
     }
 }

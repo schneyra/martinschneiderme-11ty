@@ -24,7 +24,7 @@ const createOgImage = async (title) => {
 
     // Title
     let textToSVG = TextToSVG.loadSync(
-        __dirname + "/../../fonts/Labrada-Regular.ttf"
+        __dirname + "/../../fonts/LexendDeca-Regular.ttf"
     );
 
     const optionsTitle1 = {

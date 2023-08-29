@@ -1,7 +1,6 @@
 @font-face {
     font-display: swap;
-    font-family: "Labrada";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/labrada-v2-latin-regular.woff2") format("woff2");
+    font-family: "Lexend Deca";
+    font-weight: 1 999;
+    src: url("../fonts/lexend-deca.woff2") format("woff2-variations");
 }

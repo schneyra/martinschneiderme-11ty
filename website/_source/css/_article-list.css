@@ -4,7 +4,7 @@
     list-style: none;
 
     & > * {
-        --space: var(--space-l);
+        --space: var(--space-l-xl);
     }
 }
 
@@ -65,7 +65,7 @@
 
     &__headline {
         font-size: var(--step-2);
-        font-weight: 400;
+        font-weight: 500;
         position: unset;
     }
 }

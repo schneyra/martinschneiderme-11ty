@@ -1,5 +1,5 @@
 .section {
-    --space: var(--space-3xl);
+    --space: var(--space-3xl-4xl);
 
     width: var(--content-width-wrapper);
     max-width: 100%;

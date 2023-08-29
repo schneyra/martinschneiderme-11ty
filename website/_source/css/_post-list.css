@@ -4,14 +4,14 @@
     justify-content: space-between;
     overflow-x: auto;
     overflow-y: visible;
-    gap: var(--space-s);
+    gap: var(--space-m-l);
     padding: var(--space-2xs);
 
     & li {
         display: inline-block;
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 4 / 3;
         background-image: var(--gradient-body-background-invert);
-        width: 11rem;
+        width: 22.5rem;
         flex-shrink: 0;
         align-items: stretch;
         transition: background-image 200ms linear;

@@ -1,15 +1,15 @@
-/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,19,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,21,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 :root {
-    --step--2: clamp(0.69rem, calc(0.68rem + 0.08vw), 0.76rem);
-    --step--1: clamp(0.9rem, calc(0.9rem + 0.15vw), 1rem);
-    --step-0: clamp(1rem, calc(0.95rem + 0.23vw), 1.19rem);
-    --step-1: clamp(1.2rem, calc(1.13rem + 0.36vw), 1.48rem);
-    --step-2: clamp(1.44rem, calc(1.34rem + 0.52vw), 1.86rem);
-    --step-3: clamp(1.73rem, calc(1.58rem + 0.74vw), 2.32rem);
-    --step-4: clamp(2.07rem, calc(1.87rem + 1.03vw), 2.9rem);
-    --step-5: clamp(2.49rem, calc(2.2rem + 1.42vw), 3.62rem);
-    --step-6: clamp(2.99rem, calc(2.6rem + 1.93vw), 4.53rem);
-    --step-7: clamp(3.58rem, calc(3.06rem + 2.6vw), 5.66rem);
+    --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.84rem);
+    --step--1: clamp(0.83rem, calc(0.78rem + 0.27vw), 1.05rem);
+    --step-0: clamp(1rem, calc(0.92rem + 0.39vw), 1.31rem);
+    --step-1: clamp(1.2rem, calc(1.09rem + 0.55vw), 1.64rem);
+    --step-2: clamp(1.44rem, calc(1.29rem + 0.76vw), 2.05rem);
+    --step-3: clamp(1.73rem, calc(1.52rem + 1.04vw), 2.56rem);
+    --step-4: clamp(2.07rem, calc(1.79rem + 1.41vw), 3.2rem);
+    --step-5: clamp(2.49rem, calc(2.11rem + 1.9vw), 4.01rem);
+    --step-6: clamp(2.99rem, calc(2.48rem + 2.53vw), 5.01rem);
+    --step-7: clamp(3.58rem, calc(2.91rem + 3.34vw), 6.26rem);
 }
 
 /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1600,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,&g=s,l,xl,12 */
@@ -38,8 +38,8 @@
 }
 
 :root {
-    --content-width-main: 42rem;
-    --content-width-side: 21rem;
+    --content-width-main: 48rem;
+    --content-width-side: 24rem;
     --content-width-gap: var(--space-xl);
     --content-width-wrapper: calc(
         var(--content-width-main) + var(--content-width-side) +
@@ -50,14 +50,16 @@
     --padding-default: var(--space-s);
     --space-default: 1.25em;
 
-    --font-family-headlines: "Labrada", serif;
+    --font-family-headlines: "Lexend Deca", sans-serif;
+    --font-weight-headlines: 600;
+
     --font-family-text: system-ui, sans-serif;
     --font-family-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
         Consolas, "DejaVu Sans Mono", monospace;
 
     /* Colors based on: https://coolors.co/713e5a-f2f2f2-5e8217-c4e576-4d5057 */
-    --color-text: hsl(0deg 0% 7%);
-    --color-primary: hsl(80deg 70% 70%);
+    --color-text: hsl(210deg 50% 15%);
+    --color-primary: hsl(80deg 70% 65%);
     --color-primary-dark: hsl(80deg 70% 40%);
     --color-secondary: hsl(210deg 50% 15%);
     --color-secondary-invert: hsl(0deg 0% 100%);
@@ -66,7 +68,7 @@
 
     --gradient-body-background: linear-gradient(
         110deg,
-        hsl(0deg 0% 95%),
+        hsl(0deg 0% 87.5%),
         hsl(0deg 0% 100%)
     );
 
@@ -84,13 +86,19 @@
 
     --gradient-eleventy: linear-gradient(
         190deg,
-        hsl(220deg 0% 75%),
-        hsl(0deg 0% 100%)
+        hsl(220deg 0% 35%),
+        hsl(0deg 0% 20%)
     );
 
     --gradient-js: linear-gradient(
         190deg,
-        hsl(53deg 93% 90%),
-        hsl(0deg 0% 100%)
+        hsl(53deg 93% 35%),
+        hsl(0deg 0% 20%)
+    );
+
+    --gradient-css: linear-gradient(
+        190deg,
+        hsl(210deg 50% 15%),
+        hsl(0deg 0% 20%)
     );
 }

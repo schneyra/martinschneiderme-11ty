@@ -2,7 +2,7 @@
     font-family: var(--font-family-headlines);
     text-transform: uppercase;
     font-size: var(--step-2);
-    font-weight: 400;
+    font-weight: var(--font-weight-headlines);
     position: relative;
     text-decoration: none;
 
@@ -13,7 +13,7 @@
         background-color: var(--color-primary);
         z-index: -1;
         transform: rotate(-1.1deg);
-        inset: 1.5em -0.25em 0 -0.25em;
+        inset: 1.45em -0.25em 0 -0.25em;
         transition: background-color 100ms linear, transform 100ms linear;
     }
 

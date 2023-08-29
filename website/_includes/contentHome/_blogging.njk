@@ -7,7 +7,7 @@
 
     <ul class="section__fullwidth post-list">
         {% set articles = collections.articles | reverse %}
-        {%- for article in articles.slice(0,5) -%}
+        {%- for article in articles.slice(0,3) -%}
             <li>
                 <article class="poster{% for tag in article.data.tags %} poster--{{tag}}{% endfor %}">
                     <h4 class="poster__headline">
@@ -24,7 +24,7 @@
 
     {% if dtuiposts.status === "ok" %}
         <ul class="section__fullwidth post-list">
-            {%- for article in dtuiposts.data -%}
+            {%- for article in dtuiposts.data.slice(0,3) -%}
                 <li>
                     <article class="poster">
                         {% if article.image %}

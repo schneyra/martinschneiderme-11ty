@@ -25,4 +25,9 @@
             left: -0.5rem;
         }
     }
+
+    &__title {
+        font-family: var(--font-family-headlines);
+        text-transform: uppercase;
+    }
 }

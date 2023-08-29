@@ -3,10 +3,6 @@
         margin-block-start: var(--space-xl);
     }
 
-    &__header {
-        max-width: var(--content-width-main);
-    }
-
     &__date-link {
         --space: var(--space-3xs);
 
@@ -22,5 +18,10 @@
 
     &__excerpt {
         font-weight: 500;
+        font-family: var(--font-family-headlines);
+    }
+
+    & *:is(h2, h3, h4, h5) {
+        max-width: var(--content-width-main);
     }
 }

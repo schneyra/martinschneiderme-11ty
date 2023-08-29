@@ -5,14 +5,14 @@ h4,
 h5,
 h6 {
     font-family: var(--font-family-headlines);
-    font-weight: 400;
+    font-weight: var(--font-weight-headlines);
     color: var(--color-secondary);
     line-height: 1.2;
     transform: rotate(-0.25deg);
 }
 
 h1 {
-    font-size: var(--step-4);
+    font-size: var(--step-5);
 }
 
 h2 {
