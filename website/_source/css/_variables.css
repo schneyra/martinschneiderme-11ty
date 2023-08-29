@@ -68,8 +68,8 @@
 
     --gradient-body-background: linear-gradient(
         110deg,
-        hsl(0deg 0% 87.5%),
-        hsl(0deg 0% 100%)
+        hsl(0deg 0% 97.5%),
+        hsl(0deg 0% 87.5%)
     );
 
     --gradient-body-background-invert: linear-gradient(
