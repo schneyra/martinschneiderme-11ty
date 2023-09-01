@@ -2,16 +2,35 @@
     max-width: 100%;
     width: var(--content-width-wrapper);
     margin-inline: auto;
-    min-height: 50vh;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-xl);
+    gap: var(--space-m);
     padding-inline: var(--padding-default);
     flex-wrap: wrap;
 
     & > * {
         margin-inline: auto;
+    }
+
+    & > div {
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            background: white;
+            position: absolute;
+            width: var(--content-width-wrapper);
+            width: calc(101% + var(--padding-default) + var(--space-m));
+            height: calc(100% + var(--space-xs) * 2);
+            left: calc(var(--padding-default) * -1);
+            top: calc(var(--space-xs) * -1);
+            z-index: -1;
+            transform: skew(-1deg) rotate(-1deg);
+            box-shadow: var(--shadow);
+        }
     }
 
     &__headline {
@@ -34,7 +53,7 @@
     }
 
     &__image {
-        min-width: 20rem;
+        min-width: 21rem;
         background-image: var(--gradient-primary);
 
         & img {

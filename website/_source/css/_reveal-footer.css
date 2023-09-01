@@ -1,10 +1,11 @@
 .page-wrapper {
     min-height: 100vh;
     background: var(--gradient-body-background);
-    border-bottom: 3rem solid #fff;
+    border-bottom: 1rem solid #fff;
     padding-block-end: var(--space-2xl);
     z-index: 2;
     position: relative;
+    box-shadow: var(--shadow);
 }
 
 .footer-wrapper {

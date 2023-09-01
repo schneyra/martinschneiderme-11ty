@@ -4,7 +4,7 @@
     width: var(--content-width-wrapper);
     max-width: 100%;
     margin-inline: auto;
-    padding-inline: var(--space-s);
+    padding-inline: var(--padding-default);
 
     @media (min-width: 80rem) {
         display: grid;

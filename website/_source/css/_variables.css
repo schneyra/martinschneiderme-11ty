@@ -47,7 +47,7 @@
     );
     --content-width-hero: 100rem;
 
-    --padding-default: var(--space-s);
+    --padding-default: var(--space-m);
     --space-default: 1.25em;
 
     --font-family-headlines: "Lexend Deca", sans-serif;
@@ -101,4 +101,6 @@
         hsl(210deg 50% 15%),
         hsl(0deg 0% 20%)
     );
+
+    --shadow: 0 0 2rem #ddd;
 }

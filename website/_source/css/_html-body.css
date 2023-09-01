@@ -11,4 +11,5 @@ body {
     font-family: var(--font-family-text);
     font-weight: 300;
     line-height: 1.6;
+    overflow-x: hidden;
 }
