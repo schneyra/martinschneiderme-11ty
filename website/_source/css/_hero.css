@@ -23,7 +23,7 @@
             background: white;
             position: absolute;
             width: var(--content-width-wrapper);
-            width: calc(101% + var(--padding-default) + var(--space-m));
+            width: calc(100% + var(--padding-default) + var(--space-m));
             height: calc(100% + var(--space-xs) * 2);
             left: calc(var(--padding-default) * -1);
             top: calc(var(--space-xs) * -1);
