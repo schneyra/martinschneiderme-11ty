@@ -37,4 +37,15 @@
     & :is(h1, h2, h3, h4, h5, h6) + * {
         margin-block-start: 0.5em;
     }
+
+    & :is(h2, h3, h4)::before {
+        display: block;
+        content: "";
+        height: 3em;
+        position: absolute;
+        left: calc((var(--padding-default)/1.25) * -1);
+        background: var(--gradient-primary);
+        width: 0.25em;
+        transform: rotate(-0.5deg);
+    }
 }
