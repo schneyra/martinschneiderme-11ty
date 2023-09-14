@@ -47,5 +47,6 @@
         background: var(--gradient-primary);
         width: 0.25em;
         transform: rotate(-0.5deg);
+        box-shadow: 0.1em 0.1em 0 white;
     }
 }
