@@ -38,7 +38,7 @@
         margin-block-start: 0.5em;
     }
 
-    & :is(h2, h3, h4)::before {
+    & h2::before {
         display: block;
         content: "";
         height: 3em;
