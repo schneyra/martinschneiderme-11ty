@@ -6,6 +6,6 @@
     &:focus-visible {
         text-decoration: none;
         outline-offset: 0.15rem;
-        outline: 0.2rem dashed var(--color-primary);
+        outline: 0.2rem dashed var(--color-tertiary);
     }
 }

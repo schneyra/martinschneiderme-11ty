@@ -10,14 +10,25 @@
     & li {
         display: inline-block;
         aspect-ratio: 4 / 3;
-        background-image: var(--gradient-body-background-invert);
+        background-image: var(--gradient-primary);
         width: 22.5rem;
+        max-width: 65vw;
         flex-shrink: 0;
         align-items: stretch;
-        transition: background-image 200ms linear;
+        transition: background-image 1200ms linear;
 
-        &:hover {
-            background-image: var(--gradient-primary);
+        &:hover,
+        &:focus-within {
+            background-image: var(--gradient-tertiary);
+        }
+
+        &:focus-within {
+            outline-offset: 0.15rem;
+            outline: 0.2rem dashed var(--color-tertiary);
+
+            & a:focus-visible {
+                outline: none;
+            }
         }
     }
 }

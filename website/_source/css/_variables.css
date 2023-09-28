@@ -64,6 +64,7 @@
     --color-secondary: hsl(210deg 50% 15%);
     --color-secondary-invert: hsl(0deg 0% 100%);
     --color-tertiary: hsl(327deg 29% 34%);
+    --color-tertiary-dark: hsl(327deg 29% 24%);
     --color-teaser-background-hover: hsl(0deg 0% 100%);
 
     --gradient-body-background: linear-gradient(
@@ -82,6 +83,12 @@
         190deg,
         var(--color-primary-dark),
         var(--color-primary)
+    );
+
+    --gradient-tertiary: linear-gradient(
+        190deg,
+        var(--color-tertiary-dark),
+        var(--color-tertiary)
     );
 
     --gradient-eleventy: linear-gradient(
