@@ -10,6 +10,7 @@ const figureShortcodeForArticles = require("./website/_functions/filters/figureS
 const createOgImage = require("./website/_functions/filters/createOgImage");
 const stripTags = require("./website/_functions/filters/stripTags");
 const webmentionsForUrl = require("./website/_functions/filters/webmentionsForUrl");
+const averageColor = require("./website/_functions/filters/averageColor");
 
 const htmlmin = require("./website/_functions/transforms/htmlmin");
 const purgecss = require("./website/_functions/transforms/purgecss");
@@ -58,6 +59,8 @@ module.exports = function (eleventyConfig) {
         "figureElement",
         figureShortcodeForArticles
     );
+
+    eleventyConfig.addAsyncFilter("getAverageColor", averageColor);
 
     // ASSETS
     eleventyConfig.addWatchTarget("./website/_source");

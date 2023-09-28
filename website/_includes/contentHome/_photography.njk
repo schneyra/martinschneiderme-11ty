@@ -16,9 +16,12 @@
     </p>
 
     <div class="section__fullwidth gallery">
-        <figure>                
+        {% set imagePath = "./website/_source/images/photography/arcdetriumphe.jpg" %}
+        {% set averageColor = imagePath|getAverageColor %}
+
+        <figure class="gallery-image {{ 'gallery-image--dark' if averageColor.isDark == true }}" style="--color-average: {{ averageColor.rgba }}">              
             {% pictureElement
-                "src" = "./website/_source/images/photography/arcdetriumphe.jpg",
+                "src" = imagePath,
                 "alt" = "Arc de Triumphe in Paris.",
                 "widths" = [400, 900, 1200],
                 "sizes" = "(min-width: 1200px) 1200px, 100vw"
@@ -29,9 +32,11 @@
             </figcaption>
         </figure>
 
-        <figure>                
+        {% set imagePath = "./website/_source/images/photography/icelandroad.jpg" %}
+        {% set averageColor = imagePath|getAverageColor %}
+        <figure class="gallery-image {{ 'gallery-image--dark' if averageColor.isDark == true }}" style="--color-average: {{ averageColor.rgba }}">              
             {% pictureElement
-                "src" = "./website/_source/images/photography/icelandroad.jpg",
+                "src" = imagePath,
                 "alt" = "A road until the horizon.",
                 "widths" = [400, 900, 1200],
                 "sizes" = "(min-width: 1000px) 500px, 100vw"
@@ -41,9 +46,11 @@
             </figcaption>
         </figure>
 
-        <figure>                
+        {% set imagePath = "./website/_source/images/photography/hofgartenbonn.jpg" %}
+        {% set averageColor = imagePath|getAverageColor %}
+        <figure class="gallery-image {{ 'gallery-image--dark' if averageColor.isDark == true }}" style="--color-average: {{ averageColor.rgba }}">              
             {% pictureElement
-                "src" = "./website/_source/images/photography/hofgartenbonn.jpg",
+                "src" = imagePath,
                 "alt" = "The sun is shining through some trees.",
                 "widths" = [400, 900, 1200],
                 "sizes" = "(min-width: 1200px) 1200px, 100vw"
@@ -53,10 +60,11 @@
             </figcaption>
         </figure>
 
-
-        <figure>                
+        {% set imagePath = "./website/_source/images/photography/swollenrhine.jpg" %}
+        {% set averageColor = imagePath|getAverageColor %}
+        <figure class="gallery-image {{ 'gallery-image--dark' if averageColor.isDark == true }}" style="--color-average: {{ averageColor.rgba }}">              
             {% pictureElement
-                "src" = "./website/_source/images/photography/swollenrhine.jpg",
+                "src" = imagePath,
                 "alt" = "A ship besides a bridge.",
                 "widths" = [400, 900, 1200],
                 "sizes" = "(min-width: 1200px) 1200px, 100vw"
