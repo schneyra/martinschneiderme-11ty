@@ -1,4 +1,4 @@
-:is(a, button, input, textarea) {
+* {
     &:focus {
         outline: 0;
     }

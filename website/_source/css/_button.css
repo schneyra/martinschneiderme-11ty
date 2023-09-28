@@ -1,11 +1,60 @@
 button {
-    background-color: green;
-}
+    background-color: transparent;
+    color: white;
+    border: 0;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    padding: var(--space-2xs);
+    transition: background-color 100ms linear, color 100ms linear;
+    cursor: pointer;
+    position: relative;
 
-.button {
-    color: orange;
+    &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: 0;
+        z-index: -1;
+        transform: rotate(-1deg);
+        background-color: var(--color-primary);
+        transition: background-color 100ms linear, width 100ms linear,
+            height 100ms linear;
+    }
 
-    &--blue {
-        color: violet;
+    &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 110%;
+        height: 110%;
+        left: 0;
+        top: -5%;
+        z-index: -1;
+        transform: rotate(1.25deg);
+        background-color: var(--color-secondary);
+        transition: transform 100ms linear;
+    }
+
+    @media (hover: hover) {
+        &:hover::after {
+            transform: rotate(0);
+        }
+
+        &:hover::before {
+            background-color: var(--color-tertiary);
+            top: -12.5%;
+            width: 120%;
+            height: 125%;
+        }
+    }
+
+    & svg {
+        margin-inline-end: var(--space-2xs);
+        stroke: currentColor;
     }
 }
