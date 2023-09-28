@@ -10,8 +10,10 @@ a {
         text-decoration-color: var(--color-primary);
     }
 
-    &:hover {
-        text-underline-offset: 0.2em;
-        text-decoration-color: var(--color-tertiary);
+    @media (hover: hover) {
+        &:hover {
+            text-underline-offset: 0.2em;
+            text-decoration-color: var(--color-tertiary);
+        }
     }
 }

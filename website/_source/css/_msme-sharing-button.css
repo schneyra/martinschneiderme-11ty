@@ -15,9 +15,11 @@ msme-sharing-button {
         transition: background-color 100ms linear, color 100ms linear;
         cursor: pointer;
 
-        &:hover {
-            background-color: var(--color-secondary);
-            color: var(--color-secondary-invert);
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-secondary);
+                color: var(--color-secondary-invert);
+            }
         }
     }
 

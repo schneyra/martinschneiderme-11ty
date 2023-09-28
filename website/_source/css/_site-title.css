@@ -17,8 +17,10 @@
         transition: background-color 100ms linear, transform 100ms linear;
     }
 
-    &:hover::before {
-        background-color: var(--color-tertiary);
-        transform: rotate(0);
+    @media (hover: hover) {
+        &:hover::before {
+            background-color: var(--color-tertiary);
+            transform: rotate(0);
+        }
     }
 }

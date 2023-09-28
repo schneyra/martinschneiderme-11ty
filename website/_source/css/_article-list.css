@@ -29,12 +29,14 @@
         --space: var(--space-2xs);
     }
 
-    &:hover {
-        background-color: var(--color-teaser-background-hover);
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-teaser-background-hover);
 
-        &::before {
-            transform: rotate(0.25deg);
-            border-color: var(--color-tertiary);
+            &::before {
+                transform: rotate(0.25deg);
+                border-color: var(--color-tertiary);
+            }
         }
     }
 

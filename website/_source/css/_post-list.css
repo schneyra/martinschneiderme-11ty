@@ -17,13 +17,15 @@
         align-items: stretch;
         transition: background-image 1200ms linear;
 
-        &:hover,
-        &:focus-within {
-            background-image: var(--gradient-tertiary);
+        @media (hover: hover) {
+            &:hover {
+                background-image: var(--gradient-tertiary);
+            }
         }
 
         &:focus-within {
             outline-offset: 0.15rem;
+            background-image: var(--gradient-tertiary);
             outline: 0.2rem dashed var(--color-tertiary);
 
             & a:focus-visible {
