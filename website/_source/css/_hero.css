@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-m);
+    gap: var(--space-xl);
     padding-inline: var(--padding-default);
     flex-wrap: wrap;
 
@@ -53,7 +53,7 @@
     }
 
     &__image {
-        min-width: 21rem;
+        min-width: 20.5rem;
         background-image: var(--gradient-primary);
 
         & img {
