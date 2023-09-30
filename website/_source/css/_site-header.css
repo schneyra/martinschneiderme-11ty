@@ -5,8 +5,4 @@
     padding-block: var(--padding-default);
     gap: var(--space-s);
     flex-wrap: wrap;
-
-    & + * {
-        margin-block-start: var(--space-xl-2xl);
-    }
 }

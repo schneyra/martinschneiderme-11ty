@@ -22,8 +22,8 @@ button {
         z-index: -1;
         transform: rotate(-1deg);
         background-color: var(--color-primary);
-        transition: background-color 100ms linear, width 100ms linear,
-            height 100ms linear;
+        transition: background-color 100ms linear, width 200ms linear,
+            height 200ms linear;
     }
 
     &::after {

@@ -1,11 +1,131 @@
-<header class="wrapper site-header">
-    <a href="/" class="site-title">Martin Schneider</a>
+<div class="site-header-wrapper">
+    <header class="wrapper site-header">
+        <a href="/" class="site-title">Martin Schneider</a>
+        <button class="site-navigation-toggle js-site-navigation-toggle" aria-expanded=false>Menu</button>
+        
+        <div class="site-navigation-wrapper">
+            <nav aria-label="Main">
+                <ul class="site-navigation">
+                    <li>
+                        <a href="/articles/">articles</a>
+                    </li>
+                    <li>
+                        <a href="/articles/">projects</a>
+                    </li>
+                    <li>
+                        <a href="/articles/">blogroll</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <nav aria-label="Main">
-        <ul class="site-navigation">
-            <li>
-                <a href="/articles/">articles</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+
+<style>
+    .site-header-wrapper {
+        z-index: 200;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .site-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        transition: background 300ms linear;
+        align-items: center;
+    }
+
+    .site-header::before {
+        content: "";
+        display: none;
+        position: absolute;
+        inset: var(--space-xs) var(--space-3xs) var(--space-2xs);
+        background: white;
+        box-shadow: var(--shadow);
+        z-index: -1;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 300ms ease-out;
+    }
+
+    .site-navigation-wrapper {
+        width: 100%;
+        height: 0;
+    }
+
+    .site-navigation {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 300ms ease-out;
+        list-style: none;
+
+        & > * {
+            margin-block-start: var(--space-m);
+        }
+    }
+
+    .site-navigation-toggle {
+        z-index: 210;
+        font-size: var(--step--1);
+    }
+
+    .has-open-navigation .site-header::before {
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        transform: skew(-2deg) rotate(0.5deg);
+    }
+
+    .has-open-navigation .site-navigation-wrapper {
+        height: auto;
+    }
+
+    .has-open-navigation .site-navigation {
+        visibility: visible;
+        opacity: 1;
+        margin: auto;
+        width: max-content;
+        text-align: center;
+    }
+
+    @media (min-width: 60rem) {
+        .site-navigation-toggle {
+            display: none;
+        }
+
+        .site-navigation-wrapper {
+            width: auto;
+            height: auto;
+        }
+
+        .site-navigation {
+            visibility: visible;
+            opacity: 1;
+            display: flex;
+            gap: var(--space-s);
+            align-items: center;
+
+            & > * {
+                margin-block-start: 0;
+            }
+        }
+    }
+</style>
+
+<script>
+    let body = document.querySelector('body');
+    let navigationButton = document.querySelector('.js-site-navigation-toggle');
+
+    navigationButton.addEventListener('click', (event) => {
+        if (body.classList.contains('has-open-navigation')) {
+            body.classList.remove('has-open-navigation');
+            navigationButton.setAttribute('aria-expanded', false)
+        } else {
+            body.classList.add('has-open-navigation');
+            navigationButton.setAttribute('aria-expanded', true)
+        }
+    });
+</script>
+</div>
