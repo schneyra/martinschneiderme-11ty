@@ -15,7 +15,7 @@
         to go out and take some pictures.
     </p>
 
-    <div class="section__fullwidth gallery">
+    <div class="section__fullwidth gallery flow">
         {% set imagePath = "./website/_source/images/photography/arcdetriumphe.jpg" %}
         {% set averageColor = imagePath|getAverageColor %}
 
@@ -23,7 +23,7 @@
             {% pictureElement
                 "src" = imagePath,
                 "alt" = "Arc de Triumphe in Paris.",
-                "widths" = [400, 900, 1200],
+                "widths" = [400, 600, 900, 1200, 2400],
                 "sizes" = "(min-width: 1200px) 1200px, 100vw"
             %}
             
@@ -38,8 +38,8 @@
             {% pictureElement
                 "src" = imagePath,
                 "alt" = "A road until the horizon.",
-                "widths" = [400, 900, 1200],
-                "sizes" = "(min-width: 1000px) 500px, 100vw"
+                "widths" = [400, 600, 900, 1200, 2400],
+                "sizes" = "(min-width: 1200px) 1200px, 100vw"
             %}
             <figcaption>
                 A road in Iceland, June 2015
@@ -52,7 +52,7 @@
             {% pictureElement
                 "src" = imagePath,
                 "alt" = "The sun is shining through some trees.",
-                "widths" = [400, 900, 1200],
+                "widths" = [400, 600, 900, 1200, 2400],
                 "sizes" = "(min-width: 1200px) 1200px, 100vw"
             %}
             <figcaption>
@@ -66,7 +66,7 @@
             {% pictureElement
                 "src" = imagePath,
                 "alt" = "A ship besides a bridge.",
-                "widths" = [400, 900, 1200],
+                "widths" = [400, 600, 900, 1200, 2400],
                 "sizes" = "(min-width: 1200px) 1200px, 100vw"
             %}
             <figcaption>

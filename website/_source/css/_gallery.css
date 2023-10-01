@@ -1,8 +1,5 @@
 .gallery {
-    --space: var(--space-xl);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 500px));
-    gap: var(--space-l);
+    --space: var(--space-3xl);
 
     & img {
         width: 100%;
