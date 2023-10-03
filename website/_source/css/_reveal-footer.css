@@ -6,7 +6,6 @@
     z-index: 2;
     position: relative;
     box-shadow: var(--shadow);
-    padding-block-start: calc(var(--space-xl) * 3);
 }
 
 .footer-wrapper {

@@ -48,13 +48,6 @@ title:
             {{ serviceworkerEmbed | safe }}
         </script>
 
-        <script>
-            {% set navigationToggle %}
-                {% include 'website/js/_navigation-toggle.js' %}
-            {% endset %}
-            {{ navigationToggle | safe }}
-        </script>
-
         <script src="/instantpage.js" async></script>
 
         {% include "jsonld/website.njk" %}
