@@ -11,7 +11,7 @@
         display: inline-block;
         aspect-ratio: 4 / 3;
         background-image: var(--gradient-primary);
-        width: 22.5rem;
+        width: 27rem;
         max-width: 65vw;
         flex-shrink: 0;
         align-items: stretch;

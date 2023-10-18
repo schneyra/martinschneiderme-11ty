@@ -6,12 +6,10 @@
     margin-inline: auto;
     padding-inline: var(--padding-default);
 
-    @media (min-width: 80rem) {
+    @media (min-width: 60rem) {
         display: grid;
         column-gap: var(--content-width-gap);
-        grid-template-columns:
-            [main] var(--content-width-main) [side]
-            var(--content-width-side);
+        grid-template-columns: [main] 2fr [side] 1fr;
     }
 
     & > * {
@@ -24,14 +22,20 @@
 
     &__side {
         grid-column-start: side;
-        max-width: var(--content-width-side);
         width: 100%;
         margin-inline: auto;
         display: block;
+
+        --space: var(--content-width-gap);
+        @media (min-width: 60rem) {
+            --space: 0;
+        }
     }
 
     &__fullwidth {
-        grid-column-end: span 2;
+        @media (min-width: 60rem) {
+            grid-column-end: span 2;
+        }
     }
 
     & :is(h1, h2, h3, h4, h5, h6) + * {
