@@ -2,7 +2,7 @@
     max-width: 100%;
     width: var(--content-width-wrapper);
     margin-inline: auto;
-    min-height: 35vh;
+    min-height: 45vh;
     display: flex;
     align-items: center;
     justify-content: space-between;

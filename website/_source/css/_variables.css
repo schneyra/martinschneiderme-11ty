@@ -1,18 +1,20 @@
-/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,24,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,22,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
 :root {
-    --step--2: clamp(0.6944rem, 0.628rem + 0.332vw, 0.96rem);
-    --step--1: clamp(0.8331rem, 0.7414rem + 0.4586vw, 1.2rem);
-    --step-0: clamp(1rem, 0.875rem + 0.625vw, 1.5rem);
-    --step-1: clamp(1.2rem, 1.0313rem + 0.8438vw, 1.875rem);
-    --step-2: clamp(1.44rem, 1.2141rem + 1.1297vw, 2.3438rem);
-    --step-3: clamp(1.7281rem, 1.4277rem + 1.5023vw, 2.93rem);
-    --step-4: clamp(2.0738rem, 1.6767rem + 1.9852vw, 3.6619rem);
-    --step-5: clamp(2.4881rem, 1.9658rem + 2.6117vw, 4.5775rem);
-    --step-6: clamp(2.9863rem, 2.3023rem + 3.4195vw, 5.7219rem);
-    --step-7: clamp(3.5831rem, 2.6908rem + 4.4617vw, 7.1525rem);
+    --step--2: clamp(0.6944rem, 0.648rem + 0.232vw, 0.88rem);
+    --step--1: clamp(0.8331rem, 0.7664rem + 0.3336vw, 1.1rem);
+    --step-0: clamp(1rem, 0.9063rem + 0.4688vw, 1.375rem);
+    --step-1: clamp(1.2rem, 1.0703rem + 0.6484vw, 1.7188rem);
+    --step-2: clamp(1.44rem, 1.2628rem + 0.8859vw, 2.1488rem);
+    --step-3: clamp(1.7281rem, 1.4888rem + 1.1969vw, 2.6856rem);
+    --step-4: clamp(2.0738rem, 1.753rem + 1.6039vw, 3.3569rem);
+    --step-5: clamp(2.4881rem, 2.0611rem + 2.1352vw, 4.1963rem);
+    --step-6: clamp(2.9863rem, 2.4216rem + 2.8234vw, 5.245rem);
+    --step-7: clamp(3.5831rem, 2.8398rem + 3.7164vw, 6.5563rem);
 }
 
-/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l|l-3xl&g=s,l,xl,12 */
+
 :root {
     --space-3xs: clamp(0.25rem, 0.2188rem + 0.1563vw, 0.375rem);
     --space-2xs: clamp(0.5rem, 0.4375rem + 0.3125vw, 0.75rem);
@@ -38,11 +40,12 @@
 
     /* Custom pairs */
     --space-s-l: clamp(1rem, 0.5rem + 2.5vw, 3rem);
+    --space-l-3xl: clamp(2rem, 0.25rem + 8.75vw, 9rem);
 }
 
 :root {
-    --content-width-main: 56rem;
-    --content-width-side: 28rem;
+    --content-width-main: 55rem;
+    --content-width-side: 27rem;
     --content-width-gap: var(--space-xl);
     --content-width-wrapper: calc(
         var(--content-width-main) + var(--content-width-side) +
@@ -50,7 +53,7 @@
     );
     --content-width-hero: 100rem;
 
-    --padding-default: var(--space-m);
+    --padding-default: var(--space-l);
     --space-default: 1.25em;
 
     --font-family-headlines: "Lexend Deca", sans-serif;

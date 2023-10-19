@@ -47,7 +47,7 @@
         content: "";
         height: 3em;
         position: absolute;
-        left: calc((var(--padding-default) / 1.25) * -1);
+        left: calc((var(--padding-default) / 1.5) * -1);
         background: var(--gradient-primary);
         width: 0.25em;
         transform: rotate(-0.5deg);
