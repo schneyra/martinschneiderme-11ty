@@ -35,6 +35,19 @@ module.exports = async () => {
                 .then((result) => {
                     fs.writeFile(distFile, result.css, () => true);
                     console.log(`[msme] Wrote CSS (${filename}.css)`);
+                })
+                .catch((error) => {
+                    if (error.name === "CssSyntaxError") {
+                        process.stderr.write(
+                            `[msme] Error writing CSS (${filename}.css) \n` +
+                                error.message +
+                                "\n" +
+                                error.showSourceCode() +
+                                "\n\n"
+                        );
+                    } else {
+                        throw error;
+                    }
                 });
         })
     );
