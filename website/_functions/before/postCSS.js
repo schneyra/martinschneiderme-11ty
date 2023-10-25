@@ -5,6 +5,8 @@ const postcssNested = require("postcss-nested");
 const postcssImport = require("postcss-import");
 const litePreset = require("cssnano-preset-lite");
 const fs = require("fs/promises");
+const stylelint = require("stylelint");
+const postcssReporter = require("postcss-reporter");
 
 module.exports = async () => {
     await fs.mkdir("./website/dist/", { recursive: true }, (err, path) => {
@@ -25,8 +27,10 @@ module.exports = async () => {
 
             await postcss([
                 postcssImport,
+                stylelint,
                 postcssNested,
-                cssnano({ litePreset, plugins: [autoprefixer] })
+                cssnano({ litePreset, plugins: [autoprefixer] }),
+                postcssReporter({ clearReportedMessages: true })
             ])
                 .process(css, {
                     from: sourceFile,
