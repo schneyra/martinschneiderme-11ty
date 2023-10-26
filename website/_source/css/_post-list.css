@@ -2,8 +2,7 @@
     list-style: none;
     display: flex;
     justify-content: space-between;
-    overflow-x: auto;
-    overflow-y: visible;
+    overflow: auto visible;
     gap: var(--space-m-l);
     padding: var(--space-2xs);
 

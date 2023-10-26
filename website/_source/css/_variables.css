@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,22,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
@@ -53,15 +55,16 @@
     );
     --content-width-hero: 100rem;
 
+    /* Spacing */
     --padding-default: var(--space-l);
     --space-default: 1.25em;
 
+    /* Fonts */
     --font-family-headlines: "Lexend Deca", sans-serif;
     --font-weight-headlines: 600;
-
     --font-family-text: system-ui, sans-serif;
-    --font-family-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
-        Consolas, "DejaVu Sans Mono", monospace;
+    --font-family-code: ui-monospace, "Cascadia Code", "Source Code Pro",
+        "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
 
     /* Colors based on: https://coolors.co/713e5a-f2f2f2-5e8217-c4e576-4d5057 */
     --color-text: hsl(210deg 50% 15%);
@@ -73,47 +76,41 @@
     --color-tertiary-dark: hsl(327deg 29% 24%);
     --color-teaser-background-hover: hsl(0deg 0% 100%);
 
+    /* Gradients */
     --gradient-body-background: linear-gradient(
         110deg,
         hsl(0deg 0% 97.5%),
         hsl(0deg 0% 87.5%)
     );
-
     --gradient-body-background-invert: linear-gradient(
         190deg,
         hsl(222deg 6% 30%),
         hsl(222deg 6% 60%)
     );
-
     --gradient-primary: linear-gradient(
         190deg,
         var(--color-primary-dark),
         var(--color-primary)
     );
-
     --gradient-tertiary: linear-gradient(
         190deg,
         var(--color-tertiary-dark),
         var(--color-tertiary)
     );
-
     --gradient-eleventy: linear-gradient(
         190deg,
         hsl(220deg 0% 35%),
         hsl(0deg 0% 20%)
     );
-
     --gradient-js: linear-gradient(
         190deg,
         hsl(53deg 93% 35%),
         hsl(0deg 0% 20%)
     );
-
     --gradient-css: linear-gradient(
         190deg,
         hsl(210deg 50% 15%),
         hsl(0deg 0% 20%)
     );
-
     --shadow: 0 0 2rem #ddd;
 }

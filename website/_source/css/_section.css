@@ -6,7 +6,7 @@
     margin-inline: auto;
     padding-inline: var(--padding-default);
 
-    @media (min-width: 60rem) {
+    @media (width >= 60rem) {
         display: grid;
         column-gap: var(--content-width-gap);
         grid-template-columns: [main] 2fr [side] 1fr;
@@ -14,6 +14,10 @@
 
     & > * {
         --space: var(--space-default);
+    }
+
+    & :is(h1, h2, h3, h4, h5, h6) + * {
+        margin-block-start: 0.5em;
     }
 
     & > *:not(&__side) {
@@ -27,19 +31,16 @@
         display: block;
 
         --space: var(--content-width-gap);
-        @media (min-width: 60rem) {
+
+        @media (width >= 60rem) {
             --space: 0;
         }
     }
 
     &__fullwidth {
-        @media (min-width: 60rem) {
+        @media (width >= 60rem) {
             grid-column-end: span 2;
         }
-    }
-
-    & :is(h1, h2, h3, h4, h5, h6) + * {
-        margin-block-start: 0.5em;
     }
 
     & h2::before {

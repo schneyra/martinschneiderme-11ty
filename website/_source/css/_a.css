@@ -2,7 +2,7 @@ a {
     text-decoration-thickness: 0.15em;
     transition: text-underline-offset linear 50ms;
     text-decoration-color: var(--color-primary-dark);
-    color: currentColor;
+    color: currentcolor;
     text-underline-offset: 0.1em;
     font-weight: 500;
 

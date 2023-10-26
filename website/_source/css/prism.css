@@ -11,14 +11,7 @@ pre[class*="language-"] {
     word-wrap: normal;
     line-height: 2;
     border-radius: 0;
-
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
     hyphens: none;
 }
 
@@ -28,6 +21,7 @@ pre[class*="language-"] {
     overflow: visible;
     padding: 0;
 }
+
 pre[class*="language-"] > code {
     position: relative;
     border-inline-start: 0.5rem solid var(--color-primary);
@@ -59,7 +53,7 @@ pre[class*="language-"] {
     padding: 0.2em;
     border-radius: 0.3em;
     color: #c92c2c;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0 0 0 10%);
     display: inline;
     white-space: normal;
 }
@@ -102,7 +96,7 @@ pre[class*="language-"] {
 .token.url,
 .token.variable {
     color: #a67f59;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255 255 255 50%);
 }
 
 .token.atrule,
@@ -120,7 +114,7 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string {
     color: #a67f59;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255 255 255 50%);
 }
 
 .token.important {
@@ -130,6 +124,7 @@ pre[class*="language-"] {
 .token.bold {
     font-weight: bold;
 }
+
 .token.italic {
     font-style: italic;
 }
@@ -142,18 +137,18 @@ pre[class*="language-"] {
     opacity: 0.7;
 }
 
-@media screen and (max-width: 767px) {
-    pre[class*="language-"]:before,
-    pre[class*="language-"]:after {
+@media screen and (width <= 767px) {
+    pre[class*="language-"]::before,
+    pre[class*="language-"]::after {
         bottom: 14px;
         box-shadow: none;
     }
 }
 
 /* Plugin styles */
-.token.tab:not(:empty):before,
-.token.cr:before,
-.token.lf:before {
+.token.tab:not(:empty)::before,
+.token.cr::before,
+.token.lf::before {
     color: #e0d7d1;
 }
 
@@ -176,10 +171,13 @@ pre[class*="language-"][data-line] {
     padding-bottom: 0;
     padding-left: 0;
 }
+
+/* stylelint-disable-next-line no-descending-specificity */
 pre[data-line] code {
     position: relative;
     padding-left: 4em;
 }
+
 pre .line-highlight {
     margin-top: 0;
 }
