@@ -4,6 +4,8 @@ const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 
 const w3DateFilter = require("./website/_functions/filters/w3cDate.js");
 const longDate = require("./website/_functions/filters/longDate.js");
+const niceUrl = require("./website/_functions/filters/niceUrl.js");
+const shuffle = require("./website/_functions/filters/shuffle.js");
 const recentArticles = require("./website/_functions/filters/recentArticles.js");
 const pictureElementShortcode = require("./website/_functions/filters/pictureElementShortcode");
 const figureShortcodeForArticles = require("./website/_functions/filters/figureShortcodeForArticles");
@@ -40,6 +42,8 @@ module.exports = function (eleventyConfig) {
     // FILTERS
     eleventyConfig.addFilter("w3DateFilter", w3DateFilter);
     eleventyConfig.addFilter("longDate", longDate);
+    eleventyConfig.addFilter("niceUrl", niceUrl);
+    eleventyConfig.addFilter("shuffle", shuffle);
     eleventyConfig.addFilter("recentArticles", recentArticles);
     eleventyConfig.addFilter("stripTags", stripTags);
     eleventyConfig.addFilter("webmentionsForUrl", webmentionsForUrl);
