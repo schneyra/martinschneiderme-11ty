@@ -31,13 +31,13 @@ const createOgImage = async (title) => {
         x: 70,
         y: 360,
         fontSize: 65,
-        attributes: { fill: "hsl(210deg 50% 22.5%)" }
+        attributes: { fill: "hsl(210deg 50% 20%)" }
     };
     const optionsTitle2 = {
         x: 70,
         y: 435,
         fontSize: 65,
-        attributes: { fill: "hsl(210deg 50% 22.5%)" }
+        attributes: { fill: "hsl(210deg 50% 20%)" }
     };
 
     const title1 = textToSVG.getPath(firstPartOfTitle.join(" "), optionsTitle1);
@@ -48,7 +48,7 @@ const createOgImage = async (title) => {
         x: 70,
         y: 550,
         fontSize: 45,
-        attributes: { fill: "hsl(210deg 50% 22.5%)" }
+        attributes: { fill: "hsl(210deg 50% 20%)" }
     };
 
     const website = textToSVG.getPath("martinschneider.me", optionsWebsite);
