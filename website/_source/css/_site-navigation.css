@@ -6,6 +6,6 @@
     font-weight: 500;
     font-family: var(--font-family-headlines);
     display: flex;
-    gap: var(--space-s);
+    gap: var(--space-m);
     align-items: center;
 }

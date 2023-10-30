@@ -70,10 +70,10 @@
     --color-text: hsl(210deg 50% 15%);
     --color-primary: hsl(80deg 70% 65%);
     --color-primary-dark: hsl(80deg 70% 40%);
-    --color-secondary: hsl(210deg 50% 15%);
+    --color-secondary: hsl(210deg 50% 22.5%);
     --color-secondary-invert: hsl(0deg 0% 100%);
-    --color-tertiary: hsl(327deg 29% 34%);
-    --color-tertiary-dark: hsl(327deg 29% 24%);
+    --color-tertiary: hsl(35deg 100% 50%);
+    --color-tertiary-dark: hsl(35deg 50% 25%);
     --color-teaser-background-hover: hsl(0deg 0% 100%);
 
     /* Gradients */

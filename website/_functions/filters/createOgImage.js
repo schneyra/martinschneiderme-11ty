@@ -2,9 +2,9 @@ const Image = require("@11ty/eleventy-img");
 const TextToSVG = require("text-to-svg");
 
 const createOgImage = async (title) => {
-    if (process.env.ELEVENTY_ENV !== "production") {
+    /*if (process.env.ELEVENTY_ENV !== "production") {
         return "/og-images-only-in-production.jpg";
-    }
+    }*/
 
     if (!title) {
         console.error("[msme] OG image: No title given");
@@ -31,13 +31,13 @@ const createOgImage = async (title) => {
         x: 70,
         y: 360,
         fontSize: 65,
-        attributes: { fill: "hsl(210deg 50% 13%)" }
+        attributes: { fill: "hsl(210deg 50% 22.5%)" }
     };
     const optionsTitle2 = {
         x: 70,
         y: 435,
         fontSize: 65,
-        attributes: { fill: "hsl(210deg 50% 13%)" }
+        attributes: { fill: "hsl(210deg 50% 22.5%)" }
     };
 
     const title1 = textToSVG.getPath(firstPartOfTitle.join(" "), optionsTitle1);
@@ -48,7 +48,7 @@ const createOgImage = async (title) => {
         x: 70,
         y: 550,
         fontSize: 45,
-        attributes: { fill: "hsl(0deg 0% 7%)" }
+        attributes: { fill: "hsl(210deg 50% 22.5%)" }
     };
 
     const website = textToSVG.getPath("martinschneider.me", optionsWebsite);
@@ -58,15 +58,22 @@ const createOgImage = async (title) => {
             
             <defs>
                 <linearGradient id="backgroundGradient" gradientTransform="rotate(140)">
-                <stop offset="0"  stop-color="hsl(0deg 0% 98%)" />
-                <stop offset="100%" stop-color="hsl(0deg 0% 94%)" />
+                <stop offset="0"  stop-color="hsl(0deg 0% 97.5%)" />
+                <stop offset="100%" stop-color="hsl(0deg 0% 87.5%)" />
+                </linearGradient>
+            </defs>
+
+            <defs>
+                <linearGradient id="primaryGradient">
+                <stop offset="0"  stop-color="hsl(80deg 70% 65%)" />
+                <stop offset="100%" stop-color="hsl(80deg 70% 40%)" />
                 </linearGradient>
             </defs>
 
             <rect width="1200" height="600" fill="url('#backgroundGradient')"/> 
-            <rect width="1060" height="3" x="70" y="480" fill="hsl(45deg 100% 63%)"/> 
+            <rect width="1060" height="3" x="70" y="480" fill="url('#primaryGradient')"/> 
 
-            <rect width="150" height="150" x="985" y="75" fill="hsl(45deg 100% 63%)"/>
+            <rect width="150" height="150" x="985" y="75" fill="url('#primaryGradient')"/>
 
             <image
             x="980"

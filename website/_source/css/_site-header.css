@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     padding-block: var(--padding-default);
-    gap: var(--space-s);
+    gap: var(--space-l);
     flex-wrap: wrap;
 
     & + * {
