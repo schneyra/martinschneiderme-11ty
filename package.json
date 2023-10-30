@@ -30,11 +30,11 @@
     "dependencies": {
         "@11ty/eleventy": "^2.0.1",
         "@11ty/eleventy-fetch": "^4.0.0",
-        "@11ty/eleventy-img": "^3.1.0",
+        "@11ty/eleventy-img": "^3.1.6",
         "@11ty/eleventy-plugin-directory-output": "^1.0.1",
         "@11ty/eleventy-plugin-rss": "^1.2.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-        "autoprefixer": "^10.4.14",
+        "autoprefixer": "^10.4.16",
         "cssnano": "^6.0.1",
         "cssnano-preset-lite": "^3.0.0",
         "fast-average-color-node": "^2.6.0",
@@ -44,20 +44,20 @@
         "instant.page": "^5.2.0",
         "lodash": "^4.17.21",
         "msme-sharing-button": "^2.0.1",
-        "netlify-cli": "^14.2.1",
+        "netlify-cli": "^16.9.3",
         "netlify-plugin-cache": "^1.0.3",
         "postcss": "^8.4.24",
         "postcss-import": "^15.1.0",
         "postcss-nested": "^6.0.1",
         "postcss-reporter": "^7.0.5",
-        "prettier": "^2.8.7",
+        "prettier": "^3.0.3",
         "purgecss": "^5.0.0",
         "text-to-svg": "^3.1.5",
-        "xml2js": "^0.5.0"
+        "xml2js": "^0.6.2"
     },
     "devDependencies": {
-        "@netlify/plugin-lighthouse": "^4.1.1",
-        "cypress": "^12.10.0",
+        "@netlify/plugin-lighthouse": "^5.0.0",
+        "cypress": "^13.3.3",
         "stylelint": "^15.11.0",
         "stylelint-config-standard": "^34.0.0"
     }
