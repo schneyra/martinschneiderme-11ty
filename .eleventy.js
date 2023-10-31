@@ -74,7 +74,7 @@ module.exports = function (eleventyConfig) {
 
     // TRANSFORMS
     eleventyConfig.addTransform("htmlmin", htmlmin);
-    //eleventyConfig.addTransform("purgecss", purgecss);
+    eleventyConfig.addTransform("purgecss", purgecss);
 
     return {
         markdownTemplateEngine: "njk",
