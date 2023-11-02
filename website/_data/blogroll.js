@@ -63,6 +63,10 @@ module.exports = async () => {
         {
             name: "Matthias Ott",
             url: "https://matthiasott.com/"
+        },
+        {
+            name: "Eric Meyer",
+            url: "https://meyerweb.com/"
         }
     ];
 };
