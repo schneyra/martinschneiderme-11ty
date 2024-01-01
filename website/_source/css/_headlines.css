@@ -9,6 +9,7 @@ h6 {
     color: var(--color-secondary);
     line-height: 1.2;
     transform: rotate(-0.25deg);
+    text-wrap: balance;
 }
 
 h1 {
