@@ -15,7 +15,7 @@
     }
 
     &__headline {
-        font-size: var(--step-7);
+        font-size: var(--font-size-hero-headline, --step-7);
         position: relative;
         display: inline;
         background-image: repeating-linear-gradient(
