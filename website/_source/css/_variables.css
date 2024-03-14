@@ -3,16 +3,31 @@
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,22,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
-    --step--2: clamp(0.6944rem, 0.648rem + 0.232vw, 0.88rem);
-    --step--1: clamp(0.8331rem, 0.7664rem + 0.3336vw, 1.1rem);
-    --step-0: clamp(1rem, 0.9063rem + 0.4688vw, 1.375rem);
-    --step-1: clamp(1.2rem, 1.0703rem + 0.6484vw, 1.7188rem);
-    --step-2: clamp(1.44rem, 1.2628rem + 0.8859vw, 2.1488rem);
-    --step-3: clamp(1.7281rem, 1.4888rem + 1.1969vw, 2.6856rem);
-    --step-4: clamp(2.0738rem, 1.753rem + 1.6039vw, 3.3569rem);
-    --step-5: clamp(2.4881rem, 2.0611rem + 2.1352vw, 4.1963rem);
-    --step-6: clamp(2.9863rem, 2.4216rem + 2.8234vw, 5.245rem);
-    --step-7: clamp(3.5831rem, 2.8398rem + 3.7164vw, 6.5563rem);
+  /* Step -2: 11.1111px → 14.08px */
+  --step--2: clamp(0.6944rem, 0.6481rem + 0.2319vi, 0.88rem);
+  /* Step -1: 13.3333px → 17.6px */
+  --step--1: clamp(0.8333rem, 0.7667rem + 0.3333vi, 1.1rem);
+  /* Step 0: 16px → 22px */
+  --step-0: clamp(1rem, 0.9063rem + 0.4688vi, 1.375rem);
+  /* Step 1: 19.2px → 27.5px */
+  --step-1: clamp(1.2rem, 1.0703rem + 0.6484vi, 1.7188rem);
+  /* Step 2: 23.04px → 34.375px */
+  --step-2: clamp(1.44rem, 1.2629rem + 0.8855vi, 2.1484rem);
+  /* Step 3: 27.648px → 42.9688px */
+  --step-3: clamp(1.728rem, 1.4886rem + 1.1969vi, 2.6855rem);
+  /* Step 4: 33.1776px → 53.7109px */
+  --step-4: clamp(2.0736rem, 1.7528rem + 1.6042vi, 3.3569rem);
+  /* Step 5: 39.8131px → 67.1387px */
+  --step-5: clamp(2.4883rem, 2.0614rem + 2.1348vi, 4.1962rem);
+  /* Step 6: 47.7757px → 83.9233px */
+  --step-6: clamp(2.986rem, 2.4212rem + 2.824vi, 5.2452rem);
+  /* Step 7: 57.3309px → 104.9042px */
+  --step-7: clamp(3.5832rem, 2.8398rem + 3.7167vi, 6.5565rem);
+}
+
+/* Extra-size for hero on homepage, based on steps */
+:root {
+  --font-size-hero-headline: clamp(1.2rem, 1.2629rem + 3.7167vi, 6.5565rem);
 }
 
 /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l|l-3xl&g=s,l,xl,12 */
