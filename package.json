@@ -44,7 +44,7 @@
         "instant.page": "^5.2.0",
         "lodash": "^4.17.21",
         "msme-sharing-button": "^2.0.1",
-        "netlify-cli": "^16.9.3",
+        "netlify-cli": "^17.22.1",
         "netlify-plugin-cache": "^1.0.3",
         "postcss": "^8.4.24",
         "postcss-import": "^15.1.0",
