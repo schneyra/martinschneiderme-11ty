@@ -56,7 +56,6 @@
         "xml2js": "^0.6.2"
     },
     "devDependencies": {
-        "@netlify/plugin-lighthouse": "^5.0.0",
         "cypress": "^13.3.3",
         "stylelint": "^15.11.0",
         "stylelint-config-standard": "^34.0.0"

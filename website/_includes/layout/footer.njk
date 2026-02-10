@@ -13,14 +13,14 @@
         </p>
 
         <ul class="navlist">
-            <li><a href="/articles/feed.xml">RSS-Feed</a></li>
+            {#<li><a href="/articles/feed.xml">RSS-Feed</a></li>#}
             <li><a href="/colophon/">Colophon</a></li>
             <li><a href="/accessibility/">Accessibility</a></li>
             <li><a href="/legal/">Legal Information</a></li>
         </ul>
     </div>
 
-    <ul class="iconlist">
+    {#<ul class="iconlist">
         {% for account in martin.sameAs %}
             <li>
                 <a href="{{ account.url }}" 
@@ -41,5 +41,5 @@
             "pictureElementClasses" = "",
             "imageElementClasses" = ""
         %}
-    </div>
+    </div>#}
 </footer>
