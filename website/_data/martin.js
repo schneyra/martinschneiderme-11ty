@@ -14,7 +14,7 @@ module.exports = async () => {
     return {
         name: "Martin Schneider",
         url: "https://martinschneider.me",
-        email: "hallo@martinschneider.me",
+        email: "martin@martinschneider.me",
         jobtitle1: "Frontend Web Developer",
         jobtitle2: "Diplom Informatiker (FH)",
         image: "./website/_source/images/avatar.jpg",

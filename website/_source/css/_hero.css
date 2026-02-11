@@ -1,5 +1,4 @@
 .hero {
-    padding-block-start: var(--space);
     max-width: 100%;
     width: var(--content-width-wrapper);
     margin-inline: auto;
@@ -29,7 +28,7 @@
         padding-bottom: 0.2em;
         box-decoration-break: clone;
 
-        & + * {
+        section & + * {
             margin-block-start: var(--space-l);
         }
     }
